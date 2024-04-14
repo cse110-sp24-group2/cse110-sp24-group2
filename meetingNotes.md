@@ -4,6 +4,7 @@
 
 Discussing the team branding:
  - Name: King Julien (after Madagascar)
- - First Logo: 
+ - First Logo
  - Working on Intro Video ([inspo](https://youtu.be/hdcTmpvDO0I?feature=shared)):
-   - Made a group picture: 
+   - Made a group picture
+   - Recorded individual bits for each member 
