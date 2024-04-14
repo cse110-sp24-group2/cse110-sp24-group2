@@ -3,31 +3,14 @@
 Colors: Green, Yellow, Red  
 Team Values: Collaboration, Quality, Accountability, Continous Improvement, Respect
 ## TEAM WIKI
-Name: Dhaivat Pachchigar
-Year: fourth
-Github: https://github.com/devPach4545 
-Name: Jiawen Wang
-Year: third
-Github repo: 
-https://github.com/Cocodayow
-Name: Momina Habibi
-Year: third
-Github: https://github.com/Mominahabibi19
-Name: Andrew Smithwick
-Hi! I'm Andy, a second-year computer science major from Revelle. I am excited to learn how to work on a team and the basics of HTML, CSS, and JavaScript. In my spare time, I like playing billiards and going to the beach!
-https://github.com/WishingWell13
-Name: Brian Morse
-Year: Second
-Github: https://github.com/BrianMorse12604 
-Name: Victor Hsiao
-Year: second
-GitHub: https://github.com/vihsiao
-Name: Dhruv Susheelkar
-Year: second
-GitHub: https://github.com/3DSA
-Name: Anya Chernova
-Year: second
-GitHub: https://github.com/Ascher176
-Name: Clarissa Cheng
-Year: Third
-Github: https://github.com/clarissacheng 
+| Name              | Year   | GitHub Profile                                |
+|-------------------|--------|-----------------------------------------------|
+| Dhaivat Pachchigar| fourth | [devPach4545](https://github.com/devPach4545) |
+| Jiawen Wang       | third  | [Cocodayow](https://github.com/Cocodayow)     |
+| Momina Habibi     | third  | [Mominahabibi19](https://github.com/Mominahabibi19) |
+| Andrew Smithwick  | second | [WishingWell13](https://github.com/WishingWell13) |
+| Brian Morse       | Second | [BrianMorse12604](https://github.com/BrianMorse12604) |
+| Victor Hsiao      | second | [vihsiao](https://github.com/vihsiao) |
+| Dhruv Susheelkar  | second | [3DSA](https://github.com/3DSA) |
+| Anya Chernova     | second | [Ascher176](https://github.com/Ascher176) |
+| Clarissa Cheng    | Third  | [clarissacheng](https://github.com/clarissacheng) |
