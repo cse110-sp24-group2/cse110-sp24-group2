@@ -15,3 +15,4 @@ Team Values: Collaboration, Quality, Accountability, Continous Improvement, Resp
 | Anya Chernova     | Second | [Ascher176](https://github.com/Ascher176) |
 | Clarissa Cheng    | Third  | [clarissacheng](https://github.com/clarissacheng) |
 | Uday Singla       | Second | [udsingla](https://github.com/udsingla) |
+| Madhoolika       | Third | [madhoolikacvss]([https://github.com/udsingla](https://github.com/madhoolikacvss)) |
