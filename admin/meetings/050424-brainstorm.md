@@ -1,6 +1,10 @@
-# Meeting Minutes: Developer Journal Web App
+# Meeting Minutes: Developer Journal Web App Brainstorming
 
 **Date:** 5/4/2024
+
+**Location:** Zoom
+
+**Attendance:** All members
 
 ## Agenda
 
