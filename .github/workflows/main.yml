@@ -30,7 +30,7 @@ jobs: # the things being executed
       - name: JSDoc Generation # Generate the docs for JS info
         uses: andstor/jsdoc-action@v1.2.1
         with:
-          source_dir: ./src
+          source_dir: ./source 
           recurse: true
           output_dir: ./docs
           front_page: README.md
