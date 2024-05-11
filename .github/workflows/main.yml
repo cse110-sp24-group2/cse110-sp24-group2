@@ -6,6 +6,7 @@ on:
         branches:
             - cicdtestmain
             - cicdtestfeature
+            - main
 permissions:
     contents: write
 
