@@ -211,10 +211,10 @@ body {
     text-align: center;
     font-size:120%;
     padding: 10px;
-    background-color: rgba(255, 255, 255 / 0.8);
+    background-color: rgba(255, 255, 255 / 80%);
     font-weight: bold;
     border: none;
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0 / 80%);
 }
 
 .holiday {
@@ -315,7 +315,7 @@ body {
 }
 
 button.delete-button {
-    background-color: #ffffff;
+    background-color: #fff;
     color: #343434;
     border: 2px solid #ccc;
     border-radius: 7px;
