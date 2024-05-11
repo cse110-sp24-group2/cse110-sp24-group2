@@ -1,5 +1,5 @@
 * {
-    font-family: "Rubik" , sans-serif;
+    font-family: Rubik , sans-serif;
 }
 
 .rubik-font {
@@ -24,8 +24,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 80%); 
-    box-shadow: 0 2px 5px rgba(0, 0, 0,  10%);
+    background-color: rgba(255, 255, 255 / 0.8); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 10%);
     margin-bottom: 10px;
     font-family: fantasy;
     font-weight: bold;
@@ -45,7 +45,7 @@ body {
 
 .day {
     padding: 15px 10px;
-    background-color: #ffffff;
+    background-color: #fff;
     border: none;
     transition: background-color 0.3s, transform 0.3s;
 }
@@ -54,7 +54,7 @@ body {
     background-color: #cf9fc2;
     transform: translateY(-3px);
     cursor: pointer;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 10%);
 }
 
 .day.spring {
@@ -294,7 +294,7 @@ body {
 #prev-month:hover {
     background-color: #eaeaea; 
     color:rgb(0, 0, 0);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 30%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0 / 30%);
 }
 
 #next-month {
@@ -310,7 +310,7 @@ body {
 #next-month:hover {
     background-color: #eaeaea; 
     color:rgb(0, 0, 0);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0 / 30%);
 }
 
 button.delete-button {
@@ -327,7 +327,7 @@ button.delete-button {
 button.delete-button:hover {
     background-color: #eaeaea; 
     color:rgb(0, 0, 0);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0 / 30%);
 }
 
 .arrow {

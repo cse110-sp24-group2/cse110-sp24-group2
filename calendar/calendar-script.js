@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Get some of the info to build dates
         let firstDay = new Date(year, month, 1).getDay();
-        let lastDate = new Date(year, month + 1, 0).getDate();
         let lastDay = new Date(year, month + 1, 0).getDay();
         let lastDatePrevMonth = new Date(year, month, 0).getDate();
 
