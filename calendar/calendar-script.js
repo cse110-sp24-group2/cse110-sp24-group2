@@ -6,12 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentMonth = currentDate.getMonth();
     let currentYear = currentDate.getFullYear();
     let entries = {};
-    const monthBackgrounds = [
-        "url('background-images/january.jpg')", "url('background-images/february.jpg')", "url('background-images/march.jpg')",
-        "url('background-images/april.jpg')", "url('background-images/may.jpg')", "url('background-images/june.jpg')",
-        "url('background-images/july.jpg')", "url('background-images/august.jpg')", "url('background-images/september.jpg')",
-        "url('background-images/october.jpg')", "url('background-images/november.jpg')", "url('background-images/december.jpg')"
-    ];
+    const monthBackgrounds = [];
 
 
     const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -26,15 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     new Date(currentYear, 10, 11), // Veterans Day
     new Date(currentYear, 11, 25), // Christmas Day
     ];
-
-    let dayInfo = {
-        date: '',
-        startTime: '',
-        endTime: '',
-        description: '',
-        attendees: '',
-        urgent: false,
-    }
 
     function updateMonthYear() {
         monthLabel.textContent = `${monthNames[currentMonth]} ${currentYear}`;
@@ -60,11 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         entryInput.value = '';
         // Reload the entries
         loadEntries(currentDay, currentMonth, currentYear);
-    }
-
-    function clearForm() {
-        entriesList.innerHTML = '';
-        entryInput.value = '';
     }
 
     // Add a new entry

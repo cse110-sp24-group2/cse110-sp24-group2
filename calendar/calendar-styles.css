@@ -1,5 +1,5 @@
 * {
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik" , sans-serif;
 }
 
 .rubik-font {
@@ -14,16 +14,18 @@ body {
     background-size: cover;
     color: #333;
 }
+
 .diff-month {
     color: gray;
 }
+
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.8); 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 80%); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0,  10%);
     margin-bottom: 10px;
     font-family: fantasy;
     font-weight: bold;
@@ -34,11 +36,11 @@ body {
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 80%); 
     width: 95%;
     max-width: 600px;
     margin: auto;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 15%);
 }
 
 .day {
@@ -52,7 +54,7 @@ body {
     background-color: #cf9fc2;
     transform: translateY(-3px);
     cursor: pointer;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
 }
 
 .day.spring {
@@ -72,7 +74,6 @@ body {
 }
 
 .month-color {
-   
     color: #333;
 }
 
@@ -99,7 +100,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 40%);
     font-family: fantasy;
     font-weight: 500
 }
@@ -119,8 +120,14 @@ body {
 
 /* Animation to slide the modal content from the top */
 @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0; 
+        opacity: 1
+    }
 }
 
 
@@ -192,7 +199,7 @@ body {
 .day-names {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    padding: 0px;
+    padding: 0;
     padding-top: 10px;
     width: 95%;
     max-width: 660px;
@@ -203,7 +210,7 @@ body {
     text-align: center;
     font-size:120%;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255 / 0.8);
     font-weight: bold;
     border: none;
     color: rgb(0, 0, 0);
@@ -214,7 +221,6 @@ body {
 }
 
 /* MY CHANGES */
-
 .calendar-container {
     display: flex;
     flex-direction: column;
@@ -223,8 +229,7 @@ body {
 }
 
 /* MOBILE RESPONSIVENESS BREAKPOINT - TABLET */
-
-@media (min-width: 426px) and (max-width: 1024px) {
+@media (width >= 426px) and (width <= 1024px) {
     .calendar-container {
         overflow: hidden;
     }
@@ -249,7 +254,7 @@ body {
 }
 
 /* MOBILE RESPONSIVENESS BREAKPOINT - PHONE */
-@media (max-width: 426px)  {
+@media (width <= 426px)  {
     .calendar-container {
         margin: 0 3%;
     }
@@ -289,7 +294,7 @@ body {
 #prev-month:hover {
     background-color: #eaeaea; 
     color:rgb(0, 0, 0);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 30%);
 }
 
 #next-month {
@@ -334,10 +339,8 @@ button.delete-button:hover {
   
 .right {
     transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
 }
 
 .left {
     transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
 }
