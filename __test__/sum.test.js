@@ -1,4 +1,4 @@
-import { sum } from '../src/scripts/arithmetic';
+import { sum } from '../source/scripts/arithmetic';
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
