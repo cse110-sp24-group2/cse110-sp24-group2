@@ -1,0 +1,43 @@
+name: Ensure Quality and Generate Documentation # name of the test
+
+on: 
+    # Run when pull requests are made to main branches
+    pull_request:
+        branches:
+            - main
+            - feature-testing
+permissions:
+    contents: write
+
+jobs: # the things being executed
+  tests:
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v4 # using version 4 of Actions
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Unit Tests
+        run: npm test
+  doc_gen:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - uses: actions/checkout@v4 # using version 4 of Actions
+      - name: Checkout PR
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: JSDoc Generation # Generate the docs for JS info
+        uses: andstor/jsdoc-action@v1.2.1
+        with:
+          source_dir: ./source
+          recurse: true
+          output_dir: ./docs
+          front_page: README.md
+      - name: Commit JSDoc
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Documentation Generated"
+          git push
