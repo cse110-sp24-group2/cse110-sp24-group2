@@ -4,9 +4,8 @@ on:
     # Run when pull requests are made to main branches
     pull_request:
         branches:
-            - cicdtestmain
-            - cicdtestfeature
             - main
+            - feature-testing
 permissions:
     contents: write
 
