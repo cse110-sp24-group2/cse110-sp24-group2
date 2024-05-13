@@ -1,6 +1,8 @@
 # Meeting Notes
 
-## Date: 5/12/2024
+## Date: 5/11/2024
+
+### Zoom 5:30, all members present
 
 ### Topics discussed:
 
