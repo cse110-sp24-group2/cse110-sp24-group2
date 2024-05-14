@@ -2,6 +2,15 @@
  * Represents a simple note-taking application.
  * Allows users to add notes, todos, and files with optional labels.
  */
+const { ipcRenderer } = require('electron');
+
+ipcRenderer.on('selectedDate', (event, selectedDate) => {
+    // Handle the selected date
+    console.log(selectedDate);
+});
+const fs = require('fs');
+const path = require('path');
+
 
 // Variables for notes
 const noteText = document.getElementById('note-text'); // Input field for adding notes
@@ -9,8 +18,20 @@ const addNoteBtn = document.getElementById('add-note'); // Button to add notes
 const notesList = document.getElementById('notes'); // List to display notes
 
 // Array to store notes
-let notes = JSON.parse(localStorage.getItem('notes')) || [];
-
+let notes = [];
+// Load notes from JSON file
+fs.readFile(path.join(__dirname, '../Data/notes.json'), 'utf-8', (err, data) => {
+  if (err) {
+    if (err.code === 'ENOENT') {
+      console.log('File not found, but that\'s okay. It will be created when notes are saved.');
+    } else {
+      throw err;
+    }
+  } else {
+    notes = JSON.parse(data);
+  }
+  renderNotes();
+});
 /**
  * Renders notes from the 'notes' array into the notes list.
  */
@@ -32,9 +53,13 @@ function renderNotes() {
 /**
  * Saves notes to local storage.
  */
+// Save notes to JSON file
 function saveNotes() {
-  localStorage.setItem('notes', JSON.stringify(notes));
+  fs.writeFile(path.join(__dirname, '../Data/notes.json'), JSON.stringify(notes), (err) => {
+    if (err) throw err;
+  });
 }
+
 
 // Event listener for adding notes
 addNoteBtn.addEventListener('click', () => {
@@ -56,8 +81,21 @@ const addTodoBtn = document.getElementById('add-todo'); // Button to add todos
 const todoList = document.getElementById('todo-list'); // List to display todos
 
 // Array to store todos
-let todos = JSON.parse(localStorage.getItem('todos')) || [];
-
+let todos = [];
+// Load todos from JSON file
+// Load todos from JSON file
+fs.readFile(path.join(__dirname, '../Data/todolist.json'), 'utf-8', (err, data) => {
+  if (err) {
+    if (err.code === 'ENOENT') {
+      console.log('File not found, but that\'s okay. It will be created when todos are saved.');
+    } else {
+      throw err;
+    }
+  } else {
+    todos = JSON.parse(data);
+  }
+  renderTodos();
+});
 /**
  * Renders todos from the 'todos' array into the todo list.
  */
@@ -87,7 +125,9 @@ function renderTodos() {
  * Saves todos to local storage.
  */
 function saveTodos() {
-  localStorage.setItem('todos', JSON.stringify(todos));
+  fs.writeFile(path.join(__dirname, '../Data/todolist.json'), JSON.stringify(todos), (err) => {
+    if (err) throw err;
+  });
 }
 
 // Event listener for adding todos
@@ -162,23 +202,3 @@ addBtn.addEventListener('click', () => {
 
 // Variables for displaying date and time
 const dateDisplay = document.getElementById('date-display'); // Element to display date
-const timeDisplay = document.getElementById('time-display'); // Element to display time
-
-/**
- * Updates the date and time display every second.
- */
-function updateDateTime() {
-  const now = new Date();
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const dateString = now.toLocaleDateString('en-US', options);
-  const timeString = now.toLocaleTimeString('en-US', { hour12: true });
-
-  dateDisplay.textContent = dateString;
-  timeDisplay.textContent = timeString;
-}
-
-// Update date and time display every second
-setInterval(updateDateTime, 1000);
-
-// Initial update of date and time display
-updateDateTime();
