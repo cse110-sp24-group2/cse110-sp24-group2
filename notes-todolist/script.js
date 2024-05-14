@@ -1,10 +1,19 @@
-// Notes part
-const noteText = document.getElementById('note-text');
-const addNoteBtn = document.getElementById('add-note');
-const notesList = document.getElementById('notes');
+/**
+ * Represents a simple note-taking application.
+ * Allows users to add notes, todos, and files with optional labels.
+ */
 
+// Variables for notes
+const noteText = document.getElementById('note-text'); // Input field for adding notes
+const addNoteBtn = document.getElementById('add-note'); // Button to add notes
+const notesList = document.getElementById('notes'); // List to display notes
+
+// Array to store notes
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
+/**
+ * Renders notes from the 'notes' array into the notes list.
+ */
 function renderNotes() {
   notesList.innerHTML = '';
   notes.forEach((note, index) => {
@@ -20,10 +29,14 @@ function renderNotes() {
   });
 }
 
+/**
+ * Saves notes to local storage.
+ */
 function saveNotes() {
   localStorage.setItem('notes', JSON.stringify(notes));
 }
 
+// Event listener for adding notes
 addNoteBtn.addEventListener('click', () => {
   if (noteText.value.trim()) {
     notes.push(noteText.value.trim());
@@ -33,15 +46,21 @@ addNoteBtn.addEventListener('click', () => {
   }
 });
 
+// Initial rendering of notes
 renderNotes();
 
-// TodoList Part
-const todoInput = document.getElementById('todo-input');
-const addTodoBtn = document.getElementById('add-todo');
-const todoList = document.getElementById('todo-list');
 
+// Variables for todos
+const todoInput = document.getElementById('todo-input'); // Input field for adding todos
+const addTodoBtn = document.getElementById('add-todo'); // Button to add todos
+const todoList = document.getElementById('todo-list'); // List to display todos
+
+// Array to store todos
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
+/**
+ * Renders todos from the 'todos' array into the todo list.
+ */
 function renderTodos() {
   todoList.innerHTML = '';
   todos.forEach((todo, index) => {
@@ -64,10 +83,14 @@ function renderTodos() {
   });
 }
 
+/**
+ * Saves todos to local storage.
+ */
 function saveTodos() {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+// Event listener for adding todos
 addTodoBtn.addEventListener('click', () => {
   if (todoInput.value.trim()) {
     todos.push(todoInput.value.trim());
@@ -77,16 +100,17 @@ addTodoBtn.addEventListener('click', () => {
   }
 });
 
+// Initial rendering of todos
 renderTodos();
 
 
+// Variables for adding notes with files
+const addBtn = document.getElementById('add-note'); // Button to add notes with files
+const notesContainer = document.getElementById('notes-container'); // Container to display notes
+const noteTxt = document.getElementById('note-text'); // Input field for note text
+const fileInput = document.getElementById('file-input'); // Input field for files
 
-// Adding file button and labels
-const addBtn = document.getElementById('add-note');
-const notesContainer = document.getElementById('notes-container');
-const noteTxt = document.getElementById('note-text');
-const fileInput = document.getElementById('file-input');
-
+// Event listener for adding notes with files
 addBtn.addEventListener('click', () => {
   const noteContent = noteTxt.value.trim();
   const files = fileInput.files;
@@ -120,7 +144,7 @@ addBtn.addEventListener('click', () => {
 
     notesContainer.appendChild(noteDiv);
 
-
+    // Set indicator box heights to match note height
     setTimeout(() => {
       const noteHeight = noteDiv.offsetHeight;
       const indicatorBoxes = noteDiv.querySelectorAll('.important::before, .feedback::before');
@@ -129,15 +153,20 @@ addBtn.addEventListener('click', () => {
       });
     }, 0);
 
+    // Clear input fields
     noteTxt.value = '';
     fileInput.value = null;
   }
 });
 
-// Adding date and time
-const dateDisplay = document.getElementById('date-display');
-const timeDisplay = document.getElementById('time-display');
 
+// Variables for displaying date and time
+const dateDisplay = document.getElementById('date-display'); // Element to display date
+const timeDisplay = document.getElementById('time-display'); // Element to display time
+
+/**
+ * Updates the date and time display every second.
+ */
 function updateDateTime() {
   const now = new Date();
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -148,7 +177,8 @@ function updateDateTime() {
   timeDisplay.textContent = timeString;
 }
 
+// Update date and time display every second
 setInterval(updateDateTime, 1000);
 
-
+// Initial update of date and time display
 updateDateTime();
