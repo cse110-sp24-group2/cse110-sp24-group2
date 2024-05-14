@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     new Date(currentYear, 10, 11), // Veterans Day
     new Date(currentYear, 11, 25), // Christmas Day
     ];
+    /**
+     * Updates the month and year displayed on the calendar
+     */
 
     function updateMonthYear() {
         monthLabel.textContent = `${monthNames[currentMonth]} ${currentYear}`;
@@ -28,6 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
         monthLabel.className = ''; // Clear previous class
         monthLabel.classList.add(monthClasses[currentMonth]); // Apply new class for font color
     }
+    /**
+    * Returns the number of days in a given month of a given year.
+    * @param {number} month - The month (0-11).
+    * @param {number} year - The year.
+    * @returns {number} The number of days in the month.
+    */
     function daysInMonth(month, year) {
         return new Date(year, month + 1, 0).getDate();
     }
@@ -37,7 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const entryInputTime = document.getElementById('entryTime');
     const entriesList = document.getElementById('entries');
 
-    // Handle the form submission
+    /**
+     * Handles the form submission event.
+     * @param {Event} e - The form submission event.
+     */
     entryForm.onsubmit = function(e) {
         e.preventDefault();
         // Add the new entry
@@ -48,7 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
         loadEntries(currentDay, currentMonth, currentYear);
     }
 
-    // Add a new entry
+
+   /**
+     * Adds a new entry to the entries object.
+     * @param {number} day - The day of the entry.
+     * @param {number} month - The month of the entry.
+     * @param {number} year - The year of the entry.
+     * @param {string} entry - The entry text.
+     */
     function addEntry(day, month, year, entry) {
         // Get the date string
         let dateString = `${day}-${month}-${year}`;
@@ -60,7 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
         entries[dateString].push(entry);
     }
 
-    // Load the entries for a specific day
+    /**
+     * Loads the entries for a specific day and displays them in the entries list.
+     * @param {number} day - The day of the entries.
+     * @param {number} month - The month of the entries.
+     * @param {number} year - The year of the entries.
+     */
     function loadEntries(day, month, year) {
         // Clear the entries list
         entriesList.innerHTML = '';
@@ -84,7 +108,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Get the entries for a specific day
+    /**
+     * Returns the entries for a specific day.
+     * @param {number} day - The day of the entries.
+     * @param {number} month - The month of the entries.
+     * @param {number} year - The year of the entries.
+     * @returns {Array} The entries for the specified day.
+     */
     function getEntries(day, month, year) {
         // Get the date string
         let dateString = `${day}-${month}-${year}`;
@@ -101,6 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return time1.localeCompare(time2);
         });
     }
+    /**
+     * Creates the calendar for a specific month and year.
+     * @param {number} month - The month of the calendar.
+     * @param {number} year - The year of the calendar.
+     */
     function createCalendar(month, year) {
         updateMonthYear();
 
@@ -162,7 +197,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('prev-month').addEventListener('click', () => changeMonth(-1));
     document.getElementById('next-month').addEventListener('click', () => changeMonth(1));
-
+    /**
+     * Changes the current month by a specified amount.
+     * @param {number} change - The amount to change the month by.
+     */
     function changeMonth(change) {
         currentMonth += change;
         if (currentMonth < 0) {
