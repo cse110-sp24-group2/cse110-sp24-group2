@@ -111,7 +111,8 @@ body {
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; 
+    width: 90%;
+    max-width: 90%;
     box-shadow: 0 4px 8px rgba(1 0 0 / 20%);
     animation-name: animatetop;
     animation-duration: 0.4s;
@@ -121,7 +122,7 @@ body {
 /* Animation to slide the modal content from the top */
 @keyframes animatetop {
     from {
-        top: -300px;
+        top: -100px;
         opacity: 0
     }
 

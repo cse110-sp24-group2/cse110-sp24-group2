@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Calendar</title>
     <link rel="stylesheet" href="calendar-styles.css">
+    <link rel="stylesheet" href="notes-todo-styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
     </style>
@@ -33,14 +34,41 @@
         <ul id="entries"></ul>
         <form id="entry-form">
         </form>
-        <div class="button-container">
-           <!-- Implement the part where user has to click to see notes and todo list -->
-        </div>
+        <div class="container">
+            <div class="note-section">
+              <h1>Notes</h1>
+              <div class="date-time">
+                <span id="date-display"></span>
+                <span id="time-display"></span>
+              </div>
+              <div class="note-input">
+                <textarea id="note-text" placeholder="Enter your note here..."></textarea>
+                <button id="add-note">Add Note</button>
+              </div>
+              <div class="notes-list">
+                <h2>Single tap to edit and delete </h2>
+                <ul id="notes"></ul>
+              </div>
+              <div>
+                <input type="file" id="file-input" accept="*/*">
+                <button id="add-file">Add File</button>
+              </div>
+            </div>
+            <div class="todo-section">
+              <h1>Todo List</h1>
+              <div class="input-section">
+                <input type="text" id="todo-input" placeholder="Enter a new task...">
+                <button id="add-todo">Add</button>
+              </div>
+              <ul id="todo-list"></ul>
+            </div>
+          </div>
         <button id="close-form">Close</button>
     </div>
-</div>
+    </div>
 
 
     <script src="calendar-script.js"></script>
+    <script src="notes-todo-script.js"></script>
 </body>
 </html>
