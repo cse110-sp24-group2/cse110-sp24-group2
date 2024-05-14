@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Taking and Todo App</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="note-section">
+      <h1>Notes</h1>
+      <div class="date-time">
+        <span id="date-display"></span>
+        <span id="time-display"></span>
+      </div>
+      <div class="note-input">
+        <textarea id="note-text" placeholder="Enter your note here..."></textarea>
+        <button id="add-note">Add Note</button>
+      </div>
+      <div class="notes-list">
+        <h2>Single tap to edit and delete </h2>
+        <ul id="notes"></ul>
+      </div>
+      <div>
+        <input type="file" id="file-input" accept="*/*">
+        <button id="add-file">Add File</button>
+      </div>
+    </div>
+    <div class="todo-section">
+      <h1>Todo List</h1>
+      <div class="input-section">
+        <input type="text" id="todo-input" placeholder="Enter a new task...">
+        <button id="add-todo">Add</button>
+      </div>
+      <ul id="todo-list"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

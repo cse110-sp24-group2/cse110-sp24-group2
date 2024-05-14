@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: pink;
+  }
+  
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .note-section {
+    flex: 3;
+    padding-right: 20px;
+    background-color: lightblue;
+  }
+  
+  .todo-section {
+    flex: 1;
+    padding-left: 20px;
+    background-color: lightcoral;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  .note-input, .input-section {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  #note-text, #todo-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: cyan;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .notes-list, #todo-list {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .notes-list li, #todo-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .notes-list li:hover, #todo-list li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  #todo-list li button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  #new-note {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.note {
+    border: 1px solid #ddd;
+    padding: 10px 10px 10px 70px; /* Adjusted left padding */
+    margin-bottom: 10px;
+    background-color: transparent; 
+    position: relative;
+}
+
+.important::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Adjusted top position */
+    left: 10px;
+    transform: translateY(-50%); /* Center vertically */
+    width: 50px;
+    height: 20px; /* Reduced height */
+    background-color: lightcoral;
+}
+
+.feedback::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Adjusted top position */
+    left: 10px;
+    transform: translateY(-50%); /* Center vertically */
+    width: 50px;
+    height: 20px; /* Reduced height */
+    background-color: lightblue;
+}
+.date-time {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #date-display,
+  #time-display {
+    font-weight: bold;
+  }
