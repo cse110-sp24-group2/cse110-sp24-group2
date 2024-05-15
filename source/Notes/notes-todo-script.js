@@ -107,7 +107,7 @@ function renderTodos() {
     const deleteBtn = document.createElement('button');
 
     span.textContent = todo;
-    deleteBtn.textContent = 'Delete';
+    deleteBtn.textContent = '';
 
     deleteBtn.addEventListener('click', () => {
       todos.splice(index, 1);
@@ -115,8 +115,8 @@ function renderTodos() {
       renderTodos();
     });
 
-    li.appendChild(span);
     li.appendChild(deleteBtn);
+    li.appendChild(span);
     todoList.appendChild(li);
   });
 }

@@ -1,4 +1,3 @@
-const { ipcRenderer } = require('electron');
 document.addEventListener('DOMContentLoaded', function() {
     const calendarContainer = document.getElementById('calendar');
     const monthLabel = document.getElementById('current-month');
@@ -94,9 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalDate.textContent = `${day} of ${monthNames[month]}, ${year}`;
                 //Set background colour class for modal
                 modal.className = 'modal ' + monthClasses[month];
-                //Send the selected date via IPC
-                const selectedDate = `${day}-${monthNames[month]}-${year}`;
-                ipcRenderer.send('selectedDate', selectedDate);
             };
             calendarContainer.appendChild(dayElement);
 
