@@ -90,15 +90,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const modal = document.getElementById('modal'); 
                 const modalDate = document.getElementById('modal-date'); // Get the modal date element
                 modal.style.display = "block";
-                modalDate.textContent = `${day} of ${monthNames[month]}, ${year}`;
                 //Set background colour class for modal
                 modal.className = 'modal ' + monthClasses[month];
+                const event = new CustomEvent('hasClicked', { detail: {currentDay, currentMonth, currentYear} });
+                document.dispatchEvent(event);
             };
-            calendarContainer.appendChild(dayElement);
-
         }
-
-
         // Fill the week with days from the next month
         let num = 1;
         for (let i = lastDay+1; i <= 6; i++) {
@@ -109,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
             num++;
         }
     }
-
     document.getElementById('prev-month').addEventListener('click', () => changeMonth(-1));
     document.getElementById('next-month').addEventListener('click', () => changeMonth(1));
     /**
