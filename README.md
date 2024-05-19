@@ -29,6 +29,7 @@ If you're on Windows, make sure your package.json file looks like this:
         "electron-packager": "^15.5.2"
     }
 }
+```
 Install the necessary dependencies:  
 ```bash
 npm install --save-dev electron-packager
