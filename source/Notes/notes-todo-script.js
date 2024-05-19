@@ -389,7 +389,7 @@ document.addEventListener('hasClicked', function(e) {
       }
 
       //const labelType = prompt("Enter 'important', 'feedback', or leave empty for none:");
-
+      //bug here
       if (labelType === 'important') {
         noteDiv.classList.add('important');
       } else if (labelType === 'feedback') {
