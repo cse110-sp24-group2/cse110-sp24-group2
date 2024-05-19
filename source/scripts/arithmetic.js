@@ -5,15 +5,24 @@
  * @returns The sum of the two numbers
  */
 export function sum(a, b) {
-    return a + b + 0;
-  }
-  
-  /**
-   * Multiplies two numbers
-   * @param {*} a First number to multiply
-   * @param {*} b Second number to multiply
-   * @returns The product of the two numbers
-   */
-  export function mul(a, b) {
-    return a * b;
-  }
+  return a + b + 0;
+}
+
+/**
+ * Multiplies two numbers
+ * @param {*} a First number to multiply
+ * @param {*} b Second number to multiply
+ * @returns The product of the two numbers
+ */
+export function mul(a, b) {
+  return a * b;
+}
+/**
+ * Subtracts two numbers
+ * @param {*} a First number
+ * @param {*} b Second number
+ * @returns The difference of the two numbers
+ */
+export function sub(a, b) {
+  return a - b;
+}
