@@ -1,0 +1,18 @@
+## Attendance
+- Sent Andy to ask, then discussed with Brian async and entire team during weekly meeting.
+
+## Agenda
+- Get feedback on our Definition of Done (DoD) found in our #policy channel
+- Get feedback on our Sprint Board on Github Projects
+
+
+### Definition of Done
+- Professor says should add "write your own unit tests before review" to the policy section as part of our Definition of Done
+- Developer does first cut of unit tests, then QA does the second cut of tests. Kinda the same for creating documentation
+- Can add custom @ tags for JSDocs, ie `@userdocs` and then it'll auto generate more
+
+### Sprint Boards on Github Projects
+- Either add tags for each sprint or make a new sprint board for each sprint so TAs can track it
+- Have a Sprint Backlog and General Backlog
+  - Or do the rebidding process discussed in lecture
+- Otherwise looks good
