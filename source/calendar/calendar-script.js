@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add the days of the current month
     for (let day = 1; day <= daysInMonth(month, year); day++) {
       const dayElement = document.createElement("div");
-      dayElement.classList.add("day", monthClasses[month]); // Adds specific month class
+      dayElement.classList.add("day", monthClasses[parseInt(month)]); // Adds specific month class
       dayElement.textContent = day;
       calendarContainer.appendChild(dayElement);
       // Check if the date is a holiday
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the date in localStorage for notes to access
         localStorage.setItem("date", JSON.stringify(dateInfo));
         // Navigate to the notes page
-        window.location.href = "../Notes";
+        window.location.href = escape("../Notes");
       };
     }
     // Fill the week with days from the next month
