@@ -1,0 +1,77 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+.markdown-container {
+    width: 100%;
+}
+.todo {
+    width: 20%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#markdown {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+}
+#markdownPreview {
+    width: 100%;
+    height: 500px; 
+    border: 1px solid #ccc;
+    overflow: auto; 
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+button {
+    padding: 10px 20px;
+    background-color: #a10a7e;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+#dateDisplay{
+    text-align: center;
+}
+.todo {
+   text-align: center;
+}
