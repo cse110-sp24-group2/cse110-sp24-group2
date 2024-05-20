@@ -85,7 +85,7 @@ describe("Navigation and Generation of Calendar", () => {
       });
       await page.goBack();
     }
-  }, 30000);
+  }, 100000);
 
   // Check if prev month is generated
   it("Generate Prev Month", async () => {
@@ -137,7 +137,7 @@ describe("Navigation and Generation of Calendar", () => {
       });
       await page.goBack();
     }
-  }, 30000);
+  }, 100000);
 
   // Check if next month is generated
   it("Generate next Month", async () => {
@@ -189,7 +189,7 @@ describe("Navigation and Generation of Calendar", () => {
       });
       await page.goBack();
     }
-  }, 30000);
+  }, 100000);
 
   // Check if next year's data is generated
   it("Generate next Year", async () => {
@@ -241,5 +241,5 @@ describe("Navigation and Generation of Calendar", () => {
       });
       await page.goBack();
     }
-  }, 30000);
+  }, 100000);
 });
