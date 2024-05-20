@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Set the date in localStorage for notes to access
         localStorage.setItem("date", JSON.stringify(dateInfo));
         // Navigate to the notes page
-        window.location.href = "../Notes/notes.html";
+        window.location.href = "../Notes";
       };
     }
     // Fill the week with days from the next month
