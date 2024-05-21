@@ -31,11 +31,34 @@ If you're on Windows, make sure your package.json file looks like this:
     }
 }
 ```
+If you're on Mac, make sure your package.json file looks like this:
+```json
+{
+    "name": "Dev Journal",
+    "version": "1.0.0",
+    "description": "A Developer Journal That tracks what you do in a day",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "package": "electron-packager . DevJournal --platform=darwin --arch=x64"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "electron": "^11.5.0"
+    },
+    "devDependencies": {
+        "electron-packager": "^15.5.2"
+    }
+}
+```
 Install the necessary dependencies:  
 ```bash
 npm install --save-dev electron-packager
+npm run package
 ```
 Run the app:  
 ```bash
-npm run package
+npm start
 ```
