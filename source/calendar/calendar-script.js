@@ -162,17 +162,16 @@ document.addEventListener("DOMContentLoaded", function () {
  * @param {number} month - The month of the calendar.
  * @param {number} year - The year of the calendar.
  */
-function highlightCurrentDay(month, year) {
-  
-  const todayDate = currentDate.getDate();
-  if (month === currentMonth && year === currentYear) {
-    const days = document.getElementsByClassName('day');
-    for (let i = 0; i < days.length; i++) {
-      const day = days[i];
-      if (parseInt(day.textContent) === todayDate) {
-        day.classList.add('current-day');
+  function highlightCurrentDay(month, year) {
+    const todayDate = currentDate.getDate();
+    if (month === currentMonth && year === currentYear) {
+      const days = document.getElementsByClassName('day');
+      for (const day of days) {
+        if (parseInt(day.textContent, 10) === todayDate) {
+          day.classList.add('current-day');
+        }
       }
     }
   }
-}
+  
 });
