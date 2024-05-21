@@ -369,7 +369,6 @@ button.delete-button:hover {
     font-family: 'Courier New', Courier, monospace;
     padding: 10px 12px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
   
