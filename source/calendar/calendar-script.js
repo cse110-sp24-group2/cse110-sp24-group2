@@ -163,11 +163,11 @@ document.addEventListener("DOMContentLoaded", function () {
  * @param {number} year - The year of the calendar.
  */
   function highlightCurrentDay(month, year) {
-    const todayDate = currentDate.getDate();
-    if (month === currentMonth && year === currentYear) {
+    const today = new Date();
+    if (month === today.getMonth() && year === today.getFullYear()) {
       const days = document.getElementsByClassName('day');
       for (const day of days) {
-        if (parseInt(day.textContent, 10) === todayDate) {
+        if (parseInt(day.textContent, 10) === today.getDate()) {
           day.classList.add('current-day');
         }
       }
