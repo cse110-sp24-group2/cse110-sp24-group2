@@ -19,6 +19,32 @@ body {
     color: gray;
 }
 
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.calendar-container {
+    flex: 3;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    } 
+}
+
+@media (min-width: 769px) {
+    .main-container {
+        flex-direction: row;
+        align-items: flex-start;
+    } 
+    
+}
+
 .calendar-header {
     display: flex;
     justify-content: space-between;
