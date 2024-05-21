@@ -30,14 +30,14 @@ body {
     flex: 3;
 }
 
-@media (max-width: 768px) {
+@media (width >= 769px) {
     .main-container {
         flex-direction: column;
         align-items: center;
     } 
 }
 
-@media (min-width: 769px) {
+@media (width <= 768px) {
     .main-container {
         flex-direction: row;
         align-items: flex-start;
