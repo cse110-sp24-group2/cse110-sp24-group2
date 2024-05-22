@@ -147,8 +147,23 @@ class TodoList extends HTMLElement {
         shadowRoot.appendChild(styleElement);
         shadowRoot.appendChild(container);
 
+        const button = shadowRoot.querySelector('#add-todo');
+        const input = this.shadowRoot.querySelector('#todo-input');
+        const listContainer = shadowRoot.querySelector('#list-container');
+
+        button.addEventListener('click', this.addTodoList.bind(this, input, listContainer));
     }
+
+    addTodoList(input, listContainer) {
+        console.log(input.value);
+        const li = document.createElement('li');
+        li.innerHTML = `<input type="checkbox"><label>${input.value}</label>`;
+        listContainer.appendChild(li);
+        input.value = '';
+    }
+
 }
+
 
 // Define the new custom element
 customElements.define('todo-list-element', TodoList);
