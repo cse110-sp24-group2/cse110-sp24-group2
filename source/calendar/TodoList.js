@@ -125,6 +125,14 @@ class TodoList extends HTMLElement {
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
         }
+
+        .delete-task-btn {
+            background: #ff5945;
+            color: white;
+            border: none;
+            cursor: pointer;
+            float: right;
+        }
         `;
 
         container.setAttribute('class', 'todo-list-container');
@@ -137,9 +145,9 @@ class TodoList extends HTMLElement {
                     <button id="add-todo">ADD</button>
                 </div>
                 <ul id="list-container">
-                <li><input type="checkbox" checked><label for="task1"> Study for final</label></li>
-                <li><input type="checkbox"><label for="task1"> make a calendar app</label></li>
-                <li><input type="checkbox"><label for="task1"> Task 1</label></li>
+                <li><input type="checkbox" checked><label for="task1"> Study for final</label> <button class="delete-task-btn">x</button></li>
+                <li><input type="checkbox"><label for="task1"> make a calendar app</label> <button class="delete-task-btn">x</button></li>
+                <li><input type="checkbox"><label for="task1"> Task 1</label> <button class="delete-task-btn">x</button></li>
                 </ul>
             </div>
         `;
@@ -155,14 +163,20 @@ class TodoList extends HTMLElement {
     }
 
     addTodoList(input, listContainer) {
+        if (input.value.trim() === '') return;
+
         const li = document.createElement('li');
         const checkbox = document.createElement('input');
         const label = document.createElement('label');
+        const button = document.createElement('button');
+        button.innerText = 'x';
+        button.className = 'delete-task-btn';
         checkbox.setAttribute('type', 'checkbox');
         label.for = "task1";
         label.innerText = " " + input.value;
         li.appendChild(checkbox);
         li.appendChild(label);
+        li.appendChild(button);
         listContainer.appendChild(li);
         input.value = '';
     }
