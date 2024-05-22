@@ -134,7 +134,8 @@
       if (isHoliday) {
         dayElement.classList.add("holiday");
       }
-
+      // Highlight the current day
+      highlightCurrentDay(month, year);
       // Determine what happens if the day is clicked
       dayElement.onclick = function () {
         // Create object of date info
@@ -181,6 +182,26 @@
     createCalendar(currentMonth, currentYear);
   }
   createCalendar(currentMonth, currentYear);
+
+
+  /**
+ * Highlights the current day on the calendar.
+ * @function highlightCurrentDay
+ * @param {number} month - The month of the calendar.
+ * @param {number} year - The year of the calendar.
+ */
+  function highlightCurrentDay(month, year) {
+    const today = new Date();
+    if (month === today.getMonth() &amp;&amp; year === today.getFullYear()) {
+      const days = document.getElementsByClassName('day');
+      for (const day of days) {
+        if (parseInt(day.textContent, 10) === today.getDate()) {
+          day.classList.add('current-day');
+        }
+      }
+    }
+  }
+  
 });
 </code></pre>
         </article>
@@ -192,7 +213,7 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#createCalendar">createCalendar</a></li><li><a href="global.html#daysInMonth">daysInMonth</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#mul">mul</a></li><li><a href="global.html#sub">sub</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#updateMonthYear">updateMonthYear</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#createCalendar">createCalendar</a></li><li><a href="global.html#daysInMonth">daysInMonth</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#highlightCurrentDay">highlightCurrentDay</a></li><li><a href="global.html#mul">mul</a></li><li><a href="global.html#sub">sub</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#updateMonthYear">updateMonthYear</a></li></ul>
 </nav>
 
 <br class="clear">
