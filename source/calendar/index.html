@@ -15,6 +15,7 @@
         <h1 id="current-month"></h1>
         <button id="next-month">Next<i class="arrow right"></i></button>
     </div>
+    <div class="main-container">
     <div class="calendar-container">
         <div id="day-names" class="day-names">
             <div class="day-name">Sun</div>
@@ -66,7 +67,14 @@
         <button id="close-form">Close</button>
     </div>
     </div>
-    <script src="../Notes/notes-todo-script.js"></script>
-    <script src="calendar-script.js"></script>
+
+    <div>
+      <todo-list-element></todo-list-element>
+      <script src="TodoList.js"></script>
+    </div>
+    </div>
+  
+  <!-- <script src="../Notes/notes-todo-script.js"></script> -->
+  <script src="calendar-script.js"></script>
 </body>
 </html>
