@@ -150,37 +150,38 @@ class TodoList extends HTMLElement {
             </div>
         `;
 
-        shadowRoot.appendChild(styleElement);
-        shadowRoot.appendChild(container);
+    shadowRoot.appendChild(styleElement);
+    shadowRoot.appendChild(container);
 
-        const button = shadowRoot.querySelector('#add-todo');
-        const input = this.shadowRoot.querySelector('#todo-input');
-        const listContainer = shadowRoot.querySelector('#list-container');
+    const button = shadowRoot.querySelector("#add-todo");
+    const input = this.shadowRoot.querySelector("#todo-input");
+    const listContainer = shadowRoot.querySelector("#list-container");
 
-        button.addEventListener('click', this.addTodoList.bind(this, input, listContainer));
-    }
+    button.addEventListener(
+      "click",
+      this.addTodoList.bind(this, input, listContainer),
+    );
+  }
 
-    addTodoList(input, listContainer) {
-        if (input.value.trim() === '') return;
+  addTodoList(input, listContainer) {
+    if (input.value.trim() === "") return;
 
-        const li = document.createElement('li');
-        const checkbox = document.createElement('input');
-        const label = document.createElement('label');
-        const button = document.createElement('button');
-        button.innerText = 'x';
-        button.className = 'delete-task-btn';
-        checkbox.setAttribute('type', 'checkbox');
-        label.for = "task1";
-        label.innerText = " " + input.value;
-        li.appendChild(checkbox);
-        li.appendChild(label);
-        li.appendChild(button);
-        listContainer.appendChild(li);
-        input.value = '';
-    }
-
+    const li = document.createElement("li");
+    const checkbox = document.createElement("input");
+    const label = document.createElement("label");
+    const button = document.createElement("button");
+    button.innerText = "x";
+    button.className = "delete-task-btn";
+    checkbox.setAttribute("type", "checkbox");
+    label.for = "task1";
+    label.innerText = " " + input.value;
+    li.appendChild(checkbox);
+    li.appendChild(label);
+    li.appendChild(button);
+    listContainer.appendChild(li);
+    input.value = "";
+  }
 }
-
 
 // Define the new custom element
 customElements.define("todo-list-element", TodoList);
