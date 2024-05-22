@@ -155,9 +155,14 @@ class TodoList extends HTMLElement {
     }
 
     addTodoList(input, listContainer) {
-        console.log(input.value);
         const li = document.createElement('li');
-        li.innerHTML = `<input type="checkbox"><label>${input.value}</label>`;
+        const checkbox = document.createElement('input');
+        const label = document.createElement('label');
+        checkbox.setAttribute('type', 'checkbox');
+        label.for = "task1";
+        label.innerText = " " + input.value;
+        li.appendChild(checkbox);
+        li.appendChild(label);
         listContainer.appendChild(li);
         input.value = '';
     }
