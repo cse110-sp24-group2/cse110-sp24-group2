@@ -123,6 +123,14 @@ class TodoList extends HTMLElement {
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
         }
+
+        .delete-task-btn {
+            background: #ff5945;
+            color: white;
+            border: none;
+            cursor: pointer;
+            float: right;
+        }
         `;
 
     container.setAttribute("class", "todo-list-container");
@@ -135,17 +143,44 @@ class TodoList extends HTMLElement {
                     <button id="add-todo">ADD</button>
                 </div>
                 <ul id="list-container">
-                <li><input type="checkbox" checked><label for="task1"> Study for final</label></li>
-                <li><input type="checkbox"><label for="task1"> make a calendar app</label></li>
-                <li><input type="checkbox"><label for="task1"> Task 1</label></li>
+                <li><input type="checkbox" checked><label for="task1"> Study for final</label> <button class="delete-task-btn">x</button></li>
+                <li><input type="checkbox"><label for="task1"> make a calendar app</label> <button class="delete-task-btn">x</button></li>
+                <li><input type="checkbox"><label for="task1"> Task 1</label> <button class="delete-task-btn">x</button></li>
                 </ul>
             </div>
         `;
 
-    shadowRoot.appendChild(styleElement);
-    shadowRoot.appendChild(container);
-  }
+        shadowRoot.appendChild(styleElement);
+        shadowRoot.appendChild(container);
+
+        const button = shadowRoot.querySelector('#add-todo');
+        const input = this.shadowRoot.querySelector('#todo-input');
+        const listContainer = shadowRoot.querySelector('#list-container');
+
+        button.addEventListener('click', this.addTodoList.bind(this, input, listContainer));
+    }
+
+    addTodoList(input, listContainer) {
+        if (input.value.trim() === '') return;
+
+        const li = document.createElement('li');
+        const checkbox = document.createElement('input');
+        const label = document.createElement('label');
+        const button = document.createElement('button');
+        button.innerText = 'x';
+        button.className = 'delete-task-btn';
+        checkbox.setAttribute('type', 'checkbox');
+        label.for = "task1";
+        label.innerText = " " + input.value;
+        li.appendChild(checkbox);
+        li.appendChild(label);
+        li.appendChild(button);
+        listContainer.appendChild(li);
+        input.value = '';
+    }
+
 }
+
 
 // Define the new custom element
 customElements.define("todo-list-element", TodoList);
