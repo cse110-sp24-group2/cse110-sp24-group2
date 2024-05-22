@@ -4,7 +4,7 @@
  * @param {*} b Second number to add
  * @returns The sum of the two numbers
  */
-export function sum(a, b) {
+function sum(a, b) {
   return a + b + 0;
 }
 
@@ -14,7 +14,7 @@ export function sum(a, b) {
  * @param {*} b Second number to multiply
  * @returns The product of the two numbers
  */
-export function mul(a, b) {
+function mul(a, b) {
   return a * b;
 }
 /**
@@ -23,6 +23,8 @@ export function mul(a, b) {
  * @param {*} b Second number
  * @returns The difference of the two numbers
  */
-export function sub(a, b) {
+function sub(a, b) {
   return a - b;
 }
+
+module.exports = { sum, mul, sub };
