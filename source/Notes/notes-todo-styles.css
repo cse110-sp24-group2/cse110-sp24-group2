@@ -24,17 +24,20 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
 
-.note-input, .input-section {
+.note-input,
+.input-section {
   display: flex;
   padding-left: 20px;
   margin-bottom: 20px;
 }
 
-#note-text, #todo-input {
+#note-text,
+#todo-input {
   flex: 1;
   padding: 10px;
   font-size: 16px;
@@ -60,7 +63,8 @@ button {
   padding-right: 40px;
 }
 
-.notes-list li, #todo-list li {
+.notes-list li,
+#todo-list li {
   background-color: #adadad;
   padding: 10px;
   margin-bottom: 10px;
@@ -70,7 +74,8 @@ button {
   align-items: center;
 }
 
-.notes-list li:hover, #todo-list li:hover {
+.notes-list li:hover,
+#todo-list li:hover {
   background-color: #d0cece;
 }
 
@@ -104,24 +109,24 @@ button {
 }
 
 #add-file {
-margin-top: 10px;
-padding: 10px 20px;
-background-color: #a10a7e;
-color: white;
-border: none;
-cursor: pointer;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #a10a7e;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .note {
   border: 1px solid #000000;
   padding: 10px 10px 10px 70px; /* Adjusted left padding */
   margin-bottom: 10px;
-  background-color: transparent; 
+  background-color: transparent;
   position: relative;
 }
 
 .important::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%; /* Adjusted top position */
   left: 10px;
@@ -132,7 +137,7 @@ cursor: pointer;
 }
 
 .feedback::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%; /* Adjusted top position */
   left: 10px;

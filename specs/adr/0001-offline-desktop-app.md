@@ -1,6 +1,7 @@
 # Decision: Offline Desktop App Using Electron JS
 
 ## Context and Problem Statement:
+
 - During our discussions, we deliberated on the feasibility of creating an application that could function both online and offline. With our constraint of only utilizing HTML, CSS, and JS to maintain simplicity without frameworks, we recognized that elaborate stacks wouldn't serve our purpose. Professor Powell highlighted in class that Electron JS could enable the development of a desktop application, pending TA approval.
 
 ## Decision Drivers:
@@ -16,4 +17,5 @@
 - Hybrid solution combining offline and online capabilities
 
 ## Decision Outcome:
+
 - Selected decision: "Offline desktop app using Electron JS"

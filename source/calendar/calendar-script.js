@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let day = 1; day <= daysInMonth(month, year); day++) {
       const dayElement = document.createElement("div");
       // Adds specific month class
-      dayElement.classList.add("day", monthClasses[parseInt(month,10)]); 
+      dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
       dayElement.textContent = day;
       calendarContainer.appendChild(dayElement);
       // Check if the date is a holiday
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const isHoliday = holidays.some(
         (holiday) =>
           holiday.getMonth() === currentDate.getMonth() &&
-          holiday.getDate() === currentDate.getDate()
+          holiday.getDate() === currentDate.getDate(),
       );
       if (isHoliday) {
         dayElement.classList.add("holiday");

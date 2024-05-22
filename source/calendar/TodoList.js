@@ -1,15 +1,13 @@
 class TodoList extends HTMLElement {
-    
-    constructor() {
-        super();
-        const shadowRoot = this.attachShadow({ mode: 'open' });
+  constructor() {
+    super();
+    const shadowRoot = this.attachShadow({ mode: "open" });
 
-        //create a <ul> element
-        const container = document.createElement('div');
-        const styleElement = document.createElement('style');
+    //create a <ul> element
+    const container = document.createElement("div");
+    const styleElement = document.createElement("style");
 
-
-        styleElement.textContent = `
+    styleElement.textContent = `
         .todo-list-container {
             flex: 1;
             width: 100%;
@@ -127,9 +125,9 @@ class TodoList extends HTMLElement {
         }
         `;
 
-        container.setAttribute('class', 'todo-list-container');
+    container.setAttribute("class", "todo-list-container");
 
-        container.innerHTML = `
+    container.innerHTML = `
             <div class="todo-list"> 
                 <h2>To-Do Lists <img src="images/to-do-icon.png"></h2>
                 <div class="row">
@@ -144,11 +142,10 @@ class TodoList extends HTMLElement {
             </div>
         `;
 
-        shadowRoot.appendChild(styleElement);
-        shadowRoot.appendChild(container);
-
-    }
+    shadowRoot.appendChild(styleElement);
+    shadowRoot.appendChild(container);
+  }
 }
 
 // Define the new custom element
-customElements.define('todo-list-element', TodoList);
+customElements.define("todo-list-element", TodoList);
