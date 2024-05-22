@@ -219,7 +219,7 @@
       checkbox.setAttribute("type", "checkbox");
       checkbox.id = "" + note["id"];
       checkbox.checked = note["complete"];
-      label.htmlFor = "" + note["id"];
+      label.setAttribute("for", "" + note["id"]);
       label.innerText = " " + note["input"];
       // Add the change event listener to the checkbox
       checkbox.addEventListener("change", () =>
