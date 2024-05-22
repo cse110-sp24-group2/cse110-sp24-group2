@@ -332,6 +332,7 @@ document.addEventListener('hasClicked', function(e) {
    * Event listener for the 'click' event on the 'addTodoBtn' button.
    * When the button is clicked, a function is called to add a new to-do item.
    */
+  console.log('Adding todo');
   addTodoBtn.addEventListener('click', () => {
     if (todoInput.value.trim()) {
       addTodoForDay(currentDay, todoInput.value.trim());
