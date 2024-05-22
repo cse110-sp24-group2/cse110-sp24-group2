@@ -139,15 +139,12 @@ class TodoList extends HTMLElement {
 
         container.innerHTML = `
             <div class="todo-list"> 
-                <h2>To-Do Lists <img src="images/to-do-icon.png"></h2>
+                <h2>To-Do Lists <img src="/source/components/images/to-do-icon.png"></h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
                     <button id="add-todo">ADD</button>
                 </div>
                 <ul id="list-container">
-                <li><input type="checkbox" checked><label for="task1"> Study for final</label> <button class="delete-task-btn">x</button></li>
-                <li><input type="checkbox"><label for="task1"> make a calendar app</label> <button class="delete-task-btn">x</button></li>
-                <li><input type="checkbox"><label for="task1"> Task 1</label> <button class="delete-task-btn">x</button></li>
                 </ul>
             </div>
         `;
@@ -159,26 +156,115 @@ class TodoList extends HTMLElement {
         const input = this.shadowRoot.querySelector('#todo-input');
         const listContainer = shadowRoot.querySelector('#list-container');
 
-        button.addEventListener('click', this.addTodoList.bind(this, input, listContainer));
+        button.addEventListener('click', () => this.addTodoListItem(input, listContainer));
+        this.renderNotes(listContainer);
     }
 
-    addTodoList(input, listContainer) {
-        if (input.value.trim() === '') return;
+    /**
+     * Gets the notes from the local storage
+     * @method getNotes
+     * @returns {Array} The notes objects from the local storage
+     */
+    getNotes() {
+        return JSON.parse(localStorage.getItem('todo-notes')) || [];
+    }
 
-        const li = document.createElement('li');
-        const checkbox = document.createElement('input');
-        const label = document.createElement('label');
-        const button = document.createElement('button');
-        button.innerText = 'x';
-        button.className = 'delete-task-btn';
-        checkbox.setAttribute('type', 'checkbox');
-        label.for = "task1";
-        label.innerText = " " + input.value;
-        li.appendChild(checkbox);
-        li.appendChild(label);
-        li.appendChild(button);
-        listContainer.appendChild(li);
+    /**
+     * Renders the available notes to the container
+     * @method renderNotes
+     * @param {*} listContainer The container to add the notes to
+     */
+    renderNotes(listContainer) {
+        // Reset the todo-list container
+        listContainer.innerHTML = '';
+        // Get the notes to render
+        let notes = this.getNotes();
+        notes.forEach((note) => {
+            // Create the items necessary for each note
+            const li = document.createElement('li');
+            const checkbox = document.createElement('input');
+            const label = document.createElement('label');
+            const button = document.createElement('button');
+            // Set the proper attributes
+            button.innerText = 'x';
+            button.className = 'delete-task-btn';
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.id = "" + note['id'];
+            checkbox.checked = note['complete'];
+            label.htmlFor = "" + note['id'];
+            label.innerText = " " + note['input'];
+            // Add the change event listener to the checkbox
+            checkbox.addEventListener('change', () => this.alterCompletion(note['id']));
+            // Add the click event listener to the delete button
+            button.addEventListener('click', () => this.deleteTodoListItem(note['id'], listContainer));
+            // Package the items together and append it to the container
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            li.appendChild(button);
+            listContainer.appendChild(li);
+        });
+    }
+
+    /**
+     * Adds a new todo list item to the container
+     * @method addTodoListItem
+     * @param {*} input The input element to get the info from
+     * @param {*} listContainer The container to add the new todo list item to
+     * @returns {void}
+     */
+    addTodoListItem(input, listContainer) {
+        if (input.value.trim() === '') return;
+        
+        // Get the current notes from local storage
+        let notes = this.getNotes();
+        // Get the id that is needed for the new note
+        let id = 1;
+        if (notes.length > 0) {
+            id = notes[notes.length - 1]['id'] + 1;
+        }
+        // Create the new note object and add it to the notes array
+        let noteObj = {
+            id: id,
+            input: input.value.trim(),
+            complete: false
+        };
+        notes.push(noteObj);
+        // Save the notes to local storage
+        localStorage.setItem('todo-notes', JSON.stringify(notes));
         input.value = '';
+        // Re-render the list
+        this.renderNotes(listContainer);
+    }
+
+    /**
+     * Deletes a todo list item from the container matching the id
+     * @method deleteTodoListItem
+     * @param {*} id The id of the todo list item to delete
+     * @param {*} listContainer The list to remove it from
+     */
+    deleteTodoListItem(id, listContainer) {
+        // Get the current notes from local storage
+        let notes = this.getNotes();
+        // Filter out the note that needs to be deleted
+        notes = notes.filter((note) => note.id !== id);
+        // Save the notes to local storage
+        localStorage.setItem('todo-notes', JSON.stringify(notes));
+        // Re-render the list
+        this.renderNotes(listContainer);
+    }
+
+    /**
+     * Marks a note as complete or incomplete in localStorage
+     * @method alterCompletion
+     * @param {*} id The id to alter the completion of
+     */
+    alterCompletion(id) {
+        // Get the current notes from local storage
+        let notes = this.getNotes();
+        // Find the note that needs to be altered and switch the complete value
+        notes.map((note) => {if (note.id === id) note['complete'] = !note['complete']});
+        // Save the notes to local storage
+        localStorage.setItem('todo-notes', JSON.stringify(notes));
     }
 
 }
