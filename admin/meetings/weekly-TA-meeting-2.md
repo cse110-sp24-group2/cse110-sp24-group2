@@ -10,5 +10,3 @@
 - Complete outline for Dev Work Journal
 - Finish Project Pitch
 - Continue refining CI/CD pipeline and other processes
-
-

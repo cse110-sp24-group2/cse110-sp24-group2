@@ -36,6 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
     "december",
   ];
   const holidays = [
+  const monthClasses = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
+  ];
+  const holidays = [
     new Date(currentYear, 0, 1), // New Year's Day
     new Date(currentYear, 1, 14), // Valentine's Day
     new Date(currentYear, 6, 4), // Independence Day
@@ -79,7 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let firstDay = new Date(year, month, 1).getDay();
     let lastDay = new Date(year, month + 1, 0).getDay();
     let lastDatePrevMonth = new Date(year, month, 0).getDate();
+    // Get some of the info to build dates
+    let firstDay = new Date(year, month, 1).getDay();
+    let lastDay = new Date(year, month + 1, 0).getDay();
+    let lastDatePrevMonth = new Date(year, month, 0).getDate();
 
+    calendarContainer.innerHTML = ""; // Clear previous calendar
     calendarContainer.innerHTML = ""; // Clear previous calendar
 
     // Add the beginning days of the previous month
@@ -154,3 +174,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   createCalendar(currentMonth, currentYear);
 });
+

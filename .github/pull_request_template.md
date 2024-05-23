@@ -19,14 +19,16 @@ Please delete options that are not relevant.
 
 Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
 
-
 ## Related GitHub Issue
+
 Please link to the related GitHub issue (if applicable).
 
 ## Testing
+
 - [ ] add testing to your new functionality, either in the form of unit tests or e2e tests.ease also list any relevant details for your test configuration
 
 ## Code Documentation
+
 - [ ] Document code using JSDoc comments so that it can be properly documented and help others.
 - [ ] Ensure that functions are not stuck within other functions otherwise JSDoc may struggle with pulling the documentation.
 

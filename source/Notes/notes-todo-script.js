@@ -2,9 +2,9 @@
  * Represents a simple note-taking application.
  * Allows users to add notes, todos, and files with optional labels.
  */
-const fs = require('fs');
-const path = require('path');
-const dirPath = path.join(__dirname, '../Data/files');
+const fs = require("fs");
+const path = require("path");
+const dirPath = path.join(__dirname, "../Data/files");
 /**
  * Creates a directory using the specified path. If the parent directories do not exist,
  * they will be created as well.
@@ -15,11 +15,11 @@ const dirPath = path.join(__dirname, '../Data/files');
  * @param {Error} err - An Error object. If the directory was created successfully, this parameter will be null.
  */
 fs.mkdir(dirPath, { recursive: true }, (err) => {
-    if (err) {
-        console.error('Failed to create directory', err);
-    } else {
-        console.log('Directory created');
-    }
+  if (err) {
+    console.error("Failed to create directory", err);
+  } else {
+    console.log("Directory created");
+  }
 });
 let currentDay, currentMonth, currentYear;
 /**
@@ -27,13 +27,13 @@ let currentDay, currentMonth, currentYear;
  *
  * @param {Event} e - The event object, containing information about the event.
  */
-document.addEventListener('hasClicked', function(e) {
+document.addEventListener("hasClicked", function (e) {
   ({ currentDay, currentMonth, currentYear } = e.detail);
   console.log(currentDay, currentMonth, currentYear);
-  const noteText = document.getElementById('note-text'); // Input field for adding notes
-  const addNoteBtn = document.getElementById('add-note'); // Button to add notes
-  const notesList = document.getElementById('notes'); // List to display notes
-// ================== Notes =================================
+  const noteText = document.getElementById("note-text"); // Input field for adding notes
+  const addNoteBtn = document.getElementById("add-note"); // Button to add notes
+  const notesList = document.getElementById("notes"); // List to display notes
+  // ================== Notes =================================
   // Object to store entries
   let entries = {};
   /**
@@ -45,32 +45,43 @@ document.addEventListener('hasClicked', function(e) {
    * @param {Error} callback.err - An Error object. If the file was read successfully, this parameter will be null.
    * @param {string} callback.data - The data read from the file. If an error occurred, this parameter will be undefined.
    */
-  fs.readFile(path.join(__dirname, `../Data/${currentYear}/${currentMonth}.json`), 'utf-8', (err, data) => {
-    console.log('Reading file');
-    if (err) {
-      if (err.code === 'ENOENT') {
-        console.log('File not found, but that\'s okay. It will be created when entries are saved.');
-        const dir = path.join(__dirname, `../Data/${currentYear}`);
-        fs.mkdirSync(dir, { recursive: true });
-        fs.writeFile(path.join(dir, `${currentMonth}.json`), '', 'utf-8', (err) => {
-          if (err) throw err;
-          console.log('File created');
-        });
+  fs.readFile(
+    path.join(__dirname, `../Data/${currentYear}/${currentMonth}.json`),
+    "utf-8",
+    (err, data) => {
+      console.log("Reading file");
+      if (err) {
+        if (err.code === "ENOENT") {
+          console.log(
+            "File not found, but that's okay. It will be created when entries are saved.",
+          );
+          const dir = path.join(__dirname, `../Data/${currentYear}`);
+          fs.mkdirSync(dir, { recursive: true });
+          fs.writeFile(
+            path.join(dir, `${currentMonth}.json`),
+            "",
+            "utf-8",
+            (err) => {
+              if (err) throw err;
+              console.log("File created");
+            },
+          );
+        } else {
+          throw err;
+        }
       } else {
-        throw err;
-      }
-    } else {
-      if (data) {
-        try {
-          const monthEntries = JSON.parse(data);
-          entries = monthEntries[currentDay] || [];
-        } catch (e) {
-          console.error('Error parsing JSON', e);
+        if (data) {
+          try {
+            const monthEntries = JSON.parse(data);
+            entries = monthEntries[currentDay] || [];
+          } catch (e) {
+            console.error("Error parsing JSON", e);
+          }
         }
       }
-    }
-    renderNotes(currentYear, currentMonth, currentDay);
-  });
+      renderNotes(currentYear, currentMonth, currentDay);
+    },
+  );
   /**
    * Adds a new entry for a specific day in a specific month and year.
    *
@@ -79,16 +90,16 @@ document.addEventListener('hasClicked', function(e) {
    * @param {number} month - The month to add the entry for.
    * @param {string} entry - The note or entry to add.
    * @returns {Promise} - A Promise that resolves when the entry is successfully added.
-   */ 
+   */
   function addEntryForDay(day, year, month, entry) {
     return new Promise((resolve, reject) => {
       const dir = path.join(__dirname, `../Data/${year}`);
       const filename = `${month}.json`;
-  
-      fs.readFile(path.join(dir, filename), 'utf-8', (err, data) => {
+
+      fs.readFile(path.join(dir, filename), "utf-8", (err, data) => {
         let monthEntries;
         if (err) {
-          if (err.code === 'ENOENT') {
+          if (err.code === "ENOENT") {
             // File does not exist, create a new one
             monthEntries = {};
           } else {
@@ -110,22 +121,26 @@ document.addEventListener('hasClicked', function(e) {
             monthEntries = {};
           }
         }
-  
+
         // Add the new entry
         if (!monthEntries[day]) {
           monthEntries[day] = [];
         }
         monthEntries[day].push(entry);
-  
+
         // Save the updated entries
-        fs.writeFile(path.join(dir, filename), JSON.stringify(monthEntries), (err) => {
-          if (err) {
-            console.error('Error writing file:', err);
-            reject(err);
-          } else {
-            resolve();
-          }
-        });
+        fs.writeFile(
+          path.join(dir, filename),
+          JSON.stringify(monthEntries),
+          (err) => {
+            if (err) {
+              console.error("Error writing file:", err);
+              reject(err);
+            } else {
+              resolve();
+            }
+          },
+        );
       });
     });
   }
@@ -142,7 +157,7 @@ document.addEventListener('hasClicked', function(e) {
     const filename = `${month}.json`;
 
     try {
-      const data = fs.readFileSync(path.join(dir, filename), 'utf-8');
+      const data = fs.readFileSync(path.join(dir, filename), "utf-8");
 
       // Check if data is not empty before parsing
       let monthEntries;
@@ -162,16 +177,16 @@ document.addEventListener('hasClicked', function(e) {
    * Renders entries for the current day into the notes list.
    */
   function renderNotes(year, month, day) {
-    notesList.innerHTML = '';
-  
+    notesList.innerHTML = "";
+
     // Get the entries for the specified day
     const dayEntries = getEntriesForDay(day, year, month);
-  
+
     // Render the entries for the specified day
     dayEntries.forEach((entry, index) => {
-      const li = document.createElement('li');
+      const li = document.createElement("li");
       li.textContent = entry;
-      li.addEventListener('click', () => {
+      li.addEventListener("click", () => {
         noteText.value = entry;
         dayEntries.splice(index, 1);
         saveEntries(day, year, month, dayEntries);
@@ -190,10 +205,10 @@ document.addEventListener('hasClicked', function(e) {
 
     let monthEntries;
     try {
-      const data = fs.readFileSync(path.join(dir, filename), 'utf-8');
+      const data = fs.readFileSync(path.join(dir, filename), "utf-8");
       monthEntries = JSON.parse(data);
     } catch (err) {
-      if (err.code === 'ENOENT') {
+      if (err.code === "ENOENT") {
         // File does not exist, create a new one
         monthEntries = {};
       } else {
@@ -209,26 +224,25 @@ document.addEventListener('hasClicked', function(e) {
     try {
       fs.writeFileSync(path.join(dir, filename), JSON.stringify(monthEntries));
     } catch (err) {
-      console.error('Error writing file:', err);
+      console.error("Error writing file:", err);
     }
   }
-
 
   /**
    * Event listener for the 'click' event on the 'addNoteBtn' button.
    * When the button is clicked, an asynchronous function is called to add a new note.
    */
-  addNoteBtn.addEventListener('click', async () => {
+  addNoteBtn.addEventListener("click", async () => {
     renderNotes(currentYear, currentMonth, currentDay);
     const note = noteText.value.trim();
     if (note) {
       console.log(currentDay, currentYear, currentMonth);
       try {
         await addEntryForDay(currentDay, currentYear, currentMonth, note);
-        noteText.value = '';
+        noteText.value = "";
         renderNotes(currentYear, currentMonth, currentDay);
       } catch (err) {
-        console.error('Error adding entry:', err);
+        console.error("Error adding entry:", err);
       }
     }
   });
@@ -240,16 +254,16 @@ document.addEventListener('hasClicked', function(e) {
    * @param {number} day - The day of the month of the notes to render.
    */
   function renderNotes(year, month, day) {
-    notesList.innerHTML = '';
+    notesList.innerHTML = "";
 
     // Get the entries for the specified day
     const dayEntries = getEntriesForDay(day, year, month);
 
     // Render the entries for the specified day
     dayEntries.forEach((entry, index) => {
-      const li = document.createElement('li');
+      const li = document.createElement("li");
       li.textContent = entry;
-      li.addEventListener('click', () => {
+      li.addEventListener("click", () => {
         noteText.value = entry;
         dayEntries.splice(index, 1);
         saveEntries(day, year, month, dayEntries); // Pass dayEntries as the entries parameter
@@ -260,9 +274,9 @@ document.addEventListener('hasClicked', function(e) {
   }
   // ================== Todos =================================
   // Variables for todos
-  const todoInput = document.getElementById('todo-input'); // Input field for adding todos
-  const addTodoBtn = document.getElementById('add-todo'); // Button to add todos
-  const todoList = document.getElementById('todo-list'); // List to display todos
+  const todoInput = document.getElementById("todo-input"); // Input field for adding todos
+  const addTodoBtn = document.getElementById("add-todo"); // Button to add todos
+  const todoList = document.getElementById("todo-list"); // List to display todos
   // Object to store todos
   let todos = {};
   /**
@@ -291,17 +305,17 @@ document.addEventListener('hasClicked', function(e) {
    * Renders todos for the current day into the todo list.
    */
   function renderTodos() {
-    todoList.innerHTML = '';
+    todoList.innerHTML = "";
     const dayTodos = getTodosForDay(currentDay);
     dayTodos.forEach((todo, index) => {
-      const li = document.createElement('li');
-      const span = document.createElement('span');
-      const deleteBtn = document.createElement('button');
+      const li = document.createElement("li");
+      const span = document.createElement("span");
+      const deleteBtn = document.createElement("button");
 
       span.textContent = todo;
-      deleteBtn.textContent = '';
+      deleteBtn.textContent = "";
 
-      deleteBtn.addEventListener('click', () => {
+      deleteBtn.addEventListener("click", () => {
         dayTodos.splice(index, 1);
         saveTodos(currentYear, currentMonth);
         renderTodos();
@@ -320,23 +334,27 @@ document.addEventListener('hasClicked', function(e) {
     const dir = path.join(__dirname, `../Data/${currentYear}`);
 
     // Create directory if it doesn't exist
-    if (!fs.existsSync(dir)){
+    if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
 
-    fs.writeFile(path.join(dir, `${currentMonth}_list.json`), JSON.stringify(todos), (err) => {
-      if (err) throw err;
-    });
+    fs.writeFile(
+      path.join(dir, `${currentMonth}_list.json`),
+      JSON.stringify(todos),
+      (err) => {
+        if (err) throw err;
+      },
+    );
   }
   /**
    * Event listener for the 'click' event on the 'addTodoBtn' button.
    * When the button is clicked, a function is called to add a new to-do item.
    */
-  addTodoBtn.addEventListener('click', () => {
+  addTodoBtn.addEventListener("click", () => {
     if (todoInput.value.trim()) {
       addTodoForDay(currentDay, todoInput.value.trim());
       saveTodos();
-      todoInput.value = '';
+      todoInput.value = "";
       renderTodos();
     }
   });
@@ -344,39 +362,38 @@ document.addEventListener('hasClicked', function(e) {
   // Initial rendering of todos
   renderTodos();
 
-
   // Variables for adding notes with files
-  const addBtn = document.getElementById('add-note'); // Button to add notes with files
-  const notesContainer = document.getElementById('notes-container'); // Container to display notes
-  const noteTxt = document.getElementById('note-text'); // Input field for note text
-  const fileInput = document.getElementById('file-input'); // Input field for files
+  const addBtn = document.getElementById("add-note"); // Button to add notes with files
+  const notesContainer = document.getElementById("notes-container"); // Container to display notes
+  const noteTxt = document.getElementById("note-text"); // Input field for note text
+  const fileInput = document.getElementById("file-input"); // Input field for files
 
   /**
    * Event listener for the 'click' event on the 'addBtn' button.
    * When the button is clicked, a function is called to add a new note.
    */
-  addBtn.addEventListener('click', () => {
+  addBtn.addEventListener("click", () => {
     const noteContent = noteTxt.value.trim();
     const files = fileInput.files;
 
     if (noteContent || files.length > 0) {
-      const noteDiv = document.createElement('div');
-      noteDiv.classList.add('note');
+      const noteDiv = document.createElement("div");
+      noteDiv.classList.add("note");
 
       const note = {
         content: noteContent,
-        files: []
+        files: [],
       };
 
       if (noteContent) {
-        const textDiv = document.createElement('div');
+        const textDiv = document.createElement("div");
         textDiv.textContent = noteContent;
         noteDiv.appendChild(textDiv);
       }
 
       if (files.length > 0) {
         for (let i = 0; i < files.length; i++) {
-          const fileDiv = document.createElement('div');
+          const fileDiv = document.createElement("div");
           const file = files[i];
           fileDiv.textContent = `File: ${file.name}`;
           noteDiv.appendChild(fileDiv);
@@ -390,10 +407,10 @@ document.addEventListener('hasClicked', function(e) {
 
       //const labelType = prompt("Enter 'important', 'feedback', or leave empty for none:");
       //bug here
-      if (labelType === 'important') {
-        noteDiv.classList.add('important');
-      } else if (labelType === 'feedback') {
-        noteDiv.classList.add('feedback');
+      if (labelType === "important") {
+        noteDiv.classList.add("important");
+      } else if (labelType === "feedback") {
+        noteDiv.classList.add("feedback");
       }
 
       notesContainer.appendChild(noteDiv);
@@ -401,8 +418,10 @@ document.addEventListener('hasClicked', function(e) {
       // Set indicator box heights to match note height
       setTimeout(() => {
         const noteHeight = noteDiv.offsetHeight;
-        const indicatorBoxes = noteDiv.querySelectorAll('.important::before, .feedback::before');
-        indicatorBoxes.forEach(box => {
+        const indicatorBoxes = noteDiv.querySelectorAll(
+          ".important::before, .feedback::before",
+        );
+        indicatorBoxes.forEach((box) => {
           box.style.height = `${noteHeight}px`;
         });
       }, 0);
@@ -417,7 +436,7 @@ document.addEventListener('hasClicked', function(e) {
       saveNotes();
 
       // Clear input fields
-      noteTxt.value = '';
+      noteTxt.value = "";
       fileInput.value = null;
     }
   });

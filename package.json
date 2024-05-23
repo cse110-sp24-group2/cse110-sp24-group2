@@ -18,7 +18,7 @@
   },
   "jest-puppeteer": {
     "server": {
-        "command": "http-server . -p 3000"
+      "command": "http-server . -p 3000"
     }
   }
 }
