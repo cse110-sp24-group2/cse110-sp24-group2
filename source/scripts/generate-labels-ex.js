@@ -5,6 +5,8 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
   console.log("init");
   // Get the recipes from localStorage
+
+  // Change this main element to the label bar holder, append all labels to label bar holder
   const mainElement = document.querySelector("main");
   if (!mainElement) {
     console.log("No main element");
@@ -15,8 +17,8 @@ function init() {
 
   newLabel.data = {
     name: "HTML Task",
-    color: "red",
-    done: false,
+    color: "red", 
+    done: false, // determines if the task is strikethrough
   };
 
   mainElement.appendChild(newLabel);
