@@ -409,3 +409,19 @@ button.delete-button:hover {
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.current-day {
+    background: linear-gradient(135deg, violet, pink);
+    color: #333 !important;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .current-day:hover {
+    background: linear-gradient(135deg, pink, violet);
+    color:white !important;
+    transform: scale(1.05);
+  }
