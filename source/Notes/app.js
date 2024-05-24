@@ -78,6 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
         saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
     });
 
+    document.getElementById('deleteButton').addEventListener('click', function() {
+        deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
+    });
+
     // Render markdown entry on load
     renderMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
 });
@@ -146,6 +150,21 @@ function renderMarkdownEntry(day, month, year) {
         } else {
             document.getElementById('markdown').value = data;
             document.getElementById('markdownPreview').innerHTML = marked(data);
+        }
+    });
+}
+
+function deleteMarkdownEntry(day, year, month) {
+    const dataDir = path.join(__dirname, '../Data');
+    const yearDir = path.join(dataDir, year.toString());
+    const monthDir = path.join(yearDir, month.toString());
+    const dayFilePath = path.join(monthDir, `${day}.md`);
+    
+    fs.unlink(dayFilePath, (err) => {
+        if (err) {
+            throw err;
+        } else {
+            console.log("Delete file successfully");
         }
     });
 }
