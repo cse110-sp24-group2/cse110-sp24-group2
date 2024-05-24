@@ -77,9 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const markdownText = markdownTextarea.value;
         saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
     });
-
+    //delete button functionality
     document.getElementById('deleteButton').addEventListener('click', function() {
-        deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
+        deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
+        markdownTextarea.value = '';
     });
 
     // Render markdown entry on load
@@ -153,7 +154,9 @@ function renderMarkdownEntry(day, month, year) {
         }
     });
 }
-
+/**
+ * Deletes Markdown notes for the current day from its corresponding subdirectories.
+ */
 function deleteMarkdownEntry(day, year, month) {
     const dataDir = path.join(__dirname, '../Data');
     const yearDir = path.join(dataDir, year.toString());
