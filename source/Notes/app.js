@@ -157,15 +157,15 @@ function renderMarkdownEntry(day, month, year) {
 /**
  * Deletes Markdown notes for the current day from its corresponding subdirectories.
  */
-function deleteMarkdownEntry(day, year, month) {
+function deleteMarkdownEntry(day, month, year) {
     const dataDir = path.join(__dirname, '../Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
-    const dayFilePath = path.join(monthDir, `${day}.md`);
-    
-    fs.unlink(dayFilePath, (err) => {
+    const filePath = path.join(monthDir, `${day}.md`);
+    console.log(filePath);
+    fs.unlink(filePath, (err) => {
         if (err) {
-            throw err;
+            console.error("Failed to delete file:", err);
         } else {
             console.log("Delete file successfully");
         }
