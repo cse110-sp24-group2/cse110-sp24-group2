@@ -28,7 +28,7 @@ class SearchBar extends HTMLElement {
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: red;
+            background-color: var(--month-color);
             color: white;
             cursor: pointer;
         }
@@ -50,14 +50,14 @@ class SearchBar extends HTMLElement {
         shadowRoot.appendChild(container);
 
         // Set the button color based on the current month
-        //this.updateButtonColor();
+        this.updateButtonColor();
     }
 
-    /*
-    I tried matching the color of the search button with the color of the current month but could not get it to work.
-    I have set the default color of the search button as red for now but it can be changed from search button style code above.
     
-    updateButtonColor() {
+    // I tried matching the color of the search button with the color of the current month but could not get it to work.
+    // I have set the default color of the search button as red for now but it can be changed from search button style code above.
+    
+    updateButtonColor(currentMonth) {
         const monthClasses = [
             "january",
             "february",
@@ -88,10 +88,10 @@ class SearchBar extends HTMLElement {
             december: "#53697d"
         };
 
-        const currentMonthClass = monthClasses[new Date().getMonth()];
+        const currentMonthClass = monthClasses[currentMonth];
         const searchButton = this.shadowRoot.getElementById('search-button');
         searchButton.style.backgroundColor = monthColors[currentMonthClass];
-    } */
+    }
 }
 
 // Define the new custom element
