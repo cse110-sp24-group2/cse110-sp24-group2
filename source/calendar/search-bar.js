@@ -10,6 +10,7 @@ class SearchBar extends HTMLElement {
         styleElement.textContent = `
         .search-container {
             display: flex;
+            position: relative;
             align-items: center;
             gap: 10px;
             margin-left: 20px;
@@ -20,7 +21,6 @@ class SearchBar extends HTMLElement {
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            flex: 1;
         }
         
         #search-button {
@@ -37,6 +37,27 @@ class SearchBar extends HTMLElement {
             background-color: red;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
         }
+
+        #suggestions {
+            position: absolute;
+            margin-top: auto;
+            bottom: auto;
+            display: none
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .suggestion {
+            padding: 10px;
+            background-color: #f9f9f9;
+            color: black; 
+            cursor: pointer;
+        }
+        
+        .suggestion:hover {
+            background-color: #f0f0f0;
+        }
         `;
 
         container.innerHTML = `
@@ -44,10 +65,62 @@ class SearchBar extends HTMLElement {
                 <input type="text" id="search-bar" placeholder="Search notes...">
                 <button id="search-button">Search</button>
             </div>
+            <div class = "suggestions-content" id="suggestions"></div>
         `;
 
         shadowRoot.appendChild(styleElement);
         shadowRoot.appendChild(container);
+        
+        const searchInput = container.querySelector('#search-bar');
+        const suggestions = container.querySelector('#suggestions');
+        
+        // Event listener for the search input
+        searchInput.addEventListener('input', function () {
+            const query = this.value;
+            fetchSuggestions(query);
+        });
+        
+    
+        // Function to fetch suggestions
+        const fetchSuggestions = (query) => {
+            const constSuggestions = ['important', 'personal', 'project1', 'project2', 'project3'];
+            
+            // Filter the suggestions based on query
+            const filteredSuggestions = constSuggestions.filter(suggestion =>
+                suggestion.toLowerCase().includes(query.toLowerCase())
+            );
+            
+            // Clear previous suggestions
+            suggestions.innerHTML = '';
+            
+            // Display filtered suggestions
+            filteredSuggestions.forEach(suggestion => {
+                const suggestionElement = document.createElement('div');
+                suggestionElement.textContent = suggestion;
+                suggestionElement.classList.add('suggestion');
+                
+                suggestionElement.addEventListener('click', function () {
+                    searchInput.value = suggestion;
+                    suggestions.innerHTML = '';
+                });
+                suggestions.appendChild(suggestionElement);
+            });
+
+            // Show suggestions if there are any
+            if (filteredSuggestions.length > 0) {
+                suggestions.style.display = 'block';
+            } else {
+                suggestions.style.display = 'none';
+            }
+
+        };
+
+        // Event listener for clicks outside the dropdown
+        document.addEventListener('click', function(event) {
+            if (!container.contains(event.target)) {
+                suggestions.style.display = 'none';
+            }
+        });
 
         // Set the button color based on the current month
         this.updateButtonColor();
