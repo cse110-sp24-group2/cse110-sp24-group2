@@ -1,6 +1,7 @@
 # Team King Julian Contract
 
 ## Purpose:
+
 The purpose of this team contract is to establish clear guidelines and expectations for all members of the team. By agreeing to this contract, each member commits to upholding the values, responsibilities, and standards outlined below to foster a collaborative and productive working environment.
 
 ## Team Values:
@@ -50,4 +51,5 @@ Mediation: If conflicts cannot be resolved among team members, the project manag
 Escalation: In rare cases where conflicts cannot be resolved internally, the matter may be escalated to higher management for assistance.
 
 ## Agreement:
+
 By signing below, each team member acknowledges that they have read and understood the terms of this contract and agrees to abide by them throughout the duration of the project.

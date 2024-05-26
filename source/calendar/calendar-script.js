@@ -36,6 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
     "december",
   ];
   const holidays = [
+  const monthClasses = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
+  ];
+  const holidays = [
     new Date(currentYear, 0, 1), // New Year's Day
     new Date(currentYear, 1, 14), // Valentine's Day
     new Date(currentYear, 6, 4), // Independence Day
@@ -79,7 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let firstDay = new Date(year, month, 1).getDay();
     let lastDay = new Date(year, month + 1, 0).getDay();
     let lastDatePrevMonth = new Date(year, month, 0).getDate();
+    // Get some of the info to build dates
+    let firstDay = new Date(year, month, 1).getDay();
+    let lastDay = new Date(year, month + 1, 0).getDay();
+    let lastDatePrevMonth = new Date(year, month, 0).getDate();
 
+    calendarContainer.innerHTML = ""; // Clear previous calendar
     calendarContainer.innerHTML = ""; // Clear previous calendar
 
     // Add the beginning days of the previous month
@@ -106,7 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isHoliday) {
         dayElement.classList.add("holiday");
       }
-
+      // Highlight the current day
+      highlightCurrentDay(month, year);
       // Determine what happens if the day is clicked
       dayElement.onclick = function () {
         // Create object of date info
@@ -153,4 +174,25 @@ document.addEventListener("DOMContentLoaded", function () {
     createCalendar(currentMonth, currentYear);
   }
   createCalendar(currentMonth, currentYear);
+
+
+  /**
+ * Highlights the current day on the calendar.
+ * @function highlightCurrentDay
+ * @param {number} month - The month of the calendar.
+ * @param {number} year - The year of the calendar.
+ */
+  function highlightCurrentDay(month, year) {
+    const today = new Date();
+    if (month === today.getMonth() && year === today.getFullYear()) {
+      const days = document.getElementsByClassName('day');
+      for (const day of days) {
+        if (parseInt(day.textContent, 10) === today.getDate()) {
+          day.classList.add('current-day');
+        }
+      }
+    }
+  }
+  
 });
+
