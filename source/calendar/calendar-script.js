@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentYear++;
     }
     createCalendar(currentMonth, currentYear);
+    updateSearchButtonColor();
   }
   createCalendar(currentMonth, currentYear);
 
@@ -193,6 +194,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
-  
+  function updateSearchButtonColor() {
+    const searchBarElement = document.querySelector("search-bar-element");
+    if (searchBarElement) {
+      searchBarElement.updateButtonColor(currentMonth);
+    }
+  }
+
+  updateSearchButtonColor();
 });
 

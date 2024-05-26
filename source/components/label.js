@@ -1,4 +1,3 @@
-// Makes a custom label component that is intended to be used to label day entries
 class CustomLabel extends HTMLElement {
   constructor() {
     super();
@@ -12,11 +11,14 @@ class CustomLabel extends HTMLElement {
     styleElement.textContent = `
         button {
             border-radius: 8px;
+            margin: 5px;
         }
         `;
 
     this.shadowRoot.appendChild(styleElement);
     this.shadowRoot.appendChild(rootElement);
+
+    this.addLabelButton();
   }
 
   /**
@@ -42,7 +44,7 @@ class CustomLabel extends HTMLElement {
 
     if (!articleElement) return;
 
-    // Add a buttton and style tag to the article element
+    // Add a button and style tag to the article element
     articleElement.innerHTML = `<button>${data.done ? `<s> ${data.name} </s>` : `${data.name}`}</button>`;
 
     let styleElement = this.shadowRoot.querySelector("style");
@@ -56,16 +58,39 @@ class CustomLabel extends HTMLElement {
 
     let buttonElement = this.shadowRoot.querySelector("button");
 
-    buttonElement.addEventListener("click", () => {
+    buttonElement.addEventListener("dblclick", () => {
       while (articleElement.firstChild) {
         articleElement.removeChild(articleElement.firstChild);
       }
       this.remove();
     });
   }
+
+  addLabelButton() {
+    let rootElement = this.shadowRoot.querySelector("article");
+
+    let addButton = document.createElement("button");
+    addButton.textContent = "Add Label";
+    addButton.addEventListener("click", () => {
+      this.createNewLabel();
+    });
+
+    rootElement.appendChild(addButton);
+  }
+
+  createNewLabel() {
+    let newLabel = document.createElement("custom-label");
+    newLabel.data = {
+      name: "New Label",
+      color: "#f0f0f0",
+      done: false,
+    };
+    this.shadowRoot.querySelector("article").appendChild(newLabel);
+  }
 }
 
 customElements.define("custom-label", CustomLabel);
+
 
 // Links for understanding
 // https://www.w3schools.com/tags/tag_label.asp

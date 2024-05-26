@@ -425,3 +425,49 @@ button.delete-button:hover {
     color:white !important;
     transform: scale(1.05);
   }
+
+
+  /*Adding styling for the label searching feature */
+  /* .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+#search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+}
+
+#search-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #d5583f;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #eaeaea;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+ */
+
+.calendar-header {
+    position: relative;
+}
+
+.calendar-header > * {
+    margin: 0 10px;
+}
+
+.calendar-header h1 {
+    flex: 1;
+    text-align: center;
+}
