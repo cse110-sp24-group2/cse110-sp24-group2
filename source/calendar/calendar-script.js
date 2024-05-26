@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isHoliday) {
         dayElement.classList.add("holiday");
       }
-
+      // Highlight the current day
+      highlightCurrentDay(month, year);
       // Determine what happens if the day is clicked
       dayElement.onclick = function () {
         // Create object of date info
@@ -153,4 +154,24 @@ document.addEventListener("DOMContentLoaded", function () {
     createCalendar(currentMonth, currentYear);
   }
   createCalendar(currentMonth, currentYear);
+
+
+  /**
+ * Highlights the current day on the calendar.
+ * @function highlightCurrentDay
+ * @param {number} month - The month of the calendar.
+ * @param {number} year - The year of the calendar.
+ */
+  function highlightCurrentDay(month, year) {
+    const today = new Date();
+    if (month === today.getMonth() && year === today.getFullYear()) {
+      const days = document.getElementsByClassName('day');
+      for (const day of days) {
+        if (parseInt(day.textContent, 10) === today.getDate()) {
+          day.classList.add('current-day');
+        }
+      }
+    }
+  }
+  
 });
