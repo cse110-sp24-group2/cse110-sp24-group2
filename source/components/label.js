@@ -17,16 +17,10 @@ class CustomLabel extends HTMLElement {
 
     this.shadowRoot.appendChild(styleElement);
     this.shadowRoot.appendChild(rootElement);
-
-    this.addLabelButton();
   }
 
   /**
    * Called when the .data property is set on this element.
-   *
-   * For example:
-   * let recipeCard = document.createElement('recipe-card'); // Calls constructor()
-   * recipeCard.data = { foo: 'bar' } // Calls set data({ foo: 'bar' })
    *
    * @param {Object} data - The data to pass into the <recipe-card> must be of the
    *                        following format:
@@ -37,20 +31,16 @@ class CustomLabel extends HTMLElement {
    *                        }
    */
   set data(data) {
-    // If nothing was passed in, return
     if (!data) return;
 
     let articleElement = this.shadowRoot.querySelector("article");
 
     if (!articleElement) return;
 
-    // Add a button and style tag to the article element
-    articleElement.innerHTML = `<button>${data.done ? `<s> ${data.name} </s>` : `${data.name}`}</button>`;
+    articleElement.innerHTML = `<button>${data.done ? `<s>${data.name}</s>` : `${data.name}`}</button>`;
 
     let styleElement = this.shadowRoot.querySelector("style");
-    styleElement.textContent =
-      styleElement.textContent +
-      `
+    styleElement.textContent += `
         button {
             background-color: ${data.color}
         }
@@ -65,32 +55,19 @@ class CustomLabel extends HTMLElement {
       this.remove();
     });
   }
-
-  addLabelButton() {
-    let rootElement = this.shadowRoot.querySelector("article");
-
-    let addButton = document.createElement("button");
-    addButton.textContent = "Add Label";
-    addButton.addEventListener("click", () => {
-      this.createNewLabel();
-    });
-
-    rootElement.appendChild(addButton);
-  }
-
-  createNewLabel() {
-    let newLabel = document.createElement("custom-label");
-    newLabel.data = {
-      name: "New Label",
-      color: "#f0f0f0",
-      done: false,
-    };
-    this.shadowRoot.querySelector("article").appendChild(newLabel);
-  }
 }
 
 customElements.define("custom-label", CustomLabel);
 
+// Function to add new label
+document.getElementById("add-label-button").addEventListener("click", () => {
+    let name = document.getElementById("label-name").value;
+    let color = document.getElementById("label-color").value;
 
-// Links for understanding
-// https://www.w3schools.com/tags/tag_label.asp
+    let newLabel = document.createElement("custom-label");
+    newLabel.data = {
+        name: name || "New Label",
+        color: color || "#f0f0f0",
+    };
+    document.getElementById("labels-container").appendChild(newLabel);
+});
