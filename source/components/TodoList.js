@@ -137,7 +137,7 @@ class TodoList extends HTMLElement {
 
     container.innerHTML = `
             <div class="todo-list"> 
-                <h2>To-Do Lists <img src="/source/components/images/to-do-icon.png"></h2>
+                <h2>To-Do Lists <img src="/source/components/images/to-do-icon.png"> </h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
                     <button id="add-todo">ADD</button>
