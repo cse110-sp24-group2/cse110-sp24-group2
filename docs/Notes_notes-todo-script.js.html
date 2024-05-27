@@ -62,8 +62,7 @@ document.addEventListener('hasClicked', function(e) {
   const addNoteBtn = document.getElementById('add-note'); // Button to add notes
   const notesList = document.getElementById('notes'); // List to display notes
 // ================== Notes =================================
-  // Object to store entries
-  let entries = {};
+
   /**
    * Reads the data from a JSON file corresponding to the current year and month.
    *
@@ -90,8 +89,8 @@ document.addEventListener('hasClicked', function(e) {
     } else {
       if (data) {
         try {
-          const monthEntries = JSON.parse(data);
-          entries = monthEntries[currentDay] || [];
+          // const monthEntries = JSON.parse(data);
+          // entries = monthEntries[currentDay] || [];
         } catch (e) {
           console.error('Error parsing JSON', e);
         }
@@ -186,28 +185,28 @@ document.addEventListener('hasClicked', function(e) {
       return [];
     }
   }
-  /**
-   * Renders entries for the current day into the notes list.
-   */
-  function renderNotes(year, month, day) {
-    notesList.innerHTML = '';
+  // /**
+  //  * Renders entries for the current day into the notes list.
+  //  */
+  // function renderNotes(year, month, day) {
+  //   notesList.innerHTML = '';
   
-    // Get the entries for the specified day
-    const dayEntries = getEntriesForDay(day, year, month);
+  //   // Get the entries for the specified day
+  //   const dayEntries = getEntriesForDay(day, year, month);
   
-    // Render the entries for the specified day
-    dayEntries.forEach((entry, index) => {
-      const li = document.createElement('li');
-      li.textContent = entry;
-      li.addEventListener('click', () => {
-        noteText.value = entry;
-        dayEntries.splice(index, 1);
-        saveEntries(day, year, month, dayEntries);
-        renderNotes(year, month, day);
-      });
-      notesList.appendChild(li);
-    });
-  }
+  //   // Render the entries for the specified day
+  //   dayEntries.forEach((entry, index) => {
+  //     const li = document.createElement('li');
+  //     li.textContent = entry;
+  //     li.addEventListener('click', () => {
+  //       noteText.value = entry;
+  //       dayEntries.splice(index, 1);
+  //       saveEntries(day, year, month, dayEntries);
+  //       renderNotes(year, month, day);
+  //     });
+  //     notesList.appendChild(li);
+  //   });
+  // }
 
   /**
    * Saves entries to Data subdirectory.
@@ -419,11 +418,11 @@ document.addEventListener('hasClicked', function(e) {
 
       //const labelType = prompt("Enter 'important', 'feedback', or leave empty for none:");
       //bug here
-      if (labelType === 'important') {
-        noteDiv.classList.add('important');
-      } else if (labelType === 'feedback') {
-        noteDiv.classList.add('feedback');
-      }
+      // if (labelType === 'important') {
+      //   noteDiv.classList.add('important');
+      // } else if (labelType === 'feedback') {
+      //   noteDiv.classList.add('feedback');
+      // }
 
       notesContainer.appendChild(noteDiv);
 
@@ -437,20 +436,21 @@ document.addEventListener('hasClicked', function(e) {
       }, 0);
 
       // Add note to specific day entries in JSON object for notes
-      if (!notes[currentDay]) {
-        notes[currentDay] = [];
-      }
-      notes[currentDay].push(note);
+      // if (!notes[currentDay]) {
+      //   notes[currentDay] = [];
+      // }
+      // notes[currentDay].push(note);
 
       // Save notes
-      saveNotes();
+      // saveNotes();
 
       // Clear input fields
       noteTxt.value = '';
       fileInput.value = null;
     }
   });
-});</code></pre>
+});
+</code></pre>
         </article>
     </section>
 

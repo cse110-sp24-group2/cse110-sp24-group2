@@ -103,8 +103,13 @@ npm run package
 <h2>Linting</h2>
 <h3>TLDR:</h3>
 <ul>
-<li><code>npx prettier . --w</code> to run the linter and overwrite files</li>
+<li><code>npx prettier . --w</code> to run the linter and overwrite files (for formatting)</li>
 <li><code>npx prettier . --check</code> to run the linter but not overwrite files</li>
+<li><code>npx eslint</code> to check files that violate eslint (code quality / potential bugs)
+<ul>
+<li>Need to run <code>npx eslint</code> inside the source directory. Use <code>cd source</code> if necesasry</li>
+</ul>
+</li>
 </ul>
 <p>Make sure <code>npx prettier . --check</code> does not show any unformatted files before pushing.</p>
 <h3>If you use other linters in other projects...</h3>
