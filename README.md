@@ -10,6 +10,7 @@
 cd source
 ```
 If you're on Windows, make sure your package.json file looks like this:
+### Windows
 ```json
 {
     "name": "Dev Journal",
@@ -18,7 +19,35 @@ If you're on Windows, make sure your package.json file looks like this:
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "package": "electron-packager . DevJournal --platform=win32 --arch=x64"
+        "package": "electron-packager . DevJournal --platform=win32 --arch=x64" 
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "electron": "^11.5.0"
+    },
+    "devDependencies": {
+        "electron-packager": "^15.5.2"
+    }
+}
+
+
+```
+
+### Mac
+Use this instead for package key:
+`"package": "electron-packager . Calendar --platform=darwin --arch=x64`
+
+```json
+{
+    "name": "Calendar_App",
+    "version": "1.0.0",
+    "description": "A Calendar App That tracks what you do in a day",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "package": "electron-packager . Calendar --platform=darwin --arch=x64"
     },
     "keywords": [],
     "author": "",
@@ -31,6 +60,7 @@ If you're on Windows, make sure your package.json file looks like this:
     }
 }
 ```
+
 Install the necessary dependencies:  
 ```bash
 npm install --save-dev electron-packager
@@ -39,3 +69,4 @@ Run the app:
 ```bash
 npm run package
 ```
+
