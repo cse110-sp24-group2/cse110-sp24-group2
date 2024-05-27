@@ -30,12 +30,13 @@ const monthClasses = [
 
 const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
-
+let page;
 const MAIN_PAGE_URL = "http://localhost:3000/source/calendar/";
 
 describe("Navigation and Generation of Calendar", () => {
   // Get to the calendar page
   beforeEach(async () => {
+    page = await browser.newPage();
     await page.goto(MAIN_PAGE_URL);
   });
 
@@ -74,7 +75,7 @@ describe("Navigation and Generation of Calendar", () => {
         activeDay.click(),
         page.waitForNavigation({ waitUntil: "networkidle0" }),
       ]);
-      expect(page.url()).toBe("http://localhost:3000/source/Notes/");
+      expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
         JSON.parse(localStorage.getItem("date")),
       );
@@ -126,7 +127,7 @@ describe("Navigation and Generation of Calendar", () => {
         activeDay.click(),
         page.waitForNavigation({ waitUntil: "networkidle0" }),
       ]);
-      expect(page.url()).toBe("http://localhost:3000/source/Notes/");
+      expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
         JSON.parse(localStorage.getItem("date")),
       );
@@ -178,7 +179,7 @@ describe("Navigation and Generation of Calendar", () => {
         activeDay.click(),
         page.waitForNavigation({ waitUntil: "networkidle0" }),
       ]);
-      expect(page.url()).toBe("http://localhost:3000/source/Notes/");
+      expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
         JSON.parse(localStorage.getItem("date")),
       );
@@ -230,7 +231,7 @@ describe("Navigation and Generation of Calendar", () => {
         activeDay.click(),
         page.waitForNavigation({ waitUntil: "networkidle0" }),
       ]);
-      expect(page.url()).toBe("http://localhost:3000/source/Notes/");
+      expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
         JSON.parse(localStorage.getItem("date")),
       );
