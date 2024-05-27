@@ -67,4 +67,5 @@ npm install --save-dev electron-packager
 Run the app:  
 ```bash
 npm run package
+npm start
 ```
