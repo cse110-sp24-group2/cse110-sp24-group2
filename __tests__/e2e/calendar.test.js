@@ -1,31 +1,31 @@
 const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ];
 
 const monthClasses = [
-  "january",
-  "february",
-  "march",
-  "april",
-  "may",
-  "june",
-  "july",
-  "august",
-  "september",
-  "october",
-  "november",
-  "december",
+  'january',
+  'february',
+  'march',
+  'april',
+  'may',
+  'june',
+  'july',
+  'august',
+  'september',
+  'october',
+  'november',
+  'december',
 ];
 
 const currentMonth = new Date().getMonth();
@@ -33,7 +33,7 @@ const currentYear = new Date().getFullYear();
 let page;
 const MAIN_PAGE_URL = "http://localhost:3000/source/calendar/";
 
-describe("Navigation and Generation of Calendar", () => {
+describe('Navigation and Generation of Calendar', () => {
   // Get to the calendar page
   beforeEach(async () => {
     page = await browser.newPage();
@@ -41,18 +41,18 @@ describe("Navigation and Generation of Calendar", () => {
   });
 
   // Check if current month is generated
-  it("Generate Current Month", async () => {
+  it('Generate Current Month', async () => {
     // Check month and day accuracy
     const monthLabel = await page.$eval(
-      "#current-month",
+      '#current-month',
       (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[currentMonth]} ${currentYear}`);
     // Ensure the number of days is divisible by 7
-    const numDayElements = await page.$$eval(".day", (days) => days.length);
+    const numDayElements = await page.$$eval('.day', (days) => days.length);
     expect(numDayElements % 7).toBe(0);
     // If there are days not in the current month, they should be grayed out and unclickable
-    const daysNotInMonth = await page.$$(".diff-month");
+    const daysNotInMonth = await page.$$('.diff-month');
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is grayed out
@@ -60,7 +60,7 @@ describe("Navigation and Generation of Calendar", () => {
         (el) => window.getComputedStyle(el).color,
         diffMonthDay,
       );
-      expect(diffColor).toBe("rgb(128, 128, 128)");
+      expect(diffColor).toBe('rgb(128, 128, 128)');
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(page.url()).toBe(MAIN_PAGE_URL);
@@ -73,11 +73,11 @@ describe("Navigation and Generation of Calendar", () => {
       let date = await page.evaluate((el) => el.textContent, activeDay);
       await Promise.all([
         activeDay.click(),
-        page.waitForNavigation({ waitUntil: "networkidle0" }),
+        page.waitForNavigation({ waitUntil: 'networkidle0' }),
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date")),
+        JSON.parse(localStorage.getItem('date')),
       );
       expect(dateObject).toEqual({
         month: currentMonth,
@@ -89,22 +89,22 @@ describe("Navigation and Generation of Calendar", () => {
   }, 100000);
 
   // Check if prev month is generated
-  it("Generate Prev Month", async () => {
+  it('Generate Prev Month', async () => {
     // Click the previous month button
-    await page.click("#prev-month");
+    await page.click('#prev-month');
     let month = currentMonth - 1 < 0 ? 11 : currentMonth - 1;
     let year = currentMonth - 1 < 0 ? currentYear - 1 : currentYear;
     // Check month and day accuracy
     const monthLabel = await page.$eval(
-      "#current-month",
+      '#current-month',
       (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[month]} ${year}`);
     // Ensure the number of days is divisible by 7
-    const numDayElements = await page.$$eval(".day", (days) => days.length);
+    const numDayElements = await page.$$eval('.day', (days) => days.length);
     expect(numDayElements % 7).toBe(0);
     // If there are days not in the current month, they should be grayed out and unclickable
-    const daysNotInMonth = await page.$$(".diff-month");
+    const daysNotInMonth = await page.$$('.diff-month');
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is grayed out
@@ -112,7 +112,7 @@ describe("Navigation and Generation of Calendar", () => {
         (el) => window.getComputedStyle(el).color,
         diffMonthDay,
       );
-      expect(diffColor).toBe("rgb(128, 128, 128)");
+      expect(diffColor).toBe('rgb(128, 128, 128)');
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(page.url()).toBe(MAIN_PAGE_URL);
@@ -125,11 +125,11 @@ describe("Navigation and Generation of Calendar", () => {
       let date = await page.evaluate((el) => el.textContent, activeDay);
       await Promise.all([
         activeDay.click(),
-        page.waitForNavigation({ waitUntil: "networkidle0" }),
+        page.waitForNavigation({ waitUntil: 'networkidle0' }),
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date")),
+        JSON.parse(localStorage.getItem('date')),
       );
       expect(dateObject).toEqual({
         month: month,
@@ -141,22 +141,22 @@ describe("Navigation and Generation of Calendar", () => {
   }, 100000);
 
   // Check if next month is generated
-  it("Generate next Month", async () => {
+  it('Generate next Month', async () => {
     // Click the next month button
-    await page.click("#next-month");
+    await page.click('#next-month');
     let month = currentMonth + 1 > 11 ? 0 : currentMonth + 1;
     let year = currentMonth + 1 > 11 ? currentYear + 1 : currentYear;
     // Check month and day accuracy
     const monthLabel = await page.$eval(
-      "#current-month",
+      '#current-month',
       (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[month]} ${year}`);
     // Ensure the number of days is divisible by 7
-    const numDayElements = await page.$$eval(".day", (days) => days.length);
+    const numDayElements = await page.$$eval('.day', (days) => days.length);
     expect(numDayElements % 7).toBe(0);
     // If there are days not in the current month, they should be grayed out and unclickable
-    const daysNotInMonth = await page.$$(".diff-month");
+    const daysNotInMonth = await page.$$('.diff-month');
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is grayed out
@@ -164,7 +164,7 @@ describe("Navigation and Generation of Calendar", () => {
         (el) => window.getComputedStyle(el).color,
         diffMonthDay,
       );
-      expect(diffColor).toBe("rgb(128, 128, 128)");
+      expect(diffColor).toBe('rgb(128, 128, 128)');
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(page.url()).toBe(MAIN_PAGE_URL);
@@ -177,11 +177,11 @@ describe("Navigation and Generation of Calendar", () => {
       let date = await page.evaluate((el) => el.textContent, activeDay);
       await Promise.all([
         activeDay.click(),
-        page.waitForNavigation({ waitUntil: "networkidle0" }),
+        page.waitForNavigation({ waitUntil: 'networkidle0' }),
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date")),
+        JSON.parse(localStorage.getItem('date')),
       );
       expect(dateObject).toEqual({
         month: month,
@@ -193,22 +193,22 @@ describe("Navigation and Generation of Calendar", () => {
   }, 100000);
 
   // Check if next year's data is generated
-  it("Generate next Year", async () => {
+  it('Generate next Year', async () => {
     // Click the next month button
-    await page.click("#next-month", { count: 12 });
+    await page.click('#next-month', { count: 12 });
     let month = currentMonth;
     let year = currentYear + 1;
     // Check month and day accuracy
     const monthLabel = await page.$eval(
-      "#current-month",
+      '#current-month',
       (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[month]} ${year}`);
     // Ensure the number of days is divisible by 7
-    const numDayElements = await page.$$eval(".day", (days) => days.length);
+    const numDayElements = await page.$$eval('.day', (days) => days.length);
     expect(numDayElements % 7).toBe(0);
     // If there are days not in the current month, they should be grayed out and unclickable
-    const daysNotInMonth = await page.$$(".diff-month");
+    const daysNotInMonth = await page.$$('.diff-month');
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is grayed out
@@ -216,7 +216,7 @@ describe("Navigation and Generation of Calendar", () => {
         (el) => window.getComputedStyle(el).color,
         diffMonthDay,
       );
-      expect(diffColor).toBe("rgb(128, 128, 128)");
+      expect(diffColor).toBe('rgb(128, 128, 128)');
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(page.url()).toBe(MAIN_PAGE_URL);
@@ -229,11 +229,11 @@ describe("Navigation and Generation of Calendar", () => {
       let date = await page.evaluate((el) => el.textContent, activeDay);
       await Promise.all([
         activeDay.click(),
-        page.waitForNavigation({ waitUntil: "networkidle0" }),
+        page.waitForNavigation({ waitUntil: 'networkidle0' }),
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date")),
+        JSON.parse(localStorage.getItem('date')),
       );
       expect(dateObject).toEqual({
         month: month,

@@ -71,8 +71,10 @@ npm start
 
 ### TLDR:
 
-- `npx prettier . --w` to run the linter and overwrite files
+- `npx prettier . --w` to run the linter and overwrite files (for formatting)
 - `npx prettier . --check` to run the linter but not overwrite files
+- `npx eslint` to check files that violate eslint (code quality / potential bugs)
+  - Need to run `npx eslint` inside the source directory. Use `cd source` if necesasry 
 
 Make sure `npx prettier . --check` does not show any unformatted files before pushing.
 
