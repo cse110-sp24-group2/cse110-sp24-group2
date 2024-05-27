@@ -9,9 +9,9 @@ Present: Brian, Dhruv, Uday, Momina, Clarissa, Andrew, Victor, Dhaivat, Anya
 
 ### Sprint 2 review and Retrospective
 
-[Sprint 2 Review Notes](./meetings/052524-sprint-2-review.md)
+[Sprint 2 Review Notes](./052524-sprint-2-review.md)
 
-[Retrospective Notes](./meetings/052524-retrospective.md)
+[Retrospective Notes](./052524-retrospective.md)
 
 ### Next Steps
 
