@@ -60,7 +60,6 @@ Use this instead for package key:
     }
 }
 ```
-
 Install the necessary dependencies:  
 ```bash
 npm install --save-dev electron-packager
@@ -69,4 +68,3 @@ Run the app:
 ```bash
 npm run package
 ```
-
