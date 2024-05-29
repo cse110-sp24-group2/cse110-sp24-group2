@@ -1,5 +1,4 @@
-import { monthNames, monthClasses, monthColors } from '/monthValues.js';
-
+import { monthNames, monthClasses } from '/monthValues.js';
 document.addEventListener("DOMContentLoaded", function () {
   // Get the main components of the calendar and set date info
   const calendarContainer = document.getElementById("calendar");
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentDate = new Date();
   let currentMonth = currentDate.getMonth();
   let currentYear = currentDate.getFullYear();
-  
+
   const holidays = [
     new Date(currentYear, 0, 1), // New Year's Day
     new Date(currentYear, 1, 14), // Valentine's Day
