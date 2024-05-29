@@ -174,6 +174,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+  
+  /**
+   * @function updateSearchButtonColor
+   * 
+   * Finds the search button element and updates its color based on the current month in the calendar view.
+   */
   function updateSearchButtonColor() {
     const searchBarElement = document.querySelector("search-bar-element");
     if (searchBarElement) {
