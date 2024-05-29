@@ -146,20 +146,6 @@ class SearchBar extends HTMLElement {
      * 
      */
     updateButtonColor() {
-        const monthClasses = [
-            "january",
-            "february",
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "august",
-            "september",
-            "october",
-            "november",
-            "december"
-        ];
 
         const monthColors = {
             january: "#c14300",
