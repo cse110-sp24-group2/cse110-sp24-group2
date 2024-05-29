@@ -81,7 +81,16 @@ class SearchBar extends HTMLElement {
         });
         
     
-        // Function to fetch suggestions
+        /** 
+         * @method fetchSuggestions
+         * Function to fetch autofill suggestions for the "search day entries for label" bar.
+         * 
+         * @param {string} query - The current state of the search query entered by the user. Most likely, 
+         * it will be an incomplete word that the function will use to suggest completions.
+         * 
+         * @returns {boolean} - Returns true if there are suggestions to display, false otherwise.
+         * 
+        */
         const fetchSuggestions = (query) => {
             const constSuggestions = ['important', 'personal', 'project1', 'project2', 'project3'];
             
@@ -109,8 +118,10 @@ class SearchBar extends HTMLElement {
             // Show suggestions if there are any
             if (filteredSuggestions.length > 0) {
                 suggestions.style.display = 'block';
+                return true;
             } else {
                 suggestions.style.display = 'none';
+                return false;
             }
 
         };
@@ -129,7 +140,11 @@ class SearchBar extends HTMLElement {
     
     // I tried matching the color of the search button with the color of the current month but could not get it to work.
     // I have set the default color of the search button as red for now but it can be changed from search button style code above.
-    
+    /**
+     * @function updateButtonColor
+     * Updates the color of the search button based on the current month.
+     * 
+     */
     updateButtonColor() {
         const monthClasses = [
             "january",
