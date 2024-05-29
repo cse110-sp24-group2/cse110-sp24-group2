@@ -130,7 +130,7 @@ class SearchBar extends HTMLElement {
     // I tried matching the color of the search button with the color of the current month but could not get it to work.
     // I have set the default color of the search button as red for now but it can be changed from search button style code above.
     
-    updateButtonColor(currentMonth) {
+    updateButtonColor() {
         const monthClasses = [
             "january",
             "february",
@@ -163,7 +163,7 @@ class SearchBar extends HTMLElement {
 
         const currentMonthClass = monthClasses.currentMonth;
         const searchButton = this.shadowRoot.getElementById('search-button');
-        searchButton.style.backgroundColor = monthColors[currentMonthClass];
+        searchButton.style.backgroundColor = monthColors.currentMonthClass;
     }
 }
 
