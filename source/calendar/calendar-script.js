@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
    * @function updateMonthYear
    */
   function updateMonthYear() {
-    monthLabel.textContent = `${monthNames.currentMonth} ${currentYear}`;
+    monthLabel.textContent = `${monthNames[currentMonth]} ${currentYear}`;
     monthLabel.className = ""; // Clear previous class
     monthLabel.classList.add(monthClasses.currentMonth); // Apply new class for font color
   }
