@@ -7,6 +7,35 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentMonth = currentDate.getMonth();
   let currentYear = currentDate.getFullYear();
 
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const monthClasses = [
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
+  ];
   const holidays = [
     new Date(currentYear, 0, 1), // New Year's Day
     new Date(currentYear, 1, 14), // Valentine's Day
@@ -24,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateMonthYear() {
     monthLabel.textContent = `${monthNames[currentMonth]} ${currentYear}`;
     monthLabel.className = ""; // Clear previous class
-    monthLabel.classList.add(monthClasses.currentMonth); // Apply new class for font color
+    monthLabel.classList.add(monthClasses[currentMonth]); // Apply new class for font color
   }
 
   /**
@@ -124,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
       currentYear++;
     }
     createCalendar(currentMonth, currentYear);
-    updateSearchButtonColor();
   }
   createCalendar(currentMonth, currentYear);
 
@@ -147,17 +175,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   
-  /**
-   * @function updateSearchButtonColor
-   * 
-   * Finds the search button element and updates its color based on the current month in the calendar view.
-   */
-  function updateSearchButtonColor() {
-    const searchBarElement = document.querySelector("search-bar-element");
-    if (searchBarElement) {
-      searchBarElement.updateButtonColor(currentMonth);
-    }
-  }
-
-  updateSearchButtonColor();
 });
