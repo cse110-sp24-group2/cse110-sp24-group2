@@ -1,0 +1,22 @@
+# Adding ESLint to CICD Pipeline
+
+## Problem Statement and Context
+
+- Developers are finding it difficult to resolve and identify Codacy errors
+- Codacy takes a while to run/load, making for poor developer experience
+
+## Considered Options
+
+- Disabling Codacy: many of the warnings are valid concerns (not false positives), so not doing this
+- Switching Codacy to a new tool that is more clear: Other tools are paid, also considering onboarding time picking up new tool would be hard
+- Adding Linters to help developers catch
+  - Currently 
+  
+
+## Decision Outcome
+
+- Add ESLint to our developer tools
+  - Codacy can potentially read ESLint configuration files, syncing expectations between Codacy and Developers
+  - Lacked a linter in CICD pipeline before
+    - Only had prettier
+  - ESLint has a smaller learning curve than an alternative to Codacy
