@@ -27,12 +27,19 @@
         <!--Added to do list here-->
         <todo-list-element></todo-list-element>
     </div>
+    <div class="label-container">
+        <input type="text" id="label-name" placeholder="Label Name">
+        <input type="color" id="label-color" value="#f0f0f0">
+        <button id="add-label-button">Add Label</button>
+        <div id="labels-container"></div>
+    </div> 
     <button id="saveButton">Save</button>
     <button id="deleteButton">Delete</button>
     <!-- Add a style attribute to the button -->
-    <button style="float: right;" onclick="window.location.href='../calendar/index.html'">Back to Calendar</button>
+    <button id="backToCalendar">Back to Calendar</button>
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
     <script src="app.js"></script>
     <script src="../components/TodoList.js"></script>
+    <script src="label.js"></script>
 </body>
 </html>

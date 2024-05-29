@@ -81,6 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('deleteButton').addEventListener('click', function() {
         deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
         markdownTextarea.value = '';
+        document.getElementById('markdownPreview').innerHTML = '';
+    });
+    // navigate back to calendar
+    document.getElementById('backToCalendar').addEventListener('click', function() {
+        const markdownText = markdownTextarea.value;
+        saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
+        window.location.href = '../calendar/index.html';
     });
 
     // Render markdown entry on load

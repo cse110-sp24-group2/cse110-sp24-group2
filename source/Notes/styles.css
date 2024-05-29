@@ -69,3 +69,6 @@ button {
 .todo {
    text-align: center;
 }
+#backToCalendar {
+    float: right;
+}
