@@ -161,7 +161,7 @@ class SearchBar extends HTMLElement {
             december: "#53697d"
         };
 
-        const currentMonthClass = monthClasses[currentMonth];
+        const currentMonthClass = monthClasses.currentMonth;
         const searchButton = this.shadowRoot.getElementById('search-button');
         searchButton.style.backgroundColor = monthColors[currentMonthClass];
     }
