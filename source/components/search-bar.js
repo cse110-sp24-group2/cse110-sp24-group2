@@ -1,4 +1,4 @@
-import {monthColors } from './calendar/shared.js';
+import {monthColors} from './calendar/shared.js';
 class SearchBar extends HTMLElement {
     constructor() {
         super();
