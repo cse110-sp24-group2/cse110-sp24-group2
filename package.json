@@ -1,24 +1,32 @@
 {
+  "dependencies": {
+    "electron": "^11.5.0"
+  },
   "devDependencies": {
+    "electron": "^11.5.0",
+    "electron-packager": "^15.5.2",
     "http-server": "^14.1.1",
     "jest": "^29.7.0",
     "jest-puppeteer": "^10.0.1",
     "jsdoc": "^4.0.3",
     "prettier": "3.2.5",
-    "puppeteer": "^22.8.0"
+    "puppeteer": "^22.10.0"
   },
   "scripts": {
-    "test": "node node_modules/jest/bin/jest.js"
+    "test": "node node_modules/jest/bin/jest.js",
+    "start": "electron .",
+    "package": "electron-packager . Calendar --platform=darwin --arch=x64"
   },
   "type": "module",
   "jest": {
     "preset": "jest-puppeteer",
+    "testEnvironment": "jest-environment-puppeteer",
     "transform": {},
     "verbose": true
   },
   "jest-puppeteer": {
     "server": {
-        "command": "http-server . -p 3000"
+      "command": "http-server . -p 3000"
     }
   }
 }
