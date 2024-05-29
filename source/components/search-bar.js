@@ -1,3 +1,5 @@
+import { monthClasses, monthColors } from './calendar/shared.js';
+
 class SearchBar extends HTMLElement {
     constructor() {
         super();
@@ -137,45 +139,12 @@ class SearchBar extends HTMLElement {
         this.updateButtonColor();
     }
 
-    
-    // I tried matching the color of the search button with the color of the current month but could not get it to work.
-    // I have set the default color of the search button as red for now but it can be changed from search button style code above.
-    /**
+        /**
      * @function updateButtonColor
      * Updates the color of the search button based on the current month.
      * 
      */
     updateButtonColor() {
-        const monthClasses = [
-            "january",
-            "february",
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "august",
-            "september",
-            "october",
-            "november",
-            "december"
-        ];
-
-        const monthColors = {
-            january: "#c14300",
-            february: "#f29cac",
-            march: "#28a745",
-            april: "#e83e8c",
-            may: "#790258",
-            june: "#154a27",
-            july: "#17a2b8",
-            august: "#d1890c",
-            september: "#dc3545",
-            october: "#d45810",
-            november: "#343a40",
-            december: "#53697d"
-        };
-
         const searchButton = this.shadowRoot.getElementById('search-button');
         searchButton.style.backgroundColor = monthColors.currentMonthClass;
     }
