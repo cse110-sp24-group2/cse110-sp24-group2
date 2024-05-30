@@ -172,6 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       }
-    }
+    } 
   }
 });

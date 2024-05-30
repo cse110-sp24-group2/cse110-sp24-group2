@@ -131,12 +131,32 @@ class TodoList extends HTMLElement {
             cursor: pointer;
             float: right;
         }
-        `;
+        .scrollbar {
+          overflow: scroll;
+          height: 500px;
+        }
+      
+        .scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-thumb {
+            background-color: #6b6b6b; 
+            border-radius: 10px; 
+            border: 2px solid #ffffff; 
+        }
+        .scrollbar::-webkit-scrollbar-track {
+            background: #f0f0f0; 
+            border-radius: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-corner {
+            background: transparent; 
+        }
+          `;
 
     container.setAttribute("class", "todo-list-container");
 
     container.innerHTML = `
-            <div class="todo-list"> 
+            <div class="todo-list scrollbar"> 
                 <h2>To-Do Lists <img src="/source/components/images/to-do-icon.png"> </h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
