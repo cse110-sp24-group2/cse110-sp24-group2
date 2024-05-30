@@ -13,7 +13,6 @@
   "scripts": {
     "test": "node node_modules/jest/bin/jest.js"
   },
-  "type": "module",
   "jest": {
     "preset": "jest-puppeteer",
     "testEnvironment": "jest-environment-puppeteer",
@@ -24,5 +23,6 @@
     "server": {
       "command": "http-server . -p 3000"
     }
-  }
+  },
+  "type": "module"
 }

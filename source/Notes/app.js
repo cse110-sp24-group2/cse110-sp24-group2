@@ -1,8 +1,9 @@
 /**
  * Set up necessary modules and path to Data directory
  */
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
+const __dirname = new URL('.', import.meta.url).pathname;
 const dataDir = path.join(__dirname, '../Data');
 
 /**

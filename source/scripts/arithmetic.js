@@ -27,4 +27,4 @@ function sub(a, b) {
   return a - b;
 }
 
-module.exports = { sum, mul, sub };
+export { sum, mul, sub };

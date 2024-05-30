@@ -2,8 +2,9 @@
  * Represents a simple note-taking application.
  * Allows users to add notes, todos, and files with optional labels.
  */
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
+const __dirname = new URL('.', import.meta.url).pathname;
 const dirPath = path.join(__dirname, '../Data/files');
 /**
  * Creates a directory using the specified path. If the parent directories do not exist,
