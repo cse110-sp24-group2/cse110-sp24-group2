@@ -1,50 +1,47 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Calendar</title>
-    <link rel="stylesheet" href="calendar-styles.css" />
-    <link rel="stylesheet" href="../Notes/notes-todo-styles.css" />
+    <link rel="stylesheet" href="calendar-styles.css">
+    <link rel="stylesheet" href="../Notes/notes-todo-styles.css">
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="calendar-header">
-      <button id="prev-month"><i class="arrow left"></i>Prev</button>
-      <h1 id="current-month"></h1>
-      <button id="next-month">Next<i class="arrow right"></i></button>
-    <!-- </div> -->
-        <!-- <button id="prev-month"><i class="arrow left"></i>Prev</button> -->
-        <!-- <h1 id="current-month"></h1> -->
+        <button id="prev-month"><i class="arrow left"></i>Prev</button>
+        <h1 id="current-month"></h1>
         <!-- Added search bar to the top of the calendar view inside calendar header -->
         <!-- <div class="search-container">
           <input type="text" id="search-bar" placeholder="Search labels...">
           <button id="search-button">Search</button>
         </div> -->
         <search-bar-element></search-bar-element>
-        <!-- <button id="next-month">Next<i class="arrow right"></i></button> -->
-    </div>
+        <button id="next-month">Next<i class="arrow right"></i></button>
+      </div>
     <div class="main-container">
-      <div class="calendar-container">
+    <div class="calendar-container">
         <div id="day-names" class="day-names">
-          <div class="day-name">Sun</div>
-          <div class="day-name">Mon</div>
-          <div class="day-name">Tues</div>
-          <div class="day-name">Wed</div>
-          <div class="day-name">Thurs</div>
-          <div class="day-name">Fri</div>
-          <div class="day-name">Sat</div>
+            <div class="day-name">Sun</div>
+            <div class="day-name">Mon</div>
+            <div class="day-name">Tues</div>
+            <div class="day-name">Wed</div>
+            <div class="day-name">Thurs</div>
+            <div class="day-name">Fri</div>
+            <div class="day-name">Sat</div>
         </div>
         <div id="calendar"></div>
-      </div>
+    </div>
 
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <ul id="entries"></ul>
-          <form id="entry-form"></form>
-          <div class="container">
+    <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <ul id="entries"></ul>
+        <form id="entry-form">
+        </form>
+        <div class="container">
             <div class="note-section">
               <h1>Notes</h1>
               <div class="date-time">
@@ -52,46 +49,39 @@
                 <span id="time-display"></span>
               </div>
               <div class="note-input">
-                <textarea
-                  id="note-text"
-                  placeholder="Enter your note here..."
-                ></textarea>
+                <textarea id="note-text" placeholder="Enter your note here..."></textarea>
                 <button id="add-note">Add Note</button>
               </div>
               <div class="notes-list">
-                <h2>Single tap to edit and delete</h2>
+                <h2>Single tap to edit and delete </h2>
                 <ul id="notes"></ul>
               </div>
               <div>
-                <input type="file" id="file-input" accept="*/*" />
+                <input type="file" id="file-input" accept="*/*">
                 <button id="add-file">Add File</button>
               </div>
             </div>
             <div class="todo-section">
               <h1>Todo List</h1>
               <div class="input-section">
-                <input
-                  type="text"
-                  id="todo-input"
-                  placeholder="Enter a new task..."
-                />
+                <input type="text" id="todo-input" placeholder="Enter a new task...">
                 <button id="add-todo">Add</button>
               </div>
               <ul id="todo-list"></ul>
             </div>
           </div>
-          <button id="close-form">Close</button>
-        </div>
-      </div>
+        <button id="close-form">Close</button>
+    </div>
+    </div>
 
-      <div>
-        <todo-list-element></todo-list-element>
-        <script src="../components/TodoList.js"></script>
-      </div>
+    <div>
+      <todo-list-element></todo-list-element>
+      <script src="TodoList.js"></script>
+    </div>
     </div>
   
   <!-- <script src="../Notes/notes-todo-script.js"></script> -->
   <script src="calendar-script.js"></script>
-  <script src="../search-bar.js"></script>
+  <script src="search-bar.js"></script>
 </body>
 </html>
