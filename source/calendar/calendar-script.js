@@ -166,12 +166,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const today = new Date();
     if (month === today.getMonth() && year === today.getFullYear()) {
       const days = document.getElementsByClassName('day');
-      for (const day of days) {
-        if (parseInt(day.textContent, 10) === today.getDate()) {
-          day.classList.add('current-day');
-        }
-      }
+          for (const day of days) {
+            if(day.classList[1] != 'diff-month') {
+            if (parseInt(day.textContent, 10) === today.getDate()) {
+              day.classList.add('current-day');
+            }
+          }
+          }
     }
   }
-  
-});
