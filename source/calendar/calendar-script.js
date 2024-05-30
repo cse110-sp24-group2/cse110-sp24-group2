@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let day = 1; day <= daysInMonth(month, year); day++) {
       const dayElement = document.createElement("div");
       // Adds specific month class
-      dayElement.classList.add("day", monthClasses[parseInt(month,10)]); 
+      dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
       dayElement.textContent = day;
       calendarContainer.appendChild(dayElement);
       // Check if the date is a holiday
@@ -155,23 +155,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   createCalendar(currentMonth, currentYear);
 
-
   /**
- * Highlights the current day on the calendar.
- * @function highlightCurrentDay
- * @param {number} month - The month of the calendar.
- * @param {number} year - The year of the calendar.
- */
+   * Highlights the current day on the calendar.
+   * @function highlightCurrentDay
+   * @param {number} month - The month of the calendar.
+   * @param {number} year - The year of the calendar.
+   */
   function highlightCurrentDay(month, year) {
     const today = new Date();
     if (month === today.getMonth() && year === today.getFullYear()) {
-      const days = document.getElementsByClassName('day');
+      const days = document.getElementsByClassName("day");
       for (const day of days) {
-        if (parseInt(day.textContent, 10) === today.getDate()) {
-          day.classList.add('current-day');
+        if (day.classList[1] != "diff-month") {
+          if (parseInt(day.textContent, 10) === today.getDate()) {
+            day.classList.add("current-day");
+          }
         }
       }
     }
   }
-  
 });
