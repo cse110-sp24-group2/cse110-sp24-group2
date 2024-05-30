@@ -1,39 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Get the main components of the calendar and set date info
-  const calendarContainer = document.getElementById("calendar");
-  const monthLabel = document.getElementById("current-month");
+  const calendarContainer = document.getElementById('calendar');
+  const monthLabel = document.getElementById('current-month');
   let currentDate = new Date();
   let currentMonth = currentDate.getMonth();
   let currentYear = currentDate.getFullYear();
 
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
 
   const monthClasses = [
-    "january",
-    "february",
-    "march",
-    "april",
-    "may",
-    "june",
-    "july",
-    "august",
-    "september",
-    "october",
-    "november",
-    "december",
+    'january',
+    'february',
+    'march',
+    'april',
+    'may',
+    'june',
+    'july',
+    'august',
+    'september',
+    'october',
+    'november',
+    'december',
   ];
   const holidays = [
     new Date(currentYear, 0, 1), // New Year's Day
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   function updateMonthYear() {
     monthLabel.textContent = `${monthNames[currentMonth]} ${currentYear}`;
-    monthLabel.className = ""; // Clear previous class
+    monthLabel.className = ''; // Clear previous class
     monthLabel.classList.add(monthClasses[currentMonth]); // Apply new class for font color
   }
 
@@ -80,20 +80,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let lastDay = new Date(year, month + 1, 0).getDay();
     let lastDatePrevMonth = new Date(year, month, 0).getDate();
 
-    calendarContainer.innerHTML = ""; // Clear previous calendar
+    calendarContainer.innerHTML = ''; // Clear previous calendar
 
     // Add the beginning days of the previous month
     for (let i = firstDay; i > 0; i--) {
-      const dayElement = document.createElement("div");
-      dayElement.classList.add("day", "diff-month");
+      const dayElement = document.createElement('div');
+      dayElement.classList.add('day', 'diff-month');
       dayElement.textContent = lastDatePrevMonth - i + 1;
       calendarContainer.appendChild(dayElement);
     }
     // Add the days of the current month
     for (let day = 1; day <= daysInMonth(month, year); day++) {
-      const dayElement = document.createElement("div");
+      const dayElement = document.createElement('div');
       // Adds specific month class
-      dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
+      dayElement.classList.add('day', monthClasses[parseInt(month, 10)]);
       dayElement.textContent = day;
       calendarContainer.appendChild(dayElement);
       // Check if the date is a holiday
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
           holiday.getDate() === currentDate.getDate(),
       );
       if (isHoliday) {
-        dayElement.classList.add("holiday");
+        dayElement.classList.add('holiday');
       }
       // Highlight the current day
       highlightCurrentDay(month, year);
@@ -117,27 +117,27 @@ document.addEventListener("DOMContentLoaded", function () {
           year: year,
         };
         // Set the date in localStorage for notes to access
-        localStorage.setItem("date", JSON.stringify(dateInfo));
+        localStorage.setItem('date', JSON.stringify(dateInfo));
         // Navigate to the notes page
-        window.location.href = escape("../Notes/index.html");
+        window.location.href = escape('../Notes/index.html');
       };
     }
     // Fill the week with days from the next month
     let num = 1;
     for (let i = lastDay + 1; i <= 6; i++) {
-      const dayElement = document.createElement("div");
-      dayElement.classList.add("day", "diff-month");
+      const dayElement = document.createElement('div');
+      dayElement.classList.add('day', 'diff-month');
       dayElement.textContent = num;
       calendarContainer.appendChild(dayElement);
       num++;
     }
   }
   document
-    .getElementById("prev-month")
-    .addEventListener("click", () => changeMonth(-1));
+    .getElementById('prev-month')
+    .addEventListener('click', () => changeMonth(-1));
   document
-    .getElementById("next-month")
-    .addEventListener("click", () => changeMonth(1));
+    .getElementById('next-month')
+    .addEventListener('click', () => changeMonth(1));
   /**
    * Changes the current month by a specified amount.
    * @param {number} change - The amount to change the month by.
@@ -164,10 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function highlightCurrentDay(month, year) {
     const today = new Date();
     if (month === today.getMonth() && year === today.getFullYear()) {
-      const days = document.getElementsByClassName("day");
+      const days = document.getElementsByClassName('day');
       for (const day of days) {
         if (parseInt(day.textContent, 10) === today.getDate()) {
-          day.classList.add("current-day");
+          day.classList.add('current-day');
         }
       }
     }

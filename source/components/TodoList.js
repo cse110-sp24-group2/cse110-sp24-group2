@@ -1,11 +1,11 @@
 class TodoList extends HTMLElement {
   constructor() {
     super();
-    const shadowRoot = this.attachShadow({ mode: "open" });
+    const shadowRoot = this.attachShadow({ mode: 'open' });
 
     //create a <ul> element
-    const container = document.createElement("div");
-    const styleElement = document.createElement("style");
+    const container = document.createElement('div');
+    const styleElement = document.createElement('style');
 
     styleElement.textContent = `
         .todo-list-container {
@@ -133,7 +133,7 @@ class TodoList extends HTMLElement {
         }
         `;
 
-    container.setAttribute("class", "todo-list-container");
+    container.setAttribute('class', 'todo-list-container');
 
     container.innerHTML = `
             <div class="todo-list"> 
@@ -150,12 +150,12 @@ class TodoList extends HTMLElement {
     shadowRoot.appendChild(styleElement);
     shadowRoot.appendChild(container);
 
-    const button = shadowRoot.querySelector("#add-todo");
-    const input = this.shadowRoot.querySelector("#todo-input");
-    const listContainer = shadowRoot.querySelector("#list-container");
+    const button = shadowRoot.querySelector('#add-todo');
+    const input = this.shadowRoot.querySelector('#todo-input');
+    const listContainer = shadowRoot.querySelector('#list-container');
 
-    button.addEventListener("click", () =>
-      this.addTodoListItem(input, listContainer)
+    button.addEventListener('click', () =>
+      this.addTodoListItem(input, listContainer),
     );
     this.renderNotes(listContainer);
   }
@@ -166,7 +166,7 @@ class TodoList extends HTMLElement {
    * @returns {Array} The notes objects from the local storage
    */
   getNotes() {
-    return JSON.parse(localStorage.getItem("todo-notes")) || [];
+    return JSON.parse(localStorage.getItem('todo-notes')) || [];
   }
 
   /**
@@ -176,30 +176,30 @@ class TodoList extends HTMLElement {
    */
   renderNotes(listContainer) {
     // Reset the todo-list container
-    listContainer.innerHTML = "";
+    listContainer.innerHTML = '';
     // Get the notes to render
     let notes = this.getNotes();
     notes.forEach((note) => {
       // Create the items necessary for each note
-      const li = document.createElement("li");
-      const checkbox = document.createElement("input");
-      const label = document.createElement("label");
-      const button = document.createElement("button");
+      const li = document.createElement('li');
+      const checkbox = document.createElement('input');
+      const label = document.createElement('label');
+      const button = document.createElement('button');
       // Set the proper attributes
-      button.innerText = "x";
-      button.className = "delete-task-btn";
-      checkbox.setAttribute("type", "checkbox");
-      checkbox.id = "" + note["id"];
-      checkbox.checked = note["complete"];
-      label.setAttribute("for", "" + note["id"]);
-      label.innerText = " " + note["input"];
+      button.innerText = 'x';
+      button.className = 'delete-task-btn';
+      checkbox.setAttribute('type', 'checkbox');
+      checkbox.id = '' + note['id'];
+      checkbox.checked = note['complete'];
+      label.setAttribute('for', '' + note['id']);
+      label.innerText = ' ' + note['input'];
       // Add the change event listener to the checkbox
-      checkbox.addEventListener("change", () =>
-        this.alterCompletion(note["id"])
+      checkbox.addEventListener('change', () =>
+        this.alterCompletion(note['id']),
       );
       // Add the click event listener to the delete button
-      button.addEventListener("click", () =>
-        this.deleteTodoListItem(note["id"], listContainer)
+      button.addEventListener('click', () =>
+        this.deleteTodoListItem(note['id'], listContainer),
       );
       // Package the items together and append it to the container
       li.appendChild(checkbox);
@@ -217,14 +217,14 @@ class TodoList extends HTMLElement {
    * @returns {void}
    */
   addTodoListItem(input, listContainer) {
-    if (input.value.trim() === "") return;
+    if (input.value.trim() === '') return;
 
     // Get the current notes from local storage
     let notes = this.getNotes();
     // Get the id that is needed for the new note
     let id = 1;
     if (notes.length > 0) {
-      id = notes[notes.length - 1]["id"] + 1;
+      id = notes[notes.length - 1]['id'] + 1;
     }
     // Create the new note object and add it to the notes array
     let noteObj = {
@@ -234,8 +234,8 @@ class TodoList extends HTMLElement {
     };
     notes.push(noteObj);
     // Save the notes to local storage
-    localStorage.setItem("todo-notes", JSON.stringify(notes));
-    input.value = "";
+    localStorage.setItem('todo-notes', JSON.stringify(notes));
+    input.value = '';
     // Re-render the list
     this.renderNotes(listContainer);
   }
@@ -252,7 +252,7 @@ class TodoList extends HTMLElement {
     // Filter out the note that needs to be deleted
     notes = notes.filter((note) => note.id !== id);
     // Save the notes to local storage
-    localStorage.setItem("todo-notes", JSON.stringify(notes));
+    localStorage.setItem('todo-notes', JSON.stringify(notes));
     // Re-render the list
     this.renderNotes(listContainer);
   }
@@ -267,12 +267,12 @@ class TodoList extends HTMLElement {
     let notes = this.getNotes();
     // Find the note that needs to be altered and switch the complete value
     notes.map((note) => {
-      if (note.id === id) note["complete"] = !note["complete"];
+      if (note.id === id) note['complete'] = !note['complete'];
     });
     // Save the notes to local storage
-    localStorage.setItem("todo-notes", JSON.stringify(notes));
+    localStorage.setItem('todo-notes', JSON.stringify(notes));
   }
 }
 
 // Define the new custom element
-customElements.define("todo-list-element", TodoList);
+customElements.define('todo-list-element', TodoList);

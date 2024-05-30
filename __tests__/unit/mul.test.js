@@ -1,4 +1,4 @@
-import { mul } from '../../source/scripts/arithmetic';
+const { mul } = require('../../source/scripts/arithmetic');
 
 test('multiplies 1 * 2 to equal 2', () => {
   expect(mul(1, 2)).toBe(2);

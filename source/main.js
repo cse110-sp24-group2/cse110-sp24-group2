@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow } from 'electron';
 function createWindow() {
   let win = new BrowserWindow({
     width: 800,
@@ -9,7 +9,7 @@ function createWindow() {
     },
   });
 
-  win.loadFile("calendar/index.html");
+  win.loadFile('calendar/index.html');
 }
 
 app.whenReady().then(createWindow);

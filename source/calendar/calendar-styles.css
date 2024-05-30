@@ -214,21 +214,21 @@ body {
   margin-bottom: 5px;
 }
 
-#entry-form input[type="text"],
-#entry-form input[type="submit"] {
+#entry-form input[type='text'],
+#entry-form input[type='submit'] {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-#entry-form input[type="submit"] {
+#entry-form input[type='submit'] {
   background-color: #c73485;
   color: white;
   cursor: pointer;
 }
 
-#entry-form input[type="submit"]:hover {
+#entry-form input[type='submit']:hover {
   background-color: #88cb8a;
 }
 
@@ -414,7 +414,7 @@ button.delete-button:hover {
   background: linear-gradient(135deg, violet, pink);
   color: #333 !important;
   font-weight: bold;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   padding: 10px 12px;
   border-radius: 10px;
   transition:
