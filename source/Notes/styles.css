@@ -1,21 +1,38 @@
+* {
+    font-family: Rubik , sans-serif;
+}
+
+.rubik-font {
+    font-family: Rubik, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
   background-color: rgb(255, 255, 255);
 }
+
+h1 {
+    color: #790258
+}
+
 .container {
     display: flex;
     width: 100%;
 }
 .markdown-container {
-    width: 100%;
+    width: 80%;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%);
 }
 #markdown {
     width: 100%;
     height: 500px;
-    border: 1px solid #ccc;
+    border: 1px solid #bcbcbc;
 }
 #markdownPreview {
     width: 100%;
@@ -23,46 +40,59 @@ body {
     border: 1px solid #ccc;
     overflow: auto; 
 }
+
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-}
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
+    background-color: #fcacd8;
 }
 
-/* Change background color of buttons on hover */
+.tab button {
+    background: #a10a7e;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: white;
+}
+  
 .tab button:hover {
-    background-color: #ddd;
+    background: #8b096c;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #ccc;
+    background-color: #650b4a;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 5px solid #fcacd8;
     border-top: none;
 }
-button {
+
+#saveButton, #deleteButton, #backButton {
+    margin-left: 20px;
     padding: 10px 20px;
     background-color: #a10a7e;
     color: white;
     border: none;
     cursor: pointer;
-  }
+    border-radius: 5px;
+}
+
+#deleteButton {
+    margin-left: 60%
+}
+
+#saveButton:hover, #deleteButton:hover, #backButton:hover {
+    background-color: #600544; 
+}
+
+#backButton {
+    float: right;
+}
+
 #dateDisplay{
     text-align: center;
 }
