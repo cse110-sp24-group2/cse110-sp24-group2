@@ -1,4 +1,5 @@
-import { monthNames, monthClasses } from '/monthValues.js';
+import { monthNames, monthClasses} from "../components/monthValues.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get the main components of the calendar and set date info
   const calendarContainer = document.getElementById("calendar");
@@ -7,6 +8,35 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentMonth = currentDate.getMonth();
   let currentYear = currentDate.getFullYear();
 
+  // const monthNames = [
+  //   "January",
+  //   "February",
+  //   "March",
+  //   "April",
+  //   "May",
+  //   "June",
+  //   "July",
+  //   "August",
+  //   "September",
+  //   "October",
+  //   "November",
+  //   "December",
+  // ];
+
+  // const monthClasses = [
+  //   "january",
+  //   "february",
+  //   "march",
+  //   "april",
+  //   "may",
+  //   "june",
+  //   "july",
+  //   "august",
+  //   "september",
+  //   "october",
+  //   "november",
+  //   "december",
+  // ];
   const holidays = [
     new Date(currentYear, 0, 1), // New Year's Day
     new Date(currentYear, 1, 14), // Valentine's Day
@@ -24,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateMonthYear() {
     monthLabel.textContent = `${monthNames[currentMonth]} ${currentYear}`;
     monthLabel.className = ""; // Clear previous class
-    monthLabel.classList.add(monthClasses.currentMonth); // Apply new class for font color
+    monthLabel.classList.add(monthClasses[currentMonth]); // Apply new class for font color
   }
 
   /**
