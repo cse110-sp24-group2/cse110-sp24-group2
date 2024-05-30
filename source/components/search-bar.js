@@ -150,5 +150,5 @@ class SearchBar extends HTMLElement {
     }
 }
 
-// Define the new custom element
+// Make custom component so user can create multiple copies 
 customElements.define('search-bar-element', SearchBar);
