@@ -1,4 +1,5 @@
-import {monthColors} from './calendar/shared.js';
+import {monthColors} from '../calendar/monthValues.js';   
+// const {monthColors} = require('../calendar/shared.js');
 class SearchBar extends HTMLElement {
     constructor() {
         super();
@@ -127,6 +128,15 @@ class SearchBar extends HTMLElement {
 
         };
 
+        /**
+         * 
+         * 
+         * @returns {Array} - Returns an array of labels that can be used for the autocomplete bar
+         */
+        const getLabels = () =>  {
+            return ['important', 'personal', 'project1', 'project2', 'project3'];
+        }
+
         // Event listener for clicks outside the dropdown
         document.addEventListener('click', function(event) {
             if (!container.contains(event.target)) {
@@ -138,7 +148,9 @@ class SearchBar extends HTMLElement {
         this.updateButtonColor();
     }
 
-        /**
+
+
+    /**
      * @function updateButtonColor
      * Updates the color of the search button based on the current month.
      * 

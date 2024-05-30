@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Calendar</title>
     <link rel="stylesheet" href="calendar-styles.css">
-    <link rel="stylesheet" href="../Notes/notes-todo-styles.css">
+    <link rel="stylesheet" href="../Notes/styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
     </style>
@@ -76,12 +76,13 @@
 
     <div>
       <todo-list-element></todo-list-element>
-      <script src="TodoList.js"></script>
+      <script src="../components/TodoList.js"></script>
     </div>
     </div>
   
   <!-- <script src="../Notes/notes-todo-script.js"></script> -->
-  <script src="calendar-script.js"></script>
-  <script src="search-bar.js"></script>
+  <script type="module" src="calendar-script.js"></script>
+  <script type="module" src="../components/search-bar.js"></script>
+  <noscript><em>Javascript required to run this page!</em></noscript>
 </body>
 </html>

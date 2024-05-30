@@ -1,4 +1,7 @@
-import { monthNames, monthClasses } from '/monthValues.js';
+import { monthNames, monthClasses } from './monthValues.js';
+
+// const { monthNames, monthClasses } = require('./monthValues.js');
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get the main components of the calendar and set date info
   const calendarContainer = document.getElementById("calendar");
@@ -161,3 +164,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateSearchButtonColor();
 });
+
