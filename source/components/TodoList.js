@@ -144,12 +144,12 @@ class TodoList extends HTMLElement {
             border-radius: 10px; 
             border: 2px solid #ffffff; 
         }
+        .scrollbar::-webkit-scrollbar-corner {
+          background: transparent; 
+        }
         .scrollbar::-webkit-scrollbar-track {
             background: #f0f0f0; 
             border-radius: 10px;
-        }
-        .scrollbar::-webkit-scrollbar-corner {
-            background: transparent; 
         }
           `;
 
