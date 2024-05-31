@@ -21,18 +21,28 @@ body {
 
 .main-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-right: 50px;
     flex-direction: row;
+    background-color: lightgray;
+    gap: 10px;
 }
 
 .calendar-container {
     flex: 3;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.calendar-container, .todo-list-container {
+    flex: 1 0 300px;
+    max-width: 600px;
 }
 
 /* MOBILE RESPONSIVENESS BREAKPOINT - SMALLER SCREEN SIZE */
-@media (max-width: 1024px) {
+@media (max-width: 1160px) {
     .main-container {
         flex-direction: column;
         align-items: center;
@@ -45,7 +55,7 @@ body {
 }
 
 /* DESKTOP RESPONSIVENESS BREAKPOINT */
-@media (min-width: 1024px) {
+@media (min-width: 1160px) {
     .main-container {
         flex-direction: row;
         align-items: flex-start;

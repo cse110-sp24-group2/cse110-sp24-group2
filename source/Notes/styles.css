@@ -8,6 +8,8 @@ body {
 .container {
     display: flex;
     width: 100%;
+    background-color: lightgray;
+    gap: 10px;
 }
 .markdown-container {
     width: 100%;
@@ -72,7 +74,8 @@ button {
 /* MOBILE RESPONSIVENESS BREAKPOINT - TABLET */
 @media (min-width: 426px) and (max-width: 1024px) {
     .container {
-        display: block;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 }
@@ -80,7 +83,8 @@ button {
 /* MOBILE RESPONSIVENESS BREAKPOINT - PHONE */
 @media (max-width: 426px) {
     .container {
-        display: block;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 
