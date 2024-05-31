@@ -1,0 +1,62 @@
+name: Package Electron
+
+on: 
+    # Run when pull requests are made to main branches
+    pull_request:
+        branches:
+            - electron-package-main
+permissions:
+    contents: write
+
+jobs: # the things being executed
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout PR
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: Linux Packaging
+        run: |
+          cd source
+          electron-packager . DevJournal --platform=linux --arch=x64
+          mv DevJournal-linux-x64 ../downloads/DevJournal-linux-x64
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git diff --quiet || (git add . && git commit -m "Linux Generated")
+          git push
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout PR
+        env: 
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: Windows Packaging
+        run: |
+          cd source
+          electron-packager . DevJournal --platform=win32 --arch=x64
+          mv DevJournal-win32-x64 ../downloads/DevJournal-win32-x64
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git diff --quiet || (git add . && git commit -m "Windows Generated")
+          git push
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout PR
+        env: 
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: MacOS Packaging
+        run: |
+          cd source
+          electron-packager . DevJournal --platform=darwin --arch=x64
+          mv DevJournal-darwin-x64 ../downloads/DevJournal-darwin-x64
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git diff --quiet || (git add . && git commit -m "MacOS Generated")
+          git push
