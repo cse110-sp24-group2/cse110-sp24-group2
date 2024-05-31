@@ -24,24 +24,36 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 50px;
+    flex-direction: row;
 }
 
 .calendar-container {
     flex: 3;
 }
 
-@media (width <= 768px) {
+@media (max-width: 1024px) {
     .main-container {
         flex-direction: column;
         align-items: center;
-    } 
+    }
+
+    .calendar-container {
+        width: 100%;
+        max-width: 768px;
+    }
 }
 
-@media (width >= 768px) {
+@media (min-width: 1024px) {
     .main-container {
         flex-direction: row;
         align-items: flex-start;
+        justify-content: center;
     } 
+
+    .calendar-container {
+        width: 100%;
+        max-width: 768px;
+    }
 }
 
 .calendar-header {

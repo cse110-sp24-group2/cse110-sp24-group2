@@ -69,3 +69,22 @@ button {
 .todo {
    text-align: center;
 }
+/* MOBILE RESPONSIVENESS BREAKPOINT - TABLET */
+@media (min-width: 426px) and (max-width: 1024px) {
+    .container {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* MOBILE RESPONSIVENESS BREAKPOINT - PHONE */
+@media (max-width: 426px) {
+    .container {
+        display: block;
+        width: 100%;
+    }
+
+    .todo {
+        width: 100%;
+    }
+}
