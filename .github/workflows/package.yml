@@ -23,7 +23,7 @@ jobs: # the things being executed
           npm install
           npm run package-linux
           mkdir -p ../downloads/DevJournal-linux-x64
-          mv ./DevJournal-linux-x64 ../downloads/DevJournal-linux-x64
+          mv ./DevJournal-linux-x64/* ../downloads/DevJournal-linux-x64
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add . && git commit -m "Linux Generated"
@@ -42,7 +42,7 @@ jobs: # the things being executed
           npm install
           npm run package-win
           mkdir -p ../downloads/DevJournal-win32-x64
-          mv ./DevJournal-win32-x64 ../downloads/DevJournal-win32-x64
+          mv ./DevJournal-win32-x64/* ../downloads/DevJournal-win32-x64
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add . && git commit -m "Windows Generated"
@@ -61,7 +61,7 @@ jobs: # the things being executed
           npm install
           npm run package-mac
           mkdir -p ../downloads/DevJournal-darwin-x64
-          mv ./DevJournal-darwin-x64 ../downloads/DevJournal-darwin-x64
+          mv ./DevJournal-darwin-x64/* ../downloads/DevJournal-darwin-x64
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add . && git commit -m "MacOS Generated"
