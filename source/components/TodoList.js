@@ -158,6 +158,14 @@ class TodoList extends HTMLElement {
       this.addTodoListItem(input, listContainer)
     );
     this.renderNotes(listContainer);
+
+    // Add event listener for keyboard navigation
+    button.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        this.addTodoListItem(input, listContainer);
+        e.preventDefault();
+      }
+    });
   }
 
   /**
@@ -197,10 +205,22 @@ class TodoList extends HTMLElement {
       checkbox.addEventListener("change", () =>
         this.alterCompletion(note["id"])
       );
+      // Add the keydown event listener to the checkbox
+      checkbox.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          checkbox.click();
+        }
+      });
       // Add the click event listener to the delete button
       button.addEventListener("click", () =>
         this.deleteTodoListItem(note["id"], listContainer)
       );
+      // Add the keydown event listener to the delete button
+      button.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          this.deleteTodoListItem(note["id"], listContainer);
+        }
+      });
       // Package the items together and append it to the container
       li.appendChild(checkbox);
       li.appendChild(label);

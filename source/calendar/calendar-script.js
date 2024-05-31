@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const dayElement = document.createElement("div");
       dayElement.classList.add("day", "diff-month");
       dayElement.textContent = lastDatePrevMonth - i + 1;
+      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
     }
     // Add the days of the current month
@@ -95,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Adds specific month class
       dayElement.classList.add("day", monthClasses[parseInt(month,10)]); 
       dayElement.textContent = day;
+      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
       // Check if the date is a holiday
       const currentDate = new Date(year, month, day);
@@ -121,13 +123,32 @@ document.addEventListener("DOMContentLoaded", function () {
         // Navigate to the notes page
         window.location.href = escape("../Notes/index.html");
       };
+
+      // Add event listener for keyboard navigation
+      dayElement.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          // Create object of date info
+          const dateInfo = {
+            day: day,
+            month: month,
+            year: year,
+          };
+          // Set the date in localStorage for notes to access
+          localStorage.setItem("date", JSON.stringify(dateInfo));
+          // Navigate to the notes page
+          window.location.href = escape("../Notes/index.html");
+          e.preventDefault();
+        }
+      });
     }
+    
     // Fill the week with days from the next month
     let num = 1;
     for (let i = lastDay + 1; i <= 6; i++) {
       const dayElement = document.createElement("div");
       dayElement.classList.add("day", "diff-month");
       dayElement.textContent = num;
+      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
       num++;
     }
