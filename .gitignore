@@ -1,4 +1,4 @@
 node_modules
 source/Data
-source/DevJournal-darwin-x64
-source/DevJournal-win32-x64
+DevJournal-darwin-x64
+DevJournal-win32-x64
