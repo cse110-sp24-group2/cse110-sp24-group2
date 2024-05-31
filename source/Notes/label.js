@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const dateInfo = JSON.parse(localStorage.getItem("date"));
       console.log("Saving label:", { name, color });
       saveLabel(dateInfo.day, dateInfo.month, dateInfo.year, { name, color });
+      saveDatetoLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
   });
 
   // Render labels on load
@@ -70,6 +71,38 @@ function saveLabel(day, month, year, label) {
                 }
             });
         }
+    });
+}
+/**
+ * Saves a label with the associated date to a JSON file.
+ *
+ * @param {number} day - The day of the date.
+ * @param {number} month - The month of the date.
+ * @param {number} year - The year of the date.
+ * @param {string} label - The label to be saved.
+ */
+function saveDatetoLabel(day, month, year, label) {
+    const dataDir = path.join(__dirname, '../Data');
+    const labelFilePath = path.join(dataDir, `DatetoLabel.json`);
+
+    fs.readFile(labelFilePath, 'utf-8', (err, data) => {
+        let labels = {};
+        if (!err && data) {
+            labels = JSON.parse(data);
+        }
+        const date = { day, month, year };
+        if (labels[label]) {
+            labels[label].push(date);
+        } else {
+            labels[label] = [date];
+        }
+        fs.writeFile(labelFilePath, JSON.stringify(labels, null, 2), 'utf-8', (err) => {
+            if (err) {
+                console.error('Failed to save DatetoLabel file', err);
+            } else {
+                console.log(`DatetoLabel file saved for label ${label}`);
+            }
+        });
     });
 }
 
