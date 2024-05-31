@@ -26,7 +26,7 @@ jobs: # the things being executed
           mv ./DevJournal-linux-x64 ../downloads/DevJournal-linux-x64
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git diff --quiet || (git add . && git commit -m "Linux Generated")
+          git add . && git commit -m "Linux Generated"
           git push
   windows:
     runs-on: windows-latest
@@ -45,7 +45,7 @@ jobs: # the things being executed
           mv ./DevJournal-win32-x64 ../downloads/DevJournal-win32-x64
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git diff --quiet || (git add . && git commit -m "Windows Generated")
+          git add . && git commit -m "Windows Generated"
           git push
   macos:
     runs-on: macos-latest
@@ -64,5 +64,5 @@ jobs: # the things being executed
           mv ./DevJournal-darwin-x64 ../downloads/DevJournal-darwin-x64
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git diff --quiet || (git add . && git commit -m "MacOS Generated")
+          git add . && git commit -m "MacOS Generated"
           git push
