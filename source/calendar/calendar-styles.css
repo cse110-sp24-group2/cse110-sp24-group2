@@ -31,6 +31,7 @@ body {
     flex: 3;
 }
 
+/* MOBILE RESPONSIVENESS BREAKPOINT - SMALLER SCREEN SIZE */
 @media (max-width: 1024px) {
     .main-container {
         flex-direction: column;
@@ -43,6 +44,7 @@ body {
     }
 }
 
+/* DESKTOP RESPONSIVENESS BREAKPOINT */
 @media (min-width: 1024px) {
     .main-container {
         flex-direction: row;
