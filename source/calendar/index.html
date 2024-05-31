@@ -14,6 +14,11 @@
       <button id="prev-month"><i class="arrow left"></i>Prev</button>
       <h1 id="current-month"></h1>
       <button id="next-month">Next<i class="arrow right"></i></button>
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search notes...">
+        <button id="search-button">Search</button>
+    </div>
+    <div class="suggestions-content" id="suggestions"></div>
     </div>
     <div class="main-container">
       <div class="calendar-container">
@@ -79,8 +84,7 @@
         <script src="../components/TodoList.js"></script>
       </div>
     </div>
-
-    <!-- <script src="../Notes/notes-todo-script.js"></script> -->
     <script src="calendar-script.js"></script>
+    <script src="search-bar.js"></script>
   </body>
 </html>

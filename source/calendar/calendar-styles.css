@@ -402,3 +402,53 @@ button.delete-button:hover {
     color:white !important;
     transform: scale(1.05);
   }
+  .search-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+#search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--month-color);
+    color: white;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: red;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#suggestions {
+    position: absolute;
+    margin-top: auto;
+    bottom: auto;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion {
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: black; 
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0;
+}
