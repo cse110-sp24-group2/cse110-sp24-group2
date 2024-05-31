@@ -74,30 +74,30 @@
 </code></pre>
 <p>If you're on Mac, make sure your package.json file looks like this:</p>
 <pre class="prettyprint source lang-json"><code>{
-    &quot;name&quot;: &quot;Dev Journal&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
-    &quot;main&quot;: &quot;main.js&quot;,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;electron .&quot;,
-        &quot;package&quot;: &quot;electron-packager . DevJournal --platform=darwin --arch=x64&quot;
-    },
-    &quot;keywords&quot;: [],
-    &quot;author&quot;: &quot;&quot;,
-    &quot;license&quot;: &quot;ISC&quot;,
-    &quot;dependencies&quot;: {
-        &quot;electron&quot;: &quot;^11.5.0&quot;
-    },
-    &quot;devDependencies&quot;: {
-        &quot;electron-packager&quot;: &quot;^15.5.2&quot;
-    }
+  &quot;name&quot;: &quot;Dev Journal&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
+  &quot;main&quot;: &quot;main.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;electron .&quot;,
+    &quot;package&quot;: &quot;electron-packager . DevJournal --platform=darwin --arch=x64&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;electron&quot;: &quot;^11.5.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;electron-packager&quot;: &quot;^15.5.2&quot;
+  }
 }
 </code></pre>
-<p>Install the necessary dependencies:</p>
+<h3>Install the necessary dependencies:</h3>
 <pre class="prettyprint source lang-bash"><code>npm install --save-dev electron-packager
 npm run package
 </code></pre>
-<p>Run the app:</p>
+<h3>Run the app:</h3>
 <pre class="prettyprint source lang-bash"><code>npm start
 </code></pre>
 <h2>Linting</h2>
