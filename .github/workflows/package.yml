@@ -20,6 +20,7 @@ jobs: # the things being executed
       - name: Linux Packaging
         run: |
           cd source
+          npm install
           electron-packager . DevJournal --platform=linux --arch=x64
           mv DevJournal-linux-x64 ../downloads/DevJournal-linux-x64
           git config user.name github-actions
@@ -37,6 +38,7 @@ jobs: # the things being executed
       - name: Windows Packaging
         run: |
           cd source
+          npm install
           electron-packager . DevJournal --platform=win32 --arch=x64
           mv DevJournal-win32-x64 ../downloads/DevJournal-win32-x64
           git config user.name github-actions
@@ -54,6 +56,7 @@ jobs: # the things being executed
       - name: MacOS Packaging
         run: |
           cd source
+          npm install
           electron-packager . DevJournal --platform=darwin --arch=x64
           mv DevJournal-darwin-x64 ../downloads/DevJournal-darwin-x64
           git config user.name github-actions
