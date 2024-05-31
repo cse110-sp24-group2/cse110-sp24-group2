@@ -1,15 +1,4 @@
 /**
- * Checks to make sure Data directory exists
- */
-fs.mkdir(dataDir, { recursive: true }, (err) => {
-  if (err) {
-      console.error('Failed to create directory', err);
-  } else {
-      console.log('Data directory created');
-  }
-});
-
-/**
  * CustomLabel is a custom HTML element that creates a stylized label.
 * @extends HTMLElement
 */
