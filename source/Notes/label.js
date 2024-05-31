@@ -1,4 +1,37 @@
 /**
+ * Event listener for the 'DOMContentLoaded' event on the document
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  // Create a new label when button is clicked
+  const addLabelButton = document.getElementById("add-label-button");
+  
+  addLabelButton.addEventListener("click", () => {
+      console.log("Add Label button clicked");
+      let name = document.getElementById("label-name").value;
+      let color = document.getElementById("label-color").value;
+      let newLabel = document.createElement("div");
+      newLabel.classList.add("custom-label");
+      newLabel.innerHTML = `<button style="background-color: ${color || "#F0F0F0"}">${name || "New Label"}</button>`;
+      
+      newLabel.querySelector("button").addEventListener("dblclick", () => {
+          newLabel.remove();
+      });
+      
+      document.getElementById("labels-container").appendChild(newLabel);
+
+      // Save the label to the JSON file
+      const dateInfo = JSON.parse(localStorage.getItem("date"));
+      console.log("Saving label:", { name, color });
+      saveLabel(dateInfo.day, dateInfo.month, dateInfo.year, { name, color });
+  });
+
+  // Render labels on load
+  const dateInfo = JSON.parse(localStorage.getItem("date"));
+  console.log("Rendering labels for:", dateInfo);
+  renderLabels(dateInfo.day, dateInfo.month, dateInfo.year);
+});
+
+/**
  * Saves a label to its corresponding subdirectories
  */
 function saveLabel(day, month, year, label) {
@@ -75,36 +108,3 @@ function renderLabels(day, month, year) {
         }
     });
 }
-
-/**
- * Event listener for the 'DOMContentLoaded' event on the document
- */
-document.addEventListener('DOMContentLoaded', function() {
-    // Create a new label when button is clicked
-    const addLabelButton = document.getElementById("add-label-button");
-    
-    addLabelButton.addEventListener("click", () => {
-        console.log("Add Label button clicked");
-        let name = document.getElementById("label-name").value;
-        let color = document.getElementById("label-color").value;
-        let newLabel = document.createElement("div");
-        newLabel.classList.add("custom-label");
-        newLabel.innerHTML = `<button style="background-color: ${color || "#F0F0F0"}">${name || "New Label"}</button>`;
-        
-        newLabel.querySelector("button").addEventListener("dblclick", () => {
-            newLabel.remove();
-        });
-        
-        document.getElementById("labels-container").appendChild(newLabel);
-
-        // Save the label to the JSON file
-        const dateInfo = JSON.parse(localStorage.getItem("date"));
-        console.log("Saving label:", { name, color });
-        saveLabel(dateInfo.day, dateInfo.month, dateInfo.year, { name, color });
-    });
-
-    // Render labels on load
-    const dateInfo = JSON.parse(localStorage.getItem("date"));
-    console.log("Rendering labels for:", dateInfo);
-    renderLabels(dateInfo.day, dateInfo.month, dateInfo.year);
-});
