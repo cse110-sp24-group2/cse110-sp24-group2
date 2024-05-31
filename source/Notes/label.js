@@ -9,6 +9,20 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Add Label button clicked");
         let name = document.getElementById("label-name").value;
         let color = document.getElementById("label-color").value;
+
+        if(!name) {
+            alert("No input entered");
+            return;
+        }
+
+        const dateInfo = JSON.parse(localStorage.getItem("date"));
+        
+        // Check if the label already exists
+        if(labelExists(dateInfo.day, dateInfo.month, dateInfo.year, name)) {
+            alert("Label already exists");
+            return;
+        }
+
         let newLabel = document.createElement("div");
         newLabel.classList.add("custom-label");
         newLabel.innerHTML = `<button style="background-color: ${color || "#F0F0F0"}">${name || "New Label"}</button>`;
@@ -16,18 +30,39 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("labels-container").appendChild(newLabel);
   
         // Save the label to the JSON file
-        const dateInfo = JSON.parse(localStorage.getItem("date"));
         console.log("Saving label:", { name, color });
         saveLabel(dateInfo.day, dateInfo.month, dateInfo.year, { name, color });
         saveDatetoLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
     });
   
     // Render labels on load
-    const dateInfo = JSON.parse(localStorage.getItem("date"));
     console.log("Rendering labels for:", dateInfo);
     renderLabels(dateInfo.day, dateInfo.month, dateInfo.year);
 });
 
+/**
+ * Checks if a label exists for a given day
+ */
+function labelExists(day, month, year, name) {
+    const dataDir = path.join(__dirname, '../Data');
+    const yearDir = path.join(dataDir, year.toString());
+    const monthDir = path.join(yearDir, month.toString());
+    const labelFilePath = path.join(monthDir, 'labels.json');
+
+    try {
+        const data = fs.readFileSync(labelFilePath, 'utf-8');
+        const labels = JSON.parse(data);
+        const dayLabels = labels.find(l => l.day === day);
+        if (dayLabels) {
+            return dayLabels.labels.some(label => label.name === name);
+        }
+    } catch (err) {
+        if (err.code !== 'ENOENT') {
+            console.error('Failed to read labels file:', err);
+        }
+    }
+    return false;
+}
 /**
  * Saves a label to its corresponding subdirectories
  */
