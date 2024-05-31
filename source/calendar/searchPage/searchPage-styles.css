@@ -1,0 +1,33 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#search-bar {
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#search-button {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.labels-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    margin: 5px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+}
