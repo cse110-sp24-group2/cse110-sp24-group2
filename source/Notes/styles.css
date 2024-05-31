@@ -72,3 +72,8 @@ button {
 #backToCalendar {
     float: right;
 }
+
+button {
+    border-radius: 8px;
+    margin: 5px;
+}
