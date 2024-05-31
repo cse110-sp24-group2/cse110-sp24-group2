@@ -30,7 +30,6 @@ jobs: # the things being executed
           git push
   windows:
     runs-on: windows-latest
-    needs: linux
     steps:
       - uses: actions/checkout@v4
       - name: Checkout PR
@@ -50,7 +49,6 @@ jobs: # the things being executed
           git push
   macos:
     runs-on: macos-latest
-    needs: windows
     steps:
       - uses: actions/checkout@v4
       - name: Checkout PR
