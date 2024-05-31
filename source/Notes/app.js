@@ -15,6 +15,7 @@ fs.mkdir(dataDir, { recursive: true }, (err) => {
         console.log('Data directory created');
     }
 });
+
 /**
  * Event listener for the 'DOMContentLoaded' event on the document
  */
@@ -34,11 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display the date
     document.getElementById('dateDisplay').textContent = formattedDate;
-    var markdownTextarea = document.getElementById('markdown');
+    let markdownTextarea = document.getElementById('markdown');
     markdownTextarea.addEventListener('input', function() {
-        var markdown = markdownTextarea.value;
-        var html = marked(markdown);
-        document.getElementById('markdownPreview').innerHTML = html;
+        syncMarkdownPreview();
     });
 
     //Setup rest of paths to subdirectories
@@ -81,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('deleteButton').addEventListener('click', function() {
         deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
         markdownTextarea.value = '';
+        syncMarkdownPreview();
     });
 
     // Render markdown entry on load
@@ -132,6 +132,19 @@ function saveMarkdownEntry(day, month, year, markdown) {
         }
     });
 }
+
+/**
+ * @function syncMarkdownPreview
+ * 
+ * Updates the markdown preview window with the contents of the markdown editor area.
+*/
+function syncMarkdownPreview() {
+    let markdownTextarea = document.getElementById('markdown');
+    let markdown = markdownTextarea.value;
+    let html = marked(markdown);
+    document.getElementById('markdownPreview').innerHTML = html;
+}
+
 /**
  * Renders Markdown notes for the current day into the notes window.
 */
@@ -151,6 +164,7 @@ function renderMarkdownEntry(day, month, year) {
         } else {
             document.getElementById('markdown').value = data;
             document.getElementById('markdownPreview').innerHTML = marked(data);
+            
         }
     });
 }
