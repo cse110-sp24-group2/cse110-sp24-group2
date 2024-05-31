@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 import { monthColors} from "../components/monthValues";
-
-=======
-import {monthColors} from '../calendar/monthValues.js';   
-// const {monthColors} = require('../calendar/shared.js');
->>>>>>> 670948b1d911f9e7d43fadc845cec7be7f09b9e7
 class SearchBar extends HTMLElement {
     constructor() {
         super();
@@ -152,15 +146,6 @@ class SearchBar extends HTMLElement {
         // Set the button color based on the current month
         this.updateButtonColor();
     }
-
-<<<<<<< HEAD
-    
-    // I tried matching the color of the search button with the color of the current month but could not get it to work.
-    // I have set the default color of the search button as red for now but it can be changed from search button style code above.
-=======
-
-
->>>>>>> 670948b1d911f9e7d43fadc845cec7be7f09b9e7
     /**
      * @function updateButtonColor
      * Updates the color of the search button based on the current month.
