@@ -130,6 +130,7 @@ class TodoList extends HTMLElement {
             border: none;
             cursor: pointer;
             float: right;
+            border-radius: 5px;
         }
         `;
 
