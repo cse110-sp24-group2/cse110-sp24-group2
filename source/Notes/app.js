@@ -3,7 +3,6 @@
  */
 const fs = require("fs");
 const path = require("path");
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 const dataDir = path.join(__dirname, "../Data");
 
 /**
@@ -16,7 +15,6 @@ fs.mkdir(dataDir, { recursive: true }, (err) => {
     console.log("Data directory created");
   }
 });
-
 /**
  * Event listener for the 'DOMContentLoaded' event on the document
  */
@@ -28,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   dateInfo = JSON.parse(dateInfo);
 
   // Create an array of month names
-  var monthNames = [
+  let monthNames = [
     "January",
     "February",
     "March",
@@ -44,11 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // Format the date
-  var formattedDate =
+  let formattedDate =
     monthNames[dateInfo.month] + " " + dateInfo.day + " " + dateInfo.year;
 
   // Display the date
   document.getElementById("dateDisplay").textContent = formattedDate;
+
+  // Reflect month as a class in elements for color application
+  const coloredElements = document.querySelectorAll(
+    "button, h1, div.tab, div.tabcontent"
+  );
+  let month = monthNames[dateInfo.month].toLowerCase();
+  coloredElements.forEach((element) => {
+    element.classList.add(month);
+  });
+
   let markdownTextarea = document.getElementById("markdown");
   markdownTextarea.addEventListener("input", function () {
     syncMarkdownPreview();
@@ -95,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
       markdownText
     );
   });
-  //delete button functionality
+  // Delete button functionality
   document
     .getElementById("deleteButton")
     .addEventListener("click", function () {
