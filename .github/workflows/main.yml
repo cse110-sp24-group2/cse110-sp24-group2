@@ -19,7 +19,7 @@ jobs: # the things being executed
       - name: Run Unit Tests
         run: npm run test -- ./__tests__/unit/
       - name: Build electron app
-        run: npm run package-mac
+        run: npm run package-win
       - name: Run e2e Tests
         run: npm run wdio
   doc_gen:
