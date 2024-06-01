@@ -21,14 +21,25 @@ h1 {
 
 .container {
     display: flex;
+    flex-direction: row;
     width: 100%;
 }
 .markdown-container {
+    display: flex;
+    flex-direction: column;
     width: 80%;
     padding: 20px;
     margin: 20px;
     box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%);
 }
+
+.buttonRow{
+    display: flex;
+    padding-top: 0.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #markdown {
     width: 100%;
     height: 500px;
@@ -72,17 +83,13 @@ h1 {
 }
 
 #saveButton, #deleteButton, #backButton {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     padding: 10px 20px;
     background-color: #a10a7e;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-#deleteButton {
-    margin-left: 60%
 }
 
 #saveButton:hover, #deleteButton:hover, #backButton:hover {
