@@ -73,7 +73,7 @@ function displayDates(label, labelToDate) {
             dateButton.addEventListener('click', function () {
                 localStorage.setItem('date', JSON.stringify(dateObj));
                 //Navigate to the Notes Page
-                window.location.href = '../Notes/index.html';
+                window.location.href = escape('../Notes/index.html');
             });
 
 
@@ -118,5 +118,5 @@ function updateButtonColor() {
 }
 // navigate back to calendar
 document.getElementById('backToCalendar').addEventListener('click', function() {
-    window.location.href = '../calendar/index.html';
+    window.location.href = escape('../calendar/index.html');
 });

@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('backToCalendar').addEventListener('click', function() {
         const markdownText = markdownTextarea.value;
         saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
-        window.location.href = '../calendar/index.html';
+        window.location.href = escape('../calendar/index.html');
     });
 
     // Render markdown entry on load
