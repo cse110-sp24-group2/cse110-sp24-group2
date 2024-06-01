@@ -18,6 +18,8 @@ body {
 .container {
     display: flex;
     width: 100%;
+    background-color: lightgray;
+    gap: 10px;
 }
 .markdown-container {
     width: 80%;
@@ -61,6 +63,10 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+button:first-child {
+    float: left;
     border-radius: 5px;
 }
 
@@ -164,3 +170,32 @@ button.december:hover { background-color: #435565;}
 h1.december {background-color: white; color: #53697d;}  
 
 #markdownPreview { background-color: white; }  
+
+.notes-buttons {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* MOBILE RESPONSIVENESS BREAKPOINT */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .todo {
+        width: 100%;
+    }
+
+    .notes-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    todo-list-element {
+        padding: 15px;
+    }
+}
