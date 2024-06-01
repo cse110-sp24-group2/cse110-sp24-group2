@@ -158,14 +158,35 @@
             border: none;
             cursor: pointer;
             float: right;
+            border-radius: 5px;
         }
-        `;
+        .scrollbar {
+          overflow: scroll;
+          height: 500px;
+        }
+      
+        .scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-thumb {
+            background-color: #6b6b6b; 
+            border-radius: 10px; 
+            border: 2px solid #ffffff; 
+        }
+        .scrollbar::-webkit-scrollbar-track {
+            background: #f0f0f0; 
+            border-radius: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-corner {
+            background: transparent; 
+        }
+          `;
 
     container.setAttribute("class", "todo-list-container");
 
     container.innerHTML = `
             &lt;div class="todo-list"> 
-                &lt;h2>To-Do Lists &lt;img src="/source/components/images/to-do-icon.png"> &lt;/h2>
+                &lt;h2>To-Do Lists &lt;img src="../components/images/to-do-icon.png"> &lt;/h2>
                 &lt;div class="row">
                     &lt;input type="text" id="todo-input" placeholder="Enter a new task...">
                     &lt;button id="add-todo">ADD&lt;/button>
