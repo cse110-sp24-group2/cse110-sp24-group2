@@ -17,7 +17,9 @@ jobs: # the things being executed
       - name: Install Dependencies
         run: npm install
       - name: Run Unit Tests
-        run: npm test
+        run: npm run test -- ./__tests__/unit/
+      - name: Run e2e Tests
+        run: npm run wdio
   doc_gen:
     runs-on: ubuntu-latest
     needs: tests
