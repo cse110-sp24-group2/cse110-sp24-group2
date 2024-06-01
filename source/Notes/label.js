@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Get the date information
         const dateInfo = JSON.parse(localStorage.getItem("date"));
-        //user must enter a name for the label
+        
+        // User must enter a name for the label
         if(!name) {
             alert("No input entered");
             return;
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             newLabel.innerHTML = `<button style="background-color: ${color || "#F0F0F0"}">${name || "New Label"}</button>`;
     
             document.getElementById("labels-container").appendChild(newLabel);
-            //add event listener for deleting the label
+            // Add event listener for deleting the label
             newLabel.querySelector("button").addEventListener("dblclick", () => {
                 console.log("Deleting label:", name);
                 newLabel.remove();
