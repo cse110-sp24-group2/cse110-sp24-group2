@@ -55,7 +55,7 @@ const config = {
         // see https://webdriver.io/docs/desktop-testing/electron/configuration/#service-options
         'wdio:electronServiceOptions': {
             // custom path to app binary
-            appBinaryPath: './DevJournal-win32-x64/DevJournal.exe',
+            appBinaryPath: './DevJournal-darwin-x64/DevJournal.exe',
             // custom application args
             appArgs: []
         }
