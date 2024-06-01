@@ -84,3 +84,9 @@ body {
 #results {
     margin-top: 20px;
 }
+#backToCalendar {
+    float: right;
+    border-radius: 8px;
+    margin: 5px;
+}
+
