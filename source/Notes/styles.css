@@ -71,17 +71,13 @@ button {
 .todo {
    text-align: center;
 }
-/* MOBILE RESPONSIVENESS BREAKPOINT - TABLET */
-@media (min-width: 426px) and (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+
+.notes-buttons {
+    padding: 10px;
 }
 
-/* MOBILE RESPONSIVENESS BREAKPOINT - PHONE */
-@media (max-width: 426px) {
+/* MOBILE RESPONSIVENESS BREAKPOINT */
+@media (max-width: 1024px) {
     .container {
         flex-direction: column;
         align-items: center;
@@ -90,5 +86,12 @@ button {
 
     .todo {
         width: 100%;
+    }
+
+    .notes-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 }
