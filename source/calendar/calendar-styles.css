@@ -41,7 +41,7 @@ body {
     max-width: 600px;
 }
 
-/* MOBILE RESPONSIVENESS BREAKPOINT - SMALLER SCREEN SIZE */
+/* Vertical layout for calendar and todo list if screen size is too small for readability */
 @media (max-width: 1160px) {
     .main-container {
         flex-direction: column;

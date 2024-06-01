@@ -64,7 +64,12 @@ button {
     color: white;
     border: none;
     cursor: pointer;
-  }
+}
+
+button:first-child {
+    float: left;
+}
+
 #dateDisplay{
     text-align: center;
 }
@@ -74,6 +79,7 @@ button {
 
 .notes-buttons {
     padding: 10px;
+    gap: 10px;
 }
 
 /* MOBILE RESPONSIVENESS BREAKPOINT */
@@ -92,6 +98,9 @@ button {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+    }
+
+    todo-list-element {
+        padding: 15px;
     }
 }
