@@ -34,6 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display the date
     document.getElementById('dateDisplay').textContent = formattedDate;
+
+    // Reflect month as a class in elements for color application
+    const coloredElements = document.querySelectorAll('button, h1, div.tab, div.tabcontent');
+    let month = monthNames[dateInfo.month].toLowerCase();
+    coloredElements.forEach(element => {
+        element.classList.add(month);
+    });
+
     var markdownTextarea = document.getElementById('markdown');
     markdownTextarea.addEventListener('input', function() {
         var markdown = markdownTextarea.value;
@@ -77,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const markdownText = markdownTextarea.value;
         saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
     });
-    //delete button functionality
+    // Delete button functionality
     document.getElementById('deleteButton').addEventListener('click', function() {
         deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
         markdownTextarea.value = '';
