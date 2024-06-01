@@ -53,53 +53,83 @@
 </code></pre>
 <p>If you're on Windows, make sure your package.json file looks like this:</p>
 <pre class="prettyprint source lang-json"><code>{
-    &quot;name&quot;: &quot;Dev Journal&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
-    &quot;main&quot;: &quot;main.js&quot;,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;electron .&quot;,
-        &quot;package&quot;: &quot;electron-packager . DevJournal --platform=win32 --arch=x64&quot;
-    },
-    &quot;keywords&quot;: [],
-    &quot;author&quot;: &quot;&quot;,
-    &quot;license&quot;: &quot;ISC&quot;,
-    &quot;dependencies&quot;: {
-        &quot;electron&quot;: &quot;^11.5.0&quot;
-    },
-    &quot;devDependencies&quot;: {
-        &quot;electron-packager&quot;: &quot;^15.5.2&quot;
-    }
+  &quot;name&quot;: &quot;Dev Journal&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
+  &quot;main&quot;: &quot;main.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;electron .&quot;,
+    &quot;package&quot;: &quot;electron-packager . DevJournal --platform=win32 --arch=x64&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;electron&quot;: &quot;^11.5.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;electron-packager&quot;: &quot;^15.5.2&quot;
+  }
 }
 </code></pre>
 <p>If you're on Mac, make sure your package.json file looks like this:</p>
 <pre class="prettyprint source lang-json"><code>{
-    &quot;name&quot;: &quot;Dev Journal&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
-    &quot;main&quot;: &quot;main.js&quot;,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;electron .&quot;,
-        &quot;package&quot;: &quot;electron-packager . DevJournal --platform=darwin --arch=x64&quot;
-    },
-    &quot;keywords&quot;: [],
-    &quot;author&quot;: &quot;&quot;,
-    &quot;license&quot;: &quot;ISC&quot;,
-    &quot;dependencies&quot;: {
-        &quot;electron&quot;: &quot;^11.5.0&quot;
-    },
-    &quot;devDependencies&quot;: {
-        &quot;electron-packager&quot;: &quot;^15.5.2&quot;
-    }
+  &quot;name&quot;: &quot;Dev Journal&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
+  &quot;main&quot;: &quot;main.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;electron .&quot;,
+    &quot;package&quot;: &quot;electron-packager . DevJournal --platform=darwin --arch=x64&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;electron&quot;: &quot;^11.5.0&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;electron-packager&quot;: &quot;^15.5.2&quot;
+  }
 }
 </code></pre>
-<p>Install the necessary dependencies:</p>
+<h3>Install the necessary dependencies:</h3>
 <pre class="prettyprint source lang-bash"><code>npm install --save-dev electron-packager
 npm run package
 </code></pre>
-<p>Run the app:</p>
+<h3>Run the app:</h3>
 <pre class="prettyprint source lang-bash"><code>npm start
-</code></pre></article>
+</code></pre>
+<h2>Linting</h2>
+<h3>TLDR:</h3>
+<ul>
+<li><code>npx prettier . --w</code> to run the linter and overwrite files (for formatting)</li>
+<li><code>npx prettier . --check</code> to run the linter but not overwrite files</li>
+</ul>
+<p>Make sure <code>npx prettier . --check</code> does not show any unformatted files before pushing.</p>
+<h3>If you use other linters in other projects...</h3>
+<ul>
+<li>Go to the extensions tab and click &quot;disable in workspace&quot; for all non-prettier extensions</li>
+<li><code>CTRL-SHIFT-P</code> and type &quot;Preferences: Open Workspace Settings (JSON)&quot;. Click it, it should make / take you to <code>settings.json</code></li>
+<li>Paste the following inside:</li>
+</ul>
+<pre class="prettyprint source"><code>{
+  &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;,
+  &quot;[javascript]&quot;: {
+    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
+  }
+}
+</code></pre>
+<h3>Documentation:</h3>
+<p><a href="https://prettier.io/docs/en/cli.html">Prettier Docs</a></p>
+<h3>Archive:</h3>
+<ul>
+<li><code>npx eslint</code> to check files that violate eslint (code quality / potential bugs)
+<ul>
+<li>Need to run <code>npx eslint</code> inside the source directory. Use <code>cd source</code> if necesasry</li>
+</ul>
+</li>
+</ul></article>
     </section>
 
 
