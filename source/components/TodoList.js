@@ -130,6 +130,7 @@ class TodoList extends HTMLElement {
             border: none;
             cursor: pointer;
             float: right;
+            border-radius: 5px;
         }
         .scrollbar {
           overflow: scroll;
@@ -156,8 +157,8 @@ class TodoList extends HTMLElement {
     container.setAttribute("class", "todo-list-container");
 
     container.innerHTML = `
-            <div class="todo-list scrollbar"> 
-                <h2>To-Do Lists <img src="/source/components/images/to-do-icon.png"> </h2>
+            <div class="todo-list"> 
+                <h2>To-Do Lists <img src="../components/images/to-do-icon.png"> </h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
                     <button id="add-todo">ADD</button>

@@ -72,6 +72,7 @@ body {
     padding: 15px 10px;
     background-color: #fff;
     border: none;
+    border-radius: 10px;
     transition: background-color 0.3s, transform 0.3s;
 }
 
