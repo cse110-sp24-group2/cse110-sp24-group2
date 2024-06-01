@@ -15,14 +15,12 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-h1 {
-    color: #790258
-}
-
 .container {
     display: flex;
     flex-direction: row;
     width: 100%;
+    background-color: lightgray;
+    gap: 10px;
 }
 .markdown-container {
     display: flex;
@@ -54,41 +52,32 @@ h1 {
 
 .tab {
     overflow: hidden;
-    background-color: #fcacd8;
 }
 
 .tab button {
-    background: #a10a7e;
     border: none;
     cursor: pointer;
     padding: 10px 20px;
     color: white;
-}
-  
-.tab button:hover {
-    background: #8b096c;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #650b4a;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 5px solid #fcacd8;
     border-top: none;
 }
 
 #saveButton, #deleteButton, #backButton {
     /* margin-left: 20px; */
     padding: 10px 20px;
-    background-color: #a10a7e;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+button:first-child {
+    float: left;
     border-radius: 5px;
 }
 
@@ -105,4 +94,119 @@ h1 {
 }
 .todo {
    text-align: center;
+}
+
+.january { background-color: #020494; } 
+button.january:hover { background-color: #01036b;} 
+.tab.january { background-color: #5d60fa; }
+.tab.january button.active { background-color: #000237; }
+.tabcontent.january { border: 5px solid #5d60fa; }
+h1.january {background-color: white; color: #020494;}
+
+.february { background-color: #f29cac; }
+button.february:hover { background-color: #fc849a;} 
+.tab.february  { background-color: #f3bec8; }
+.tab.february  button.active { background-color: #f76a84; }
+.tabcontent.february { border: 5px solid #f3bec8; }
+h1.february {background-color: white; color: #f29cac;}
+
+.march { background-color: #28a745; } 
+button.march:hover { background-color: #199336;} 
+.tab.march  { background-color: #70d889; }
+.tab.march  button.active { background-color: #0a8026; }
+.tabcontent.march { border: 5px solid #70d889; }
+h1.march {background-color: white; color: #28a745;}  
+
+.april { background-color: #e83e8c; } 
+button.april:hover { background-color: #d81f75;} 
+.tab.april  { background-color: #e883b2; }
+.tab.april  button.active { background-color: #ad0b57; }
+.tabcontent.april { border: 5px solid #e883b2; }
+h1.april {background-color: white; color: #e83e8c;}  
+
+.may { background-color: #790258; }  
+button.may:hover { background-color: #640148;} 
+.tab.may  { background-color: #ae2e8a; }
+.tab.may  button.active { background-color: #4f0139; }
+.tabcontent.may { border: 5px solid #ae2e8a; }
+h1.may {background-color: white; color: #790258;}  
+  
+.june { background-color: #154a27; } 
+button.june:hover { background-color: #10361c;} 
+.tab.june  { background-color: #275f3a; }
+.tab.june  button.active { background-color: #0c2e17; }
+.tabcontent.june { border: 5px solid #275f3a; }
+h1.june {background-color: white; color: #154a27;}
+
+.july { background-color: #17a2b8; } 
+button.july:hover { background-color: #1797ab;} 
+.tab.july  { background-color: #5cc2d1; }
+.tab.july  button.active { background-color: #027587; }
+.tabcontent.july { border: 5px solid #5cc2d1; }
+h1.july {background-color: white; color: #17a2b8;}   
+
+.august { background-color: #d1890c; } 
+button.august:hover { background-color: #b9790b;} 
+.tab.august  { background-color: #d9ac5e; }
+.tab.august  button.active { background-color: #8e5b04; }
+.tabcontent.august { border: 5px solid #d9ac5e; }
+h1.august {background-color: white; color: #d1890c;}   
+
+.september { background-color: #dc3545; }
+button.september:hover { background-color: #c62f3e;} 
+.tab.september  { background-color: #d36974; }
+.tab.september  button.active { background-color: #a91524; }
+.tabcontent.september { border: 5px solid #d36974; }
+h1.september {background-color: white; color: #dc3545;}  
+
+.october { background-color: #d45810; }  
+button.october:hover { background-color: #bc4e0f;} 
+.tab.october  { background-color: #e99c70; }
+.tab.october  button.active { background-color: #a04008; }
+.tabcontent.october { border: 5px solid #e99c70; }
+h1.october {background-color: white; color: #d45810;}  
+
+.november { background-color: #343a40; } 
+button.november:hover { background-color: #262a2e;} 
+.tab.november  { background-color: #707e8c; }
+.tab.november  button.active { background-color: #1a1d21; }
+.tabcontent.november { border: 5px solid #707e8c; }
+h1.november {background-color: white; color: #343a40;}  
+
+.december { background-color: #53697d; } 
+button.december:hover { background-color: #435565;} 
+.tab.december  { background-color: #7999b7; }
+.tab.december  button.active { background-color: #2d3944; }
+.tabcontent.december { border: 5px solid #7999b7; }
+h1.december {background-color: white; color: #53697d;}  
+
+#markdownPreview { background-color: white; }  
+
+.notes-buttons {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* MOBILE RESPONSIVENESS BREAKPOINT */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .todo {
+        width: 100%;
+    }
+
+    .notes-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    todo-list-element {
+        padding: 15px;
+    }
 }
