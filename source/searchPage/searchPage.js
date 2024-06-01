@@ -6,7 +6,7 @@ const path = require('path');
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-bar');
     const labelsContainer = document.getElementById('labels-container');
-    const labelToDate = JSON.parse(fs.readFileSync(path.join(__dirname, '../Data', 'DatetoLabel.json'), 'utf8'));
+    const labelToDate = JSON.parse(fs.readFileSync(path.join(__dirname, "../DevJournal",'/Data', 'DatetoLabel.json'), 'utf8'));
     // Event listener for input event on search input
     searchInput.addEventListener('input', function () {
         const query = this.value;
@@ -90,7 +90,7 @@ function displayDates(label, labelToDate) {
  * @param {HTMLElement} searchInput - The search input element.
  */
 function filterLabels(query, labelsContainer, searchInput) {
-    const constSuggestions = Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, '../Data', 'DatetoLabel.json'), 'utf8')));
+    const constSuggestions = Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, '../DevJournal', '/Data', 'DatetoLabel.json'), 'utf8')));
     const filteredLabels = constSuggestions.filter(suggestion =>
         suggestion.toLowerCase().includes(query.toLowerCase())
     );

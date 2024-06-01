@@ -18,7 +18,7 @@ If you're on Windows, make sure your package.json file looks like this:
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "package": "electron-packager . DevJournal --platform=win32 --arch=x64"
+        "package": "electron-packager . DevJournal --platform=win32 --arch=x64 --out=DevJournal"
     },
     "keywords": [],
     "author": "",
@@ -40,7 +40,7 @@ If you're on Mac, make sure your package.json file looks like this:
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "package": "electron-packager . DevJournal --platform=darwin --arch=x64"
+        "package": "electron-packager . DevJournal --platform=darwin --arch=x64 --out=DevJournal"
     },
     "keywords": [],
     "author": "",

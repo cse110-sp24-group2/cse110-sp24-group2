@@ -3,7 +3,7 @@
  */
 const fs = require('fs');
 const path = require('path');
-const dataDir = path.join(__dirname, '../Data');
+const dataDir = path.join(__dirname, '../DevJournal/Data');
 
 /**
  * Checks to make sure Data directory exists
@@ -113,7 +113,7 @@ function openTab(evt, tabName) {
  * Saves Markdown notes for the current day into its corresponding subdirectories.
 */
 function saveMarkdownEntry(day, month, year, markdown) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal//Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
     const dayFilePath = path.join(monthDir, `${day}.md`);
@@ -143,7 +143,7 @@ function saveMarkdownEntry(day, month, year, markdown) {
  * Renders Markdown notes for the current day into the notes window.
 */
 function renderMarkdownEntry(day, month, year) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
     const dayFilePath = path.join(monthDir, `${day}.md`);
@@ -165,7 +165,7 @@ function renderMarkdownEntry(day, month, year) {
  * Deletes Markdown notes for the current day from its corresponding subdirectories.
  */
 function deleteMarkdownEntry(day, month, year) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
     const filePath = path.join(monthDir, `${day}.md`);

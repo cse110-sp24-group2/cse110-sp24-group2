@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
  * Checks if a label exists for a given day
  */
 function labelExists(day, month, year, name) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
     const labelFilePath = path.join(monthDir, 'labels.json');
@@ -88,7 +88,7 @@ function labelExists(day, month, year, name) {
  * Saves a label to its corresponding subdirectories
  */
 function saveLabel(day, month, year, label) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
     const labelFilePath = path.join(monthDir, `labels.json`);
@@ -133,7 +133,7 @@ function saveLabel(day, month, year, label) {
  * @param {string} label - The label to be saved.
  */
 function saveDatetoLabel(day, month, year, label) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const labelFilePath = path.join(dataDir, `DatetoLabel.json`);
     fs.readFile(labelFilePath, 'utf-8', (err, data) => {
         let labels = {};
@@ -159,7 +159,7 @@ function saveDatetoLabel(day, month, year, label) {
  * Renders labels for the current day into the labels container.
  */
 function renderLabels(day, month, year) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
     const labelFilePath = path.join(monthDir, 'labels.json');
@@ -198,7 +198,7 @@ function renderLabels(day, month, year) {
  * Deletes a label from its corresponding subdirectories
  */
 function deleteLabel(day, month, year, label) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const yearDir = path.join(dataDir, year.toString());
     const monthDir = path.join(yearDir, month.toString());
     const labelFilePath = path.join(monthDir, `labels.json`);
@@ -236,7 +236,7 @@ function deleteLabel(day, month, year, label) {
  * @param {string} label - The label to be deleted.
  */
 function deleteDatetoLabel(day, month, year, label) {
-    const dataDir = path.join(__dirname, '../Data');
+    const dataDir = path.join(__dirname, '../DevJournal/Data');
     const labelFilePath = path.join(dataDir, `DatetoLabel.json`);
     fs.readFile(labelFilePath, 'utf-8', (err, data) => {
         if (err) {
