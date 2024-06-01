@@ -1,4 +1,4 @@
-import { browser } from '@wdio/globals'
+const { browser } = require('@wdio/globals')
 
 describe('Electron Testing', () => {
     it('should print application title', async () => {
