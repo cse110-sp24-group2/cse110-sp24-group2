@@ -22,7 +22,7 @@ fs.mkdir(dataDir, { recursive: true }, (err) => {
  */
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve the date from local storage
-  var dateInfo = localStorage.getItem("date");
+  let dateInfo = localStorage.getItem("date");
 
   // Parse the JSON string back into an object
   dateInfo = JSON.parse(dateInfo);
@@ -111,14 +111,16 @@ document.addEventListener("DOMContentLoaded", function () {
  * Opens entry windows for Markdown and To-do list
  */
 function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
+  let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tabcontent[parseInt(i, 10)].style.display = "none";
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[parseInt(i, 10)].className = tablinks[
+      parseInt(i, 10)
+    ].className.replace(" active", "");
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";

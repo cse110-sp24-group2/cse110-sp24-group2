@@ -4,68 +4,56 @@
 
 ## Running the App
 
-1. Navigate to the source directory:
-
-```bash
-cd source
-```
-
-If you're on Windows, make sure your package.json file looks like this:
+1. Make sure that the root package.json looks like this:
 
 ```json
 {
-  "name": "Dev Journal",
+  "name": "dev_journal",
   "version": "1.0.0",
   "description": "A Developer Journal That tracks what you do in a day",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "package": "electron-packager . DevJournal --platform=win32 --arch=x64"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "electron": "^11.5.0"
-  },
+  "main": "source/main.js",
   "devDependencies": {
-    "electron-packager": "^15.5.2"
+    "@wdio/cli": "^8.38.1",
+    "@wdio/local-runner": "^8.38.0",
+    "@wdio/mocha-framework": "^8.38.0",
+    "@wdio/spec-reporter": "^8.38.0",
+    "electron": "^30.0.9",
+    "electron-packager": "^17.1.2",
+    "jest": "^29.7.0",
+    "jsdoc": "^4.0.3",
+    "prettier": "3.2.5",
+    "wdio-electron-service": "^6.6.1"
+  },
+  "scripts": {
+    "test": "node node_modules/jest/bin/jest.js",
+    "start": "electron .",
+    "package-win": "electron-packager . DevJournal --platform=win32 --arch=x64 --asar",
+    "package-mac": "electron-packager . DevJournal --platform=darwin --arch=x64 --asar",
+    "package-linux": "electron-packager . DevJournal --platform=linux --arch=x64 --asar",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "jest": {
+    "transform": {},
+    "verbose": true
   }
 }
 ```
 
-If you're on Mac, make sure your package.json file looks like this:
-
-```json
-{
-  "name": "Dev Journal",
-  "version": "1.0.0",
-  "description": "A Developer Journal That tracks what you do in a day",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "package": "electron-packager . DevJournal --platform=darwin --arch=x64"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "electron": "^11.5.0"
-  },
-  "devDependencies": {
-    "electron-packager": "^15.5.2"
-  }
-}
-```
-
-### Install the necessary dependencies:
+2. Install the necessary dependencies:
 
 ```bash
-npm install --save-dev electron-packager
-npm run package
+npm install
 ```
 
-### Run the app:
+3. Depending on which device you have, run one of the following commands:
+
+```bash
+npm run package-win
+npm run package-mac
+npm run package-linux
+```
+
+4. Run the app:
 
 ```bash
 npm start
