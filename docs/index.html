@@ -47,57 +47,54 @@
 <h2><a href="admin/team.md">Team Wiki</a></h2>
 <h2>Running the App</h2>
 <ol>
-<li>Navigate to the source directory:</li>
+<li>Make sure that the root package.json looks like this:</li>
 </ol>
-<pre class="prettyprint source lang-bash"><code>cd source
-</code></pre>
-<p>If you're on Windows, make sure your package.json file looks like this:</p>
 <pre class="prettyprint source lang-json"><code>{
-    &quot;name&quot;: &quot;Dev Journal&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
-    &quot;main&quot;: &quot;main.js&quot;,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;electron .&quot;,
-        &quot;package&quot;: &quot;electron-packager . DevJournal --platform=win32 --arch=x64&quot;
-    },
-    &quot;keywords&quot;: [],
-    &quot;author&quot;: &quot;&quot;,
-    &quot;license&quot;: &quot;ISC&quot;,
-    &quot;dependencies&quot;: {
-        &quot;electron&quot;: &quot;^11.5.0&quot;
-    },
-    &quot;devDependencies&quot;: {
-        &quot;electron-packager&quot;: &quot;^15.5.2&quot;
-    }
+  &quot;name&quot;: &quot;dev_journal&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
+  &quot;main&quot;: &quot;source/main.js&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;@wdio/cli&quot;: &quot;^8.38.1&quot;,
+    &quot;@wdio/local-runner&quot;: &quot;^8.38.0&quot;,
+    &quot;@wdio/mocha-framework&quot;: &quot;^8.38.0&quot;,
+    &quot;@wdio/spec-reporter&quot;: &quot;^8.38.0&quot;,
+    &quot;electron&quot;: &quot;^30.0.9&quot;,
+    &quot;electron-packager&quot;: &quot;^17.1.2&quot;,
+    &quot;jest&quot;: &quot;^29.7.0&quot;,
+    &quot;jsdoc&quot;: &quot;^4.0.3&quot;,
+    &quot;prettier&quot;: &quot;3.2.5&quot;,
+    &quot;wdio-electron-service&quot;: &quot;^6.6.1&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;node node_modules/jest/bin/jest.js&quot;,
+    &quot;start&quot;: &quot;electron .&quot;,
+    &quot;package-win&quot;: &quot;electron-packager . DevJournal --platform=win32 --arch=x64 --asar&quot;,
+    &quot;package-mac&quot;: &quot;electron-packager . DevJournal --platform=darwin --arch=x64 --asar&quot;,
+    &quot;package-linux&quot;: &quot;electron-packager . DevJournal --platform=linux --arch=x64 --asar&quot;,
+    &quot;wdio&quot;: &quot;wdio run ./wdio.conf.js&quot;
+  },
+  &quot;jest&quot;: {
+    &quot;transform&quot;: {},
+    &quot;verbose&quot;: true
+  }
 }
 </code></pre>
-<p>If you're on Mac, make sure your package.json file looks like this:</p>
-<pre class="prettyprint source lang-json"><code>{
-    &quot;name&quot;: &quot;Dev Journal&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
-    &quot;main&quot;: &quot;main.js&quot;,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;electron .&quot;,
-        &quot;package&quot;: &quot;electron-packager . DevJournal --platform=darwin --arch=x64&quot;
-    },
-    &quot;keywords&quot;: [],
-    &quot;author&quot;: &quot;&quot;,
-    &quot;license&quot;: &quot;ISC&quot;,
-    &quot;dependencies&quot;: {
-        &quot;electron&quot;: &quot;^11.5.0&quot;
-    },
-    &quot;devDependencies&quot;: {
-        &quot;electron-packager&quot;: &quot;^15.5.2&quot;
-    }
-}
+<ol start="2">
+<li>Install the necessary dependencies:</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>npm install
 </code></pre>
-<p>Install the necessary dependencies:</p>
-<pre class="prettyprint source lang-bash"><code>npm install --save-dev electron-packager
-npm run package
+<ol start="3">
+<li>Depending on which device you have, run one of the following commands:</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>npm run package-win
+npm run package-mac
+npm run package-linux
 </code></pre>
-<p>Run the app:</p>
+<ol start="4">
+<li>Run the app:</li>
+</ol>
 <pre class="prettyprint source lang-bash"><code>npm start
 </code></pre></article>
     </section>

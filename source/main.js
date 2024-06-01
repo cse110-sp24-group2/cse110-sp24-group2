@@ -9,7 +9,7 @@ function createWindow () {
     }
   })
 
-  win.loadFile('calendar/index.html')
+  win.loadFile('source/calendar/index.html')
 }
 
 app.whenReady().then(createWindow)
