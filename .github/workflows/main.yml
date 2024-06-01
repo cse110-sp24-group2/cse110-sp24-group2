@@ -11,7 +11,7 @@ permissions:
 
 jobs: # the things being executed
   tests:
-    runs-on: macos-latest 
+    runs-on: windows-latest 
     steps:
       - uses: actions/checkout@v4 # using version 4 of Actions
       - name: Install Dependencies
