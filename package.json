@@ -18,9 +18,9 @@
   "scripts": {
     "test": "node node_modules/jest/bin/jest.js",
     "start": "electron .",
-    "package-win": "electron-packager . DevJournal --platform=win32 --arch=x64 --asar",
-    "package-mac": "electron-packager . DevJournal --platform=darwin --arch=x64 --asar",
-    "package-linux": "electron-packager . DevJournal --platform=linux --arch=x64 --asar",
+    "package-win": "electron-packager . DevJournal --platform=win32 --arch=x64 --asar --out=DevJournal",
+    "package-mac": "electron-packager . DevJournal --platform=darwin --arch=x64 --asar --out=DevJournal",
+    "package-linux": "electron-packager . DevJournal --platform=linux --arch=x64 --asar --out=DevJournal",
     "wdio": "wdio run ./wdio.conf.js"
   },
   "jest": {

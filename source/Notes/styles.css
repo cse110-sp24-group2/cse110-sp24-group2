@@ -90,7 +90,14 @@ button:first-child {
 .todo {
    text-align: center;
 }
+#backToCalendar {
+    float: right;
+}
 
+button {
+    border-radius: 8px;
+    margin: 5px;
+}
 .january { background-color: #020494; } 
 button.january:hover { background-color: #01036b;} 
 .tab.january { background-color: #5d60fa; }

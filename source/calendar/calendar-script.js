@@ -196,3 +196,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } 
   }
 });
+document.getElementById("search-bar").addEventListener("click", function() {
+  window.location.href = escape("../searchPage/searchPage.html");
+});
+document.getElementById("search-button").addEventListener("click", function() {
+  window.location.href = escape("../searchPage/searchPage.html");
+});
