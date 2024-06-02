@@ -115,6 +115,8 @@ function updateButtonColor() {
     const currentMonthClass = monthClasses[new Date().getMonth()];
     const searchButton = document.getElementById('search-button');
     searchButton.style.backgroundColor = monthColors[currentMonthClass];
+    const backToCalendarButton = document.getElementById('backToCalendar');
+    backToCalendarButton.style.backgroundColor = monthColors[currentMonthClass];
 }
 // navigate back to calendar
 document.getElementById('backToCalendar').addEventListener('click', function() {

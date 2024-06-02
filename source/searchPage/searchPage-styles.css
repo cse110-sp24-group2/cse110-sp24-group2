@@ -85,8 +85,21 @@ body {
     margin-top: 20px;
 }
 #backToCalendar {
-    float: right;
+    position: absolute;
+    top: 10px;
+    left: 25px;
     border-radius: 8px;
     margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--month-color);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
 }
-
+#backToCalendar:hover {
+    background-color: var(--month-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
