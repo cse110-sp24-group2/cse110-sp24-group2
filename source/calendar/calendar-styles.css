@@ -2,6 +2,10 @@
     font-family: Rubik , sans-serif;
 }
 
+.todo-section{
+    padding: 10px;
+}
+
 .rubik-font {
     font-family: Rubik, sans-serif;
     font-optical-sizing: auto;
