@@ -53,7 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
     renderLabels(dateInfo.day, dateInfo.month, dateInfo.year);
 });
 /**
- * Checks if a label exists for a given day
+ * Checks if a label exists for a specific day.
+ *
+ * @param {number} day - The day of the month.
+ * @param {number} month - The month of the year.
+ * @param {number} year - The year.
+ * @param {string} name - The name of the label.
+ * @returns {Promise<boolean>} A promise that resolves to a boolean indicating whether the label exists.
  */
 function labelExists(day, month, year, name) {
     const dataDir = path.join(__dirname, '../../DevJournal/Data');
@@ -85,7 +91,12 @@ function labelExists(day, month, year, name) {
     });
 }
 /**
- * Saves a label to its corresponding subdirectories
+ * Saves a label for a specific day.
+ *
+ * @param {number} day - The day of the month.
+ * @param {number} month - The month of the year.
+ * @param {number} year - The year.
+ * @param {string} label - The label to save.
  */
 function saveLabel(day, month, year, label) {
     const dataDir = path.join(__dirname, '../../DevJournal/Data');
@@ -157,6 +168,10 @@ function saveDatetoLabel(day, month, year, label) {
 }
 /**
  * Renders labels for the current day into the labels container.
+ *
+ * @param {number} day - The day of the month.
+ * @param {number} month - The month of the year.
+ * @param {number} year - The year.
  */
 function renderLabels(day, month, year) {
     const dataDir = path.join(__dirname, '../../DevJournal/Data');
@@ -195,7 +210,12 @@ function renderLabels(day, month, year) {
     });
 }
 /**
- * Deletes a label from its corresponding subdirectories
+ * Deletes a label for a specific day.
+ *
+ * @param {number} day - The day of the month.
+ * @param {number} month - The month of the year.
+ * @param {number} year - The year.
+ * @param {string} label - The name of the label to delete.
  */
 function deleteLabel(day, month, year, label) {
     const dataDir = path.join(__dirname, '../../DevJournal/Data');
