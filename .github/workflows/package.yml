@@ -39,7 +39,7 @@ jobs: # the things being executed
         uses: thedoctor0/zip-release@0.7.5
         with:
           filename: "DevJournal-linux-x64.zip"
-          path: "DevJournal-linux-64"
+          path: "DevJournal-linux-x64"
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
@@ -68,7 +68,7 @@ jobs: # the things being executed
         uses: thedoctor0/zip-release@0.7.5
         with:
           filename: "DevJournal-win32-x64.zip"
-          path: "DevJournal-win32-64"
+          path: "DevJournal-win32-x64"
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
@@ -97,7 +97,7 @@ jobs: # the things being executed
         uses: thedoctor0/zip-release@0.7.5
         with:
           filename: "DevJournal-darwin-x64.zip"
-          path: "DevJournal-darwin-64"
+          path: "DevJournal-darwin-x64"
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
