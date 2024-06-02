@@ -1,9 +1,9 @@
 /**
  * Set up necessary modules and path to Data directory
  */
-const fs = require('fs');
-const path = require('path');
-const dataDir = path.join(__dirname, '../../DevJournal/Data');
+const fs = require("fs");
+const path = require("path");
+const dataDir = path.join(__dirname, "../../DevJournal/Data");
 /**
  * Checks to make sure Data directory exists
  */
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Reflect month as a class in elements for color application
   const coloredElements = document.querySelectorAll(
-    "button, h1, div.tab, div.tabcontent"
+    "button, h1, div.tab, div.tabcontent",
   );
   let month = monthNames[dateInfo.month].toLowerCase();
   coloredElements.forEach((element) => {
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       dateInfo.day,
       dateInfo.month,
       dateInfo.year,
-      markdownText
+      markdownText,
     );
   });
   // Delete button functionality
@@ -110,29 +110,43 @@ document.addEventListener("DOMContentLoaded", function () {
       markdownTextarea.value = "";
       syncMarkdownPreview();
     });
-    // Simulate a click on the "Markdown" button
-    document.querySelector('.tablinks[onclick*="Markdown"]').click();
+  // Simulate a click on the "Markdown" button
+  document.querySelector('.tablinks[onclick*="Markdown"]').click();
 
-    // Add save button functionality
-    document.getElementById('saveButton').addEventListener('click', function() {
-        const markdownText = markdownTextarea.value;
-        saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
+  // Add save button functionality
+  document.getElementById("saveButton").addEventListener("click", function () {
+    const markdownText = markdownTextarea.value;
+    saveMarkdownEntry(
+      dateInfo.day,
+      dateInfo.month,
+      dateInfo.year,
+      markdownText,
+    );
+  });
+  //delete button functionality
+  document
+    .getElementById("deleteButton")
+    .addEventListener("click", function () {
+      deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
+      markdownTextarea.value = "";
+      document.getElementById("markdownPreview").innerHTML = "";
     });
-    //delete button functionality
-    document.getElementById('deleteButton').addEventListener('click', function() {
-        deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
-        markdownTextarea.value = '';
-        document.getElementById('markdownPreview').innerHTML = '';
-    });
-    // navigate back to calendar
-    document.getElementById('backToCalendar').addEventListener('click', function() {
-        const markdownText = markdownTextarea.value;
-        saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
-        window.location.href = escape('../calendar/index.html');
+  // navigate back to calendar
+  document
+    .getElementById("backToCalendar")
+    .addEventListener("click", function () {
+      const markdownText = markdownTextarea.value;
+      saveMarkdownEntry(
+        dateInfo.day,
+        dateInfo.month,
+        dateInfo.year,
+        markdownText,
+      );
+      window.location.href = escape("../calendar/index.html");
     });
 
-    // Render markdown entry on load
-    renderMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
+  // Render markdown entry on load
+  renderMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
 });
 /**
  * Opens entry windows for Markdown and To-do list
@@ -156,10 +170,10 @@ function openTab(evt, tabName) {
  * Saves Markdown notes for the current day into its corresponding subdirectories.
  */
 function saveMarkdownEntry(day, month, year, markdown) {
-    const dataDir = path.join(__dirname, '../../DevJournal//Data');
-    const yearDir = path.join(dataDir, year.toString());
-    const monthDir = path.join(yearDir, month.toString());
-    const dayFilePath = path.join(monthDir, `${day}.md`);
+  const dataDir = path.join(__dirname, "../../DevJournal//Data");
+  const yearDir = path.join(dataDir, year.toString());
+  const monthDir = path.join(yearDir, month.toString());
+  const dayFilePath = path.join(monthDir, `${day}.md`);
 
   fs.mkdir(yearDir, { recursive: true }, (err) => {
     if (err) {
@@ -175,7 +189,7 @@ function saveMarkdownEntry(day, month, year, markdown) {
               console.error("Failed to save markdown file", err);
             } else {
               console.log(
-                `Markdown file saved for ${month + 1}-${day}-${year}`
+                `Markdown file saved for ${month + 1}-${day}-${year}`,
               );
             }
           });
@@ -201,10 +215,10 @@ function syncMarkdownPreview() {
  * Renders Markdown notes for the current day into the notes window.
  */
 function renderMarkdownEntry(day, month, year) {
-    const dataDir = path.join(__dirname, '../../DevJournal/Data');
-    const yearDir = path.join(dataDir, year.toString());
-    const monthDir = path.join(yearDir, month.toString());
-    const dayFilePath = path.join(monthDir, `${day}.md`);
+  const dataDir = path.join(__dirname, "../../DevJournal/Data");
+  const yearDir = path.join(dataDir, year.toString());
+  const monthDir = path.join(yearDir, month.toString());
+  const dayFilePath = path.join(monthDir, `${day}.md`);
 
   fs.readFile(dayFilePath, "utf-8", (err, data) => {
     if (err) {
@@ -223,16 +237,16 @@ function renderMarkdownEntry(day, month, year) {
  * Deletes Markdown notes for the current day from its corresponding subdirectories.
  */
 function deleteMarkdownEntry(day, month, year) {
-    const dataDir = path.join(__dirname, '../../DevJournal/Data');
-    const yearDir = path.join(dataDir, year.toString());
-    const monthDir = path.join(yearDir, month.toString());
-    const filePath = path.join(monthDir, `${day}.md`);
-    console.log(filePath);
-    fs.unlink(filePath, (err) => {
-        if (err) {
-            console.error("Failed to delete file:", err);
-        } else {
-            console.log("Delete file successfully");
-        }
-    });
+  const dataDir = path.join(__dirname, "../../DevJournal/Data");
+  const yearDir = path.join(dataDir, year.toString());
+  const monthDir = path.join(yearDir, month.toString());
+  const filePath = path.join(monthDir, `${day}.md`);
+  console.log(filePath);
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.error("Failed to delete file:", err);
+    } else {
+      console.log("Delete file successfully");
+    }
+  });
 }

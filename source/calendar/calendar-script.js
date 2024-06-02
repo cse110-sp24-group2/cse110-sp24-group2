@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
    * @function updateMonthYear
    */
   function updateMonthYear() {
-    monthLabel.textContent = `${monthNames[parseInt(currentMonth,10)]} ${currentYear}`;
+    monthLabel.textContent = `${monthNames[parseInt(currentMonth, 10)]} ${currentYear}`;
     monthLabel.className = ""; // Clear previous class
-    monthLabel.classList.add(monthClasses[parseInt(currentMonth,10)]); // Apply new class for font color
+    monthLabel.classList.add(monthClasses[parseInt(currentMonth, 10)]); // Apply new class for font color
   }
 
   /**
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const dayElement = document.createElement("div");
       dayElement.classList.add("day", "diff-month");
       dayElement.textContent = lastDatePrevMonth - i + 1;
-      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
+      dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
     }
     // Add the days of the current month
@@ -96,14 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // Adds specific month class
       dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
       dayElement.textContent = day;
-      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
+      dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
       // Check if the date is a holiday
       const currentDate = new Date(year, month, day);
       const isHoliday = holidays.some(
         (holiday) =>
           holiday.getMonth() === currentDate.getMonth() &&
-          holiday.getDate() === currentDate.getDate()
+          holiday.getDate() === currentDate.getDate(),
       );
       if (isHoliday) {
         dayElement.classList.add("holiday");
@@ -141,14 +141,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
-    
+
     // Fill the week with days from the next month
     let num = 1;
     for (let i = lastDay + 1; i <= 6; i++) {
       const dayElement = document.createElement("div");
       dayElement.classList.add("day", "diff-month");
       dayElement.textContent = num;
-      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
+      dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
       num++;
     }
@@ -193,12 +193,12 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       }
-    } 
+    }
   }
 });
-document.getElementById("search-bar").addEventListener("click", function() {
+document.getElementById("search-bar").addEventListener("click", function () {
   window.location.href = escape("../searchPage/searchPage.html");
 });
-document.getElementById("search-button").addEventListener("click", function() {
+document.getElementById("search-button").addEventListener("click", function () {
   window.location.href = escape("../searchPage/searchPage.html");
 });

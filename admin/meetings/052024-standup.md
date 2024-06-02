@@ -10,7 +10,7 @@
 
 **Any issues you have run into?**: Not currently
 
-___
+---
 
 **Name**: Victor Hsiao
 
@@ -20,7 +20,7 @@ ___
 
 **Any issues you have run into**?: My feature is dependent on the todo list being created first
 
-___
+---
 
 **Name**: Andrew Smithwick
 
@@ -30,9 +30,7 @@ ___
 
 **Any issues you have run into**?: trying to figure out how to work w/ other tasks and not cause merge conflicts
 
-
-
-___
+---
 
 **Name**: Dhaivat Pachchigar
 
@@ -42,7 +40,7 @@ ___
 
 **Any issues you have run into**?: nope
 
-___
+---
 
 **Name**: Clarissa Cheng
 
@@ -52,7 +50,7 @@ ___
 
 **Any issues you have run into**?: No
 
-___
+---
 
 **Name**: Momina HAbibi
 
@@ -62,7 +60,7 @@ ___
 
 **Any issues you have run into**?: No
 
-___
+---
 
 **Name**: Anya Chernova
 
@@ -72,17 +70,17 @@ ___
 
 **Any issues you have run into**?: Not currently
 
-___
+---
 
 **Name**: Madhoolika Chodavarapu
 
 **What you have done**: Modified the mvp code such that the selections of labels can be done through checkboxes instead of user’s typing the label’s name. Went through the work done so far on the Notes section of the project.
 
-**What you are going to work on**: Most likely implementing label’s filtering 
+**What you are going to work on**: Most likely implementing label’s filtering
 
 **Any issues you have run into**?: No
 
-___
+---
 
 **Name**: Jiawen Wang
 
@@ -94,7 +92,7 @@ Implement double click for deleting label
 **Any issues you have run into**?:
 Not now
 
-___
+---
 
 **Name**: Uday Singla
 
@@ -104,7 +102,7 @@ ___
 
 **Any issues you have run into**?: The implementation would be properly completed once the document part to add notes for the journal has been completed.
 
-___
+---
 
 **Name**:
 

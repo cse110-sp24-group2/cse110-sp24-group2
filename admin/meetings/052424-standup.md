@@ -12,7 +12,7 @@
 
 **Active issue link**: N/A
 
-___
+---
 
 **Name**: Andrew Smithwick
 
@@ -24,7 +24,7 @@ ___
 
 **Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/44)
 
-___
+---
 
 **Name**: Dhaivat Pachchigar
 
@@ -36,7 +36,7 @@ ___
 
 **Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/25)
 
-___
+---
 
 **Name**: Anya Chernova
 
@@ -48,19 +48,19 @@ ___
 
 **Active issue link**: [Issue Link](https://github.com/orgs/cse110-sp24-group2/projects/1?pane=issue&itemId=64260154)
 
-___
+---
 
 **Name**: Momina Habibi
 
 **What you have done**: I have worked on the styling and implementation of the front-end of todo-tasks.
 
-**What you are going to work on**: I will review my code and look for any ways to improve it. 
+**What you are going to work on**: I will review my code and look for any ways to improve it.
 
 **Any issues you have run into?**: None at the moment.
 
 **Active issue link**: N/A
 
-___
+---
 
 **Name**: Madhoolika Chodavarapu
 
@@ -72,7 +72,7 @@ ___
 
 **Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/47)
 
-___
+---
 
 **Name**: Victor Hsiao
 
@@ -84,23 +84,23 @@ ___
 
 **Active issue link**: [Issue Link]([FEATURE] Create user flow diagram for our app · Issue #25 · cse110-sp24-group2/cse110-sp24-group2 (github.com))
 
-___
+---
 
 **Name**: Clarissa Cheng
 
 **What you have done**: Worked on Save button functionality and ensured each Markdown/notes entry was saved to correct subdirectories. Also helped with Delete button
 
-**What you are going to work on**: Back-end functionality of labels for Markdown/notes 
+**What you are going to work on**: Back-end functionality of labels for Markdown/notes
 
 **Any issues you have run into?**: Small issues
 
 **Active issue link**: [Issue Link]() Issue was closed
 
-___
+---
 
 **Name**: uday singla
 
-**What you have done**: Updated the front end of the search bar feature and added the color changing feature to the search button to match the month color 
+**What you have done**: Updated the front end of the search bar feature and added the color changing feature to the search button to match the month color
 
 **What you are going to work on**: Helping with the drop down feature and implementation of the search feature for the labels
 
@@ -108,7 +108,7 @@ ___
 
 **Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/37)
 
-___
+---
 
 **Name**:
 
@@ -120,7 +120,7 @@ ___
 
 **Active issue link**: [Issue Link]()
 
-___
+---
 
 **Name**:
 
@@ -131,7 +131,3 @@ ___
 **Any issues you have run into?**:
 
 **Active issue link**: [Issue Link]()
-
-
-
-

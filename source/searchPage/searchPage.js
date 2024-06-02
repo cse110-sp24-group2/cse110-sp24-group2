@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const labelToDate = JSON.parse(
     fs.readFileSync(
       path.join(__dirname, "../../DevJournal", "/Data", "DatetoLabel.json"),
-      "utf8"
-    )
+      "utf8",
+    ),
   );
   // Event listener for input event on search input
   searchInput.addEventListener("input", function () {
@@ -56,11 +56,11 @@ function displayLabels(labels, labelsContainer, searchInput) {
               __dirname,
               "../../DevJournal",
               "/Data",
-              "DatetoLabel.json"
+              "DatetoLabel.json",
             ),
-            "utf8"
-          )
-        )
+            "utf8",
+          ),
+        ),
       );
     });
 
@@ -111,12 +111,12 @@ function filterLabels(query, labelsContainer, searchInput) {
     JSON.parse(
       fs.readFileSync(
         path.join(__dirname, "../../DevJournal", "/Data", "DatetoLabel.json"),
-        "utf8"
-      )
-    )
+        "utf8",
+      ),
+    ),
   );
   const filteredLabels = constSuggestions.filter((suggestion) =>
-    suggestion.toLowerCase().includes(query.toLowerCase())
+    suggestion.toLowerCase().includes(query.toLowerCase()),
   );
   displayLabels(filteredLabels, labelsContainer, searchInput, filterLabels);
 }

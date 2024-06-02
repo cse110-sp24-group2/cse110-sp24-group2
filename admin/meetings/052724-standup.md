@@ -12,7 +12,7 @@
 
 **Active issue link**: N/A
 
-___
+---
 
 **Name**: Andrew Smithwick
 
@@ -24,44 +24,44 @@ ___
 
 **Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/44)
 
-___
+---
 
-**Name**: Dhaivat Pachchigar	
+**Name**: Dhaivat Pachchigar
 
 **What you have done**: Refactoring the code base
-	
-**What you are going to work on**: Making the calender keyboard friendly	
+**What you are going to work on**: Making the calender keyboard friendly
 
 **Any issues you have run into?**: no
 
 **Active issue link**: [Issue Link]()
 
-___
+---
 
-**Name**: Madhoolika Chodavarapu 
+**Name**: Madhoolika Chodavarapu
 
-**What you have done**: Attended our subteam meeting to discuss our tasks for the next sprint. 
+**What you have done**: Attended our subteam meeting to discuss our tasks for the next sprint.
 
-**What you are going to work on**: back end of storing custom labels/ensuring corresponding notes show up when a label is selected 
+**What you are going to work on**: back end of storing custom labels/ensuring corresponding notes show up when a label is selected
 
 **Any issues you have run into?**: nope
 
 **Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/56)
 
-___
+---
 
 **Name**:Jiawen Wang
 
 **What you have done**: Attended our subteam meeting. Added an add label button with customizable color and double click deletion function.
 
-**What you are going to work on**: Decided to work on notes next. 
+**What you are going to work on**: Decided to work on notes next.
 
 **Any issues you have run into?**:
 Not being able to merge my pr to main?? Idk why it fails tho
 
 **Active issue link**: [Issue Link]()
 Not for now
-___
+
+---
 
 **Name**: Momina Habibi
 
@@ -72,10 +72,9 @@ ___
 **Any issues you have run into?**: No
 
 **Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/68)
- [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/70)
+[Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/70)
 
-
-___
+---
 
 **Name**: Clarissa Cheng
 
@@ -87,18 +86,19 @@ ___
 
 **Active issue link**: [Issue Link]()
 
-___
+---
 
 **Name**: Anya Chernova
 
 **What you have done**: Sprint review, retrospective, meeting notes
 
-**What you are going to work on**: Working on the frontend component on the notes page 
+**What you are going to work on**: Working on the frontend component on the notes page
 
 **Any issues you have run into?**: Not currently
 
 **Active issue link**: N/A
-___
+
+---
 
 **Name**: Uday Singla
 
@@ -110,7 +110,7 @@ ___
 
 **Active issue link**: [Issue Link]()
 
-___
+---
 
 **Name**:
 
@@ -122,7 +122,7 @@ ___
 
 **Active issue link**: [Issue Link]()
 
-___
+---
 
 **Name**:
 
@@ -133,7 +133,3 @@ ___
 **Any issues you have run into?**:
 
 **Active issue link**: [Issue Link]()
-
-
-
-

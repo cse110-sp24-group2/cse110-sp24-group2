@@ -1,17 +1,17 @@
 name: Ensure Quality and Generate Documentation # name of the test
 
-on: 
-    # Run when pull requests are made to main branches
-    pull_request:
-        branches:
-            - main
-            - feature-testing
+on:
+  # Run when pull requests are made to main branches
+  pull_request:
+    branches:
+      - main
+      - feature-testing
 permissions:
-    contents: write
+  contents: write
 
 jobs: # the things being executed
   tests:
-    runs-on: windows-latest 
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4 # using version 4 of Actions
       - name: Install Dependencies
@@ -28,7 +28,7 @@ jobs: # the things being executed
     steps:
       - uses: actions/checkout@v4 # using version 4 of Actions
       - name: Checkout PR
-        env: 
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr checkout ${{ github.event.pull_request.number }}
       - name: JSDoc Generation # Generate the docs for JS info

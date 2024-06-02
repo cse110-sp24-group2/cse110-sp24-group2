@@ -17,9 +17,11 @@ We are going to have the Codacy app run quality tests on code to ensure that the
 ### Testing:
 
 #### Jest
+
 We will be using Jest in order to implement our unit tests. Examples of Jest unit tests can be found in Lab 5. The `jest` package needs to be installed in order to use Jest properly to run tests.
 
 #### Puppeteer
+
 We will be using puppeteer along with jest in order to complete end-to-end testing. The `puppeteer` and `jest-puppeteer` packages should be installed in order to properly run the e2e testing.
 
 NOTE: We also used the `http-server` package so that GitHub Actions can start up a local server of the code so that puppeteer has a server url to access to perform the tests
@@ -43,6 +45,7 @@ The main branch will deploy on GitHub pages so the current published version of 
 ### Prettier Github Actions & Linting
 
 Currently, we plan for everyone to use `prettier` locally to help code quality. If this strategy does not work, we also have the option to integrate `prettier` into our Github Actions pipeline. We can consult the following two links:
+
 - [Prettier Actions](https://github.com/marketplace/actions/prettier-action)
 - [Online Tutorial](https://mskelton.dev/blog/auto-formatting-code-using-prettier-and-github-actions)
 

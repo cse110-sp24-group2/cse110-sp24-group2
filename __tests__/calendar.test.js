@@ -45,7 +45,7 @@ describe("Navigation and Generation of Calendar", () => {
     // Check month and day accuracy
     const monthLabel = await page.$eval(
       "#current-month",
-      (el) => el.textContent
+      (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[currentMonth]} ${currentYear}`);
     // Ensure the number of days is divisible by 7
@@ -58,7 +58,7 @@ describe("Navigation and Generation of Calendar", () => {
       // Make sure the day is grayed out
       const diffColor = await page.evaluate(
         (el) => window.getComputedStyle(el).color,
-        diffMonthDay
+        diffMonthDay,
       );
       expect(diffColor).toBe("rgb(128, 128, 128)");
       // Make sure the day is unclickable
@@ -77,7 +77,7 @@ describe("Navigation and Generation of Calendar", () => {
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date"))
+        JSON.parse(localStorage.getItem("date")),
       );
       expect(dateObject).toEqual({
         month: currentMonth,
@@ -97,7 +97,7 @@ describe("Navigation and Generation of Calendar", () => {
     // Check month and day accuracy
     const monthLabel = await page.$eval(
       "#current-month",
-      (el) => el.textContent
+      (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[month]} ${year}`);
     // Ensure the number of days is divisible by 7
@@ -110,7 +110,7 @@ describe("Navigation and Generation of Calendar", () => {
       // Make sure the day is grayed out
       const diffColor = await page.evaluate(
         (el) => window.getComputedStyle(el).color,
-        diffMonthDay
+        diffMonthDay,
       );
       expect(diffColor).toBe("rgb(128, 128, 128)");
       // Make sure the day is unclickable
@@ -129,7 +129,7 @@ describe("Navigation and Generation of Calendar", () => {
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date"))
+        JSON.parse(localStorage.getItem("date")),
       );
       expect(dateObject).toEqual({
         month: month,
@@ -149,7 +149,7 @@ describe("Navigation and Generation of Calendar", () => {
     // Check month and day accuracy
     const monthLabel = await page.$eval(
       "#current-month",
-      (el) => el.textContent
+      (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[month]} ${year}`);
     // Ensure the number of days is divisible by 7
@@ -162,7 +162,7 @@ describe("Navigation and Generation of Calendar", () => {
       // Make sure the day is grayed out
       const diffColor = await page.evaluate(
         (el) => window.getComputedStyle(el).color,
-        diffMonthDay
+        diffMonthDay,
       );
       expect(diffColor).toBe("rgb(128, 128, 128)");
       // Make sure the day is unclickable
@@ -181,7 +181,7 @@ describe("Navigation and Generation of Calendar", () => {
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date"))
+        JSON.parse(localStorage.getItem("date")),
       );
       expect(dateObject).toEqual({
         month: month,
@@ -201,7 +201,7 @@ describe("Navigation and Generation of Calendar", () => {
     // Check month and day accuracy
     const monthLabel = await page.$eval(
       "#current-month",
-      (el) => el.textContent
+      (el) => el.textContent,
     );
     expect(monthLabel).toBe(`${monthNames[month]} ${year}`);
     // Ensure the number of days is divisible by 7
@@ -214,7 +214,7 @@ describe("Navigation and Generation of Calendar", () => {
       // Make sure the day is grayed out
       const diffColor = await page.evaluate(
         (el) => window.getComputedStyle(el).color,
-        diffMonthDay
+        diffMonthDay,
       );
       expect(diffColor).toBe("rgb(128, 128, 128)");
       // Make sure the day is unclickable
@@ -233,7 +233,7 @@ describe("Navigation and Generation of Calendar", () => {
       ]);
       expect(page.url()).toBe("http://localhost:3000/source/Notes/index.html");
       let dateObject = await page.evaluate(() =>
-        JSON.parse(localStorage.getItem("date"))
+        JSON.parse(localStorage.getItem("date")),
       );
       expect(dateObject).toEqual({
         month: month,
