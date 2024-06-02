@@ -21,6 +21,7 @@ body {
     width: 100%;
     background-color: lightgray;
     gap: 10px;
+    padding: 10px;
 }
 .markdown-container {
     display: flex;
