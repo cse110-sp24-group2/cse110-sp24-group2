@@ -3,6 +3,7 @@
 ## Date: 5/25/2024
 
 ### Zoom 5:30
+
 Present: Brian, Dhruv, Uday, Momina, Clarissa, Andrew, Victor, Dhaivat, Anya
 
 ### Topics discussed:
@@ -16,13 +17,16 @@ Present: Brian, Dhruv, Uday, Momina, Clarissa, Andrew, Victor, Dhaivat, Anya
 ### Next Steps
 
 Team Brian:
+
 - Clean up code.
 - Work on accessibility.
-  
+
 Team Dhruv:
+
 - Work on the backend of labels.
-  
+
 Team Andrew:
+
 - Improve the appearance of the notetaking interface.
 
 ### Overview of the tasks:

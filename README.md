@@ -5,6 +5,7 @@
 ## Running the App
 
 1. Make sure that the root package.json looks like this:
+
 ```json
 {
   "name": "dev_journal",
@@ -37,18 +38,23 @@
   }
 }
 ```
-2. Install the necessary dependencies:  
+
+2. Install the necessary dependencies:
+
 ```bash
 npm install
 ```
+
 3. Depending on which device you have, run one of the following commands:
+
 ```bash
 npm run package-win
 npm run package-mac
 npm run package-linux
 ```
 
-4. Run the app:  
+4. Run the app:
+
 ```bash
 npm start
 ```

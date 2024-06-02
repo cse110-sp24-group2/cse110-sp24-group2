@@ -1,73 +1,73 @@
-/* animation.css */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    font-family: "Courier New", Courier, monospace;
-    overflow: hidden;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
 }
 
 #animationContainer {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#leftCurtain, #rightCurtain {
-    width: 50%;
-    height: 100%;
-    background-color: pink; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2em;
-    position: absolute;
-    top: 0;
+#leftCurtain,
+#rightCurtain {
+  width: 50%;
+  height: 100%;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
 }
 
 #leftCurtain {
-    left: 0;
-    animation: openLeftCurtain 5s forwards;
+  left: 0;
+  animation: openLeftCurtain 5s forwards;
 }
 
 #rightCurtain {
-    right: 0;
-    animation: openRightCurtain 5s forwards;
+  right: 0;
+  animation: openRightCurtain 5s forwards;
 }
 
 #centerText {
-    text-align: center;
-    color: darkorchid;
-    font-size: 2em;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
- 
+  text-align: center;
+  color: darkorchid;
+  font-size: 2em;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 @keyframes openLeftCurtain {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes openRightCurtain {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

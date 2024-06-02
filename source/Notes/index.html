@@ -1,43 +1,49 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Markdown Notes App Journal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Add a style attribute to the button -->
-    <button onclick="window.location.href='../calendar/index.html'">Back to Calendar</button>
+    <button onclick="window.location.href='../calendar/index.html'">
+      Back to Calendar
+    </button>
     <h1 id="dateDisplay">Date will be displayed here</h1>
 
     <div class="container">
-        <div class="markdown-container">
-            <div class="tab">
-                <button class="tablinks" onclick="openTab(event, 'Markdown')">Markdown</button>
-                <button class="tablinks" onclick="openTab(event, 'Preview')">Preview</button>
-            </div>
-
-            <div id="Markdown" class="tabcontent">
-                <textarea id="markdown"></textarea>
-            </div>
-
-            <div id="Preview" class="tabcontent">
-                <div id="markdownPreview"></div>
-            </div>
-            <div class="notes-buttons">
-                <button id="saveButton">Save</button>
-                <button id="deleteButton">Delete</button>
-            </div>
+      <div class="markdown-container">
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'Markdown')">
+            Markdown
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'Preview')">
+            Preview
+          </button>
         </div>
-        <!--Added to do list here-->
-        <todo-list-element></todo-list-element>
+
+        <div id="Markdown" class="tabcontent">
+          <textarea id="markdown"></textarea>
+        </div>
+
+        <div id="Preview" class="tabcontent">
+          <div id="markdownPreview"></div>
+        </div>
+        <div class="notes-buttons">
+          <button id="saveButton">Save</button>
+          <button id="deleteButton">Delete</button>
+        </div>
+      </div>
+      <!--Added to do list here-->
+      <todo-list-element></todo-list-element>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
     <script src="app.js"></script>
     <script src="../components/TodoList.js"></script>
-</body>
+  </body>
 </html>

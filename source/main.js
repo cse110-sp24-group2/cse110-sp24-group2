@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron')
-function createWindow () {
+const { app, BrowserWindow } = require("electron");
+function createWindow() {
   let win = new BrowserWindow({
     width: 1200,
     height: 1000,
@@ -7,10 +7,9 @@ function createWindow () {
       nodeIntegration: true, // turn off nodeIntegration
       contextIsolation: false, // turn on contextIsolationt
     },
-    
-  })
+  });
 
-  win.loadFile('source/animation/animation.html')
+  win.loadFile("source/animation/animation.html");
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow);

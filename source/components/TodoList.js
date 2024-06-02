@@ -176,7 +176,7 @@ class TodoList extends HTMLElement {
     const listContainer = shadowRoot.querySelector("#list-container");
 
     button.addEventListener("click", () =>
-      this.addTodoListItem(input, listContainer)
+      this.addTodoListItem(input, listContainer),
     );
     this.renderNotes(listContainer);
 
@@ -224,7 +224,7 @@ class TodoList extends HTMLElement {
       label.innerText = " " + note["input"];
       // Add the change event listener to the checkbox
       checkbox.addEventListener("change", () =>
-        this.alterCompletion(note["id"])
+        this.alterCompletion(note["id"]),
       );
       // Add the keydown event listener to the checkbox
       checkbox.addEventListener("keydown", function (e) {
@@ -234,7 +234,7 @@ class TodoList extends HTMLElement {
       });
       // Add the click event listener to the delete button
       button.addEventListener("click", () =>
-        this.deleteTodoListItem(note["id"], listContainer)
+        this.deleteTodoListItem(note["id"], listContainer),
       );
       // Add the keydown event listener to the delete button
       button.addEventListener("keydown", function (e) {
