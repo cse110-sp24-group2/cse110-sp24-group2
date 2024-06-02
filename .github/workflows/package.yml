@@ -4,7 +4,7 @@ on:
   # Run when pull requests are made to main branches
   pull_request:
     branches:
-      - package-main
+      - main
 permissions:
   contents: write
 
