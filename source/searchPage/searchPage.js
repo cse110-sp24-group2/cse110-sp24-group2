@@ -39,6 +39,7 @@ function displayLabels(labels, labelsContainer, searchInput) {
         const labelElement = document.createElement('div');
         labelElement.textContent = label;
         labelElement.classList.add('label');
+        
 
         // Event listener for click event on label element
         labelElement.addEventListener('click', function () {
