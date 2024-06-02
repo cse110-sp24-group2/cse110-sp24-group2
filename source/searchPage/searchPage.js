@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {Array} labels - The labels to display.
  * @param {HTMLElement} labelsContainer - The container to display labels in.
  * @param {HTMLElement} searchInput - The search input element.
- * @param {Function} filterLabels - The function to filter labels.
  */
 function displayLabels(labels, labelsContainer, searchInput) {
     labelsContainer.innerHTML = '';
@@ -44,6 +43,7 @@ function displayLabels(labels, labelsContainer, searchInput) {
         // Event listener for click event on label element
         labelElement.addEventListener('click', function () {
             searchInput.value = label;
+            displayDates(label, JSON.parse(fs.readFileSync(path.join(__dirname, "../DevJournal", '/Data', 'DatetoLabel.json'), 'utf8')));
         });
 
         labelsContainer.appendChild(labelElement);
@@ -63,7 +63,7 @@ function displayDates(label, labelToDate) {
     if (labelToDate.hasOwnProperty(label)) {
         console.log(`Found label in labelToDate: ${label}`);
         labelToDate[label].forEach(dateObj => {
-            const dateStr = `${dateObj.day}/${dateObj.month}/${dateObj.year}`;
+            const dateStr = `${dateObj.month+1}/${dateObj.day}/${dateObj.year}`;
             console.log(`Creating button for date: ${dateStr}`);
             const dateButton = document.createElement('button');
             dateButton.textContent = dateStr;
@@ -72,10 +72,9 @@ function displayDates(label, labelToDate) {
             // Event listener for click event on date button
             dateButton.addEventListener('click', function () {
                 localStorage.setItem('date', JSON.stringify(dateObj));
-                //Navigate to the Notes Page
+                // Navigate to the Notes Page
                 window.location.href = escape('../Notes/index.html');
             });
-
 
             datesContainer.appendChild(dateButton);
         });
@@ -118,7 +117,7 @@ function updateButtonColor() {
     const backToCalendarButton = document.getElementById('backToCalendar');
     backToCalendarButton.style.backgroundColor = monthColors[currentMonthClass];
 }
-// navigate back to calendar
+// Navigate back to calendar
 document.getElementById('backToCalendar').addEventListener('click', function() {
     window.location.href = escape('../calendar/index.html');
 });
