@@ -50,6 +50,13 @@
     <div id="labels-container"></div>
     <!-- Add a style attribute to the button -->
     <button id="backToCalendar">Back to Calendar</button>
+
+    <dialog id="delete-confirm-dialog">
+      <p>Are you sure you want to delete this markdown entry?</p>
+      <button id="delete-confirm-btn">Confirm</button>
+      <button id="delete-cancel-btn">Cancel</button>
+    </dialog>
+    
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
     <script src="app.js"></script>
     <script src="../components/TodoList.js"></script>

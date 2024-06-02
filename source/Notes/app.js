@@ -103,13 +103,43 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
   // Delete button functionality
-  document
-    .getElementById("deleteButton")
-    .addEventListener("click", function () {
-      deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
-      markdownTextarea.value = "";
-      syncMarkdownPreview();
-    });
+  // document
+  //   .getElementById("deleteButton")
+  //   .addEventListener("click", function () {
+  //     deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
+  //     markdownTextarea.value = "";
+  //     syncMarkdownPreview();
+  //   });
+  // document.getElementById("deleteButton").addEventListener("click", function () {
+  //   if (confirm("Are you sure you want to delete this entry?")) {
+  //     deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
+  //     markdownTextarea.value = "";
+  //     syncMarkdownPreview();
+  //   }
+  // });
+
+  // Delete button with Confirmation popup functionality
+  const deleteConfirmDialog = document.getElementById("delete-confirm-dialog");
+  const deleteConfirmBtn = document.getElementById("delete-confirm-btn");
+  const deleteCancelBtn = document.getElementById("delete-cancel-btn");
+
+  document.getElementById("deleteButton").addEventListener("click", function () {
+    deleteConfirmDialog.showModal();
+  });
+
+  deleteConfirmBtn.addEventListener("click", function () {
+    deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
+    markdownTextarea.value = "";
+    syncMarkdownPreview();
+    deleteConfirmDialog.close();
+    // Ensure textarea is editable
+    markdownTextarea.removeAttribute('disabled');
+  });
+
+  deleteCancelBtn.addEventListener("click", function () {
+    deleteConfirmDialog.close();
+  });
+
     // Simulate a click on the "Markdown" button
     document.querySelector('.tablinks[onclick*="Markdown"]').click();
 
@@ -118,12 +148,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const markdownText = markdownTextarea.value;
         saveMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year, markdownText);
     });
-    //delete button functionality
-    document.getElementById('deleteButton').addEventListener('click', function() {
-        deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
-        markdownTextarea.value = '';
-        document.getElementById('markdownPreview').innerHTML = '';
-    });
+    // //delete button functionality
+    // document.getElementById('deleteButton').addEventListener('click', function() {
+    //     deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
+    //     markdownTextarea.value = '';
+    //     document.getElementById('markdownPreview').innerHTML = '';
+    // });
     // navigate back to calendar
     document.getElementById('backToCalendar').addEventListener('click', function() {
         const markdownText = markdownTextarea.value;
