@@ -21,27 +21,51 @@ body {
 
 .main-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-right: 50px;
+    flex-direction: row;
+    background-color: lightgray;
+    gap: 10px;
 }
 
 .calendar-container {
     flex: 3;
+    min-width: 300px;
+    max-width: 600px;
 }
 
-@media (width <= 768px) {
+.calendar-container, .todo-list-container {
+    flex: 1 0 300px;
+    max-width: 600px;
+}
+
+/* Vertical layout for calendar and todo list if screen size is too small for readability */
+@media (max-width: 1160px) {
     .main-container {
         flex-direction: column;
         align-items: center;
-    } 
+    }
+
+    .calendar-container {
+        width: 100%;
+        max-width: 768px;
+    }
 }
 
-@media (width >= 768px) {
+/* DESKTOP RESPONSIVENESS BREAKPOINT */
+@media (min-width: 1160px) {
     .main-container {
         flex-direction: row;
         align-items: flex-start;
+        justify-content: center;
     } 
+
+    .calendar-container {
+        width: 100%;
+        max-width: 768px;
+    }
 }
 
 .calendar-header {
@@ -72,48 +96,138 @@ body {
     padding: 15px 10px;
     background-color: #fff;
     border: none;
+    border-radius: 10px;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .day:hover {
-    background-color: #cf9fc2;
     transform: translateY(-3px);
     cursor: pointer;
     box-shadow: 0 4px 5px rgba(0 0 0 / 10%);
 }
 
-.day.spring {
-    color: #ff69b4;
+.current-day {
+    color: #333 !important;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+  
+.current-day:hover {
+    color:white !important;
+    transform: scale(1.05);
 }
 
-.day.summer {
-    color: #008000; 
+.january { color: #020494; } 
+.day.january:hover { background-color: #6668b9;} 
+.current-day.january {
+    background: linear-gradient(135deg, rgb(55, 16, 197), rgb(5, 113, 246));
+} 
+.current-day.january:hover {
+    background: linear-gradient(135deg, rgb(5, 113, 246), rgb(55, 16, 197));
 }
 
-.day.fall {
-    color: #ffa500; 
+.february { color: #f29cac; }
+.day.february:hover { background-color: #f0b9c3;} 
+.current-day.february {
+    background: linear-gradient(135deg, pink, violet);
+} 
+.current-day.february:hover {
+    background: linear-gradient(135deg, violet, pink);
 }
 
-.day.winter {
-    color: #00f; 
+.march { color: #28a745; } 
+.day.march:hover { background-color: rgb(86, 234, 135);}  
+.current-day.march {
+    background: linear-gradient(135deg, rgb(82, 213, 161), rgb(78, 194, 36));
+} 
+.current-day.march:hover {
+    background: linear-gradient(135deg, rgb(78, 194, 36), rgb(82, 213, 161));
 }
 
-.month-color {
-    color: #333;
+.april { color: #e83e8c; } 
+.day.april:hover { background-color: #f476b1;} 
+.current-day.april {
+    background: linear-gradient(135deg, rgb(219, 57, 208), rgb(195, 24, 129));
+} 
+.current-day.april:hover {
+    background: linear-gradient(135deg, rgb(195, 24, 129), rgb(219, 57, 208));
 }
 
-.january { color: #c14300; }  
-.february { color: #f29cac; } 
-.march { color: #28a745; }   
-.april { color: #e83e8c; }   
-.may { color: #790258; }     
-.june { color: #154a27; }    
-.july { color: #17a2b8; }     
-.august { color: #d1890c; }   
+.may { color: #790258; }  
+.day.may:hover { background-color: #ea65c4;} 
+.current-day.may {
+    background: linear-gradient(135deg, rgb(236, 55, 149), rgb(183, 17, 161));
+} 
+.current-day.may:hover {
+    background: linear-gradient(135deg, rgb(183, 17, 161), rgb(236, 55, 149));
+}
+  
+.june { color: #154a27; } 
+.day.june:hover { background-color: #47d175;}
+.current-day.june {
+    background: linear-gradient(135deg, rgb(101, 225, 142), rgb(61, 183, 17));
+} 
+.current-day.june:hover {
+    background: linear-gradient(135deg, rgb(61, 183, 17), rgb(101, 225, 142));
+}
+
+
+.july { color: #17a2b8; } 
+.day.july:hover { background-color: #5ed9ec;}  
+.current-day.july {
+    background: linear-gradient(135deg, rgb(21, 234, 227), rgb(17, 139, 183));
+} 
+.current-day.july:hover {
+    background: linear-gradient(135deg, rgb(17, 139, 183), rgb(21, 234, 227));
+}
+
+.august { color: #d1890c; } 
+.day.august:hover { background-color: #f5bb58;} 
+.current-day.august {
+    background: linear-gradient(135deg, rgb(236, 170, 38), rgb(199, 228, 8));
+} 
+.current-day.august:hover {
+    background: linear-gradient(135deg, rgb(199, 228, 8), rgb(236, 170, 38));
+}
+
 .september { color: #dc3545; }
+.day.september:hover { background-color: #ed7480;}
+.current-day.september {
+    background: linear-gradient(135deg, rgb(201, 55, 30), rgb(252, 57, 67));
+} 
+.current-day.september:hover {
+    background: linear-gradient(135deg, rgb(252, 57, 67), rgb(201, 55, 30));
+}
+
 .october { color: #d45810; }  
+.day.october:hover { background-color: #e8864d;}
+.current-day.october {
+    background: linear-gradient(135deg, rgb(242, 214, 55), rgb(231, 151, 14));
+} 
+.current-day.october:hover {
+    background: linear-gradient(135deg, rgb(231, 151, 14), rgb(242, 214, 55));
+}
+
 .november { color: #343a40; } 
+.day.november:hover { background-color: #a6b6c6;}
+.current-day.november {
+    background: linear-gradient(135deg, rgb(187, 205, 218), rgb(107, 123, 132));
+} 
+.current-day.november:hover {
+    background: linear-gradient(135deg, rgb(107, 123, 132), rgb(187, 205, 218));
+}
+
 .december { color: #53697d; } 
+.day.december:hover { background-color: #9bbfe1;}
+.current-day.december {
+    background: linear-gradient(135deg, rgb(101, 188, 225), rgb(42, 85, 151));
+} 
+.current-day.december:hover {
+    background: linear-gradient(135deg, rgb(42, 85, 151), rgb(101, 188, 225));
+}
 
 
 .modal {

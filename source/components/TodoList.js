@@ -130,14 +130,35 @@ class TodoList extends HTMLElement {
             border: none;
             cursor: pointer;
             float: right;
+            border-radius: 5px;
         }
-        `;
+        .scrollbar {
+          overflow: scroll;
+          height: 500px;
+        }
+      
+        .scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-thumb {
+            background-color: #6b6b6b; 
+            border-radius: 10px; 
+            border: 2px solid #ffffff; 
+        }
+        .scrollbar::-webkit-scrollbar-track {
+            background: #f0f0f0; 
+            border-radius: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-corner {
+            background: transparent; 
+        }
+          `;
 
     container.setAttribute("class", "todo-list-container");
 
     container.innerHTML = `
             <div class="todo-list"> 
-                <h2>To-Do Lists <img src="/source/components/images/to-do-icon.png"> </h2>
+                <h2>To-Do Lists <img src="../components/images/to-do-icon.png"> </h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
                     <button id="add-todo">ADD</button>
@@ -158,6 +179,14 @@ class TodoList extends HTMLElement {
       this.addTodoListItem(input, listContainer)
     );
     this.renderNotes(listContainer);
+
+    // Add event listener for keyboard navigation
+    button.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        this.addTodoListItem(input, listContainer);
+        e.preventDefault();
+      }
+    });
   }
 
   /**
@@ -197,10 +226,22 @@ class TodoList extends HTMLElement {
       checkbox.addEventListener("change", () =>
         this.alterCompletion(note["id"])
       );
+      // Add the keydown event listener to the checkbox
+      checkbox.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          checkbox.click();
+        }
+      });
       // Add the click event listener to the delete button
       button.addEventListener("click", () =>
         this.deleteTodoListItem(note["id"], listContainer)
       );
+      // Add the keydown event listener to the delete button
+      button.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          this.deleteTodoListItem(note["id"], listContainer);
+        }
+      });
       // Package the items together and append it to the container
       li.appendChild(checkbox);
       li.appendChild(label);
