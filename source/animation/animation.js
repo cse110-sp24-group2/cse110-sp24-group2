@@ -1,10 +1,9 @@
-/**
- * Wait for 5 seconds and then redirect to the calendar page
- * @function updateMonthYear
- */
 document.addEventListener("DOMContentLoaded", function () {
-  const animationDuration = 5000;
+  const animationDuration = 6000;
   setTimeout(function () {
-    window.location.href = "../calendar/index.html";
+    document.getElementById('centerText').classList.remove('hidden');
+    setTimeout(function () {
+      window.location.href = "../calendar/index.html";
+    }, animationDuration);
   }, animationDuration);
 });
