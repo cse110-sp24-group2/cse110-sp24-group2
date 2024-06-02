@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', function () {
         const query = this.value;
         console.log(`Input event triggered with query: ${query}`);
-        filterLabels(query, labelsContainer, searchInput);
+        filterLabels(query, labelsContainer, searchInput, labelToDate);
         const datesContainer = document.getElementById('dates-container');
         // If the query matches a label, display the dates for that label
         if (labelToDate.hasOwnProperty(query)) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateButtonColor();
-    filterLabels('', labelsContainer, searchInput);
+    filterLabels('', labelsContainer, searchInput, labelToDate);
 });
 
 /**
@@ -32,24 +32,45 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {Array} labels - The labels to display.
  * @param {HTMLElement} labelsContainer - The container to display labels in.
  * @param {HTMLElement} searchInput - The search input element.
+ * @param {Object} labelToDate - The label to date mapping.
  */
-function displayLabels(labels, labelsContainer, searchInput) {
+function displayLabels(labels, labelsContainer, searchInput, labelToDate) {
     labelsContainer.innerHTML = '';
     labels.forEach(label => {
         const labelElement = document.createElement('div');
-        labelElement.textContent = label;
-        labelElement.classList.add('label');
-        
+        labelElement.classList.add('label-container');
 
-        // Event listener for click event on label element
-        labelElement.addEventListener('click', function () {
-            searchInput.value = label;
-            displayDates(label, JSON.parse(fs.readFileSync(path.join(__dirname, "../DevJournal", '/Data', 'DatetoLabel.json'), 'utf8')));
-        });
+        const labelText = document.createElement('span');
+        labelText.textContent = label;
+        labelText.classList.add('label-name');
+        labelText.style.backgroundColor = labelToDate[label][0].color || '#F0F0F0';
+        labelElement.appendChild(labelText);
+        
+        const dates = labelToDate[label];
+        if (dates && dates.length > 0) {
+            const datesContainer = document.createElement('div');
+            datesContainer.classList.add('label-dates');
+            dates.forEach(date => {
+                const dateButton = document.createElement('button');
+                dateButton.textContent = `${date.month+1}/${date.day}/${date.year}`;
+                dateButton.classList.add('date-button');
+                dateButton.style.backgroundColor = date.color || '#F0F0F0'; // Set date button color
+                dateButton.addEventListener('click', function () {
+                    localStorage.setItem('date', JSON.stringify(date));
+                    window.location.href = escape('../Notes/index.html');
+                });
+                datesContainer.appendChild(dateButton);
+            });
+            labelElement.appendChild(datesContainer);
+        }
 
         labelsContainer.appendChild(labelElement);
     });
 }
+
+
+
+
 /**
  * Display dates as clickable buttons for a given label.
  * @param {string} label - The label to display dates for.
@@ -88,15 +109,15 @@ function displayDates(label, labelToDate) {
  * @param {string} query - The query to filter labels.
  * @param {HTMLElement} labelsContainer - The container to display labels in.
  * @param {HTMLElement} searchInput - The search input element.
+ * @param {Object} labelToDate - The label to date mapping.
  */
-function filterLabels(query, labelsContainer, searchInput) {
+function filterLabels(query, labelsContainer, searchInput, labelToDate) {
     const constSuggestions = Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, '../DevJournal', '/Data', 'DatetoLabel.json'), 'utf8')));
     const filteredLabels = constSuggestions.filter(suggestion =>
         suggestion.toLowerCase().includes(query.toLowerCase())
     );
-    displayLabels(filteredLabels, labelsContainer, searchInput, filterLabels);
+    displayLabels(filteredLabels, labelsContainer, searchInput, labelToDate);
 }
-
 /**
  * Update the color of the search button based on the current month.
  */

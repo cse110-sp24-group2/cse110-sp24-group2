@@ -177,8 +177,7 @@ function renderLabels(day, month, year) {
                 dayLabels.labels.forEach(labelData => {
                     let newLabel = document.createElement("div");
                     newLabel.classList.add("custom-label");
-                    newLabel.innerHTML = `<button style="background-color: ${labelData.color}">${labelData.done ? `<s>${labelData.name}</s>` : `${labelData.name}`}</button>`;
-                    
+                    newLabel.innerHTML = `<button style="background-color: ${labelData.color || '#F0F0F0'}">${labelData.done ? `<s>${labelData.name}</s>` : `${labelData.name}`}</button>`;                    
                     document.getElementById("labels-container").appendChild(newLabel);
                     // Add the dblclick event listener to the new label
                     newLabel.querySelector("button").addEventListener("dblclick", () => {

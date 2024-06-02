@@ -42,23 +42,46 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-#labels-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.label {
+.label-container {
     padding: 10px;
-    background-color: #f9f9f9;
+    font-size: 16px;
+    top: 10px;
+    right: 10px;
+    left: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
 }
 
-.label:hover {
-    background-color: #f0f0f0;
+.label-name {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--month-color);
+    color: rgb(3, 3, 3);
+    cursor: pointer;
+    display: inline-block;
+}
+
+.label-dates {
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+}
+
+.date-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px; 
+}
+.date-button:hover {
+    background-color: #bbb;
 }
 
 #suggestions {
