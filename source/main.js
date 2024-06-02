@@ -6,10 +6,11 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true, // turn off nodeIntegration
       contextIsolation: false, // turn on contextIsolationt
-    }
+    },
+    
   })
 
-  win.loadFile('source/calendar/index.html')
+  win.loadFile('source/animation/animation.html')
 }
 
 app.whenReady().then(createWindow)
