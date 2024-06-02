@@ -4,10 +4,10 @@ let appBinaryPath;
 switch (os.platform()) {
   case "darwin":
     appBinaryPath =
-      "./DevJournal/DevJournal-darwin-x64/DevJournal.app/Contents/MacOS/DevJournal";
+      './DevJournal/DevJournal-darwin-x64/DevJournal.app/Contents/MacOS/DevJournal';
     break;
   case "win32":
-    appBinaryPath = "\\path\\for\\windows\\DevJournal.exe";
+    appBinaryPath = './DevJournal/DevJournal-win32-x64/DevJournal.exe';
     break;
   case "linux":
     appBinaryPath = "/path/for/linux/DevJournal";
