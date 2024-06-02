@@ -1,1615 +1,4306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8">
     <title>JSDoc: Global</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="styles/prettify-tomorrow.css"
-    />
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
-  </head>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
 
-  <body>
-    <div id="main">
-      <h1 class="page-title">Global</h1>
+<body>
 
-      <section>
-        <header>
-          <h2></h2>
-        </header>
+<div id="main">
 
-        <article>
-          <div class="container-overview">
-            <dl class="details"></dl>
-          </div>
+    <h1 class="page-title">Global</h1>
 
-          <h3 class="subsection-title">Members</h3>
+    
 
-          <h4 class="name" id="fs">
-            <span class="type-signature">(constant) </span>fs<span
-              class="type-signature"
-            ></span>
-          </h4>
 
-          <div class="description">
-            Set up necessary modules and path to Data directory
-          </div>
 
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_app.js.html">Notes/app.js</a>,
-                  <a href="Notes_app.js.html#line4">line 4</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
 
-          <h3 class="subsection-title">Methods</h3>
+<section>
 
-          <h4 class="name" id="addTodoListItem">
-            <span class="type-signature"></span>addTodoListItem<span
-              class="signature"
-              >(input, listContainer)</span
-            ><span class="type-signature"> &rarr; {void}</span>
-          </h4>
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
 
-          <div class="description">
-            Adds a new todo list item to the container
-          </div>
+<article>
+    <div class="container-overview">
+    
+        
 
-          <h5>Parameters:</h5>
+        
 
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
 
-                <th>Type</th>
+<dl class="details">
 
-                <th class="last">Description</th>
-              </tr>
-            </thead>
+    
 
-            <tbody>
-              <tr>
-                <td class="name"><code>input</code></td>
+    
 
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
+    
 
-                <td class="description last">
-                  The input element to get the info from
-                </td>
-              </tr>
+    
 
-              <tr>
-                <td class="name"><code>listContainer</code></td>
+    
 
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
+    
 
-                <td class="description last">
-                  The container to add the new todo list item to
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    
 
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="components_TodoList.js.html"
-                    >components/TodoList.js</a
-                  >, <a href="components_TodoList.js.html#line253">line 253</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
+    
 
-          <h5>Returns:</h5>
+    
 
-          <dl>
-            <dt>Type</dt>
-            <dd>
-              <span class="param-type">void</span>
-            </dd>
-          </dl>
+    
 
-          <h4 class="name" id="alterCompletion">
-            <span class="type-signature"></span>alterCompletion<span
-              class="signature"
-              >(id)</span
-            ><span class="type-signature"></span>
-          </h4>
+    
 
-          <div class="description">
-            Marks a note as complete or incomplete in localStorage
-          </div>
+    
 
-          <h5>Parameters:</h5>
+    
 
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
+    
 
-                <th>Type</th>
+    
 
-                <th class="last">Description</th>
-              </tr>
-            </thead>
+    
+</dl>
 
-            <tbody>
-              <tr>
-                <td class="name"><code>id</code></td>
 
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">
-                  The id to alter the completion of
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="components_TodoList.js.html"
-                    >components/TodoList.js</a
-                  >, <a href="components_TodoList.js.html#line301">line 301</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="createCalendar">
-            <span class="type-signature"></span>createCalendar<span
-              class="signature"
-              >(month, year)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Creates the calendar for a specific month and year.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the calendar.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year of the calendar.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="calendar_calendar-script.js.html"
-                    >calendar/calendar-script.js</a
-                  >,
-                  <a href="calendar_calendar-script.js.html#line69">line 69</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="daysInMonth">
-            <span class="type-signature"></span>daysInMonth<span
-              class="signature"
-              >(month, year)</span
-            ><span class="type-signature"> &rarr; {number}</span>
-          </h4>
-
-          <div class="description">
-            Returns the number of days in a given month of a given year.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month (0-11).</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="calendar_calendar-script.js.html"
-                    >calendar/calendar-script.js</a
-                  >,
-                  <a href="calendar_calendar-script.js.html#line58">line 58</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h5>Returns:</h5>
-
-          <div class="param-desc">The number of days in the month.</div>
-
-          <dl>
-            <dt>Type</dt>
-            <dd>
-              <span class="param-type">number</span>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="deleteDatetoLabel">
-            <span class="type-signature"></span>deleteDatetoLabel<span
-              class="signature"
-              >(day, month, year, label)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Deletes a date associated with a label from the DatetoLabel.json
-            file.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>day</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The day of the date.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the date.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year of the date.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>label</code></td>
-
-                <td class="type">
-                  <span class="param-type">string</span>
-                </td>
-
-                <td class="description last">The label to be deleted.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_label.js.html">Notes/label.js</a>,
-                  <a href="Notes_label.js.html#line258">line 258</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="deleteLabel">
-            <span class="type-signature"></span>deleteLabel<span
-              class="signature"
-              >(day, month, year, label)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">Deletes a label for a specific day.</div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>day</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The day of the month.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the year.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>label</code></td>
-
-                <td class="type">
-                  <span class="param-type">string</span>
-                </td>
-
-                <td class="description last">
-                  The name of the label to delete.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_label.js.html">Notes/label.js</a>,
-                  <a href="Notes_label.js.html#line220">line 220</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="deleteMarkdownEntry">
-            <span class="type-signature"></span>deleteMarkdownEntry<span
-              class="signature"
-              >()</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Deletes Markdown notes for the current day from its corresponding
-            subdirectories.
-          </div>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_app.js.html">Notes/app.js</a>,
-                  <a href="Notes_app.js.html#line225">line 225</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="deleteTodoListItem">
-            <span class="type-signature"></span>deleteTodoListItem<span
-              class="signature"
-              >(id, listContainer)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Deletes a todo list item from the container matching the id
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>id</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">
-                  The id of the todo list item to delete
-                </td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>listContainer</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">The list to remove it from</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="components_TodoList.js.html"
-                    >components/TodoList.js</a
-                  >, <a href="components_TodoList.js.html#line284">line 284</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="displayDates">
-            <span class="type-signature"></span>displayDates<span
-              class="signature"
-              >(label, labelToDate)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Display dates as clickable buttons for a given label.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>label</code></td>
-
-                <td class="type">
-                  <span class="param-type">string</span>
-                </td>
-
-                <td class="description last">
-                  The label to display dates for.
-                </td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>labelToDate</code></td>
-
-                <td class="type">
-                  <span class="param-type">Object</span>
-                </td>
-
-                <td class="description last">The label to date mapping.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="searchPage_searchPage.js.html"
-                    >searchPage/searchPage.js</a
-                  >, <a href="searchPage_searchPage.js.html#line75">line 75</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="displayLabels">
-            <span class="type-signature"></span>displayLabels<span
-              class="signature"
-              >(labels, labelsContainer, searchInput)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">Display labels in the labels container.</div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>labels</code></td>
-
-                <td class="type">
-                  <span class="param-type">Array</span>
-                </td>
-
-                <td class="description last">The labels to display.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>labelsContainer</code></td>
-
-                <td class="type">
-                  <span class="param-type">HTMLElement</span>
-                </td>
-
-                <td class="description last">
-                  The container to display labels in.
-                </td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>searchInput</code></td>
-
-                <td class="type">
-                  <span class="param-type">HTMLElement</span>
-                </td>
-
-                <td class="description last">The search input element.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="searchPage_searchPage.js.html"
-                    >searchPage/searchPage.js</a
-                  >, <a href="searchPage_searchPage.js.html#line41">line 41</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="filterLabels">
-            <span class="type-signature"></span>filterLabels<span
-              class="signature"
-              >(query, labelsContainer, searchInput)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Filter labels based on a query and display them.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>query</code></td>
-
-                <td class="type">
-                  <span class="param-type">string</span>
-                </td>
-
-                <td class="description last">The query to filter labels.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>labelsContainer</code></td>
-
-                <td class="type">
-                  <span class="param-type">HTMLElement</span>
-                </td>
-
-                <td class="description last">
-                  The container to display labels in.
-                </td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>searchInput</code></td>
-
-                <td class="type">
-                  <span class="param-type">HTMLElement</span>
-                </td>
-
-                <td class="description last">The search input element.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="searchPage_searchPage.js.html"
-                    >searchPage/searchPage.js</a
-                  >,
-                  <a href="searchPage_searchPage.js.html#line109">line 109</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="getNotes">
-            <span class="type-signature"></span>getNotes<span class="signature"
-              >()</span
-            ><span class="type-signature"> &rarr; {Array}</span>
-          </h4>
-
-          <div class="description">Gets the notes from the local storage</div>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="components_TodoList.js.html"
-                    >components/TodoList.js</a
-                  >, <a href="components_TodoList.js.html#line192">line 192</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h5>Returns:</h5>
-
-          <div class="param-desc">The notes objects from the local storage</div>
-
-          <dl>
-            <dt>Type</dt>
-            <dd>
-              <span class="param-type">Array</span>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="highlightCurrentDay">
-            <span class="type-signature"></span>highlightCurrentDay<span
-              class="signature"
-              >(month, year)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Highlights the current day on the calendar.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the calendar.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year of the calendar.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="calendar_calendar-script.js.html"
-                    >calendar/calendar-script.js</a
-                  >,
-                  <a href="calendar_calendar-script.js.html#line179"
-                    >line 179</a
-                  >
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="labelExists">
-            <span class="type-signature"></span>labelExists<span
-              class="signature"
-              >(day, month, year, name)</span
-            ><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
-          </h4>
-
-          <div class="description">
-            Checks if a label exists for a specific day.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>day</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The day of the month.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the year.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>name</code></td>
-
-                <td class="type">
-                  <span class="param-type">string</span>
-                </td>
-
-                <td class="description last">The name of the label.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_label.js.html">Notes/label.js</a>,
-                  <a href="Notes_label.js.html#line64">line 64</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h5>Returns:</h5>
-
-          <div class="param-desc">
-            A promise that resolves to a boolean indicating whether the label
-            exists.
-          </div>
-
-          <dl>
-            <dt>Type</dt>
-            <dd>
-              <span class="param-type">Promise.&lt;boolean></span>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="mul">
-            <span class="type-signature"></span>mul<span class="signature"
-              >(a, b)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">Multiplies two numbers</div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>a</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">First number to multiply</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>b</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">Second number to multiply</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a
-                  >, <a href="scripts_arithmetic.js.html#line17">line 17</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h5>Returns:</h5>
-
-          <div class="param-desc">The product of the two numbers</div>
-
-          <h4 class="name" id="openTab">
-            <span class="type-signature"></span>openTab<span class="signature"
-              >()</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Opens entry windows for Markdown and To-do list
-          </div>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_app.js.html">Notes/app.js</a>,
-                  <a href="Notes_app.js.html#line140">line 140</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="renderLabels">
-            <span class="type-signature"></span>renderLabels<span
-              class="signature"
-              >(day, month, year)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Renders labels for the current day into the labels container.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>day</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The day of the month.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the year.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_label.js.html">Notes/label.js</a>,
-                  <a href="Notes_label.js.html#line176">line 176</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="renderMarkdownEntry">
-            <span class="type-signature"></span>renderMarkdownEntry<span
-              class="signature"
-              >()</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Renders Markdown notes for the current day into the notes window.
-          </div>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_app.js.html">Notes/app.js</a>,
-                  <a href="Notes_app.js.html#line203">line 203</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="renderNotes">
-            <span class="type-signature"></span>renderNotes<span
-              class="signature"
-              >(listContainer)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Renders the available notes to the container
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>listContainer</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">
-                  The container to add the notes to
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="components_TodoList.js.html"
-                    >components/TodoList.js</a
-                  >, <a href="components_TodoList.js.html#line201">line 201</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="saveDatetoLabel">
-            <span class="type-signature"></span>saveDatetoLabel<span
-              class="signature"
-              >(day, month, year, label)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Saves a label with the associated date to a JSON file.
-          </div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>day</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The day of the date.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the date.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year of the date.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>label</code></td>
-
-                <td class="type">
-                  <span class="param-type">string</span>
-                </td>
-
-                <td class="description last">The label to be saved.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_label.js.html">Notes/label.js</a>,
-                  <a href="Notes_label.js.html#line146">line 146</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="saveLabel">
-            <span class="type-signature"></span>saveLabel<span class="signature"
-              >(day, month, year, label)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">Saves a label for a specific day.</div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>day</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The day of the month.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>month</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The month of the year.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>year</code></td>
-
-                <td class="type">
-                  <span class="param-type">number</span>
-                </td>
-
-                <td class="description last">The year.</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>label</code></td>
-
-                <td class="type">
-                  <span class="param-type">string</span>
-                </td>
-
-                <td class="description last">The label to save.</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_label.js.html">Notes/label.js</a>,
-                  <a href="Notes_label.js.html#line101">line 101</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="saveMarkdownEntry">
-            <span class="type-signature"></span>saveMarkdownEntry<span
-              class="signature"
-              >()</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Saves Markdown notes for the current day into its corresponding
-            subdirectories.
-          </div>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_app.js.html">Notes/app.js</a>,
-                  <a href="Notes_app.js.html#line158">line 158</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="sub">
-            <span class="type-signature"></span>sub<span class="signature"
-              >(a, b)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">Subtracts two numbers</div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>a</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">First number</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>b</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">Second number</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a
-                  >, <a href="scripts_arithmetic.js.html#line26">line 26</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h5>Returns:</h5>
-
-          <div class="param-desc">The difference of the two numbers</div>
-
-          <h4 class="name" id="sum">
-            <span class="type-signature"></span>sum<span class="signature"
-              >(a, b)</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">Sums up the two numbers</div>
-
-          <h5>Parameters:</h5>
-
-          <table class="params">
-            <thead>
-              <tr>
-                <th>Name</th>
-
-                <th>Type</th>
-
-                <th class="last">Description</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td class="name"><code>a</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">First number to add</td>
-              </tr>
-
-              <tr>
-                <td class="name"><code>b</code></td>
-
-                <td class="type">
-                  <span class="param-type">*</span>
-                </td>
-
-                <td class="description last">Second number to add</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a
-                  >, <a href="scripts_arithmetic.js.html#line7">line 7</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h5>Returns:</h5>
-
-          <div class="param-desc">The sum of the two numbers</div>
-
-          <h4
-            class="name"
-            id="syncMarkdownPreviewUpdatesthemarkdownpreviewwindowwiththecontentsofthemarkdowneditorarea."
-          >
-            <span class="type-signature"></span>syncMarkdownPreview Updates the
-            markdown preview window with the contents of the markdown editor
-            area.<span class="signature">()</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="Notes_app.js.html">Notes/app.js</a>,
-                  <a href="Notes_app.js.html#line188">line 188</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="updateButtonColor">
-            <span class="type-signature"></span>updateButtonColor<span
-              class="signature"
-              >()</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Update the color of the search button based on the current month.
-          </div>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="searchPage_searchPage.js.html"
-                    >searchPage/searchPage.js</a
-                  >,
-                  <a href="searchPage_searchPage.js.html#line127">line 127</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-
-          <h4 class="name" id="updateMonthYear">
-            <span class="type-signature"></span>updateMonthYear<span
-              class="signature"
-              >()</span
-            ><span class="type-signature"></span>
-          </h4>
-
-          <div class="description">
-            Updates the month and year displayed on the calendar
-          </div>
-
-          <dl class="details">
-            <dt class="tag-source">Source:</dt>
-            <dd class="tag-source">
-              <ul class="dummy">
-                <li>
-                  <a href="calendar_calendar-script.js.html"
-                    >calendar/calendar-script.js</a
-                  >,
-                  <a href="calendar_calendar-script.js.html#line48">line 48</a>
-                </li>
-              </ul>
-            </dd>
-          </dl>
-        </article>
-      </section>
+        
+    
     </div>
 
-    <nav>
-      <h2><a href="index.html">Home</a></h2>
-      <h3>Global</h3>
-      <ul>
-        <li><a href="global.html#addTodoListItem">addTodoListItem</a></li>
-        <li><a href="global.html#alterCompletion">alterCompletion</a></li>
-        <li><a href="global.html#createCalendar">createCalendar</a></li>
-        <li><a href="global.html#daysInMonth">daysInMonth</a></li>
-        <li><a href="global.html#deleteDatetoLabel">deleteDatetoLabel</a></li>
-        <li><a href="global.html#deleteLabel">deleteLabel</a></li>
-        <li>
-          <a href="global.html#deleteMarkdownEntry">deleteMarkdownEntry</a>
-        </li>
-        <li><a href="global.html#deleteTodoListItem">deleteTodoListItem</a></li>
-        <li><a href="global.html#displayDates">displayDates</a></li>
-        <li><a href="global.html#displayLabels">displayLabels</a></li>
-        <li><a href="global.html#filterLabels">filterLabels</a></li>
-        <li><a href="global.html#fs">fs</a></li>
-        <li><a href="global.html#getNotes">getNotes</a></li>
-        <li>
-          <a href="global.html#highlightCurrentDay">highlightCurrentDay</a>
-        </li>
-        <li><a href="global.html#labelExists">labelExists</a></li>
-        <li><a href="global.html#mul">mul</a></li>
-        <li><a href="global.html#openTab">openTab</a></li>
-        <li><a href="global.html#renderLabels">renderLabels</a></li>
-        <li>
-          <a href="global.html#renderMarkdownEntry">renderMarkdownEntry</a>
-        </li>
-        <li><a href="global.html#renderNotes">renderNotes</a></li>
-        <li><a href="global.html#saveDatetoLabel">saveDatetoLabel</a></li>
-        <li><a href="global.html#saveLabel">saveLabel</a></li>
-        <li><a href="global.html#saveMarkdownEntry">saveMarkdownEntry</a></li>
-        <li><a href="global.html#sub">sub</a></li>
-        <li><a href="global.html#sum">sum</a></li>
-        <li>
-          <a
-            href="global.html#syncMarkdownPreviewUpdatesthemarkdownpreviewwindowwiththecontentsofthemarkdowneditorarea."
-            >syncMarkdownPreview Updates the markdown preview window with the
-            contents of the markdown editor area.</a
-          >
-        </li>
-        <li><a href="global.html#updateButtonColor">updateButtonColor</a></li>
-        <li><a href="global.html#updateMonthYear">updateMonthYear</a></li>
-      </ul>
-    </nav>
+    
 
-    <br class="clear" />
+    
 
-    <footer>
-      Documentation generated by
-      <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a>
-    </footer>
+    
 
-    <script>
-      prettyPrint();
-    </script>
-    <script src="scripts/linenumber.js"></script>
-  </body>
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="fs"><span class="type-signature">(constant) </span>fs<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Set up necessary modules and path to Data directory
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_app.js.html">Notes/app.js</a>, <a href="Notes_app.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addTodoListItem"><span class="type-signature"></span>addTodoListItem<span class="signature">(input, listContainer)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Adds a new todo list item to the container
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The input element to get the info from</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The container to add the new todo list item to</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_TodoList.js.html">components/TodoList.js</a>, <a href="components_TodoList.js.html#line253">line 253</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="alterCompletion"><span class="type-signature"></span>alterCompletion<span class="signature">(id)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Marks a note as complete or incomplete in localStorage
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id to alter the completion of</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_TodoList.js.html">components/TodoList.js</a>, <a href="components_TodoList.js.html#line301">line 301</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createCalendar"><span class="type-signature"></span>createCalendar<span class="signature">(month, year)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates the calendar for a specific month and year.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the calendar.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year of the calendar.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="daysInMonth"><span class="type-signature"></span>daysInMonth<span class="signature">(month, year)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Returns the number of days in a given month of a given year.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month (0-11).</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The number of days in the month.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteDatetoLabel"><span class="type-signature"></span>deleteDatetoLabel<span class="signature">(day, month, year, label)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Deletes a date associated with a label from the DatetoLabel.json file.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The day of the date.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the date.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year of the date.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The label to be deleted.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_label.js.html">Notes/label.js</a>, <a href="Notes_label.js.html#line291">line 291</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteLabel"><span class="type-signature"></span>deleteLabel<span class="signature">(day, month, year, label)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Deletes a label for a specific day.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The day of the month.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the year.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the label to delete.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_label.js.html">Notes/label.js</a>, <a href="Notes_label.js.html#line244">line 244</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteMarkdownEntry"><span class="type-signature"></span>deleteMarkdownEntry<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Deletes Markdown notes for the current day from its corresponding subdirectories.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_app.js.html">Notes/app.js</a>, <a href="Notes_app.js.html#line239">line 239</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteTodoListItem"><span class="type-signature"></span>deleteTodoListItem<span class="signature">(id, listContainer)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Deletes a todo list item from the container matching the id
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id of the todo list item to delete</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>listContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The list to remove it from</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_TodoList.js.html">components/TodoList.js</a>, <a href="components_TodoList.js.html#line284">line 284</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="displayDates"><span class="type-signature"></span>displayDates<span class="signature">(label, labelToDate)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Display dates as clickable buttons for a given label.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The label to display dates for.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelToDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The label to date mapping.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="searchPage_searchPage.js.html">searchPage/searchPage.js</a>, <a href="searchPage_searchPage.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="displayLabels"><span class="type-signature"></span>displayLabels<span class="signature">(labels, labelsContainer, searchInput)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Display labels in the labels container.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>labels</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The labels to display.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelsContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The container to display labels in.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>searchInput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The search input element.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="searchPage_searchPage.js.html">searchPage/searchPage.js</a>, <a href="searchPage_searchPage.js.html#line41">line 41</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="filterLabels"><span class="type-signature"></span>filterLabels<span class="signature">(query, labelsContainer, searchInput)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Filter labels based on a query and display them.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The query to filter labels.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>labelsContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The container to display labels in.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>searchInput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The search input element.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="searchPage_searchPage.js.html">searchPage/searchPage.js</a>, <a href="searchPage_searchPage.js.html#line109">line 109</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getNotes"><span class="type-signature"></span>getNotes<span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets the notes from the local storage
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_TodoList.js.html">components/TodoList.js</a>, <a href="components_TodoList.js.html#line192">line 192</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The notes objects from the local storage
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="highlightCurrentDay"><span class="type-signature"></span>highlightCurrentDay<span class="signature">(month, year)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Highlights the current day on the calendar.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the calendar.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year of the calendar.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line179">line 179</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="labelExists"><span class="type-signature"></span>labelExists<span class="signature">(day, month, year, name)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks if a label exists for a specific day.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The day of the month.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the year.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The name of the label.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_label.js.html">Notes/label.js</a>, <a href="Notes_label.js.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise that resolves to a boolean indicating whether the label exists.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="mul"><span class="type-signature"></span>mul<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Multiplies two numbers
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">First number to multiply</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Second number to multiply</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a>, <a href="scripts_arithmetic.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The product of the two numbers
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="openTab"><span class="type-signature"></span>openTab<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Opens entry windows for Markdown and To-do list
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_app.js.html">Notes/app.js</a>, <a href="Notes_app.js.html#line154">line 154</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="renderLabels"><span class="type-signature"></span>renderLabels<span class="signature">(day, month, year)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Renders labels for the current day into the labels container.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The day of the month.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the year.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_label.js.html">Notes/label.js</a>, <a href="Notes_label.js.html#line190">line 190</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="renderMarkdownEntry"><span class="type-signature"></span>renderMarkdownEntry<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Renders Markdown notes for the current day into the notes window.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_app.js.html">Notes/app.js</a>, <a href="Notes_app.js.html#line217">line 217</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="renderNotes"><span class="type-signature"></span>renderNotes<span class="signature">(listContainer)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Renders the available notes to the container
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>listContainer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The container to add the notes to</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="components_TodoList.js.html">components/TodoList.js</a>, <a href="components_TodoList.js.html#line201">line 201</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="saveDatetoLabel"><span class="type-signature"></span>saveDatetoLabel<span class="signature">(day, month, year, label)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Saves a label with the associated date to a JSON file.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The day of the date.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the date.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year of the date.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The label to be saved.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_label.js.html">Notes/label.js</a>, <a href="Notes_label.js.html#line155">line 155</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="saveLabel"><span class="type-signature"></span>saveLabel<span class="signature">(day, month, year, label)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Saves a label for a specific day.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The day of the month.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month of the year.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The label to save.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_label.js.html">Notes/label.js</a>, <a href="Notes_label.js.html#line103">line 103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="saveMarkdownEntry"><span class="type-signature"></span>saveMarkdownEntry<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Saves Markdown notes for the current day into its corresponding subdirectories.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_app.js.html">Notes/app.js</a>, <a href="Notes_app.js.html#line172">line 172</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sub"><span class="type-signature"></span>sub<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Subtracts two numbers
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">First number</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Second number</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a>, <a href="scripts_arithmetic.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The difference of the two numbers
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="sum"><span class="type-signature"></span>sum<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sums up the two numbers
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">First number to add</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Second number to add</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a>, <a href="scripts_arithmetic.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The sum of the two numbers
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="syncMarkdownPreviewUpdatesthemarkdownpreviewwindowwiththecontentsofthemarkdowneditorarea."><span class="type-signature"></span>syncMarkdownPreview
+
+Updates the markdown preview window with the contents of the markdown editor area.<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Notes_app.js.html">Notes/app.js</a>, <a href="Notes_app.js.html#line202">line 202</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="updateButtonColor"><span class="type-signature"></span>updateButtonColor<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Update the color of the search button based on the current month.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="searchPage_searchPage.js.html">searchPage/searchPage.js</a>, <a href="searchPage_searchPage.js.html#line127">line 127</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="updateMonthYear"><span class="type-signature"></span>updateMonthYear<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Updates the month and year displayed on the calendar
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTodoListItem">addTodoListItem</a></li><li><a href="global.html#alterCompletion">alterCompletion</a></li><li><a href="global.html#createCalendar">createCalendar</a></li><li><a href="global.html#daysInMonth">daysInMonth</a></li><li><a href="global.html#deleteDatetoLabel">deleteDatetoLabel</a></li><li><a href="global.html#deleteLabel">deleteLabel</a></li><li><a href="global.html#deleteMarkdownEntry">deleteMarkdownEntry</a></li><li><a href="global.html#deleteTodoListItem">deleteTodoListItem</a></li><li><a href="global.html#displayDates">displayDates</a></li><li><a href="global.html#displayLabels">displayLabels</a></li><li><a href="global.html#filterLabels">filterLabels</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#getNotes">getNotes</a></li><li><a href="global.html#highlightCurrentDay">highlightCurrentDay</a></li><li><a href="global.html#labelExists">labelExists</a></li><li><a href="global.html#mul">mul</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#renderLabels">renderLabels</a></li><li><a href="global.html#renderMarkdownEntry">renderMarkdownEntry</a></li><li><a href="global.html#renderNotes">renderNotes</a></li><li><a href="global.html#saveDatetoLabel">saveDatetoLabel</a></li><li><a href="global.html#saveLabel">saveLabel</a></li><li><a href="global.html#saveMarkdownEntry">saveMarkdownEntry</a></li><li><a href="global.html#sub">sub</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#syncMarkdownPreviewUpdatesthemarkdownpreviewwindowwiththecontentsofthemarkdowneditorarea.">syncMarkdownPreview
+
+Updates the markdown preview window with the contents of the markdown editor area.</a></li><li><a href="global.html#updateButtonColor">updateButtonColor</a></li><li><a href="global.html#updateMonthYear">updateMonthYear</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
 </html>
