@@ -213,3 +213,49 @@ h1.december {background-color: white; color: #53697d;}
         padding: 15px;
     }
 }
+
+
+/* Style for the delete confirmation dialog */
+#delete-confirm-dialog {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Style for the confirm button */
+  #delete-confirm-btn {
+    background-color: #f44336;
+    color: white; /* White text color */
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover effect for the confirm button */
+  #delete-confirm-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Style for the cancel button */
+  #delete-cancel-btn {
+    background-color: #ccc;
+    color: white; /* White text color */
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover effect for the cancel button */
+  #delete-cancel-btn:hover {
+    background-color: #bbb;
+  }
+  
