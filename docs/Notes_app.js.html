@@ -47,11 +47,11 @@ fs.mkdir(dataDir, { recursive: true }, (err) => {
  */
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve the date from local storage
-  var dateInfo = localStorage.getItem("date");
+  let dateInfo = localStorage.getItem("date");
   // Parse the JSON string back into an object
   dateInfo = JSON.parse(dateInfo);
   // Create an array of month names
-  var monthNames = [
+  let monthNames = [
     "January",
     "February",
     "March",
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "December",
   ];
   // Format the date
-  var formattedDate =
+  let formattedDate =
     monthNames[dateInfo.month] + " " + dateInfo.day + " " + dateInfo.year;
   // Display the date
   document.getElementById("dateDisplay").textContent = formattedDate;
@@ -78,10 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
   coloredElements.forEach((element) => {
     element.classList.add(month);
   });
-  var markdownTextarea = document.getElementById("markdown");
+  let markdownTextarea = document.getElementById("markdown");
   markdownTextarea.addEventListener("input", function () {
-    var markdown = markdownTextarea.value;
-    var html = marked(markdown);
+    let markdown = markdownTextarea.value;
+    let html = marked(markdown);
     document.getElementById("markdownPreview").innerHTML = html;
   });
   //Setup rest of paths to subdirectories
@@ -126,9 +126,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const deleteConfirmDialog = document.getElementById("delete-confirm-dialog");
   const deleteConfirmBtn = document.getElementById("delete-confirm-btn");
   const deleteCancelBtn = document.getElementById("delete-cancel-btn");
-  document.getElementById("deleteButton").addEventListener("click", function () {
-    deleteConfirmDialog.showModal();
-  });
+  document
+    .getElementById("deleteButton")
+    .addEventListener("click", function () {
+      deleteConfirmDialog.showModal();
+    });
   deleteConfirmBtn.addEventListener("click", function () {
     deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
     markdownTextarea.value = "";
@@ -136,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
     deleteConfirmDialog.close();
     // Ensure textarea is editable
-    markdownTextarea.removeAttribute('disabled');
+    markdownTextarea.removeAttribute("disabled");
   });
   deleteCancelBtn.addEventListener("click", function () {
     deleteConfirmDialog.close();
@@ -161,14 +163,16 @@ document.addEventListener("DOMContentLoaded", function () {
  * Opens entry windows for Markdown and To-do list
  */
 function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
+  let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i &lt; tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tabcontent[parseInt(i, 10)].style.display = "none";
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i &lt; tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[parseInt(i, 10)].className = tablinks[
+      parseInt(i, 10)
+    ].className.replace(" active", "");
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
