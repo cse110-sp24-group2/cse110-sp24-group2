@@ -609,7 +609,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line69">line 69</a>
+        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -769,7 +769,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line58">line 58</a>
+        <a href="calendar_calendar-helper.js.html">calendar/calendar-helper.js</a>, <a href="calendar_calendar-helper.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -2247,7 +2247,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line179">line 179</a>
+        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line164">line 164</a>
     </li></ul></dd>
     
 
@@ -2272,6 +2272,222 @@
 
 
 
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isHoliday"><span class="type-signature"></span>isHoliday<span class="signature">(year, month, day, holidays)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Determines if the day is a holiday or not
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The year to test for</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The month to test for</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The day to test for</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>holidays</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A list of holidays to check against</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="calendar_calendar-helper.js.html">calendar/calendar-helper.js</a>, <a href="calendar_calendar-helper.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    True if the day is a holiday, false otherwise
+</div>
+
+
+
+    
 
 
 
@@ -2498,176 +2714,6 @@
 
     </dd>
 </dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="mul"><span class="type-signature"></span>mul<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Multiplies two numbers
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">First number to multiply</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>b</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Second number to multiply</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a>, <a href="scripts_arithmetic.js.html#line17">line 17</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    The product of the two numbers
-</div>
-
-
 
     
 
@@ -3677,346 +3723,6 @@
     
 
     
-    <h4 class="name" id="sub"><span class="type-signature"></span>sub<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Subtracts two numbers
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">First number</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>b</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Second number</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a>, <a href="scripts_arithmetic.js.html#line26">line 26</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    The difference of the two numbers
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="sum"><span class="type-signature"></span>sum<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Sums up the two numbers
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">First number to add</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>b</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Second number to add</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="scripts_arithmetic.js.html">scripts/arithmetic.js</a>, <a href="scripts_arithmetic.js.html#line7">line 7</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    The sum of the two numbers
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id="syncMarkdownPreviewUpdatesthemarkdownpreviewwindowwiththecontentsofthemarkdowneditorarea."><span class="type-signature"></span>syncMarkdownPreview
 
 Updates the markdown preview window with the contents of the markdown editor area.<span class="signature">()</span><span class="type-signature"></span></h4>
@@ -4243,7 +3949,7 @@ Updates the markdown preview window with the contents of the markdown editor are
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line48">line 48</a>
+        <a href="calendar_calendar-script.js.html">calendar/calendar-script.js</a>, <a href="calendar_calendar-script.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -4289,7 +3995,7 @@ Updates the markdown preview window with the contents of the markdown editor are
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTodoListItem">addTodoListItem</a></li><li><a href="global.html#alterCompletion">alterCompletion</a></li><li><a href="global.html#createCalendar">createCalendar</a></li><li><a href="global.html#daysInMonth">daysInMonth</a></li><li><a href="global.html#deleteDatetoLabel">deleteDatetoLabel</a></li><li><a href="global.html#deleteLabel">deleteLabel</a></li><li><a href="global.html#deleteMarkdownEntry">deleteMarkdownEntry</a></li><li><a href="global.html#deleteTodoListItem">deleteTodoListItem</a></li><li><a href="global.html#displayDates">displayDates</a></li><li><a href="global.html#displayLabels">displayLabels</a></li><li><a href="global.html#filterLabels">filterLabels</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#getNotes">getNotes</a></li><li><a href="global.html#highlightCurrentDay">highlightCurrentDay</a></li><li><a href="global.html#labelExists">labelExists</a></li><li><a href="global.html#mul">mul</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#renderLabels">renderLabels</a></li><li><a href="global.html#renderMarkdownEntry">renderMarkdownEntry</a></li><li><a href="global.html#renderNotes">renderNotes</a></li><li><a href="global.html#saveDatetoLabel">saveDatetoLabel</a></li><li><a href="global.html#saveLabel">saveLabel</a></li><li><a href="global.html#saveMarkdownEntry">saveMarkdownEntry</a></li><li><a href="global.html#sub">sub</a></li><li><a href="global.html#sum">sum</a></li><li><a href="global.html#syncMarkdownPreviewUpdatesthemarkdownpreviewwindowwiththecontentsofthemarkdowneditorarea.">syncMarkdownPreview
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTodoListItem">addTodoListItem</a></li><li><a href="global.html#alterCompletion">alterCompletion</a></li><li><a href="global.html#createCalendar">createCalendar</a></li><li><a href="global.html#daysInMonth">daysInMonth</a></li><li><a href="global.html#deleteDatetoLabel">deleteDatetoLabel</a></li><li><a href="global.html#deleteLabel">deleteLabel</a></li><li><a href="global.html#deleteMarkdownEntry">deleteMarkdownEntry</a></li><li><a href="global.html#deleteTodoListItem">deleteTodoListItem</a></li><li><a href="global.html#displayDates">displayDates</a></li><li><a href="global.html#displayLabels">displayLabels</a></li><li><a href="global.html#filterLabels">filterLabels</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#getNotes">getNotes</a></li><li><a href="global.html#highlightCurrentDay">highlightCurrentDay</a></li><li><a href="global.html#isHoliday">isHoliday</a></li><li><a href="global.html#labelExists">labelExists</a></li><li><a href="global.html#openTab">openTab</a></li><li><a href="global.html#renderLabels">renderLabels</a></li><li><a href="global.html#renderMarkdownEntry">renderMarkdownEntry</a></li><li><a href="global.html#renderNotes">renderNotes</a></li><li><a href="global.html#saveDatetoLabel">saveDatetoLabel</a></li><li><a href="global.html#saveLabel">saveLabel</a></li><li><a href="global.html#saveMarkdownEntry">saveMarkdownEntry</a></li><li><a href="global.html#syncMarkdownPreviewUpdatesthemarkdownpreviewwindowwiththecontentsofthemarkdowneditorarea.">syncMarkdownPreview
 
 Updates the markdown preview window with the contents of the markdown editor area.</a></li><li><a href="global.html#updateButtonColor">updateButtonColor</a></li><li><a href="global.html#updateMonthYear">updateMonthYear</a></li></ul>
 </nav>
