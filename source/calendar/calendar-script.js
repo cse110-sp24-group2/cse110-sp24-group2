@@ -1,3 +1,5 @@
+const { daysInMonth, isHoliday } = require("./calendar-helper");
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get the main components of the calendar and set date info
   const calendarContainer = document.getElementById("calendar");
@@ -50,20 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
    * @function updateMonthYear
    */
   function updateMonthYear() {
-    monthLabel.textContent = `${monthNames[parseInt(currentMonth,10)]} ${currentYear}`;
+    monthLabel.textContent = `${monthNames[parseInt(currentMonth, 10)]} ${currentYear}`;
     monthLabel.className = ""; // Clear previous class
-    monthLabel.classList.add(monthClasses[parseInt(currentMonth,10)]); // Apply new class for font color
-  }
-
-  /**
-   * Returns the number of days in a given month of a given year.
-   * @function daysInMonth
-   * @param {number} month - The month (0-11).
-   * @param {number} year - The year.
-   * @returns {number} The number of days in the month.
-   */
-  function daysInMonth(month, year) {
-    return new Date(year, month + 1, 0).getDate();
+    monthLabel.classList.add(monthClasses[parseInt(currentMonth, 10)]); // Apply new class for font color
   }
 
   /**
@@ -87,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const dayElement = document.createElement("div");
       dayElement.classList.add("day", "diff-month");
       dayElement.textContent = lastDatePrevMonth - i + 1;
-      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
+      dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
     }
     // Add the days of the current month
@@ -96,16 +87,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // Adds specific month class
       dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
       dayElement.textContent = day;
-      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
+      dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
       // Check if the date is a holiday
-      const currentDate = new Date(year, month, day);
-      const isHoliday = holidays.some(
-        (holiday) =>
-          holiday.getMonth() === currentDate.getMonth() &&
-          holiday.getDate() === currentDate.getDate()
-      );
-      if (isHoliday) {
+      if (isHoliday(year, month, day, holidays)) {
         dayElement.classList.add("holiday");
       }
       // Highlight the current day
@@ -141,14 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
-    
+
     // Fill the week with days from the next month
     let num = 1;
     for (let i = lastDay + 1; i <= 6; i++) {
       const dayElement = document.createElement("div");
       dayElement.classList.add("day", "diff-month");
       dayElement.textContent = num;
-      dayElement.setAttribute('tabindex', '0'); // Add tabindex to make days keyboard accessible
+      dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
       num++;
     }
@@ -193,12 +178,12 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       }
-    } 
+    }
   }
 });
-document.getElementById("search-bar").addEventListener("click", function() {
+document.getElementById("search-bar").addEventListener("click", function () {
   window.location.href = escape("../searchPage/searchPage.html");
 });
-document.getElementById("search-button").addEventListener("click", function() {
+document.getElementById("search-button").addEventListener("click", function () {
   window.location.href = escape("../searchPage/searchPage.html");
 });
