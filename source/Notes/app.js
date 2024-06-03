@@ -1,9 +1,9 @@
 /**
  * Set up necessary modules and path to Data directory
  */
-const fs = require("fs");
-const path = require("path");
-const dataDir = path.join(__dirname, "../../DevJournal/Data");
+const fs = require('fs');
+const path = require('path');
+const dataDir = path.join(__dirname, '../../DevJournal/Data');
 /**
  * Checks to make sure Data directory exists
  */
@@ -19,11 +19,11 @@ fs.mkdir(dataDir, { recursive: true }, (err) => {
  */
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve the date from local storage
-  var dateInfo = localStorage.getItem("date");
+  let dateInfo = localStorage.getItem("date");
   // Parse the JSON string back into an object
   dateInfo = JSON.parse(dateInfo);
   // Create an array of month names
-  var monthNames = [
+  let monthNames = [
     "January",
     "February",
     "March",
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "December",
   ];
   // Format the date
-  var formattedDate =
+  let formattedDate =
     monthNames[dateInfo.month] + " " + dateInfo.day + " " + dateInfo.year;
   // Display the date
   document.getElementById("dateDisplay").textContent = formattedDate;
@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
   coloredElements.forEach((element) => {
     element.classList.add(month);
   });
-  var markdownTextarea = document.getElementById("markdown");
+  let markdownTextarea = document.getElementById("markdown");
   markdownTextarea.addEventListener("input", function () {
-    var markdown = markdownTextarea.value;
-    var html = marked(markdown);
+    let markdown = markdownTextarea.value;
+    let html = marked(markdown);
     document.getElementById("markdownPreview").innerHTML = html;
   });
   //Setup rest of paths to subdirectories
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * Opens entry windows for Markdown and To-do list
  */
 function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
+  let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
