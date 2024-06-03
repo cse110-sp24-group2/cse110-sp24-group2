@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Markdown Notes App Journal</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Add a style attribute to the button -->
-    <button onclick="window.location.href='../calendar/index.html'">Back to Calendar</button>
+    <button onclick="window.location.href='../calendar/index.html'">
+      Back to Calendar
+    </button>
     <h1 id="dateDisplay">Date will be displayed here</h1>
 
     <div class="container">
@@ -30,22 +31,21 @@
           <textarea id="markdown"></textarea>
         </div>
 
-
-            <div id="Preview" class="tabcontent">
-                <div id="markdownPreview"></div>
-            </div>
-            <div class="notes-buttons">
-                <button id="saveButton">Save</button>
-                <button id="deleteButton">Delete</button>
-            </div>
+        <div id="Preview" class="tabcontent">
+          <div id="markdownPreview"></div>
         </div>
-        <!--Added to do list here-->
+        <div class="notes-buttons">
+          <button id="saveButton">Save</button>
+          <button id="deleteButton">Delete</button>
+        </div>
+      </div>
+      <!--Added to do list here-->
       <todo-list-element></todo-list-element>
     </div>
     <div id="controls">
-        <input type="text" id="label-name" placeholder="Label Name">
-        <input type="color" id="label-color">
-        <button id="add-label-button">Add Label</button>
+      <input type="text" id="label-name" placeholder="Label Name" />
+      <input type="color" id="label-color" />
+      <button id="add-label-button">Add Label</button>
     </div>
     <div id="labels-container"></div>
     <!-- Add a style attribute to the button -->
@@ -67,5 +67,5 @@
         JavaScript to get the desired functionality
       </p>
     </noscript>
-</body>
+  </body>
 </html>

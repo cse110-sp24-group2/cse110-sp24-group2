@@ -1,7 +1,7 @@
 console.log("searchPage.js loaded");
 const fs = require("fs");
 const path = require("path");
-
+updateButtonColor();
 // Event listener for DOMContentLoaded event
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-bar");
@@ -48,6 +48,7 @@ function displayLabels(labels, labelsContainer, searchInput) {
     // Event listener for click event on label element
     labelElement.addEventListener("click", function () {
       searchInput.value = label;
+      labelsContainer.innerHTML = "";
       displayDates(
         label,
         JSON.parse(
@@ -77,6 +78,9 @@ function displayDates(label, labelToDate) {
   datesContainer.innerHTML = "";
 
   console.log(`Displaying dates for label: ${label}`);
+  const searchButtonColor = getComputedStyle(
+    document.getElementById("search-button")
+  ).backgroundColor;
 
   if (labelToDate.hasOwnProperty(label)) {
     console.log(`Found label in labelToDate: ${label}`);
@@ -86,6 +90,7 @@ function displayDates(label, labelToDate) {
       const dateButton = document.createElement("button");
       dateButton.textContent = dateStr;
       dateButton.classList.add("date-button");
+      dateButton.style.backgroundColor = searchButtonColor;
 
       // Event listener for click event on date button
       dateButton.addEventListener("click", function () {
@@ -98,6 +103,10 @@ function displayDates(label, labelToDate) {
     });
   } else {
     console.log(`Label not found in labelToDate: ${label}`);
+    const messageElement = document.createElement("div");
+    messageElement.textContent = `Label not found in labelToDate: ${label}`;
+    messageElement.classList.add("No such Label exists");
+    datesContainer.appendChild(messageElement);
   }
 }
 /**
