@@ -1,9 +1,9 @@
 /**
  * Set up necessary modules and path to Data directory
  */
-const fs = require('fs');
-const path = require('path');
-const dataDir = path.join(__dirname, '../../DevJournal/Data');
+const fs = require("fs");
+const path = require("path");
+const dataDir = path.join(__dirname, "../../DevJournal/Data");
 /**
  * Checks to make sure Data directory exists
  */
@@ -98,9 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const deleteConfirmDialog = document.getElementById("delete-confirm-dialog");
   const deleteConfirmBtn = document.getElementById("delete-confirm-btn");
   const deleteCancelBtn = document.getElementById("delete-cancel-btn");
-  document.getElementById("deleteButton").addEventListener("click", function () {
-    deleteConfirmDialog.showModal();
-  });
+  document
+    .getElementById("deleteButton")
+    .addEventListener("click", function () {
+      deleteConfirmDialog.showModal();
+    });
   deleteConfirmBtn.addEventListener("click", function () {
     deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
     markdownTextarea.value = "";
@@ -108,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
     deleteConfirmDialog.close();
     // Ensure textarea is editable
-    markdownTextarea.removeAttribute('disabled');
+    markdownTextarea.removeAttribute("disabled");
   });
   deleteCancelBtn.addEventListener("click", function () {
     deleteConfirmDialog.close();
@@ -136,11 +138,13 @@ function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tabcontent[parseInt(i, 10)].style.display = "none";
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[parseInt(i, 10)].className = tablinks[
+      parseInt(i, 10)
+    ].className.replace(" active", "");
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
