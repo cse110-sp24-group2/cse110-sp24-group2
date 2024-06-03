@@ -1,6 +1,6 @@
 # Meeting Notes
 
-## Date: 6/2/2024
+## Date: 6/1/2024
 
 ### Zoom 5:30, all members present
 
