@@ -1,4 +1,8 @@
 const { ipcRenderer } = require("electron");
+module.exports = {
+  deleteLabel,
+  deleteDatetoLabel,
+};
 /**
  * Event listener for the 'DOMContentLoaded' event on the document
  */
@@ -260,15 +264,19 @@ function deleteLabel(day, month, year, label) {
       return;
     }
     let labels = JSON.parse(data);
-    const existingLabel = labels.find((l) => l.day === day);
-    if (existingLabel) {
-      const labelIndex = existingLabel.labels.findIndex(
-        (l) => l.name === label
-      );
-      if (labelIndex > -1) {
-        existingLabel.labels.splice(labelIndex, 1);
-        if (existingLabel.labels.length === 0) {
-          labels = labels.filter((l) => l.day !== day);
+    if (label === null) {
+      labels = labels.filter((l) => l.day !== day);
+    } else {
+      const existingLabel = labels.find((l) => l.day === day);
+      if (existingLabel) {
+        const labelIndex = existingLabel.labels.findIndex(
+          (l) => l.name === label
+        );
+        if (labelIndex > -1) {
+          existingLabel.labels.splice(labelIndex, 1);
+          if (existingLabel.labels.length === 0) {
+            labels = labels.filter((l) => l.day !== day);
+          }
         }
       }
     }
@@ -305,15 +313,30 @@ function deleteDatetoLabel(day, month, year, label) {
       return;
     }
     let labels = JSON.parse(data);
-    const dates = labels[label];
-    if (dates) {
-      const dateIndex = dates.findIndex(
-        (date) => date.day === day && date.month === month && date.year === year
-      );
-      if (dateIndex > -1) {
-        dates.splice(dateIndex, 1);
-        if (dates.length === 0) {
-          delete labels[label];
+    if (label === null) {
+      for (let key in labels) {
+        if (labels[key]) {
+          labels[key] = labels[key].filter(
+            (date) =>
+              date.day !== day || date.month !== month || date.year !== year
+          );
+          if (labels[key].length === 0) {
+            delete labels[key];
+          }
+        }
+      }
+    } else {
+      const dates = labels[label];
+      if (dates) {
+        const dateIndex = dates.findIndex(
+          (date) =>
+            date.day === day && date.month === month && date.year === year
+        );
+        if (dateIndex > -1) {
+          dates.splice(dateIndex, 1);
+          if (dates.length === 0) {
+            delete labels[label];
+          }
         }
       }
     }

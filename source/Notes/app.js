@@ -1,3 +1,4 @@
+const { deleteLabel, deleteDatetoLabel } = require("../Notes/label.js");
 /**
  * Set up necessary modules and path to Data directory
  */
@@ -215,6 +216,8 @@ function deleteMarkdownEntry(day, month, year) {
       console.error("Failed to delete file:", err);
     } else {
       console.log("Delete file successfully");
+      deleteLabel(day, month, year, null);
+      deleteDatetoLabel(day, month, year, null);
     }
   });
 }
