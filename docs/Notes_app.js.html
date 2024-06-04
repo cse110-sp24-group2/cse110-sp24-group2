@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
   deleteConfirmBtn.addEventListener("click", function () {
     deleteMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
     markdownTextarea.value = "";
-    //syncMarkdownPreview();
+    document.getElementById("markdownPreview").innerHTML = "";
     renderMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
     deleteConfirmDialog.close();
     // Ensure textarea is editable
