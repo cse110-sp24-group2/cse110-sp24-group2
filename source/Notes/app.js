@@ -1,9 +1,7 @@
 /**
  * Set up necessary modules and path to Data directory
  */
-/*global fs*/
 const fs = require("fs");
-/*global path*/
 const path = require("path");
 const dataDir = path.join(__dirname, "../../DevJournal/Data");
 /**
