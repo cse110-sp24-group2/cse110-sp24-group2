@@ -20,7 +20,8 @@ body {
 }
 
 .diff-month {
-    color: gray;
+    color: rgb(192, 189, 189);
+    font-family: cursive;
 }
 
 .main-container {
@@ -28,9 +29,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
+    margin-right: 30px;
+    margin-left: 30px;
     flex-direction: row;
-    background-color: lightgray;
+    background: linear-gradient(135deg, #439093, pink);
     gap: 10px;
 }
 
@@ -77,9 +79,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(255 255 255 / 80%); 
-    box-shadow: 0 2px 5px rgba(0 0 0 / 10%);
+    background-color: rgba(238 215 236 / 80%); 
+    box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
     margin-bottom: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
     font-family: fantasy;
     font-weight: bold;
 }
@@ -129,9 +133,9 @@ body {
 }
 
 .current-day {
-    color: #333 !important;
+    color: #044c4d;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: cursive;
     padding: 10px 12px;
     border-radius: 10px;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
@@ -142,115 +146,102 @@ body {
     transform: scale(1.05);
 }
 
-.january { color: #020494; } 
-.day.january:hover { background-color: #6668b9;} 
+.january { color: #187474; font-family: cursive; } 
+.day.january:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.january {
-    background: linear-gradient(135deg, rgb(55, 16, 197), rgb(5, 113, 246));
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.january:hover {
-    background: linear-gradient(135deg, rgb(5, 113, 246), rgb(55, 16, 197));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.february { color: #f29cac; }
-.day.february:hover { background-color: #f0b9c3;} 
+.february { color: #187474; font-family: cursive; } 
+.day.february:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.february {
-    background: linear-gradient(135deg, pink, violet);
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.february:hover {
-    background: linear-gradient(135deg, violet, pink);
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.march { color: #28a745; } 
-.day.march:hover { background-color: rgb(86, 234, 135);}  
+.march { color: #187474; font-family: cursive; } 
+.day.march:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.march {
-    background: linear-gradient(135deg, rgb(82, 213, 161), rgb(78, 194, 36));
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.march:hover {
-    background: linear-gradient(135deg, rgb(78, 194, 36), rgb(82, 213, 161));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.april { color: #e83e8c; } 
-.day.april:hover { background-color: #f476b1;} 
+.april { color: #187474; font-family: cursive; } 
+.day.april:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.april {
-    background: linear-gradient(135deg, rgb(219, 57, 208), rgb(195, 24, 129));
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.april:hover {
-    background: linear-gradient(135deg, rgb(195, 24, 129), rgb(219, 57, 208));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.may { color: #790258; }  
-.day.may:hover { background-color: #ea65c4;} 
+.may { color: #187474; font-family: cursive; } 
+.day.may:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.may {
-    background: linear-gradient(135deg, rgb(236, 55, 149), rgb(183, 17, 161));
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.may:hover {
-    background: linear-gradient(135deg, rgb(183, 17, 161), rgb(236, 55, 149));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
   
-.june { color: #154a27; } 
-.day.june:hover { background-color: #47d175;}
+.june { color: #187474; font-family: cursive; } 
+.day.june:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.june {
-    background: linear-gradient(135deg, rgb(101, 225, 142), rgb(61, 183, 17));
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.june:hover {
-    background: linear-gradient(135deg, rgb(61, 183, 17), rgb(101, 225, 142));
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+
+
+.july { color: #187474; font-family: cursive; } 
+.day.july:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
-
-
-.july { color: #17a2b8; } 
-.day.july:hover { background-color: #5ed9ec;}  
 .current-day.july {
-    background: linear-gradient(135deg, rgb(21, 234, 227), rgb(17, 139, 183));
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.july:hover {
-    background: linear-gradient(135deg, rgb(17, 139, 183), rgb(21, 234, 227));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.august { color: #d1890c; } 
-.day.august:hover { background-color: #f5bb58;} 
+.august { color: #187474; font-family: cursive; } 
+.day.august:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.august {
-    background: linear-gradient(135deg, rgb(236, 170, 38), rgb(199, 228, 8));
-} 
+    background: linear-gradient(135deg, #439093, pink); } 
 .current-day.august:hover {
-    background: linear-gradient(135deg, rgb(199, 228, 8), rgb(236, 170, 38));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.september { color: #dc3545; }
-.day.september:hover { background-color: #ed7480;}
+.september { color: #187474; font-family: cursive; }
+.day.september:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.september {
-    background: linear-gradient(135deg, rgb(201, 55, 30), rgb(252, 57, 67));
-} 
+    background: linear-gradient(135deg, #439093, pink); }
 .current-day.september:hover {
-    background: linear-gradient(135deg, rgb(252, 57, 67), rgb(201, 55, 30));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.october { color: #d45810; }  
-.day.october:hover { background-color: #e8864d;}
+.october { color: #187474; font-family: cursive; }
+.day.october:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.october {
-    background: linear-gradient(135deg, rgb(242, 214, 55), rgb(231, 151, 14));
-} 
+    background: linear-gradient(135deg, #439093, pink); }
 .current-day.october:hover {
-    background: linear-gradient(135deg, rgb(231, 151, 14), rgb(242, 214, 55));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.november { color: #343a40; } 
-.day.november:hover { background-color: #a6b6c6;}
+.november { color: #187474; font-family: cursive; }
+.day.november:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.november {
-    background: linear-gradient(135deg, rgb(187, 205, 218), rgb(107, 123, 132));
-} 
+    background: linear-gradient(135deg, #439093, pink); }
 .current-day.november:hover {
-    background: linear-gradient(135deg, rgb(107, 123, 132), rgb(187, 205, 218));
-}
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
-.december { color: #53697d; } 
-.day.december:hover { background-color: #9bbfe1;}
+.december { color: #187474; font-family: cursive; }
+.day.december:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 .current-day.december {
-    background: linear-gradient(135deg, rgb(101, 188, 225), rgb(42, 85, 151));
-} 
+    background: linear-gradient(135deg, #439093, pink); }
 .current-day.december:hover {
-    background: linear-gradient(135deg, rgb(42, 85, 151), rgb(101, 188, 225));
-}
-
+    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
 
 .modal {
     display: none;
@@ -292,7 +283,6 @@ body {
         opacity: 1
     }
 }
-
 
 .close {
     color:  #4e253c;
@@ -376,7 +366,9 @@ body {
     background-color: rgba(255 255 255 / 80%);
     font-weight: bold;
     border: none;
-    color: rgba(0 0 0 / 80%);
+    margin-top: 20px;
+    color: rgba(15 106 108 / 805);
+    font-family: serif;
 }
 
 .holiday {
@@ -445,35 +437,37 @@ body {
 }
 
 #prev-month {
-    background-color: #fff;
-    color: #343434;
-    border: 2px solid #ccc;
-    border-radius: 7px;
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(9 165 179 / 60%);
     padding: 5px 10px;
     font-size: 14.5px;
     cursor: pointer;
 }
   
 #prev-month:hover {
-    background-color: #eaeaea; 
-    color:rgb(0 0 0);
-    box-shadow: 0 3px 6px rgba(0 0 0 / 30%);
+    background: linear-gradient(135deg, #02a2a8, pink);
+    color:white !important;
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
 }
 
 #next-month {
-    background-color: #fff;
-    color: #343434;
-    border: 2px solid #ccc;
-    border-radius: 7px;
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(9 165 179 / 60%);
     padding: 5px 10px;
     font-size: 14.5px;
     cursor: pointer;
 }
   
 #next-month:hover {
-    background-color: #eaeaea; 
-    color:rgb(0 0 0);
-    box-shadow: 0 3px 6px rgba(0 0 0 / 30%);
+    background: linear-gradient(135deg, #439093, pink);
+    color:white !important;
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
 }
 
 button.delete-button {
@@ -494,7 +488,7 @@ button.delete-button:hover {
 }
 
 .arrow {
-    border: solid #595959;
+    border: solid rgb(27 72 69);
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
@@ -512,8 +506,7 @@ button.delete-button:hover {
     display: flex;
     justify-content: center; 
     align-items: center;    
-    
-      position: absolute;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);  
@@ -525,47 +518,64 @@ button.delete-button:hover {
 
 .current-day {
     background: linear-gradient(135deg, violet, pink);
-    color: #333 !important;
+    color: #044c4d;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: cursive;
     padding: 10px 12px;
     border-radius: 10px;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
   
-  .current-day:hover {
-    background: linear-gradient(135deg, pink, violet);
-    color:white !important;
-    transform: scale(1.05);
-  }
-  .search-container {
+.current-day:hover {
+background: linear-gradient(135deg, pink, violet);
+color:white !important;
+transform: scale(1.05);
+}
+
+.search-container {
     display: flex;
     position: relative;
     align-items: center;
     gap: 10px;
     margin-left: 20px;
+    justify-content: space-between;
+    background: white;
+    color: #044c4d;
+    border: 2px solid #025a5a;
+    box-shadow: 0 0 8px rgba(9 165 179 / 60%);
+    border-radius: 20px;
+    padding-left: 20px;  
+}
+
+.search-container input::placeholder {
+    color: #044c4d;
+    text-shadow: 1px 1px 1px #f2acda;
 }
 
 #search-bar {
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
 }
 
 #search-button {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: var(--month-color);
-    color: white;
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
     cursor: pointer;
+    border-radius: 15px;
 }
 
 #search-button:hover {
-    background-color: red;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    color:white !important;
+    background: linear-gradient(135deg, #439093, pink);
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+
 }
 
 #suggestions {
