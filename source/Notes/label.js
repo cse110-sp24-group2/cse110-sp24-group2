@@ -1,4 +1,7 @@
+
 const { ipcRenderer } = require("electron");
+/*global fs*/
+/*global path*/
 /**
  * Event listener for the 'DOMContentLoaded' event on the document
  */
