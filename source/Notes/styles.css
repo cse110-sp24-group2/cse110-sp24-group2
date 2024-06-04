@@ -258,4 +258,17 @@ h1.december {background-color: white; color: #53697d;}
   #delete-cancel-btn:hover {
     background-color: #bbb;
   }
-  
+  /* Define the fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in {
+    animation: fadeIn 0.5s forwards;
+  }
