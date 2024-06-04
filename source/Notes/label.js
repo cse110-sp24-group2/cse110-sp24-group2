@@ -317,13 +317,13 @@ function deleteDatetoLabel(day, month, year, label) {
     let labels = JSON.parse(data);
     if (label === null) {
       for (let key in labels) {
-        if (labels[key]) {
-          labels[key] = labels[key].filter(
+        if (labels[parseInt(key)]) {
+          labels[key] = labels[parseInt(key)].filter(
             (date) =>
               date.day !== day || date.month !== month || date.year !== year
           );
-          if (labels[key].length === 0) {
-            delete labels[key];
+          if (labels[parseInt(key)].length === 0) {
+            delete labels[parseInt(key)];
           }
         }
       }
