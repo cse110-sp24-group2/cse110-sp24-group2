@@ -63,7 +63,7 @@ body {
     border-top: none;
 }
 
-#saveButton, #deleteButton, #backButton {
+button {
     /* margin-left: 20px; */
     padding: 10px 20px;
     color: white;
@@ -75,10 +75,6 @@ body {
 button:first-child {
     float: left;
     border-radius: 5px;
-}
-
-#saveButton:hover, #deleteButton:hover, #backButton:hover {
-    background-color: #600544; 
 }
 
 #backButton {
