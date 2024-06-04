@@ -261,7 +261,7 @@ class TodoList extends HTMLElement {
           li.classList.add("fade-out");
           setTimeout(() => {
             this.deleteTodoListItem(note["id"], listContainer);
-          }, 300);s
+          }, 300);
         }
       });
       // Package the items together and append it to the container
