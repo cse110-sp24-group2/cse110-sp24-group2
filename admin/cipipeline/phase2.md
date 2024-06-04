@@ -39,3 +39,7 @@ For each pull request, after all of the automatic testing and generation is done
 ### Packaging via GitHub Releases
 
 When merging code into the `main` branch, a packaging process begins that builds our app for windows, macos, and linux machines. Those builds are then compressed and uploaded as part of the generated release that can be found on the home page of the repo. This allows users to quickly download the files they need to run the application on their own
+
+### Youtube Video Demonstration
+
+[CI/CD Pipeline Demo](https://youtu.be/87xuN17x6aM)
