@@ -319,7 +319,7 @@ function deleteDatetoLabel(day, month, year, label) {
     if (label === null) {
       for (let key in labels) {
         if (labels[parseInt(key)]) {
-          labels[key] = labels[parseInt(key)].filter(
+          labels[parseInt(key)] = labels[parseInt(key)].filter(
             (date) =>
               date.day !== day || date.month !== month || date.year !== year
           );
