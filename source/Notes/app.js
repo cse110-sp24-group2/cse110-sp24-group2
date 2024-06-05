@@ -155,9 +155,6 @@ function openTab(evt, tabName) {
 }
 /**
  * Saves Markdown notes for the current day into its corresponding subdirectories.
- */
-/**
- * Saves Markdown notes for the current day into its corresponding subdirectories.
  * @param {number} day - The day of the month.
  * @param {number} month - The month of the year.
  * @param {number} year - The year.
