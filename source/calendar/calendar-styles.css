@@ -31,6 +31,8 @@ body {
   align-items: center;
   margin-right: 30px;
   margin-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 15vh;
   flex-direction: row;
   background: linear-gradient(135deg, #439093, pink);
   gap: 10px;
@@ -85,7 +87,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(238 215 236 / 80%);
+  background-color: rgba(242, 229, 241, 0.8);
   box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
   margin-bottom: 10px;
   margin-right: 30px;
@@ -105,6 +107,19 @@ body {
   margin: auto;
   box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
 
 .day {
   padding: 15px 10px;
@@ -114,6 +129,10 @@ body {
   transition:
     background-color 0.3s,
     transform 0.3s;
+}
+
+.day.fade-in {
+  animation: fadeIn 0.5s ease forwards;
 }
 
 .day:hover {
