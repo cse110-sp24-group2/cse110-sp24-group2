@@ -373,31 +373,12 @@ body {
   box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0 0 0 / 40%);
-  font-family: fantasy;
-  font-weight: 500;
+.day {
+  font-family: Rubik, sans-serif;
 }
 
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 90%;
-  max-width: 90%;
-  box-shadow: 0 4px 8px rgba(1 0 0 / 20%);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+#current-month {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Animation to slide the modal content from the top */
