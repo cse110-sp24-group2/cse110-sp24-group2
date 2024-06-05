@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
+
 function createWindow () {
   let win = new BrowserWindow({
     width: 1200,
@@ -13,3 +14,8 @@ function createWindow () {
 }
 
 app.whenReady().then(createWindow)
+
+ipcMain.on('show-error-dialog', (event, title, message) => {
+  dialog.showErrorBox(title, message);
+  event.returnValue = null;
+});
