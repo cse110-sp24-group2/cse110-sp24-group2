@@ -1,12 +1,12 @@
 * {
-    font-family: Rubik , sans-serif;
+  font-family: Rubik, sans-serif;
 }
 
 .rubik-font {
-    font-family: Rubik, sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+  font-family: Rubik, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 body {
@@ -16,245 +16,298 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background-color: rgba(242, 229, 241, 0.8); 
-    gap: 10px;
-    padding: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgba(242, 229, 241, 0.8);
+  gap: 10px;
+  padding: 10px;
 }
 .markdown-container {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    padding: 20px;
-    margin: 20px;
-    background-color: rgba(255 255 255 / 80%);
-    box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(255 255 255 / 80%);
+  box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%);
 }
 
 #markdown {
-    width: 100%;
-    height: 500px;
-    border: 1px solid #bcbcbc;
-    resize:none
+  width: 100%;
+  height: 500px;
+  border: 1px solid #bcbcbc;
+  resize: none;
 }
 
-textarea:focus{
-    outline-color: pink;   
+textarea:focus {
+  outline-color: pink;
 }
 
 #markdownPreview {
-    width: 100%;
-    height: 500px; 
-    border: 1px solid #ccc;
-    overflow: auto; 
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  overflow: auto;
 }
 
 .tab {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .tab button {
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #0af2f2, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #0af2f2, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  border-radius: 5px;
 }
 
 .tab button:hover {
-    color:white !important;
-    background: linear-gradient(135deg, #439093, pink);
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+  color: white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
 }
 
 /* Style the tab content */
 .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
 }
 
 #add-label-button {
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    cursor: pointer;
-    border-radius: 8px;
-    margin: 5px;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 5px;
 }
 
 #add-label-button:hover {
-    color:white !important;
-    background: linear-gradient(135deg, #439093, pink);
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+  color: white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
 }
 
-#saveButton, #deleteButton, #backButton, #back-to-calendar{
-    /* margin-left: 20px; */
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    cursor: pointer;
-    border-radius: 5px;
+#saveButton,
+#deleteButton,
+#backButton,
+#back-to-calendar {
+  /* margin-left: 20px; */
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+div.custom-label button {
+  /* margin-left: 20px; */
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 button:first-child {
-    float: left;
-    border-radius: 5px;
+  float: left;
+  border-radius: 5px;
 }
 
-#saveButton:hover, #deleteButton:hover, #backButton:hover, #back-to-calendar:hover {
-    color:white !important;
-    background: linear-gradient(135deg, #439093, pink);
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+#saveButton:hover,
+#deleteButton:hover,
+#backButton:hover,
+#back-to-calendar:hover {
+  color: white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
 }
 
 #backButton {
-    float: right;
+  float: right;
 }
 
-#dateDisplay{
-    text-align: center;
+#dateDisplay {
+  text-align: center;
 }
 .todo {
-   text-align: center;
+  text-align: center;
 }
 #backToCalendar {
-    float: right;
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
+  float: right;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
 }
 
 #backToCalendar:hover {
-    color:white !important;
-    background: linear-gradient(135deg, #439093, pink);
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+  color: white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
 }
 
 button {
-    border-radius: 8px;
-    margin: 5px;
+  border-radius: 8px;
+  margin: 5px;
 }
 
-.color { background-color: #ebc2c6; } 
-button.color:hover { background-color: #1c5959;} 
-.tab.color  { background-color: #01858a; }
-.tab.color  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.color { border: 5px solid #0d7475; }
-h1.color {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-#markdownPreview { background-color: white; }  
+.color {
+  background-color: #ebc2c6;
+}
+button.color:hover {
+  background-color: #1c5959;
+}
+.tab.color {
+  background-color: #01858a;
+}
+.tab.color button.active {
+  background: linear-gradient(135deg, #439093, pink);
+}
+.tabcontent.color {
+  border: 5px solid #0d7475;
+}
+h1.color {
+  background-color: white;
+  color: #187474;
+  font-family: "Times New Roman", Times, serif;
+}
+#markdownPreview {
+  background-color: white;
+}
 
 .notes-buttons {
-    display: flex;
-    padding: 10px;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* MOBILE RESPONSIVENESS BREAKPOINT */
 @media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-    .todo {
-        width: 100%;
-    }
+  .todo {
+    width: 100%;
+  }
 
-    .notes-buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .notes-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    todo-list-element {
-        padding: 15px;
-    }
+  todo-list-element {
+    padding: 15px;
+  }
 }
-
 
 /* Style for the delete confirmation dialog */
 #delete-confirm-dialog {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-  }
-  
-  /* Style for the confirm button */
-  #delete-confirm-btn {
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    border-radius: 3px;
-    padding: 8px 16px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  /* Hover effect for the confirm button */
-  #delete-confirm-btn:hover {
-    color:white !important;
-    background: linear-gradient(135deg, #439093, pink);
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
-  }
-  
-  /* Style for the cancel button */
-  #delete-cancel-btn {
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    border-radius: 3px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  /* Hover effect for the cancel button */
-  #delete-cancel-btn:hover {
-    color:white !important;
-    background: linear-gradient(135deg, #439093, pink);
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
-  }
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
 
-  input{
-    color: #044c4d;
-    border: 2px solid #025a5a;
-    box-shadow: 0 0 8px rgba(67 162 170 / 0.6);
-  }
+/* Style for the confirm button */
+#delete-confirm-btn {
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  border-radius: 3px;
+  padding: 8px 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  input::placeholder {
-    color: #044c4d;
-    text-shadow: 1px 1px 1px #f2acda;
-  }
+/* Hover effect for the confirm button */
+#delete-confirm-btn:hover {
+  color: white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
+}
 
-    input:focus {
-    outline-color: pink;
-    }
+/* Style for the cancel button */
+#delete-cancel-btn {
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  border-radius: 3px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* Hover effect for the cancel button */
+#delete-cancel-btn:hover {
+  color: white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
+}
+
+input {
+  color: #044c4d;
+  border: 2px solid #025a5a;
+  box-shadow: 0 0 8px rgba(67 162 170 / 0.6);
+}
+
+input::placeholder {
+  color: #044c4d;
+  text-shadow: 1px 1px 1px #f2acda;
+}
+
+input:focus {
+  outline-color: pink;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .fade-in {
-    animation: fadeIn 0.5s forwards;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
- 
+}
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
