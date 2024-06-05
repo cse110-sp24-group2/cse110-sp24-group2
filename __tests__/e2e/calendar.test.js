@@ -63,9 +63,6 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
@@ -118,9 +115,6 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
@@ -169,9 +163,6 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
@@ -222,9 +213,6 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);

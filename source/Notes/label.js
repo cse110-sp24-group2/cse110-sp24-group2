@@ -5,6 +5,7 @@ module.exports = {
 };
 const fs = require("fs");
 const path = require("path");
+
 /**
  * Event listener for the 'DOMContentLoaded' event on the document
  */
