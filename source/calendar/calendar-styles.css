@@ -1,7 +1,3 @@
-* {
-  font-family: Rubik, sans-serif;
-}
-
 .todo-section {
   padding: 10px;
 }
@@ -73,7 +69,7 @@ body {
 }
 
 /* Vertical layout for calendar and todo list if screen size is too small for readability */
-@media (max-width: 1200px) {
+@media (max-width: 1205px) {
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -92,7 +88,7 @@ body {
 }
 
 /* DESKTOP RESPONSIVENESS BREAKPOINT */
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .main-container {
     flex-direction: row;
     align-items: flex-start;
