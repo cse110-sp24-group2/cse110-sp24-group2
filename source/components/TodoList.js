@@ -13,9 +13,11 @@ class TodoList extends HTMLElement {
             width: auto;
             max-width: 450px;
             height: auto;
-            padding: 30px;
+            padding: 20px;
             background-color: rgba(255 255 255 / 80%); 
             margin-top: 25px;
+            box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%); 
+            margin-right: 20px;
             box-shadow: 0 6px 12px rgba(0 0 0 / 15%);  
             color: #044c4d;
         }
@@ -133,6 +135,24 @@ class TodoList extends HTMLElement {
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
         }
+        @keyframes fadeOut{
+          from{
+              opacity: 1;
+              transform: translateY(10px);
+          }
+          to {
+              opacity: 0;
+              transform: translateY(0);
+          }
+        } 
+     
+        .fade-out {
+          opacity: 0;
+          transform: translateY(0);
+          animation: fadeOut 0.5s forwards;
+        }
+
+
 
         .delete-task-btn {
             background: linear-gradient(135deg, #439093, pink);
@@ -176,7 +196,7 @@ class TodoList extends HTMLElement {
     container.setAttribute("class", "todo-list-container");
 
     container.innerHTML = `
-            <div class="todo-list"> 
+            <div class="todo-list scrollbar"> 
                 <h2>To-Do Lists <img src="../components/images/to-do-icon.png"> </h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
@@ -252,13 +272,19 @@ class TodoList extends HTMLElement {
         }
       });
       // Add the click event listener to the delete button
-      button.addEventListener("click", () =>
-        this.deleteTodoListItem(note["id"], listContainer)
-      );
+      button.addEventListener("click", () => {
+        li.classList.add("fade-out");
+        setTimeout(() => {
+          this.deleteTodoListItem(note["id"], listContainer);
+        }, 300);
+      });
       // Add the keydown event listener to the delete button
       button.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {
-          this.deleteTodoListItem(note["id"], listContainer);
+          li.classList.add("fade-out");
+          setTimeout(() => {
+            this.deleteTodoListItem(note["id"], listContainer);
+          }, 300);
         }
       });
       // Package the items together and append it to the container

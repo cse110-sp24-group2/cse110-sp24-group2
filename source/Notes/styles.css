@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: lightgray;
+    background-color: rgba(242, 229, 241, 0.8); 
     gap: 10px;
     padding: 10px;
 }
@@ -29,6 +29,7 @@ body {
     width: 80%;
     padding: 20px;
     margin: 20px;
+    background-color: rgba(255 255 255 / 80%);
     box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%);
 }
 
@@ -38,6 +39,11 @@ body {
     border: 1px solid #bcbcbc;
     resize:none
 }
+
+textarea:focus{
+    outline-color: pink;   
+}
+
 #markdownPreview {
     width: 100%;
     height: 500px; 
@@ -53,7 +59,15 @@ body {
     border: none;
     cursor: pointer;
     padding: 10px 20px;
-    color: white;
+    background: linear-gradient(135deg, #0af2f2, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
+}
+
+.tab button:hover {
+    color:white !important;
+    background: linear-gradient(135deg, #439093, pink);
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
 }
 
 /* Style the tab content */
@@ -63,11 +77,27 @@ body {
     border-top: none;
 }
 
-button {
+#add-label-button {
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+#add-label-button:hover {
+    color:white !important;
+    background: linear-gradient(135deg, #439093, pink);
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+}
+
+#saveButton, #deleteButton, #backButton, #back-to-calendar{
     /* margin-left: 20px; */
     padding: 10px 20px;
-    color: white;
-    border: none;
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -75,6 +105,12 @@ button {
 button:first-child {
     float: left;
     border-radius: 5px;
+}
+
+#saveButton:hover, #deleteButton:hover, #backButton:hover, #back-to-calendar:hover {
+    color:white !important;
+    background: linear-gradient(135deg, #439093, pink);
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
 }
 
 #backButton {
@@ -89,95 +125,105 @@ button:first-child {
 }
 #backToCalendar {
     float: right;
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
+}
+
+#backToCalendar:hover {
+    color:white !important;
+    background: linear-gradient(135deg, #439093, pink);
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
 }
 
 button {
     border-radius: 8px;
     margin: 5px;
 }
-.january { background-color: #020494; } 
-button.january:hover { background-color: #01036b;} 
-.tab.january { background-color: #5d60fa; }
-.tab.january button.active { background-color: #000237; }
-.tabcontent.january { border: 5px solid #5d60fa; }
-h1.january {background-color: white; color: #020494;}
 
-.february { background-color: #f29cac; }
-button.february:hover { background-color: #fc849a;} 
-.tab.february  { background-color: #f3bec8; }
-.tab.february  button.active { background-color: #f76a84; }
-.tabcontent.february { border: 5px solid #f3bec8; }
-h1.february {background-color: white; color: #f29cac;}
+.january { background-color: #ebc2c6; } 
+button.january:hover { background-color: #1c5959;} 
+.tab.january  { background-color: #01858a; }
+.tab.january  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.january { border: 5px solid #0d7475; }
+h1.january {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.march { background-color: #28a745; } 
-button.march:hover { background-color: #199336;} 
-.tab.march  { background-color: #70d889; }
-.tab.march  button.active { background-color: #0a8026; }
-.tabcontent.march { border: 5px solid #70d889; }
-h1.march {background-color: white; color: #28a745;}  
+.february { background-color: #ebc2c6; }
+button.february:hover { background-color: #1c5959;}
+.tab.february  { background-color: #01858a; }
+.tab.february  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.february { border: 5px solid #0d7475; }
+h1.february {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.april { background-color: #e83e8c; } 
-button.april:hover { background-color: #d81f75;} 
-.tab.april  { background-color: #e883b2; }
-.tab.april  button.active { background-color: #ad0b57; }
-.tabcontent.april { border: 5px solid #e883b2; }
-h1.april {background-color: white; color: #e83e8c;}  
+.march { background-color: #ebc2c6; }
+button.march:hover { background-color: #1c5959;}
+.tab.march  { background-color: #01858a; }
+.tab.march  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.march { border: 5px solid #0d7475; }
+h1.march {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.may { background-color: #790258; }  
-button.may:hover { background-color: #640148;} 
-.tab.may  { background-color: #ae2e8a; }
-.tab.may  button.active { background-color: #4f0139; }
-.tabcontent.may { border: 5px solid #ae2e8a; }
-h1.may {background-color: white; color: #790258;}  
-  
-.june { background-color: #154a27; } 
-button.june:hover { background-color: #10361c;} 
-.tab.june  { background-color: #275f3a; }
-.tab.june  button.active { background-color: #0c2e17; }
-.tabcontent.june { border: 5px solid #275f3a; }
-h1.june {background-color: white; color: #154a27;}
+.april { background-color: #ebc2c6; }
+button.april:hover { background-color: #1c5959;}
+.tab.april  { background-color: #01858a; }
+.tab.april  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.april { border: 5px solid #0d7475; }
+h1.april {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.july { background-color: #17a2b8; } 
-button.july:hover { background-color: #1797ab;} 
-.tab.july  { background-color: #5cc2d1; }
-.tab.july  button.active { background-color: #027587; }
-.tabcontent.july { border: 5px solid #5cc2d1; }
-h1.july {background-color: white; color: #17a2b8;}   
+.may { background-color: #ebc2c6; }
+button.may:hover { background-color: #1c5959;}
+.tab.may  { background-color: #01858a; }
+.tab.may  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.may { border: 5px solid #0d7475; }
+h1.may {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
+ 
+.june { background-color: #ebc2c6; } 
+button.june:hover { background-color: #1c5959;} 
+.tab.june  { background-color: #01858a; }
+.tab.june  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.june { border: 5px solid #0d7475; }
+h1.june {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.august { background-color: #d1890c; } 
-button.august:hover { background-color: #b9790b;} 
-.tab.august  { background-color: #d9ac5e; }
-.tab.august  button.active { background-color: #8e5b04; }
-.tabcontent.august { border: 5px solid #d9ac5e; }
-h1.august {background-color: white; color: #d1890c;}   
+.july { background-color: #ebc2c6; }
+button.july:hover { background-color: #1c5959;}
+.tab.july  { background-color: #01858a; }
+.tab.july  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.july { border: 5px solid #0d7475; }
+h1.july {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.september { background-color: #dc3545; }
-button.september:hover { background-color: #c62f3e;} 
-.tab.september  { background-color: #d36974; }
-.tab.september  button.active { background-color: #a91524; }
-.tabcontent.september { border: 5px solid #d36974; }
-h1.september {background-color: white; color: #dc3545;}  
+.august { background-color: #ebc2c6; }
+button.august:hover { background-color: #1c5959;}
+.tab.august  { background-color: #01858a; }
+.tab.august  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.august { border: 5px solid #0d7475; }
+h1.august {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.october { background-color: #d45810; }  
-button.october:hover { background-color: #bc4e0f;} 
-.tab.october  { background-color: #e99c70; }
-.tab.october  button.active { background-color: #a04008; }
-.tabcontent.october { border: 5px solid #e99c70; }
-h1.october {background-color: white; color: #d45810;}  
+.september { background-color: #ebc2c6; }
+button.september:hover { background-color: #1c5959; }
+.tab.september  { background-color: #01858a; }
+.tab.september  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.september { border: 5px solid #0d7475; }
+h1.september {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.november { background-color: #343a40; } 
-button.november:hover { background-color: #262a2e;} 
-.tab.november  { background-color: #707e8c; }
-.tab.november  button.active { background-color: #1a1d21; }
-.tabcontent.november { border: 5px solid #707e8c; }
-h1.november {background-color: white; color: #343a40;}  
+.october { background-color: #ebc2c6; }
+button.october:hover { background-color: #1c5959;}
+.tab.october  { background-color: #01858a; }
+.tab.october  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.october { border: 5px solid #0d7475; }
+h1.october {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
-.december { background-color: #53697d; } 
-button.december:hover { background-color: #435565;} 
-.tab.december  { background-color: #7999b7; }
-.tab.december  button.active { background-color: #2d3944; }
-.tabcontent.december { border: 5px solid #7999b7; }
-h1.december {background-color: white; color: #53697d;}  
+.november { background-color: #ebc2c6; }
+button.november:hover { background-color: #1c5959;}
+.tab.november  { background-color: #01858a; }
+.tab.november  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.november { border: 5px solid #0d7475; }
+h1.november {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
+
+.december { background-color: #ebc2c6; }
+button.december:hover { background-color: #1c5959;}
+.tab.december  { background-color: #01858a; }
+.tab.december  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.december { border: 5px solid #0d7475; }
+h1.december {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 
 #markdownPreview { background-color: white; }  
 
@@ -225,9 +271,9 @@ h1.december {background-color: white; color: #53697d;}
   
   /* Style for the confirm button */
   #delete-confirm-btn {
-    background-color: #f44336;
-    color: white; /* White text color */
-    border: none;
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
     border-radius: 3px;
     padding: 8px 16px;
     margin-right: 10px;
@@ -237,14 +283,16 @@ h1.december {background-color: white; color: #53697d;}
   
   /* Hover effect for the confirm button */
   #delete-confirm-btn:hover {
-    background-color: #d32f2f;
+    color:white !important;
+    background: linear-gradient(135deg, #439093, pink);
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
   }
   
   /* Style for the cancel button */
   #delete-cancel-btn {
-    background-color: #ccc;
-    color: white; /* White text color */
-    border: none;
+    background: linear-gradient(135deg, #439093, pink);
+    color: #044c4d;
+    border: 1px solid #025a5a;
     border-radius: 3px;
     padding: 8px 16px;
     cursor: pointer;
@@ -253,6 +301,37 @@ h1.december {background-color: white; color: #53697d;}
   
   /* Hover effect for the cancel button */
   #delete-cancel-btn:hover {
-    background-color: #bbb;
+    color:white !important;
+    background: linear-gradient(135deg, #439093, pink);
+    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
   }
-  
+
+  input{
+    color: #044c4d;
+    border: 2px solid #025a5a;
+    box-shadow: 0 0 8px rgba(67 162 170 / 0.6);
+  }
+
+  input::placeholder {
+    color: #044c4d;
+    text-shadow: 1px 1px 1px #f2acda;
+  }
+
+    input:focus {
+    outline-color: pink;
+    }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in {
+    animation: fadeIn 0.5s forwards;
+  }
+ 

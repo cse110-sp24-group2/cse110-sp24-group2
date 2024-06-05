@@ -3,8 +3,9 @@
 }
 
 body {
-  background: no-repeat center center fixed;
-  background-size: cover;
+  background-color: rgba(239, 219, 237, 0.8); 
+  /*background: no-repeat center center fixed;
+  background-size: cover;*/
   color: #333;
 }
 
@@ -20,7 +21,7 @@ body {
 #search-bar {
   padding: 5px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #025a5a;
   border-radius: 5px;
   width: calc(100% - 120px);
   display: inline-block;
@@ -29,17 +30,26 @@ body {
 #search-button {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: var(--month-color);
-  color: white;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
   cursor: pointer;
   display: inline-block;
 }
 
 #search-button:hover {
-  background-color: red;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  color:white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%);
+}
+
+input::placeholder {
+    color: #044c4d;
+    text-shadow: 1px 1px 1px #f2acda;
+}
+input:focus{
+    outline-color: pink;   
 }
 
 #labels-container {
@@ -52,14 +62,17 @@ body {
 .label {
   padding: 10px;
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #025a5a;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .label:hover {
-  background-color: #f0f0f0;
+  color:white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%);
 }
+
 .no-label-message {
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -106,14 +119,16 @@ body {
   margin: 5px;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: var(--month-color);
-  color: white;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  cursor: pointer;
   cursor: pointer;
   display: inline-block;
 }
 #backToCalendar:hover {
-  background-color: var(--month-color);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  color:white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%);
 }

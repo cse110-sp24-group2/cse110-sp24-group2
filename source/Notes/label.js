@@ -1,4 +1,3 @@
-
 const { ipcRenderer } = require("electron");
 const { labelExists, saveLabel, saveDatetoLabel, deleteLabel, deleteDatetoLabel } = require('./label-helper');
 /*global fs*/
@@ -119,3 +118,4 @@ function renderLabels(day, month, year) {
     }
   });
 }
+

@@ -2,6 +2,9 @@ const { daysInMonth, isHoliday } = require("./calendar-helper");
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get the main components of the calendar and set date info
+  window.onload = function () {
+    document.body.classList.add("fade-in");
+  };
   const calendarContainer = document.getElementById("calendar");
   const monthLabel = document.getElementById("current-month");
   let currentDate = new Date();
@@ -76,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add the beginning days of the previous month
     for (let i = firstDay; i > 0; i--) {
       const dayElement = document.createElement("div");
-      dayElement.classList.add("day", "diff-month");
+      dayElement.classList.add("day", "diff-month", "fade-in");
       dayElement.textContent = lastDatePrevMonth - i + 1;
       dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
@@ -85,7 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let day = 1; day <= daysInMonth(month, year); day++) {
       const dayElement = document.createElement("div");
       // Adds specific month class
-      dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
+      // dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
+      dayElement.classList.add("day", monthClasses[parseInt(month, 10)], "fade-in"); // Added "fade-in" class here
       dayElement.textContent = day;
       dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
@@ -131,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let num = 1;
     for (let i = lastDay + 1; i <= 6; i++) {
       const dayElement = document.createElement("div");
-      dayElement.classList.add("day", "diff-month");
+      dayElement.classList.add("day", "diff-month","fade-in");
       dayElement.textContent = num;
       dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
