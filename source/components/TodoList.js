@@ -13,9 +13,10 @@ class TodoList extends HTMLElement {
             width: auto;
             max-width: 450px;
             height: auto;
-            padding: 30px;
+            padding: 20px;
             background-color: rgba(255 255 255 / 80%); 
             margin-top: 25px;
+            margin-right: 20px;
             box-shadow: 0 6px 12px rgba(0 0 0 / 15%);  
             color: #044c4d;
         }
