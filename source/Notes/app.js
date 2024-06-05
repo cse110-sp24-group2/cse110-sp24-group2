@@ -1,5 +1,5 @@
 const { deleteLabel, deleteDatetoLabel } = require("../Notes/label.js");
-// Play a fade in animaiton when the notes page load
+// Play a fade in animation when the notes page load
 window.onload = function () {
   document.body.classList.add("fade-in");
 };
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
   deleteCancelBtn.addEventListener("click", function () {
     deleteConfirmDialog.close();
   });
-  // navigate back to calendar
+  // Navigate back to calendar
   document
     .getElementById("backToCalendar")
     .addEventListener("click", function () {
@@ -156,6 +156,13 @@ function openTab(evt, tabName) {
 /**
  * Saves Markdown notes for the current day into its corresponding subdirectories.
  */
+/**
+ * Saves Markdown notes for the current day into its corresponding subdirectories.
+ * @param {number} day - The day of the month.
+ * @param {number} month - The month of the year.
+ * @param {number} year - The year.
+ * @param {string} markdown - Markdown entry.
+ */
 function saveMarkdownEntry(day, month, year, markdown) {
   const dataDir = path.join(__dirname, "../../DevJournal/Data");
   const yearDir = path.join(dataDir, year.toString());
@@ -186,6 +193,9 @@ function saveMarkdownEntry(day, month, year, markdown) {
 }
 /**
  * Renders Markdown notes for the current day into the notes window.
+ * @param {number} day - The day of the month.
+ * @param {number} month - The month of the year.
+ * @param {number} year - The year.
  */
 function renderMarkdownEntry(day, month, year) {
   const dataDir = path.join(__dirname, "../../DevJournal/Data");
@@ -207,6 +217,9 @@ function renderMarkdownEntry(day, month, year) {
 }
 /**
  * Deletes Markdown notes for the current day from its corresponding subdirectories.
+ * @param {number} day - The day of the month.
+ * @param {number} month - The month of the year.
+ * @param {number} year - The year.
  */
 function deleteMarkdownEntry(day, month, year) {
   const dataDir = path.join(__dirname, "../../DevJournal/Data");
