@@ -234,7 +234,7 @@ describe("Navigation and Generation of Calendar", () => {
     let dateDisplay = await browser.$("#dateDisplay");
     let dateDisplayText = await dateDisplay.getText();
     // Check that the date displayed is correct
-    expect(dateDisplayText).toBe(`${monthNames[month]} ${date} ${year}`);
+    expect(dateDisplayText).toBe(`${monthNames[month]} ${date}, ${year}`);
     // Go back to the calendar page
     let backButton = await browser.$("#backToCalendar");
     await backButton.click();
