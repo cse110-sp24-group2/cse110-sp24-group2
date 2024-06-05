@@ -1,93 +1,41 @@
-# cse110-sp24-group2
+# cse110-sp24-group2 Dev Work Journal
 
 ## [Team Wiki](admin/team.md)
 
-## Running the App
+In order to help a developer keep track of the work they have done and still need to do, we have developed a work journal that should help alleviate that need in an efficient manner.
 
-1. Make sure that the root package.json looks like this:
+The work journal has an easy to navigate calendar that keeps track of some of the major holidays for you, a notes page with full markdown support, a todo list to keep track of your long term goals and projects, and a labelling system that will make searching for your work a breeze!
 
-```json
-{
-  "name": "dev_journal",
-  "version": "1.0.0",
-  "description": "A Developer Journal That tracks what you do in a day",
-  "main": "source/main.js",
-  "devDependencies": {
-    "@wdio/cli": "^8.38.1",
-    "@wdio/local-runner": "^8.38.0",
-    "@wdio/mocha-framework": "^8.38.0",
-    "@wdio/spec-reporter": "^8.38.0",
-    "electron": "^30.0.9",
-    "electron-packager": "^17.1.2",
-    "jest": "^29.7.0",
-    "jsdoc": "^4.0.3",
-    "prettier": "3.2.5",
-    "wdio-electron-service": "^6.6.1"
-  },
-  "scripts": {
-    "test": "node node_modules/jest/bin/jest.js",
-    "start": "electron .",
-    "package-win": "electron-packager . DevJournal --platform=win32 --arch=x64 --asar",
-    "package-mac": "electron-packager . DevJournal --platform=darwin --arch=x64 --asar",
-    "package-linux": "electron-packager . DevJournal --platform=linux --arch=x64 --asar",
-    "wdio": "wdio run ./wdio.conf.js"
-  },
-  "jest": {
-    "transform": {},
-    "verbose": true
-  }
-}
-```
+## Installation
 
-2. Install the necessary dependencies:
+Go to the [Releases page](https://github.com/cse110-sp24-group2/cse110-sp24-group2/releases) in order to find the files that you need to download, whether that is on a Windows, MacOS, or Linux system.
 
-```bash
-npm install
-```
+Once you have downloaded the file, all you need to do is unzip the folder and run the executable.
 
-3. Depending on which device you have, run one of the following commands:
+After that the app should be fully functional to help you achieve your goals!
 
-```bash
-npm run package-win
-npm run package-mac
-npm run package-linux
-```
+## Basic Navigation
 
-4. Run the app:
+Upon opening the app, you will find the calendar page that looks like this:
 
-```bash
-npm start
-```
+![Calendar page](admin/branding/calendarpage.png)
 
-## Linting
+From there you have a fully navigational calendar to log on any day you would like.
 
-### TLDR:
+You can also see a todo-list page on the side where you can add any goal, mark it as complete, or delete as necessary.
 
-- `npx prettier . --w` to run the linter and overwrite files (for formatting)
-- `npx prettier . --check` to run the linter but not overwrite files
+There is also the search bar on the top right where upon clicking it you can choose one of the labels you have created to find all the days with that current label and navigate to them.
 
-Make sure `npx prettier . --check` does not show any unformatted files before pushing.
+Once you click on a day, you will be taken to the notes page that looks like this:
 
-### If you use other linters in other projects...
+![Notes page](admin/branding/notespage.png)
 
-- Go to the extensions tab and click "disable in workspace" for all non-prettier extensions
-- `CTRL-SHIFT-P` and type "Preferences: Open Workspace Settings (JSON)". Click it, it should make / take you to `settings.json`
-- Paste the following inside:
+Here you find a page where you can write your notes utilizing [markdown](https://www.markdownguide.org/) format so that when you click on the preview page, you can see your notes in a smooth and easy-to-read way.
 
-```
-{
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
-}
-```
+The other new feature on this page is the label system at the bottom, simply add a name and select a color of your choice to mark this page so when you look for the topic again later, you can quickly find it once again
 
-### Documentation:
+---
 
-[Prettier Docs](https://prettier.io/docs/en/cli.html)
+We hope you enjoy the work journal and can get some good use out of it, thank you!
 
-### Archive:
-
-- `npx eslint` to check files that violate eslint (code quality / potential bugs)
-  - Need to run `npx eslint` inside the source directory. Use `cd source` if necesasry
+_- CSE 110 Sp24 King Julian (aka Group 2)_
