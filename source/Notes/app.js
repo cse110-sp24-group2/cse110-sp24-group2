@@ -1,8 +1,8 @@
+const { deleteLabel, deleteDatetoLabel } = require("../Notes/label.js");
 // Play a fade in animaiton when the notes page load
 window.onload = function () {
   document.body.classList.add("fade-in");
 };
-
 /**
  * Set up necessary modules and path to Data directory
  */
@@ -214,12 +214,33 @@ function deleteMarkdownEntry(day, month, year) {
   const yearDir = path.join(dataDir, year.toString());
   const monthDir = path.join(yearDir, month.toString());
   const filePath = path.join(monthDir, `${day}.md`);
+
   console.log(filePath);
   fs.unlink(filePath, (err) => {
     if (err) {
       console.error("Failed to delete file:", err);
     } else {
       console.log("Delete file successfully");
+      // Delete the labels associated with this date
+      const labelFilePath = path.join(monthDir, "labels.json");
+      fs.readFile(labelFilePath, "utf-8", (err, data) => {
+        if (err) {
+          console.error("Failed to read labels file:", err);
+        } else {
+          const labels = JSON.parse(data);
+          const dayLabels = labels.find((l) => l.day === day);
+          if (dayLabels) {
+            dayLabels.labels.forEach((label) => {
+              deleteDatetoLabel(day, month, year, label.name);
+            });
+          }
+        }
+
+        // Delete the labels associated with this date
+        deleteLabel(day, month, year, null);
+        deleteDatetoLabel(day, month, year, null);
+        location.reload();
+      });
     }
   });
 }
