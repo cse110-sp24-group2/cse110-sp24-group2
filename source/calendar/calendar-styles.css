@@ -31,6 +31,8 @@ body {
     align-items: center;
     margin-right: 30px;
     margin-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 15vh;
     flex-direction: row;
     background: linear-gradient(135deg, #439093, pink);
     gap: 10px;
