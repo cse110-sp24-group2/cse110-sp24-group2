@@ -50,8 +50,30 @@ body {
   max-width: 600px;
 }
 
+.day-names {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  padding: 0;
+  padding-top: 10px;
+  width: 660px;
+  max-width: 660px;
+  margin: auto;
+}
+
+.day-name {
+  text-align: center;
+  font-size: 120%;
+  padding: 10px;
+  background-color: rgba(255 255 255 / 80%);
+  font-weight: bold;
+  border: none;
+  margin-top: 20px;
+  color: rgba(15 106 108 / 805);
+  font-family: serif;
+}
+
 /* Vertical layout for calendar and todo list if screen size is too small for readability */
-@media (max-width: 1160px) {
+@media (max-width: 1200px) {
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -63,13 +85,14 @@ body {
   }
 
   .day-names {
+    width: 630px;
     flex-direction: row;
     align-items: center;
   }
 }
 
 /* DESKTOP RESPONSIVENESS BREAKPOINT */
-@media (min-width: 1160px) {
+@media (min-width: 1200px) {
   .main-container {
     flex-direction: row;
     align-items: flex-start;
@@ -453,28 +476,6 @@ body {
 
 #close-form:hover {
   background-color: #ed9693;
-}
-
-.day-names {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  padding: 0;
-  padding-top: 10px;
-  width: 95%;
-  max-width: 660px;
-  margin: auto;
-}
-
-.day-name {
-  text-align: center;
-  font-size: 120%;
-  padding: 10px;
-  background-color: rgba(255 255 255 / 80%);
-  font-weight: bold;
-  border: none;
-  margin-top: 20px;
-  color: rgba(15 106 108 / 805);
-  font-family: serif;
 }
 
 .holiday {
