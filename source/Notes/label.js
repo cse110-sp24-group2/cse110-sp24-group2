@@ -107,6 +107,7 @@ function labelExists(day, month, year, name) {
     });
   });
 }
+
 /**
  * Saves a label for a specific day.
  *

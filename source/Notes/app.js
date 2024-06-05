@@ -239,6 +239,7 @@ function deleteMarkdownEntry(day, month, year) {
         // Delete the labels associated with this date
         deleteLabel(day, month, year, null);
         deleteDatetoLabel(day, month, year, null);
+        location.reload();
       });
     }
   });
