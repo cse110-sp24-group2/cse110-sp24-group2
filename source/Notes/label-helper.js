@@ -107,13 +107,10 @@ function saveDatetoLabel(day, month, year, label) {
       labels = JSON.parse(data);
     }
     const date = { day, month, year };
-    // codacy-disable-next-line security/detect-object-injection
-    if (labels[label]) {
-      // codacy-disable-next-line security/detect-object-injection
-      labels[label].push(date);
+    if (labels[String(label)]) {
+      labels[String(label)].push(date);
     } else {
-      // codacy-disable-next-line security/detect-object-injection
-      labels[label] = [date];
+      labels[String(label)] = [date];
     }
     fs.writeFile(
       labelFilePath,
@@ -193,8 +190,7 @@ function deleteDatetoLabel(day, month, year, label) {
       return;
     }
     let labels = JSON.parse(data);
-    // codacy-disable-next-line security/detect-object-injection
-    const dates = labels[label];
+    const dates = labels[String(label)];
     if (dates) {
       const dateIndex = dates.findIndex(
         (date) => date.day === day && date.month === month && date.year === year
@@ -202,8 +198,9 @@ function deleteDatetoLabel(day, month, year, label) {
       if (dateIndex > -1) {
         dates.splice(dateIndex, 1);
         if (dates.length === 0) {
-          // codacy-disable-next-line security/detect-object-injection
-          delete labels[label];
+          if(labels.hasOwnProperty(String(label))){
+            delete labels[String(label)];
+          }
         }
       }
     }
