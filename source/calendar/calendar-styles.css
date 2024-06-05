@@ -181,196 +181,25 @@ body {
   transform: scale(1.05);
 }
 
-.january {
+.day {
   color: #187474;
-  font-family: cursive;
+  font-family: Rubik, sans-serif;
 }
-.day.january:hover {
+.day:hover {
   background: linear-gradient(135deg, #02a2a8, pink);
   box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
-.current-day.january {
+.current-day {
   background: linear-gradient(135deg, #439093, pink);
 }
-.current-day.january:hover {
+.current-day:hover {
   background: linear-gradient(135deg, #02a2a8, pink);
   box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 
-.february {
-  color: #187474;
-  font-family: cursive;
-}
-.day.february:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.february {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.february:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.march {
-  color: #187474;
-  font-family: cursive;
-}
-.day.march:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.march {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.march:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.april {
-  color: #187474;
-  font-family: cursive;
-}
-.day.april:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.april {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.april:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.may {
-  color: #187474;
-  font-family: cursive;
-}
-.day.may:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.may {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.may:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.june {
-  color: #187474;
-  font-family: cursive;
-}
-.day.june:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.june {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.june:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.july {
-  color: #187474;
-  font-family: cursive;
-}
-.day.july:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.july {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.july:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.august {
-  color: #187474;
-  font-family: cursive;
-}
-.day.august:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.august {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.august:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.september {
-  color: #187474;
-  font-family: cursive;
-}
-.day.september:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.september {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.september:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.october {
-  color: #187474;
-  font-family: cursive;
-}
-.day.october:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.october {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.october:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.november {
-  color: #187474;
-  font-family: cursive;
-}
-.day.november:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.november {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.november:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-
-.december {
-  color: #187474;
-  font-family: cursive;
-}
-.day.december:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
-}
-.current-day.december {
-  background: linear-gradient(135deg, #439093, pink);
-}
-.current-day.december:hover {
-  background: linear-gradient(135deg, #02a2a8, pink);
-  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  color:#187474;
 }
 
 .modal {
@@ -568,25 +397,6 @@ button.delete-button:hover {
   padding: 20px;
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.current-day {
-  background: linear-gradient(135deg, violet, pink);
-  color: #044c4d;
-  font-weight: bold;
-  font-family: cursive;
-  padding: 10px 12px;
-  border-radius: 10px;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.current-day:hover {
-  background: linear-gradient(135deg, pink, violet);
-  color: white !important;
-  transform: scale(1.05);
 }
 
 .search-container {

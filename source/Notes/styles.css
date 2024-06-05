@@ -62,6 +62,7 @@ textarea:focus{
     background: linear-gradient(135deg, #0af2f2, pink);
     color: #044c4d;
     border: 1px solid #025a5a;
+    border-radius: 5px;
 }
 
 .tab button:hover {
@@ -141,90 +142,12 @@ button {
     margin: 5px;
 }
 
-.january { background-color: #ebc2c6; } 
-button.january:hover { background-color: #1c5959;} 
-.tab.january  { background-color: #01858a; }
-.tab.january  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.january { border: 5px solid #0d7475; }
-h1.january {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.february { background-color: #ebc2c6; }
-button.february:hover { background-color: #1c5959;}
-.tab.february  { background-color: #01858a; }
-.tab.february  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.february { border: 5px solid #0d7475; }
-h1.february {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.march { background-color: #ebc2c6; }
-button.march:hover { background-color: #1c5959;}
-.tab.march  { background-color: #01858a; }
-.tab.march  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.march { border: 5px solid #0d7475; }
-h1.march {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.april { background-color: #ebc2c6; }
-button.april:hover { background-color: #1c5959;}
-.tab.april  { background-color: #01858a; }
-.tab.april  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.april { border: 5px solid #0d7475; }
-h1.april {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.may { background-color: #ebc2c6; }
-button.may:hover { background-color: #1c5959;}
-.tab.may  { background-color: #01858a; }
-.tab.may  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.may { border: 5px solid #0d7475; }
-h1.may {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
- 
-.june { background-color: #ebc2c6; } 
-button.june:hover { background-color: #1c5959;} 
-.tab.june  { background-color: #01858a; }
-.tab.june  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.june { border: 5px solid #0d7475; }
-h1.june {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.july { background-color: #ebc2c6; }
-button.july:hover { background-color: #1c5959;}
-.tab.july  { background-color: #01858a; }
-.tab.july  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.july { border: 5px solid #0d7475; }
-h1.july {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.august { background-color: #ebc2c6; }
-button.august:hover { background-color: #1c5959;}
-.tab.august  { background-color: #01858a; }
-.tab.august  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.august { border: 5px solid #0d7475; }
-h1.august {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.september { background-color: #ebc2c6; }
-button.september:hover { background-color: #1c5959; }
-.tab.september  { background-color: #01858a; }
-.tab.september  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.september { border: 5px solid #0d7475; }
-h1.september {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.october { background-color: #ebc2c6; }
-button.october:hover { background-color: #1c5959;}
-.tab.october  { background-color: #01858a; }
-.tab.october  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.october { border: 5px solid #0d7475; }
-h1.october {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.november { background-color: #ebc2c6; }
-button.november:hover { background-color: #1c5959;}
-.tab.november  { background-color: #01858a; }
-.tab.november  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.november { border: 5px solid #0d7475; }
-h1.november {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
-.december { background-color: #ebc2c6; }
-button.december:hover { background-color: #1c5959;}
-.tab.december  { background-color: #01858a; }
-.tab.december  button.active { background: linear-gradient(135deg, #439093, pink); }
-.tabcontent.december { border: 5px solid #0d7475; }
-h1.december {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
-
+.color { background-color: #ebc2c6; } 
+button.color:hover { background-color: #1c5959;} 
+.tab.color  { background-color: #01858a; }
+.tab.color  button.active { background: linear-gradient(135deg, #439093, pink); }
+.tabcontent.color { border: 5px solid #0d7475; }
+h1.color {background-color: white; color: #187474; font-family: 'Times New Roman', Times, serif; }
 #markdownPreview { background-color: white; }  
 
 .notes-buttons {
