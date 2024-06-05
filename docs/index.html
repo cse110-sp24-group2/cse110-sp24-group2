@@ -43,90 +43,27 @@
 
 
     <section>
-        <article><h1>cse110-sp24-group2</h1>
+        <article><h1>cse110-sp24-group2 Dev Work Journal</h1>
 <h2><a href="admin/team.md">Team Wiki</a></h2>
-<h2>Running the App</h2>
-<ol>
-<li>Make sure that the root package.json looks like this:</li>
-</ol>
-<pre class="prettyprint source lang-json"><code>{
-  &quot;name&quot;: &quot;dev_journal&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;A Developer Journal That tracks what you do in a day&quot;,
-  &quot;main&quot;: &quot;source/main.js&quot;,
-  &quot;devDependencies&quot;: {
-    &quot;@wdio/cli&quot;: &quot;^8.38.1&quot;,
-    &quot;@wdio/local-runner&quot;: &quot;^8.38.0&quot;,
-    &quot;@wdio/mocha-framework&quot;: &quot;^8.38.0&quot;,
-    &quot;@wdio/spec-reporter&quot;: &quot;^8.38.0&quot;,
-    &quot;electron&quot;: &quot;^30.0.9&quot;,
-    &quot;electron-packager&quot;: &quot;^17.1.2&quot;,
-    &quot;jest&quot;: &quot;^29.7.0&quot;,
-    &quot;jsdoc&quot;: &quot;^4.0.3&quot;,
-    &quot;prettier&quot;: &quot;3.2.5&quot;,
-    &quot;wdio-electron-service&quot;: &quot;^6.6.1&quot;
-  },
-  &quot;scripts&quot;: {
-    &quot;test&quot;: &quot;node node_modules/jest/bin/jest.js&quot;,
-    &quot;start&quot;: &quot;electron .&quot;,
-    &quot;package-win&quot;: &quot;electron-packager . DevJournal --platform=win32 --arch=x64 --asar&quot;,
-    &quot;package-mac&quot;: &quot;electron-packager . DevJournal --platform=darwin --arch=x64 --asar&quot;,
-    &quot;package-linux&quot;: &quot;electron-packager . DevJournal --platform=linux --arch=x64 --asar&quot;,
-    &quot;wdio&quot;: &quot;wdio run ./wdio.conf.js&quot;
-  },
-  &quot;jest&quot;: {
-    &quot;transform&quot;: {},
-    &quot;verbose&quot;: true
-  }
-}
-</code></pre>
-<ol start="2">
-<li>Install the necessary dependencies:</li>
-</ol>
-<pre class="prettyprint source lang-bash"><code>npm install
-</code></pre>
-<ol start="3">
-<li>Depending on which device you have, run one of the following commands:</li>
-</ol>
-<pre class="prettyprint source lang-bash"><code>npm run package-win
-npm run package-mac
-npm run package-linux
-</code></pre>
-<ol start="4">
-<li>Run the app:</li>
-</ol>
-<pre class="prettyprint source lang-bash"><code>npm start
-</code></pre>
-<h2>Linting</h2>
-<h3>TLDR:</h3>
-<ul>
-<li><code>npx prettier . --w</code> to run the linter and overwrite files (for formatting)</li>
-<li><code>npx prettier . --check</code> to run the linter but not overwrite files</li>
-</ul>
-<p>Make sure <code>npx prettier . --check</code> does not show any unformatted files before pushing.</p>
-<h3>If you use other linters in other projects...</h3>
-<ul>
-<li>Go to the extensions tab and click &quot;disable in workspace&quot; for all non-prettier extensions</li>
-<li><code>CTRL-SHIFT-P</code> and type &quot;Preferences: Open Workspace Settings (JSON)&quot;. Click it, it should make / take you to <code>settings.json</code></li>
-<li>Paste the following inside:</li>
-</ul>
-<pre class="prettyprint source"><code>{
-  &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;,
-  &quot;[javascript]&quot;: {
-    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
-  }
-}
-</code></pre>
-<h3>Documentation:</h3>
-<p><a href="https://prettier.io/docs/en/cli.html">Prettier Docs</a></p>
-<h3>Archive:</h3>
-<ul>
-<li><code>npx eslint</code> to check files that violate eslint (code quality / potential bugs)
-<ul>
-<li>Need to run <code>npx eslint</code> inside the source directory. Use <code>cd source</code> if necesasry</li>
-</ul>
-</li>
-</ul></article>
+<p>In order to help a developer keep track of the work they have done and still need to do, we have developed a work journal that should help alleviate that need in an efficient manner.</p>
+<p>The work journal has an easy to navigate calendar that keeps track of some of the major holidays for you, a notes page with full markdown support, a todo list to keep track of your long term goals and projects, and a labelling system that will make searching for your work a breeze!</p>
+<h2>Installation</h2>
+<p>Go to the <a href="https://github.com/cse110-sp24-group2/cse110-sp24-group2/releases">Releases page</a> in order to find the files that you need to download, whether that is on a Windows, MacOS, or Linux system.</p>
+<p>Once you have downloaded the file, all you need to do is unzip the folder and run the executable.</p>
+<p>After that the app should be fully functional to help you achieve your goals!</p>
+<h2>Basic Navigation</h2>
+<p>Upon opening the app, you will find the calendar page that looks like this:</p>
+<p><img src="admin/branding/calendarpage.png" alt="Calendar page"></p>
+<p>From there you have a fully navigational calendar to log on any day you would like.</p>
+<p>You can also see a todo-list page on the side where you can add any goal, mark it as complete, or delete as necessary.</p>
+<p>There is also the search bar on the top right where upon clicking it you can choose one of the labels you have created to find all the days with that current label and navigate to them.</p>
+<p>Once you click on a day, you will be taken to the notes page that looks like this:</p>
+<p><img src="admin/branding/notespage.png" alt="Notes page"></p>
+<p>Here you find a page where you can write your notes utilizing <a href="https://www.markdownguide.org/">markdown</a> format so that when you click on the preview page, you can see your notes in a smooth and easy-to-read way.</p>
+<p>The other new feature on this page is the label system at the bottom, simply add a name and select a color of your choice to mark this page so when you look for the topic again later, you can quickly find it once again</p>
+<hr>
+<p>We hope you enjoy the work journal and can get some good use out of it, thank you!</p>
+<p><em>- CSE 110 Sp24 King Julian (aka Group 2)</em></p></article>
     </section>
 
 
