@@ -1,7 +1,3 @@
-* {
-  font-family: Rubik, sans-serif;
-}
-
 .todo-section {
   padding: 10px;
 }
@@ -50,8 +46,30 @@ body {
   max-width: 600px;
 }
 
+.day-names {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  padding: 0;
+  padding-top: 10px;
+  width: 660px;
+  max-width: 660px;
+  margin: auto;
+}
+
+.day-name {
+  text-align: center;
+  font-size: 120%;
+  padding: 10px;
+  background-color: rgba(255 255 255 / 80%);
+  font-weight: bold;
+  border: none;
+  margin-top: 20px;
+  color: rgba(15 106 108 / 805);
+  font-family: serif;
+}
+
 /* Vertical layout for calendar and todo list if screen size is too small for readability */
-@media (max-width: 1160px) {
+@media (max-width: 1205px) {
   .main-container {
     flex-direction: column;
     align-items: center;
@@ -63,13 +81,14 @@ body {
   }
 
   .day-names {
+    width: 630px;
     flex-direction: row;
     align-items: center;
   }
 }
 
 /* DESKTOP RESPONSIVENESS BREAKPOINT */
-@media (min-width: 1160px) {
+@media (min-width: 1205px) {
   .main-container {
     flex-direction: row;
     align-items: flex-start;
@@ -350,31 +369,12 @@ body {
   box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0 0 0 / 40%);
-  font-family: fantasy;
-  font-weight: 500;
+.day {
+  font-family: Rubik, sans-serif;
 }
 
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 90%;
-  max-width: 90%;
-  box-shadow: 0 4px 8px rgba(1 0 0 / 20%);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+#current-month {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Animation to slide the modal content from the top */
@@ -453,28 +453,6 @@ body {
 
 #close-form:hover {
   background-color: #ed9693;
-}
-
-.day-names {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  padding: 0;
-  padding-top: 10px;
-  width: 95%;
-  max-width: 660px;
-  margin: auto;
-}
-
-.day-name {
-  text-align: center;
-  font-size: 120%;
-  padding: 10px;
-  background-color: rgba(255 255 255 / 80%);
-  font-weight: bold;
-  border: none;
-  margin-top: 20px;
-  color: rgba(15 106 108 / 805);
-  font-family: serif;
 }
 
 .holiday {
@@ -567,25 +545,6 @@ button.delete-button:hover {
   padding: 20px;
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.current-day {
-  background: linear-gradient(135deg, violet, pink);
-  color: #044c4d;
-  font-weight: bold;
-  font-family: cursive;
-  padding: 10px 12px;
-  border-radius: 10px;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.current-day:hover {
-  background: linear-gradient(135deg, pink, violet);
-  color: white !important;
-  transform: scale(1.05);
 }
 
 .search-container {
