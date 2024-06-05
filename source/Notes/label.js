@@ -325,6 +325,7 @@ function deleteDatetoLabel(day, month, year, label) {
               date.day !== day || date.month !== month || date.year !== year
           );
           if (labels[key].length === 0) {
+            // Need to delete this
             delete labels[key];
           }
         }
