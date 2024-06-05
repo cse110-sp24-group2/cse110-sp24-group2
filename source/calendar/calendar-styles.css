@@ -1,582 +1,640 @@
 * {
-    font-family: Rubik , sans-serif;
+  font-family: Rubik, sans-serif;
 }
 
-.todo-section{
-    padding: 10px;
+.todo-section {
+  padding: 10px;
 }
 
 .rubik-font {
-    font-family: Rubik, sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
+  font-family: Rubik, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 body {
-    background:no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
+  background: no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
 }
 
 .diff-month {
-    color: rgb(192, 189, 189);
-    font-family: cursive;
+  color: rgb(192, 189, 189);
+  font-family: cursive;
 }
 
 .main-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-right: 30px;
-    margin-left: 30px;
-    flex-direction: row;
-    background: linear-gradient(135deg, #439093, pink);
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  margin-left: 30px;
+  flex-direction: row;
+  background: linear-gradient(135deg, #439093, pink);
+  gap: 10px;
 }
 
 .calendar-container {
-    flex: 3;
-    min-width: 300px;
-    max-width: 600px;
+  flex: 3;
+  min-width: 300px;
+  max-width: 600px;
 }
 
-.calendar-container, .todo-list-container {
-    flex: 1 0 300px;
-    max-width: 600px;
+.calendar-container,
+.todo-list-container {
+  flex: 1 0 300px;
+  max-width: 600px;
 }
 
 /* Vertical layout for calendar and todo list if screen size is too small for readability */
 @media (max-width: 1160px) {
-    .main-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .calendar-container {
-        width: 100%;
-        max-width: 768px;
-    }
+  .calendar-container {
+    width: 100%;
+    flex: auto;
+  }
+
+  .day-names {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 /* DESKTOP RESPONSIVENESS BREAKPOINT */
 @media (min-width: 1160px) {
-    .main-container {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-    } 
+  .main-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
 
-    .calendar-container {
-        width: 100%;
-        max-width: 768px;
-    }
+  .calendar-container {
+    width: 100%;
+    max-width: 768px;
+  }
 }
 
 .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(238 215 236 / 80%); 
-    box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
-    margin-bottom: 10px;
-    margin-right: 30px;
-    margin-left: 30px;
-    font-family: fantasy;
-    font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(238 215 236 / 80%);
+  box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
+  margin-bottom: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-family: fantasy;
+  font-weight: bold;
 }
 
 #calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    padding: 30px;
-    background-color: rgba(255 255 255 / 80%); 
-    width: 95%;
-    max-width: 600px;
-    margin: auto;
-    box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding: 30px;
+  background-color: rgba(255 255 255 / 80%);
+  width: 95%;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
 }
 
 .day {
-    padding: 15px 10px;
-    background-color: #fff;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.3s, transform 0.3s;
+  padding: 15px 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
 }
 
 .day:hover {
-    transform: translateY(-3px);
-    cursor: pointer;
-    box-shadow: 0 4px 5px rgba(0 0 0 / 10%);
+  transform: translateY(-3px);
+  cursor: pointer;
+  box-shadow: 0 4px 5px rgba(0 0 0 / 10%);
 }
 
 .current-day {
-    color: #044c4d;
-    font-weight: bold;
-    font-family: cursive;
-    padding: 10px 12px;
-    border-radius: 10px;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-  
-.current-day:hover {
-    color:white !important;
-    transform: scale(1.05);
+  color: #044c4d;
+  font-weight: bold;
+  font-family: cursive;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.january { color: #187474; font-family: cursive; } 
-.day.january:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.current-day:hover {
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.january {
+  color: #187474;
+  font-family: cursive;
+}
+.day.january:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.january {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.january:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.february { color: #187474; font-family: cursive; } 
-.day.february:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.february {
+  color: #187474;
+  font-family: cursive;
+}
+.day.february:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.february {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.february:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.march { color: #187474; font-family: cursive; } 
-.day.march:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.march {
+  color: #187474;
+  font-family: cursive;
+}
+.day.march:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.march {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.march:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.april { color: #187474; font-family: cursive; } 
-.day.april:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.april {
+  color: #187474;
+  font-family: cursive;
+}
+.day.april:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.april {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.april:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.may { color: #187474; font-family: cursive; } 
-.day.may:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.may {
+  color: #187474;
+  font-family: cursive;
+}
+.day.may:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.may {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.may:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
-  
-.june { color: #187474; font-family: cursive; } 
-.day.june:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
+
+.june {
+  color: #187474;
+  font-family: cursive;
+}
+.day.june:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.june {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.june:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-
-.july { color: #187474; font-family: cursive; } 
-.day.july:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.july {
+  color: #187474;
+  font-family: cursive;
+}
+.day.july:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.july {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.july:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.august { color: #187474; font-family: cursive; } 
-.day.august:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.august {
+  color: #187474;
+  font-family: cursive;
+}
+.day.august:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.august {
-    background: linear-gradient(135deg, #439093, pink); } 
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.august:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.september { color: #187474; font-family: cursive; }
-.day.september:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.september {
+  color: #187474;
+  font-family: cursive;
+}
+.day.september:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.september {
-    background: linear-gradient(135deg, #439093, pink); }
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.september:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.october { color: #187474; font-family: cursive; }
-.day.october:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.october {
+  color: #187474;
+  font-family: cursive;
+}
+.day.october:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.october {
-    background: linear-gradient(135deg, #439093, pink); }
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.october:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.november { color: #187474; font-family: cursive; }
-.day.november:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.november {
+  color: #187474;
+  font-family: cursive;
+}
+.day.november:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.november {
-    background: linear-gradient(135deg, #439093, pink); }
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.november:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
-.december { color: #187474; font-family: cursive; }
-.day.december:hover { background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+.december {
+  color: #187474;
+  font-family: cursive;
+}
+.day.december:hover {
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
 }
 .current-day.december {
-    background: linear-gradient(135deg, #439093, pink); }
+  background: linear-gradient(135deg, #439093, pink);
+}
 .current-day.december:hover {
-    background: linear-gradient(135deg, #02a2a8, pink); box-shadow: 0 3px 6px rgba(0 0 0 / 60%);}
+  background: linear-gradient(135deg, #02a2a8, pink);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 60%);
+}
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0 0 0 / 40%);
-    font-family: fantasy;
-    font-weight: 500
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0 0 0 / 40%);
+  font-family: fantasy;
+  font-weight: 500;
 }
 
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 90%;
-    box-shadow: 0 4px 8px rgba(1 0 0 / 20%);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+  position: relative;
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(1 0 0 / 20%);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
-
 
 /* Animation to slide the modal content from the top */
 @keyframes animatetop {
-    from {
-        top: -100px;
-        opacity: 0
-    }
+  from {
+    top: -100px;
+    opacity: 0;
+  }
 
-    to {
-        top: 0; 
-        opacity: 1
-    }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .close {
-    color:  #4e253c;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+  color: #4e253c;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color:  hsl(330deg 100% 52%);
-    text-decoration: none;
+  color: hsl(330deg 100% 52%);
+  text-decoration: none;
 }
 
-.entry-item{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+.entry-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 }
 
 #entry-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 #entry-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 #entry-form input[type="text"],
 #entry-form input[type="submit"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 #entry-form input[type="submit"] {
-    background-color:  #c73485;
-    color: white;
-    cursor: pointer;
+  background-color: #c73485;
+  color: white;
+  cursor: pointer;
 }
 
 #entry-form input[type="submit"]:hover {
-    background-color: #88cb8a;
+  background-color: #88cb8a;
 }
 
 #close-form {
-    padding: 10px 20px;
-    background-color: #6c2b56;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #6c2b56;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
 #close-form:hover {
-    background-color: #ed9693;
+  background-color: #ed9693;
 }
 
 .day-names {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    padding: 0;
-    padding-top: 10px;
-    width: 95%;
-    max-width: 660px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  padding: 0;
+  padding-top: 10px;
+  width: 95%;
+  max-width: 660px;
+  margin: auto;
 }
 
 .day-name {
-    text-align: center;
-    font-size:120%;
-    padding: 10px;
-    background-color: rgba(255 255 255 / 80%);
-    font-weight: bold;
-    border: none;
-    margin-top: 20px;
-    color: rgba(15 106 108 / 805);
-    font-family: serif;
+  text-align: center;
+  font-size: 120%;
+  padding: 10px;
+  background-color: rgba(255 255 255 / 80%);
+  font-weight: bold;
+  border: none;
+  margin-top: 20px;
+  color: rgba(15 106 108 / 805);
+  font-family: serif;
 }
 
 .holiday {
-    color: red;
-}
-
-/* MY CHANGES */
-.calendar-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* MOBILE RESPONSIVENESS BREAKPOINT - TABLET */
-@media (width >= 426px) and (width <= 1024px) {
-    .calendar-container {
-        overflow: hidden;
-    }
-
-    #day-names {
-        display: flex;
-        align-items: center;
-        grid-template-columns: repeat(3, 1fr);
-
-        .day-name {
-            width: 95%;
-        }
-    }
-
-    #day-names > .day-name {
-        width: 80%;
-    }
-
-    .day {
-        width: 70%
-    }
-}
-
-/* MOBILE RESPONSIVENESS BREAKPOINT - PHONE */
-@media (width <= 426px)  {
-    .calendar-container {
-        margin: 0 3%;
-    }
-
-    .entry-item {
-        gap: 0.75rem;
-    }
-
-    .calendar-header {
-        justify-content: center;
-        width: 100vw;
-        gap: 7%;
-    }
-
-    #calendar {
-        grid-template-columns: repeat(7, 12.5%);
-        padding-right: 1%;
-        gap: 1.5vw;
-    }
-
-    #day-names {
-        grid-template-columns: repeat(7, 13vw);
-        font-size: 70%;
-    }
+  color: red;
 }
 
 #prev-month {
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(9 165 179 / 60%);
-    padding: 5px 10px;
-    font-size: 14.5px;
-    cursor: pointer;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(9 165 179 / 60%);
+  padding: 5px 10px;
+  font-size: 14.5px;
+  cursor: pointer;
 }
-  
+
 #prev-month:hover {
-    background: linear-gradient(135deg, #02a2a8, pink);
-    color:white !important;
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+  background: linear-gradient(135deg, #02a2a8, pink);
+  color: white !important;
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
 }
 
 #next-month {
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(9 165 179 / 60%);
-    padding: 5px 10px;
-    font-size: 14.5px;
-    cursor: pointer;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(9 165 179 / 60%);
+  padding: 5px 10px;
+  font-size: 14.5px;
+  cursor: pointer;
 }
-  
+
 #next-month:hover {
-    background: linear-gradient(135deg, #439093, pink);
-    color:white !important;
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
+  background: linear-gradient(135deg, #439093, pink);
+  color: white !important;
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
 }
 
 button.delete-button {
-    background-color: #fff;
-    color: #343434;
-    border: 2px solid #ccc;
-    border-radius: 7px;
-    padding: 5px 10px;
-    font-size: 14.5px;
-    cursor: pointer;
-    margin-left: 10px;
+  background-color: #fff;
+  color: #343434;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 14.5px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 button.delete-button:hover {
-    background-color: #eaeaea; 
-    color:rgb(0 0 0);
-    box-shadow: 0 3px 6px rgba(0 0 0 / 30%);
+  background-color: #eaeaea;
+  color: rgb(0 0 0);
+  box-shadow: 0 3px 6px rgba(0 0 0 / 30%);
 }
 
 .arrow {
-    border: solid rgb(27 72 69);
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
+  border: solid rgb(27 72 69);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
 }
-  
+
 .right {
-    transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .left {
-    transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .button-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;    
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
-    background-color: #f2f2f2; /* Light gray background */
-    padding: 20px;
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2; /* Light gray background */
+  padding: 20px;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .current-day {
-    background: linear-gradient(135deg, violet, pink);
-    color: #044c4d;
-    font-weight: bold;
-    font-family: cursive;
-    padding: 10px 12px;
-    border-radius: 10px;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  }
-  
+  background: linear-gradient(135deg, violet, pink);
+  color: #044c4d;
+  font-weight: bold;
+  font-family: cursive;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
 .current-day:hover {
-background: linear-gradient(135deg, pink, violet);
-color:white !important;
-transform: scale(1.05);
+  background: linear-gradient(135deg, pink, violet);
+  color: white !important;
+  transform: scale(1.05);
 }
 
 .search-container {
-    display: flex;
-    position: relative;
-    align-items: center;
-    gap: 10px;
-    margin-left: 20px;
-    justify-content: space-between;
-    background: white;
-    color: #044c4d;
-    border: 2px solid #025a5a;
-    box-shadow: 0 0 8px rgba(9 165 179 / 60%);
-    border-radius: 20px;
-    padding-left: 20px;  
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+  justify-content: space-between;
+  background: white;
+  color: #044c4d;
+  border: 2px solid #025a5a;
+  box-shadow: 0 0 8px rgba(9 165 179 / 60%);
+  border-radius: 20px;
+  padding-left: 20px;
 }
 
 .search-container input::placeholder {
-    color: #044c4d;
-    text-shadow: 1px 1px 1px #f2acda;
+  color: #044c4d;
+  text-shadow: 1px 1px 1px #f2acda;
 }
 
 #search-bar {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-    font-weight: 14px;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
 }
 
 #search-button {
-    padding: 10px;
-    font-size: 16px;
-    background: linear-gradient(135deg, #439093, pink);
-    color: #044c4d;
-    border: 1px solid #025a5a;
-    cursor: pointer;
-    border-radius: 15px;
+  padding: 10px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  cursor: pointer;
+  border-radius: 15px;
 }
 
 #search-button:hover {
-    color:white !important;
-    background: linear-gradient(135deg, #439093, pink);
-    box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%); 
-
+  color: white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow:
+    0 0 5px rgba(9 165 179 / 60%),
+    0 0 25px rgba(9 165 179 / 60%),
+    0 0 50px rgba(9 165 179 / 60%),
+    0 0 200px rgba(9 165 179 / 60%);
 }
 
 #suggestions {
-    position: absolute;
-    margin-top: auto;
-    bottom: auto;
-    display: none;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  margin-top: auto;
+  bottom: auto;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .suggestion {
-    padding: 10px;
-    background-color: #f9f9f9;
-    color: black; 
-    cursor: pointer;
+  padding: 10px;
+  background-color: #f9f9f9;
+  color: black;
+  cursor: pointer;
 }
 
 .suggestion:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
