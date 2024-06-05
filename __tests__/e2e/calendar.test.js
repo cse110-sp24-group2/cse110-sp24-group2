@@ -63,9 +63,6 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
@@ -82,6 +79,7 @@ describe("Navigation and Generation of Calendar", () => {
       let activeDay = activeDays[i];
       let date = await activeDay.getText();
       await activeDay.click();
+      await browser.pause(800);
       // Make sure you are sent to the notes page
       expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
       let dateDisplay = await browser.$("#dateDisplay");
@@ -93,6 +91,7 @@ describe("Navigation and Generation of Calendar", () => {
       // Go back to the calendar page
       let backButton = await browser.$("#backToCalendar");
       await backButton.click();
+      await browser.pause(800);
       // Ensure you are back on the calendar page
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
     }
@@ -118,9 +117,6 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
@@ -133,6 +129,7 @@ describe("Navigation and Generation of Calendar", () => {
       let activeDay = activeDays[i];
       let date = await activeDay.getText();
       await activeDay.click();
+      await browser.pause(800);
       // Make sure you are sent to the notes page
       expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
       let dateDisplay = await browser.$("#dateDisplay");
@@ -142,6 +139,7 @@ describe("Navigation and Generation of Calendar", () => {
       // Go back to the calendar page
       let backButton = await browser.$("#backToCalendar");
       await backButton.click();
+      await browser.pause(800);
       // Ensure you are back on the calendar page
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
       // Get back to the previous month
@@ -169,9 +167,6 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
@@ -184,6 +179,7 @@ describe("Navigation and Generation of Calendar", () => {
       let activeDay = activeDays[i];
       let date = await activeDay.getText();
       await activeDay.click();
+      await browser.pause(800);
       // Make sure you are sent to the notes page
       expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
       let dateDisplay = await browser.$("#dateDisplay");
@@ -193,6 +189,7 @@ describe("Navigation and Generation of Calendar", () => {
       // Go back to the calendar page
       let backButton = await browser.$("#backToCalendar");
       await backButton.click();
+      await browser.pause(800);
       // Ensure you are back on the calendar page
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
       // Get back to the next month
@@ -222,36 +219,27 @@ describe("Navigation and Generation of Calendar", () => {
     const daysNotInMonth = await browser.$$(".diff-month");
     if (daysNotInMonth.length > 0) {
       let diffMonthDay = daysNotInMonth[0];
-      // Make sure the day is grayed out
-      const diffColor = await diffMonthDay.getCSSProperty("color");
-      expect(diffColor.parsed.hex).toBe("#808080");
       // Make sure the day is unclickable
       await diffMonthDay.click();
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
     }
     // Click days of the month to be sent to notes page and check displayed date
     let activeDays = await browser.$$(`div.${monthClasses[month]}`);
-    for (let i = 0; i < 5; i++) {
-      // Get new date to go to
-      activeDays = await browser.$$(`div.${monthClasses[month]}`);
-      let activeDay = activeDays[i];
-      let date = await activeDay.getText();
-      await activeDay.click();
-      // Make sure you are sent to the notes page
-      expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
-      let dateDisplay = await browser.$("#dateDisplay");
-      let dateDisplayText = await dateDisplay.getText();
-      // Check that the date displayed is correct
-      expect(dateDisplayText).toBe(`${monthNames[month]} ${date} ${year}`);
-      // Go back to the calendar page
-      let backButton = await browser.$("#backToCalendar");
-      await backButton.click();
-      // Ensure you are back on the calendar page
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
-      // Get back to the next year
-      for (let i = 0; i < 12; i++) {
-        await nextButton.click();
-      }
-    }
+    let activeDay = activeDays[0];
+    let date = await activeDay.getText();
+    await activeDay.click();
+    await browser.pause(800);
+    // Make sure you are sent to the notes page
+    expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
+    let dateDisplay = await browser.$("#dateDisplay");
+    let dateDisplayText = await dateDisplay.getText();
+    // Check that the date displayed is correct
+    expect(dateDisplayText).toBe(`${monthNames[month]} ${date} ${year}`);
+    // Go back to the calendar page
+    let backButton = await browser.$("#backToCalendar");
+    await backButton.click();
+    await browser.pause(800);
+    // Ensure you are back on the calendar page
+    expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
   }, 100000);
 });

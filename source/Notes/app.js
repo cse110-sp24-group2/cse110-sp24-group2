@@ -1,5 +1,8 @@
-const { deleteLabel, deleteDatetoLabel } = require("./label.js"); // Adjust the path as needed
-
+const { deleteLabel, deleteDatetoLabel } = require("../Notes/label.js");
+// Play a fade in animaiton when the notes page load
+window.onload = function () {
+  document.body.classList.add("fade-in");
+};
 /**
  * Set up necessary modules and path to Data directory
  */

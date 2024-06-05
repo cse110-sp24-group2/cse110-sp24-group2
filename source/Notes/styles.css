@@ -63,7 +63,7 @@ body {
     border-top: none;
 }
 
-#saveButton, #deleteButton, #backButton {
+button {
     /* margin-left: 20px; */
     padding: 10px 20px;
     color: white;
@@ -75,10 +75,6 @@ body {
 button:first-child {
     float: left;
     border-radius: 5px;
-}
-
-#saveButton:hover, #deleteButton:hover, #backButton:hover {
-    background-color: #600544; 
 }
 
 #backButton {
@@ -258,5 +254,18 @@ h1.december {background-color: white; color: #53697d;}
   /* Hover effect for the cancel button */
   #delete-cancel-btn:hover {
     background-color: #bbb;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in {
+    animation: fadeIn 0.5s forwards;
   }
   
