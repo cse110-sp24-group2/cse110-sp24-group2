@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
   // Format the date
   let formattedDate =
-    monthNames[dateInfo.month] + " " + dateInfo.day + " " + dateInfo.year;
+    monthNames[dateInfo.month] + " " + dateInfo.day + ", " + dateInfo.year;
   // Display the date
   document.getElementById("dateDisplay").textContent = formattedDate;
   // Reflect month as a class in elements for color application

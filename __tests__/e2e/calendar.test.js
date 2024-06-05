@@ -86,7 +86,7 @@ describe("Navigation and Generation of Calendar", () => {
       let dateDisplayText = await dateDisplay.getText();
       // Check that the date displayed is correct
       expect(dateDisplayText).toBe(
-        `${monthNames[currentMonth]} ${date} ${currentYear}`
+        `${monthNames[currentMonth]} ${date}, ${currentYear}`
       );
       // Go back to the calendar page
       let backButton = await browser.$("#backToCalendar");
@@ -135,7 +135,7 @@ describe("Navigation and Generation of Calendar", () => {
       let dateDisplay = await browser.$("#dateDisplay");
       let dateDisplayText = await dateDisplay.getText();
       // Check that the date displayed is correct
-      expect(dateDisplayText).toBe(`${monthNames[month]} ${date} ${year}`);
+      expect(dateDisplayText).toBe(`${monthNames[month]} ${date}, ${year}`);
       // Go back to the calendar page
       let backButton = await browser.$("#backToCalendar");
       await backButton.click();
@@ -185,7 +185,7 @@ describe("Navigation and Generation of Calendar", () => {
       let dateDisplay = await browser.$("#dateDisplay");
       let dateDisplayText = await dateDisplay.getText();
       // Check that the date displayed is correct
-      expect(dateDisplayText).toBe(`${monthNames[month]} ${date} ${year}`);
+      expect(dateDisplayText).toBe(`${monthNames[month]} ${date}, ${year}`);
       // Go back to the calendar page
       let backButton = await browser.$("#backToCalendar");
       await backButton.click();
@@ -234,7 +234,7 @@ describe("Navigation and Generation of Calendar", () => {
     let dateDisplay = await browser.$("#dateDisplay");
     let dateDisplayText = await dateDisplay.getText();
     // Check that the date displayed is correct
-    expect(dateDisplayText).toBe(`${monthNames[month]} ${date} ${year}`);
+    expect(dateDisplayText).toBe(`${monthNames[month]} ${date}, ${year}`);
     // Go back to the calendar page
     let backButton = await browser.$("#backToCalendar");
     await backButton.click();
