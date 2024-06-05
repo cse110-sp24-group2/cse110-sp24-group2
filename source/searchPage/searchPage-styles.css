@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: rgba(242 229 241 80%); 
+  background-color: rgba(239, 219, 237, 0.8); 
   /*background: no-repeat center center fixed;
   background-size: cover;*/
   color: #333;
@@ -47,6 +47,9 @@ body {
 input::placeholder {
     color: #044c4d;
     text-shadow: 1px 1px 1px #f2acda;
+}
+input:focus{
+    outline-color: pink;   
 }
 
 #labels-container {
