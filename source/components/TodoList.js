@@ -133,6 +133,24 @@ class TodoList extends HTMLElement {
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
         }
+        @keyframes fadeOut{
+          from{
+              opacity: 1;
+              transform: translateY(10px);
+          }
+          to {
+              opacity: 0;
+              transform: translateY(0);
+          }
+        } 
+     
+        .fade-out {
+          opacity: 0;
+          transform: translateY(0);
+          animation: fadeOut 0.5s forwards;
+        }
+
+
 
         .delete-task-btn {
             background: linear-gradient(135deg, #439093, pink);
@@ -252,13 +270,19 @@ class TodoList extends HTMLElement {
         }
       });
       // Add the click event listener to the delete button
-      button.addEventListener("click", () =>
-        this.deleteTodoListItem(note["id"], listContainer)
-      );
+      button.addEventListener("click", () => {
+        li.classList.add("fade-out");
+        setTimeout(() => {
+          this.deleteTodoListItem(note["id"], listContainer);
+        }, 300);
+      });
       // Add the keydown event listener to the delete button
       button.addEventListener("keydown", function (e) {
         if (e.key === "Enter") {
-          this.deleteTodoListItem(note["id"], listContainer);
+          li.classList.add("fade-out");
+          setTimeout(() => {
+            this.deleteTodoListItem(note["id"], listContainer);
+          }, 300);
         }
       });
       // Package the items together and append it to the container
