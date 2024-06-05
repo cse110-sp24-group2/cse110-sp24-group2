@@ -79,9 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const coloredElements = document.querySelectorAll(
     "button, h1, div.tab, div.tabcontent"
   );
-  let month = monthNames[dateInfo.month].toLowerCase();
   coloredElements.forEach((element) => {
-    element.classList.add(month);
+    element.classList.add("color");
   });
   let markdownTextarea = document.getElementById("markdown");
   markdownTextarea.addEventListener("input", function () {
