@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-
+const { deleteLabel, deleteDatetoLabel } = require('../../source/Notes/label-helper');
 /**
  * Saves Markdown notes for the current day into its corresponding subdirectories.
  */
