@@ -63,6 +63,7 @@ jobs: # the things being executed
       - name: Windows Packaging
         run: |
           npm install
+          npm install -g electron-builder
           npm run package
       - name: Upload Release Asset
         id: upload-release-asset
@@ -87,6 +88,7 @@ jobs: # the things being executed
       - name: MacOS Packaging
         run: |
           npm install
+          npm install -g electron-builder
           npm run package
       - name: Upload Release Asset
         id: upload-release-asset
