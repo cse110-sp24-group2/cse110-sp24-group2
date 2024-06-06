@@ -5,7 +5,8 @@
 - Custom filtering
 
 #### User Stories
-- As a user, I want to add and delete notes to record 
+
+- As a user, I want to add and delete notes to record
 - To make finding notes easier...
   - As a user, I want to filter notes by day
   - As a user, I want to control how I filter notes
@@ -13,24 +14,27 @@
 
 ### Performance Efficiency - Does it perform properly
 
+- The app should be able to run without a graphics card and with 8 GB of RAM.
+- The app should not take more than 500 MB of space
 
 ### User Stories
+
 - As a user, I want my app to load in less than a second so I don't lose my train of thought
 
 ### Compatibility - is it compatible with the systems we are building for?
 
 - The app must be compatible with Windows 11 and MacOS
   - Developers keep their devices up to date, so we will target the latest versions
- 
+
 ### Usability
 
-- 
+-
 
 ### Reliability
 
 -
 
-### Security 
+### Security
 
 -
 
