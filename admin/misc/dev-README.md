@@ -89,7 +89,7 @@ Make sure `npx prettier . --check` does not show any unformatted files before pu
 
 ### Finding Stored Files on The Release Version (Mac)
 
-- `npm run package` creates a build. The following JSON in `package.json` is relevant, but please google the `electron-builder` pacakge.
+- `npm run package` creates a build. The following JSON in `package.json` is also relevant for this npm script, but please google the `electron-builder` pacakge to understand the keywords.
 
 ```json
 "build": {
@@ -104,7 +104,7 @@ Make sure `npx prettier . --check` does not show any unformatted files before pu
   },
 ```
 
-- Once you create the build, it should generate a folder called `DevJournal`. Right click `DevJournal` and Reveal its Location in the Finder.
+- Once you create the build / run the command, it should generate a folder called `DevJournal`. Right click `DevJournal` and Reveal its Location in the Finder.
 - Right click the application, then click "Show Package Contents
 - Navigate to `cse110-sp24-group2/DevJournal/mac-arm64/Developer Journal.app/Contents/Resources/app/DevJournal/Data` to find app local data
 
