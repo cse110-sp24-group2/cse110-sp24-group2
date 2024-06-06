@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Calendar</title>
+    <link rel="stylesheet" href="calendar-styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="calendar-header">
+      <button id="prev-month"><i class="arrow left"></i>Prev</button>
+      <h1 id="current-month"></h1>
+      <button id="next-month">Next<i class="arrow right"></i></button>
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search notes...">
+        <button id="search-button">Search</button>
+    </div>
+    <div class="suggestions-content" id="suggestions"></div>
+    </div>
+    <div class="main-container">
+      <div class="calendar-container">
+        <div id="day-names" class="day-names">
+          <div class="day-name">Sun</div>
+          <div class="day-name">Mon</div>
+          <div class="day-name">Tues</div>
+          <div class="day-name">Wed</div>
+          <div class="day-name">Thurs</div>
+          <div class="day-name">Fri</div>
+          <div class="day-name">Sat</div>
+        </div>
+        <div id="calendar"></div>
+      </div>
+
+      <div>
+        <todo-list-element></todo-list-element>
+        <script src="../components/TodoList.js"></script>
+      </div>
+    </div>
+    <script src="calendar-script.js"></script>
+    <script src="../searchPage/searchPage.js"></script>
+    <noscript>
+      <p>
+        This application requires JavaScript to function. Please activate
+        JavaScript to get the desired functionality
+      </p>
+    </noscript>
+  </body>
+</html>
