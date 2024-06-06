@@ -3,8 +3,8 @@ module.exports = {
   deleteLabel,
   deleteDatetoLabel,
 };
-const fs = require("fs");
-const path = require("path");
+/*global fs*/
+/*global path*/
 
 /**
  * Event listener for the 'DOMContentLoaded' event on the document
