@@ -1,0 +1,102 @@
+name: Package Electron
+
+on:
+  # Run when pull requests are made to main branches
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: write
+
+jobs: # the things being executed
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: 1.0.0
+          release_name: Release 1.0.0
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url}}
+  linux:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: Linux Packaging
+        run: |
+          npm install
+          npm run package-linux
+      - name: Zip application
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          filename: "DevJournal-linux-x64.zip"
+          path: "DevJournal"
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release.outputs.upload_url }}
+          asset_path: ./DevJournal-linux-x64.zip
+          asset_name: DevJournal-linux-x64.zip
+          asset_content_type: application/zip
+
+  windows:
+    runs-on: windows-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: Windows Packaging
+        run: |
+          npm install
+          npm install -g electron-builder
+          npm run package
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release.outputs.upload_url }}
+          asset_path: ./DevJournal/Developer Journal Setup 1.0.0.exe
+          asset_name: Developer Journal Setup 1.0.0.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
+
+  macos:
+    runs-on: macos-latest
+    needs: release
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+      - name: MacOS Packaging
+        run: |
+          npm install
+          npm install -g electron-builder
+          npm run package
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release.outputs.upload_url }}
+          asset_path: ./DevJournal/Developer Journal-1.0.0-arm64.dmg
+          asset_name: Developer Journal-1.0.0-arm64.dmg
+          asset_content_type: application/x-apple-diskimage

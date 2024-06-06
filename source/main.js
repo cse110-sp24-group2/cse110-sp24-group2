@@ -1,15 +1,23 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
+const path = require('path');
+
 function createWindow () {
   let win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 1000,
+    icon: `${__dirname}/../assets/icons/icon.ico`,
     webPreferences: {
       nodeIntegration: true, // turn off nodeIntegration
       contextIsolation: false, // turn on contextIsolationt
     }
   })
 
-  win.loadFile('calendar/index.html')
+  win.loadFile('source/calendar/index.html')
 }
 
 app.whenReady().then(createWindow)
+
+ipcMain.on('show-error-dialog', (event, title, message) => {
+  dialog.showErrorBox(title, message);
+  event.returnValue = null;
+});

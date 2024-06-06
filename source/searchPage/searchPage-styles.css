@@ -1,0 +1,134 @@
+* {
+  font-family: Rubik, sans-serif;
+}
+
+body {
+  background-color: rgba(239, 219, 237, 0.8); 
+  /*background: no-repeat center center fixed;
+  background-size: cover;*/
+  color: #333;
+}
+
+.search-container {
+  position: relative;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+#search-bar {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #025a5a;
+  border-radius: 5px;
+  width: calc(100% - 120px);
+  display: inline-block;
+}
+
+#search-button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#search-button:hover {
+  color:white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%);
+}
+
+input::placeholder {
+    color: #044c4d;
+    text-shadow: 1px 1px 1px #f2acda;
+}
+input:focus{
+    outline-color: pink;   
+}
+
+#labels-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.label {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #025a5a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.label:hover {
+  color:white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%);
+}
+
+.no-label-message {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-top: 10px;
+}
+.date-button {
+  margin: 5px;
+  padding: 10px;
+  background-color: var(--month-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#suggestions {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 20px);
+  max-width: 600px;
+}
+
+.suggestion {
+  padding: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: #f0f0f0;
+}
+
+#results {
+  margin-top: 20px;
+}
+#backToCalendar {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #439093, pink);
+  color: #044c4d;
+  border: 1px solid #025a5a;
+  cursor: pointer;
+  cursor: pointer;
+  display: inline-block;
+}
+#backToCalendar:hover {
+  color:white !important;
+  background: linear-gradient(135deg, #439093, pink);
+  box-shadow: 0 0 5px rgba(9 165 179 / 60%), 0 0 25px rgba(9 165 179 / 60%), 0 0 50px rgba(9 165 179 / 60%), 0 0 200px rgba(9 165 179 / 60%);
+}

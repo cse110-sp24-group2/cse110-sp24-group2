@@ -10,27 +10,25 @@ class TodoList extends HTMLElement {
     styleElement.textContent = `
         .todo-list-container {
             flex: 1;
-            width: 100%;
+            width: auto;
             max-width: 450px;
+            height: auto;
+            padding: 20px;
             background-color: rgba(255 255 255 / 80%); 
-            box-shadow: 0 12px 6px rgba(0 0 0 / 15%);
-        }
-        
-        .todo-list {
-            width: 100%;
-            max-width: 350px;
-            background-color: rgba(255 255 255 / 80%);
-            margin: auto;
-            padding: 40px 30px 70px;
-            border-radius: 10px;
+            margin-top: 25px;
+            box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%); 
+            margin-right: 20px;
+            box-shadow: 0 6px 12px rgba(0 0 0 / 15%);  
+            color: #044c4d;
         }
         
         .todo-list h2 {
-            color: black;
+            color: #187474;
             display: flex;
             align-items: center;
             font-size: 1.5rem;
             margin-bottom: 20px;
+            font-family: serif;
         }
         
         .todo-list h2 img {
@@ -42,8 +40,11 @@ class TodoList extends HTMLElement {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #edeef0;
-            border-radius: 30px;
+            background: white;
+            color: #044c4d;
+            border: 2px solid #025a5a;
+            box-shadow: 0 0 8px rgba(67 162 170 / 0.6);
+            border-radius: 20px;
             padding-left: 20px;
             margin-bottom: 25px;
         }
@@ -55,16 +56,27 @@ class TodoList extends HTMLElement {
             padding: 10px;
             font-weight: 14px;
         }
-        
+
+        .row input::placeholder {
+          color: #044c4d;
+          text-shadow: 1px 1px 1px #f2acda;
+        }
+      
         .row button{
-            border: none;
             outline: none;
             padding: 16px 50px;
-            background: #ff5945;
-            color: #fff;
+            background: linear-gradient(135deg, #439093, pink);
+            color: #044c4d;
+            border: 1px solid #025a5a;
             font-size: 16px;
-            cursor:pointer;
-            border-radius: 40px;
+            cursor: pointer;
+            border-radius: 18px; 
+        }
+
+        .row button:hover {
+            color:white !important;
+            background: linear-gradient(135deg, #439093, pink);
+            box-shadow: 0 0 5px rgba(9, 165, 179, 0.6), 0 0 25px rgba(9, 165, 179, 0.6), 0 0 50px rgba(9, 165, 179, 0.6), 0 0 200px rgba(9, 165, 179, 0.6); 
         }
         
         #list-container {
@@ -72,7 +84,6 @@ class TodoList extends HTMLElement {
             margin-left: 0;
             padding: 0;
             list-style: none;
-        
         }
         ul li {
             list-style: none;
@@ -102,8 +113,9 @@ class TodoList extends HTMLElement {
             position: relative;
         }
         ul li input[type="checkbox"]:checked {
-            background: #ff5945;
-            border-color:  #ff5945;
+            background: linear-gradient(135deg, #439093, pink);
+            border: 1px solid #025a5a;
+            box-shadow: 0 0 8px rgba(67, 162, 170, 0.6);
         }
         ul li input[type="checkbox"]:checked + label {
             text-decoration: line-through;
@@ -123,24 +135,72 @@ class TodoList extends HTMLElement {
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
         }
+        @keyframes fadeOut{
+          from{
+              opacity: 1;
+              transform: translateY(10px);
+          }
+          to {
+              opacity: 0;
+              transform: translateY(0);
+          }
+        } 
+     
+        .fade-out {
+          opacity: 0;
+          transform: translateY(0);
+          animation: fadeOut 0.5s forwards;
+        }
+
+
 
         .delete-task-btn {
-            background: #ff5945;
+            background: linear-gradient(135deg, #439093, pink);
             color: white;
-            border: none;
+            border: 1px solid #025a5a;
             cursor: pointer;
             float: right;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba(67, 162, 170, 0.6);
         }
-        `;
+        
+        .delete-task-btn:hover {
+            box-shadow: 0 0 5px rgba(9, 165, 179, 0.6), 0 0 25px rgba(9, 165, 179, 0.6), 0 0 50px rgba(9, 165, 179, 0.6), 0 0 200px rgba(9, 165, 179, 0.6); 
+        }
+
+        .scrollbar {
+            overflow: scroll;
+            height: 500px;
+        }
+      
+        .scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .scrollbar::-webkit-scrollbar-thumb {
+            background-color: #6b6b6b; 
+            border-radius: 10px; 
+            border: 2px solid #ffffff; 
+        }
+
+        .scrollbar::-webkit-scrollbar-track {
+            background: #f0f0f0; 
+            border-radius: 10px;
+        }
+
+        .scrollbar::-webkit-scrollbar-corner {
+            background: transparent; 
+        }
+          `;
 
     container.setAttribute("class", "todo-list-container");
 
     container.innerHTML = `
-            <div class="todo-list"> 
-                <h2>To-Do Lists <img src="/source/components/images/to-do-icon.png"> </h2>
+            <div class="todo-list scrollbar"> 
+                <h2>To-Do Lists <img src="../components/images/to-do-icon.png"> </h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
-                    <button id="add-todo">ADD</button>
+                    <button id="add-todo">Add</button>
                 </div>
                 <ul id="list-container">
                 </ul>
@@ -158,6 +218,14 @@ class TodoList extends HTMLElement {
       this.addTodoListItem(input, listContainer)
     );
     this.renderNotes(listContainer);
+
+    // Add event listener for keyboard navigation
+    button.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        this.addTodoListItem(input, listContainer);
+        e.preventDefault();
+      }
+    });
   }
 
   /**
@@ -197,10 +265,28 @@ class TodoList extends HTMLElement {
       checkbox.addEventListener("change", () =>
         this.alterCompletion(note["id"])
       );
+      // Add the keydown event listener to the checkbox
+      checkbox.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          checkbox.click();
+        }
+      });
       // Add the click event listener to the delete button
-      button.addEventListener("click", () =>
-        this.deleteTodoListItem(note["id"], listContainer)
-      );
+      button.addEventListener("click", () => {
+        li.classList.add("fade-out");
+        setTimeout(() => {
+          this.deleteTodoListItem(note["id"], listContainer);
+        }, 300);
+      });
+      // Add the keydown event listener to the delete button
+      button.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          li.classList.add("fade-out");
+          setTimeout(() => {
+            this.deleteTodoListItem(note["id"], listContainer);
+          }, 300);
+        }
+      });
       // Package the items together and append it to the container
       li.appendChild(checkbox);
       li.appendChild(label);
