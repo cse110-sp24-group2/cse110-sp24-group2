@@ -13,6 +13,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jsdoc": "^4.0.3",
+    "mock-fs": "^5.2.0",
     "prettier": "3.2.5",
     "wdio-electron-service": "^6.6.1"
   },
