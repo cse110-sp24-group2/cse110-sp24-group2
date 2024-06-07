@@ -79,15 +79,15 @@ Testing
 
 ___
 
-**Name**:
+**Name**: Anya Chernova
 
-**What you have done**:
+**What you have done**: Added logo, fixed margins of elements and fonts, cleaned redundant code in calendar html and css.
 
-**What you are going to work on**:
+**What you are going to work on**: Testing search page
 
-**Any issues you have run into?**:
+**Any issues you have run into?**: Not currently
 
-**Active issue link**: [Issue Link]()
+**Active issue link**: [Issue Link](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/176)
 
 ___
 
