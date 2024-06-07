@@ -35,3 +35,7 @@
 
 - We opted for filtering by using labels with priorities for keyword search.
 - We opted for using x buttons to delete labels (and TODO list labels later)
+
+### Updates / Slack Archive
+
+![X Button Discussion](XButtonDiscussion.png)
