@@ -9,6 +9,11 @@ const currentDate = new Date().getDate();
 const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
 
+const monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
 describe("Navigation and Generation of SearchPage", () => {
   // Get to the calendar page
   beforeEach(async () => {
@@ -20,7 +25,10 @@ describe("Navigation and Generation of SearchPage", () => {
         CALENDAR_URL
       ).href;
 
-      NOTES_URL = path.resolve(CALENDAR_URL, "../../Notes/index.html");
+      NOTES_URL = new URL(
+        "../../source/Notes/index.html",
+        CALENDAR_URL
+      ).href;
     }
 
     // Click on the search bar
@@ -149,6 +157,55 @@ describe("Navigation and Generation of SearchPage", () => {
         break;
       }
     }
+  });
+
+  it("Check if date can be clicked and leads to the right notes", async () => {
+    // Click on one of the labels
+    const labelsContainer = await browser.$("#labels-container");
+    const childLabels = await labelsContainer.$$('*');
+
+    // Loop through the labels to find the one we want
+    for (const childLabel of childLabels) {
+      const text = await childLabel.getText();
+      if (text.trim() === 'test-label-final-test') {
+        await childLabel.click();
+
+        // Click the date button
+        const dateButton = await browser.$('.date-button');
+        await dateButton.click()
+
+        // Check if notes are loaded
+        expect(await browser.getUrl()).toBe(NOTES_URL);
+
+        // Check if these are notes for correct day
+        const notesDate = await (await browser.$('h1')).getText();
+
+        const formattedCurrentDate = `${monthNames[currentMonth]} ${currentDate}, ${currentYear}`;
+        expect(notesDate).toBe(formattedCurrentDate);
+
+        // Go back to calendar
+        const backToCalendarButton = await browser.$("#backToCalendar");
+        await backToCalendarButton.click();
+        break;
+      }
+    }
+  });
+  
+  it("Check that non-existent label does not show up", async () => {
+    // Get all labels
+    const labelsContainer = await browser.$("#labels-container");
+    const childLabels = await labelsContainer.$$('*');
+  
+    // Check that a non-existent label does not show up
+    let found = false;
+    for (const childLabel of childLabels) {
+      const text = await childLabel.getText();
+      if (text.trim() !== 'test-label-final-test') {
+        found = true;
+        break;
+      }
+    }
+    expect(found).toBe(false);
   });
 });
 
