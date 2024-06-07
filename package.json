@@ -29,5 +29,8 @@
     "transform": {},
     "verbose": true,
     "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "local-storage": "^2.0.0"
   }
 }
