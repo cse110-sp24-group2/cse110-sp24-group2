@@ -120,6 +120,7 @@ describe("Navigation and Generation of Calendar", () => {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is unclickable
       await diffMonthDay.click();
+      await browser.pause(800);
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
     }
     // Click days of the month to be sent to notes page and check displayed date
@@ -145,6 +146,7 @@ describe("Navigation and Generation of Calendar", () => {
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
       // Get back to the previous month
       await prevButton.click();
+      await browser.pause(800);
     }
   }, 100000);
 
@@ -195,6 +197,7 @@ describe("Navigation and Generation of Calendar", () => {
       expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
       // Get back to the next month
       await nextButton.click();
+      await browser.pause(800);
     }
   }, 100000);
 
