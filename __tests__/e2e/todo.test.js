@@ -70,4 +70,67 @@ describe("Testing of the To Do List element", () => {
       expect(taskCrossed["value"]).toHaveText(expect.stringContaining("none"));
     }
   });
+
+  // Check the addition of items
+  it("Delete items to ToDo", async () => {
+    // Get the todo-list element
+    let todoList = await browser.$("todo-list-element");
+    expect(todoList).not.toBeNull();
+
+    // Get the input, add button, and list elements
+    let list = await todoList.shadow$("#list-container");
+    expect(list).not.toBeNull();
+
+    // Check the number of items in the list
+    let tasks = await list.$$("li");
+    expect(tasks.length).toBe(5);
+    // Ensure that there is the proper text in each item
+    for (let i = 1; i <= 5; i++) {
+      // Get the todo-list element
+      todoList = await browser.$("todo-list-element");
+      expect(todoList).not.toBeNull();
+
+      // Get the input, add button, and list elements
+      list = await todoList.shadow$("#list-container");
+      expect(list).not.toBeNull();
+
+      tasks = await list.$$("li");
+
+      const deleteButton = await tasks[0].$(".delete-task-btn");
+      console.log(deleteButton);
+      console.log(tasks);
+
+      expect(deleteButton).not.toBeNull();
+
+      // Delete the item
+      await deleteButton.click();
+
+      await browser.pause(800); // FADE AS OF TIME OF WRITING WAS 300, INCREASE THIS PAUSE IF FADE IS LONGER
+      // await browser.waitUntil(
+      //   async function () {
+      //     return (await currTask.isExisting()) === false;
+      //   },
+      //   {
+      //     timeout: 2000,
+      //     timeoutMsg: `expected task to be gone after 2s, tag is ${item}`,
+      //   }
+      // );
+      expect(await list.$$("li")).toHaveLength(5 - i);
+      // expect(await currTask.isExisting()).toBe(false);
+      // browser.debug();
+
+      // // Get the todo-list element
+      // const todoListNew = await browser.$("todo-list-element");
+      // // Get the input, add button, and list elements
+      // const listNew = await todoListNew.shadow$("#list-container");
+      // await deleteButton.waitForExist({
+      //   reverse: true,
+      //   timeout: 400000000,
+      //   timeoutMsg: "expected task to be gone after many seconds",
+      // });
+    }
+
+    const endTasks = await list.$$("li");
+    expect(endTasks.length).toBe(0);
+  });
 });
