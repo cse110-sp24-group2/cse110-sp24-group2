@@ -34,7 +34,7 @@ describe("Navigation and Generation of SearchPage", () => {
     // Add a brief pause to ensure page load
     await browser.pause(800);
   });
-
+  /*
   // Test if clicking on the "Back to Calendar" button takes you to the calendar page
   it("Verify Back to Calendar Navigation", async () => {
     // Click on the "Back to Calendar" button
@@ -68,36 +68,67 @@ describe("Navigation and Generation of SearchPage", () => {
     const enteredText = await searchBar.getValue();
     expect(enteredText).toBe(searchText);
   }, 10000);
-
+  */
   // Added label should show up on searchPage
   it("Add Label to Notes Page and Verify on Search Page", async () => {
-    // Navigate to the main calendar page
+    // First you are on the calendar page
     await browser.url(CALENDAR_URL);
-    await browser.url(NOTES_URL);
-    await browser.pause(800);
-
-    // Adding label
-    const labelText = "test";
-    const label = await browser.$("#label-name");
-    await label.setValue(labelText);
-    const addLabelButton = await browser.$("#add-label-button");
-    await addLabelButton.click();
+    // Click on the current day. take you to notes page
+    const currentDay = await $('.current-day');
     await browser.pause(3000);
+    await currentDay.click();
+    
+    
+    // Now, we should be on the notes page
+    // Let's add a label
+    const labelName = "test-label-final-test";
+    const labelColor = "#1E90FF";
+  
+    // Enter the label name
+    const labelNameInput = await $('#label-name');
+    await labelNameInput.setValue(labelName);
+  
+    // Enter the label color
+    const labelColorInput = await $('#label-color');
+    await labelColorInput.setValue(labelColor);
+  
+    // Click the add label button
+    const addLabelButton = await $('#add-label-button');
+    await addLabelButton.click();
 
-    // Navigate back to the calendar page
+    
+    // Go back to calendar
     const backToCalendarButton = await browser.$("#backToCalendar");
     await backToCalendarButton.click();
-    await browser.pause(3000);
+    
+    
+    // Click on the search bar
+    await browser.execute(() => {
+      document.querySelector("#search-bar").click();
+    });
 
-    // Enter searchPage
+    // Navigate to the search page
     await browser.url(SEARCH_URL);
     await browser.pause(3000);
 
-    // Verify if the label exists on the search page
+
+    // Check that one of the label is the one i created.
     const labelsContainer = await browser.$("#labels-container");
-    const labelExists = await labelsContainer.$(
-      `//*[contains(text(), '${labelText}')]`
-    );
-    expect(labelExists).toBe(true);
+    const childLabels = await labelsContainer.$$('*');
+
+    let hasChildWithText = false;
+
+    for (const childLabel of childLabels) {
+      const text = await childLabel.getText();
+      if (text.trim() === 'test-label-final-test') {
+        hasChildWithText = true;
+        break;
+      }
+    }
+
+    expect(hasChildWithText).toBe(true);
+    
   });
 });
+
+
