@@ -194,6 +194,7 @@ class TodoList extends HTMLElement {
           `;
 
     container.setAttribute("class", "todo-list-container");
+    container.setAttribute("tabindex", "0"); // Add tabindex to make todolist keyboard accessible
 
     container.innerHTML = `
             <div class="todo-list scrollbar"> 
@@ -213,20 +214,27 @@ class TodoList extends HTMLElement {
     const button = shadowRoot.querySelector("#add-todo");
     const input = this.shadowRoot.querySelector("#todo-input");
     const listContainer = shadowRoot.querySelector("#list-container");
-
     button.addEventListener("click", () =>
       this.addTodoListItem(input, listContainer)
     );
     this.renderNotes(listContainer);
 
-    // Add event listener for keyboard navigation
+    // Add event listener for keyboard navigation on add button
     button.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
         this.addTodoListItem(input, listContainer);
         e.preventDefault();
       }
     });
+    // Add event listener for enter key on input 
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        this.addTodoListItem(input, listContainer);
+        e.preventDefault();
+      }
+    });
   }
+
 
   /**
    * Gets the notes from the local storage
