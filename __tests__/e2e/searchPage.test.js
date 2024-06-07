@@ -34,7 +34,7 @@ describe("Navigation and Generation of SearchPage", () => {
     // Add a brief pause to ensure page load
     await browser.pause(800);
   });
-  /*
+  
   // Test if clicking on the "Back to Calendar" button takes you to the calendar page
   it("Verify Back to Calendar Navigation", async () => {
     // Click on the "Back to Calendar" button
@@ -68,7 +68,7 @@ describe("Navigation and Generation of SearchPage", () => {
     const enteredText = await searchBar.getValue();
     expect(enteredText).toBe(searchText);
   }, 10000);
-  */
+  
   // Added label should show up on searchPage
   it("Add Label to Notes Page and Verify on Search Page", async () => {
     // First you are on the calendar page
@@ -78,7 +78,7 @@ describe("Navigation and Generation of SearchPage", () => {
     await browser.pause(3000);
     await currentDay.click();
     
-    
+
     // Now, we should be on the notes page
     // Let's add a label
     const labelName = "test-label-final-test";
@@ -125,9 +125,30 @@ describe("Navigation and Generation of SearchPage", () => {
         break;
       }
     }
+    expect(hasChildWithText).toBe(true);    
+  });
 
-    expect(hasChildWithText).toBe(true);
-    
+  // Check if the label created on a particular date has the correct data
+  it("Check if labels show up with correct dates", async () => {
+    // Click on one of the labels
+    const labelsContainer = await browser.$("#labels-container");
+    const childLabels = await labelsContainer.$$('*');
+
+    // Loop through the labels to find the one we want
+    for (const childLabel of childLabels) {
+      const text = await childLabel.getText();
+      if (text.trim() === 'test-label-final-test') {
+        await childLabel.click();
+        // Check if the date that we see is the same as the current date
+        const dateButton = await browser.$('.date-button');
+        const displayedDate = await dateButton.getText();
+
+        // Check if the date is correct
+        const formattedCurrentDate = `${currentMonth + 1}/${currentDate}/${currentYear}`;
+        expect(displayedDate).toBe(formattedCurrentDate);
+        break;
+      }
+    }
   });
 });
 
