@@ -6,7 +6,7 @@
   "description": "A Developer Journal That tracks what you do in a day",
   "main": "source/main.js",
   "scripts": {
-    "start": "electron source/main.js",
+    "start": "electron .",
     "package": "electron-builder",
     "test": "node node_modules/jest/bin/jest.js -- __tests__/unit",
     "package-win": "electron-packager . DevJournal --platform=win32 --arch=x64 --out=DevJournal",
