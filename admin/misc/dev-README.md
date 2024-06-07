@@ -65,6 +65,7 @@ npm start
 
 - `npx prettier . --w` to run the linter and overwrite files (for formatting)
 - `npx prettier . --check` to run the linter but not overwrite files
+- Files should also format on autosave. Use `CMD-P` on Mac or `CTRL-P` on windows to navigate to `.vscode/settings.json` to edit prettier rules.
 
 Make sure `npx prettier . --check` does not show any unformatted files before pushing.
 
