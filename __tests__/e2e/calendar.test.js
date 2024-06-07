@@ -47,6 +47,7 @@ describe("Navigation and Generation of Calendar", () => {
       NOTES_URL = path.resolve(CALENDAR_URL, "../../Notes/index.html");
     }
     await browser.url(CALENDAR_URL);
+    await browser.pause(800);
   });
 
   // Check if current month is generated

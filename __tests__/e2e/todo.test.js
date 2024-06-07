@@ -13,6 +13,7 @@ describe("Testing of the To Do List element", () => {
       NOTES_URL = path.resolve(CALENDAR_URL, "../../Notes/index.html");
     }
     await browser.url(CALENDAR_URL);
+    await browser.pause(800);
   });
 
   // Check the addition of items
@@ -26,8 +27,10 @@ describe("Testing of the To Do List element", () => {
     // Add items to the list
     for (let i = 1; i <= 5; i++) {
       await input.click();
+      await browser.pause(100);
       await browser.keys(`ToDo List Item ${i}`);
       await addButton.click();
+      await browser.pause(100);
     }
     // Check the number of items in the list
     const tasks = await list.$$("li");
@@ -56,6 +59,7 @@ describe("Testing of the To Do List element", () => {
       const taskDesc = await task.$("label");
       // Check the item as complete via clicking the checkbox
       await taskCheck.click();
+      await browser.pause(100);
       // Make sure checkbox is checked and that the text is crossed out
       expect(await taskCheck.isSelected()).toBe(true);
       let taskCrossed = await taskDesc.getCSSProperty("text-decoration");
@@ -64,6 +68,7 @@ describe("Testing of the To Do List element", () => {
       );
       // Check the item as uncomplete via clicking the label
       await taskDesc.click();
+      await browser.pause(100);
       // Make sure checkbox is unchecked and that the text is not crossed out
       expect(await taskCheck.isSelected()).toBe(false);
       taskCrossed = await taskDesc.getCSSProperty("text-decoration");
