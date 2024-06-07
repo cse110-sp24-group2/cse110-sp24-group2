@@ -110,29 +110,10 @@ describe("Testing of the To Do List element", () => {
       // Delete the item
       await deleteButton.click();
 
-      await browser.pause(800); // FADE AS OF TIME OF WRITING WAS 300, INCREASE THIS PAUSE IF FADE IS LONGER
-      // await browser.waitUntil(
-      //   async function () {
-      //     return (await currTask.isExisting()) === false;
-      //   },
-      //   {
-      //     timeout: 2000,
-      //     timeoutMsg: `expected task to be gone after 2s, tag is ${item}`,
-      //   }
-      // );
-      expect(await list.$$("li")).toHaveLength(5 - i);
-      // expect(await currTask.isExisting()).toBe(false);
-      // browser.debug();
+      // FADE FOR DELETE DLEAY AT OF TIME OF WRITING WAS 300, INCREASE THIS PAUSE IF FADE IS LONGER
+      await browser.pause(600);
 
-      // // Get the todo-list element
-      // const todoListNew = await browser.$("todo-list-element");
-      // // Get the input, add button, and list elements
-      // const listNew = await todoListNew.shadow$("#list-container");
-      // await deleteButton.waitForExist({
-      //   reverse: true,
-      //   timeout: 400000000,
-      //   timeoutMsg: "expected task to be gone after many seconds",
-      // });
+      expect(await list.$$("li")).toHaveLength(5 - i);
     }
 
     const endTasks = await list.$$("li");
