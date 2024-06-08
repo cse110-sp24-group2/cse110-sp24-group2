@@ -75,9 +75,16 @@ body {
     align-items: center;
   }
 
-  .calendar-container {
-    width: 100%;
+  .calendar-container,
+  .todo-list-container,
+  todo-list-element {
+    width: 95%;
+    max-width: 600px;
+
     flex: auto;
+    justify-self: center;
+
+    align-items: center;
   }
 
   .day-names {
@@ -164,7 +171,6 @@ body {
   color: #044c4d;
   font-weight: bold;
   font-family: cursive;
-  padding: 10px 12px;
   border-radius: 10px;
   transition:
     background 0.3s ease,
@@ -374,7 +380,7 @@ body {
 }
 
 #current-month {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Animation to slide the modal content from the top */
