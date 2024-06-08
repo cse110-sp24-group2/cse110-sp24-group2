@@ -8,6 +8,12 @@ class TodoList extends HTMLElement {
     const styleElement = document.createElement("style");
 
     styleElement.textContent = `
+        .courgette-regular {
+          font-family: "Courgette", cursive;
+          font-weight: 400;
+          font-style: normal;
+        }
+
         .todo-list-container {
             flex: 1;
             width: auto;
@@ -28,12 +34,12 @@ class TodoList extends HTMLElement {
             align-items: center;
             font-size: 1.5rem;
             margin-bottom: 20px;
-            font-family: serif;
+            margin-left: 10px;
+            font-family: Courgette;
         }
         
         .todo-list h2 img {
             width: 30px;
-            margin-left: 10px;
         }
         
         .row {
@@ -45,9 +51,12 @@ class TodoList extends HTMLElement {
             border: 2px solid #025a5a;
             box-shadow: 0 0 8px rgba(67 162 170 / 0.6);
             border-radius: 20px;
-            padding-left: 20px;
+            padding-left: 15px;
             margin-bottom: 25px;
+            margin-right: 10px;
+            margin-left: 10px;
         }
+
         input {
             flex: 1;
             border: none;
@@ -64,7 +73,7 @@ class TodoList extends HTMLElement {
       
         .row button{
             outline: none;
-            padding: 16px 50px;
+            padding: 8px 20px;
             background: linear-gradient(135deg, #439093, pink);
             color: #044c4d;
             border: 1px solid #025a5a;
@@ -76,7 +85,7 @@ class TodoList extends HTMLElement {
         .row button:hover {
             color:white !important;
             background: linear-gradient(135deg, #439093, pink);
-            box-shadow: 0 0 5px rgba(9, 165, 179, 0.6), 0 0 25px rgba(9, 165, 179, 0.6), 0 0 50px rgba(9, 165, 179, 0.6), 0 0 200px rgba(9, 165, 179, 0.6); 
+            box-shadow: 0 0 5px rgba(9, 165, 179, 0.6), 0 0 12px rgba(9, 165, 179, 0.6), 0 0 25px rgba(9, 165, 179, 0.6), 0 0 200px rgba(9, 165, 179, 0.6); 
         }
         
         #list-container {
@@ -91,7 +100,9 @@ class TodoList extends HTMLElement {
             padding: 12px 8px 12px 0;
             user-select: none;
             cursor: pointer;
-            position: relative;   
+            margin-left: 5px;
+            position: relative;  
+            font-family: Courgette; 
         }
         ul li::before {
             content: '';
@@ -152,14 +163,13 @@ class TodoList extends HTMLElement {
           animation: fadeOut 0.5s forwards;
         }
 
-
-
         .delete-task-btn {
             background: linear-gradient(135deg, #439093, pink);
             color: white;
             border: 1px solid #025a5a;
             cursor: pointer;
             float: right;
+            margin-right: 10px;
             border-radius: 5px;
             box-shadow: 0 0 8px rgba(67, 162, 170, 0.6);
         }
@@ -196,8 +206,11 @@ class TodoList extends HTMLElement {
     container.setAttribute("class", "todo-list-container");
 
     container.innerHTML = `
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+            </style>
             <div class="todo-list scrollbar"> 
-                <h2>To-Do Lists <img src="../components/images/to-do-icon.png"> </h2>
+                <h2>To-Do List &nbsp<img src="../components/images/to-do-icon.png"> </h2>
                 <div class="row">
                     <input type="text" id="todo-input" placeholder="Enter a new task...">
                     <button id="add-todo">Add</button>
