@@ -1,14 +1,18 @@
 const { browser } = require("@wdio/globals");
 const path = require("path");
 
+
+//Declare Variables to be used throughout testing and set before each test
 let CALENDAR_URL;
 let SEARCH_URL;
 let NOTES_URL;
 
+// Getting the current dat, month and year from computer.
 const currentDate = new Date().getDate();
 const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
 
+// Array of month names
 const monthNames = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -120,7 +124,7 @@ describe("Navigation and Generation of SearchPage", () => {
     await browser.pause(3000);
 
 
-    // Check that one of the label is the one i created.
+    // Check that one of the label is the one I created.
     const labelsContainer = await browser.$("#labels-container");
     const childLabels = await labelsContainer.$$('*');
 
