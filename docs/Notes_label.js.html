@@ -84,6 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
           deleteLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
           deleteDatetoLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
         });
+        newLabel.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            console.log("Deleting label:", name);
+            newLabel.remove();
+            deleteLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
+             deleteDatetoLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
+          }
+        });
         // Save the label to the JSON file
         console.log("Saving label:", { name, color });
         saveLabel(dateInfo.day, dateInfo.month, dateInfo.year, { name, color });
