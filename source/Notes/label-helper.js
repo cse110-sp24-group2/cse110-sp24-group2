@@ -145,53 +145,6 @@ function deleteLabel(day, month, year, label) {
       return;
     }
     let labels = JSON.parse(data);
-    const existingLabel = labels.find((l) => l.day === day);
-    if (existingLabel) {
-      const labelIndex = existingLabel.labels.findIndex(
-        (l) => l.name === label
-      );
-      if (labelIndex > -1) {
-        existingLabel.labels.splice(labelIndex, 1);
-        if (existingLabel.labels.length === 0) {
-          labels = labels.filter((l) => l.day !== day);
-        }
-      }
-    }
-    fs.writeFile(
-      labelFilePath,
-      JSON.stringify(labels, null, 2),
-      "utf-8",
-      (err) => {
-        if (err) {
-          console.error("Failed to save labels file", err);
-        } else {
-          console.log(
-            `Label ${label} deleted from ${month + 1}-${day}-${year}`
-          );
-        }
-      }
-    );
-  });
-}
-/**
- * Deletes a label for a specific day.
- *
- * @param {number} day - The day of the month.
- * @param {number} month - The month of the year.
- * @param {number} year - The year.
- * @param {string} label - The name of the label to delete.
- */
-function deleteLabel(day, month, year, label) {
-  const dataDir = path.join(__dirname, "../../DevJournal/Data");
-  const yearDir = path.join(dataDir, year.toString());
-  const monthDir = path.join(yearDir, month.toString());
-  const labelFilePath = path.join(monthDir, `labels.json`);
-  fs.readFile(labelFilePath, "utf-8", (err, data) => {
-    if (err) {
-      console.error("Failed to read labels file", err);
-      return;
-    }
-    let labels = JSON.parse(data);
     if (label === null) {
       labels = labels.filter((l) => l.day !== day);
     } else {
