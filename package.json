@@ -12,7 +12,8 @@
     "package-win": "electron-packager . DevJournal --platform=win32 --arch=x64 --out=DevJournal",
     "package-mac": "electron-packager . DevJournal --platform=darwin --arch=x64 --out=DevJournal",
     "package-linux": "electron-packager . DevJournal --platform=linux --arch=x64 --out=DevJournal",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "wdio:todo": "DEBUG=true npx wdio run ./wdio.conf.js --spec ./__tests__/e2e/todo.test.js"
   },
   "keywords": [],
   "license": "ISC",
