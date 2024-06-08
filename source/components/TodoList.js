@@ -11,13 +11,12 @@ class TodoList extends HTMLElement {
         .todo-list-container {
             flex: 1;
             width: auto;
-            max-width: 450px;
             height: auto;
             padding: 20px;
             background-color: rgba(255 255 255 / 80%); 
             margin-top: 25px;
             box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%); 
-            margin-right: 20px;
+            margin-right: 10px;
             box-shadow: 0 6px 12px rgba(0 0 0 / 15%);  
             color: #044c4d;
         }
@@ -92,6 +91,9 @@ class TodoList extends HTMLElement {
             user-select: none;
             cursor: pointer;
             position: relative;   
+            overflow-x: scroll;
+            width: 0;
+            min-width: 100%;
         }
         ul li::before {
             content: '';
@@ -152,8 +154,6 @@ class TodoList extends HTMLElement {
           animation: fadeOut 0.5s forwards;
         }
 
-
-
         .delete-task-btn {
             background: linear-gradient(135deg, #439093, pink);
             color: white;
@@ -191,6 +191,16 @@ class TodoList extends HTMLElement {
         .scrollbar::-webkit-scrollbar-corner {
             background: transparent; 
         }
+
+        @media (max-width: 1205px) {
+          .todo-list-container{
+            margin-right: 0px;
+            margin-left: 0px;
+            width: 95%;
+            padding: 30px;
+            
+          }
+        }
           `;
 
     container.setAttribute("class", "todo-list-container");
@@ -226,7 +236,7 @@ class TodoList extends HTMLElement {
         e.preventDefault();
       }
     });
-    // Add event listener for enter key on input 
+    // Add event listener for enter key on input
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         this.addTodoListItem(input, listContainer);
@@ -234,7 +244,6 @@ class TodoList extends HTMLElement {
       }
     });
   }
-
 
   /**
    * Gets the notes from the local storage
