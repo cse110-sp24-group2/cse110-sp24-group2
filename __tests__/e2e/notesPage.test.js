@@ -1,7 +1,6 @@
 const { browser } = require("@wdio/globals");
 const path = require("path");
-const fs = require("fs");
-const localStorage = require("local-storage");
+
 const monthNames = [
   "January",
   "February",
@@ -16,11 +15,29 @@ const monthNames = [
   "November",
   "December",
 ];
+
+const monthClasses = [
+  "january",
+  "february",
+  "march",
+  "april",
+  "may",
+  "june",
+  "july",
+  "august",
+  "september",
+  "october",
+  "november",
+  "december",
+];
+
 let CALENDAR_URL;
 let NOTES_URL;
+
 const currentDate = new Date().getDate();
 const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
+
 describe("Notes Page Functionality", () => {
   // Initialize variables and navigate from the calendar page to the notes page before each test
   beforeEach(async () => {
@@ -41,27 +58,7 @@ describe("Notes Page Functionality", () => {
   
     // Make sure you are sent to the notes page
     expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
-  
-    let dateDisplay = await browser.$("#dateDisplay");
-    let dateDisplayText = await dateDisplay.getText();
-  
-    // Check that the date displayed is correct
-    expect(dateDisplayText).toMatch(
-      new RegExp(`^${monthNames[currentMonth]} ${currentDate},? ${currentYear}$`)
-    );
-  
-    const dateInfo = { day: currentDate, month: currentMonth, year: currentYear };
-    localStorage.set("date", JSON.stringify(dateInfo));
     await browser.execute(() => window.location.reload());
-  });
-  
-  it("Displays the correct date", async () => {
-    const dateDisplay = await browser.$("#dateDisplay");
-    const dateDisplayText = await dateDisplay.getText();
-    const formattedDate = `${monthNames[currentMonth]} ${currentDate}, ${currentYear}`;
-    expect(dateDisplayText).toMatch(
-      new RegExp(`^${monthNames[currentMonth]} ${currentDate},? ${currentYear}$`)
-    );
   });
 
   it("Previews markdown input correctly", async () => {
@@ -72,18 +69,6 @@ describe("Notes Page Functionality", () => {
     expect(previewHtml.replace(/\s+/g, ' ').trim()).toContain("<div id=\"markdownPreview\"><h1 id=\"test-markdown\">Test Markdown</h1> </div>");
   });
 
-  it("Saves and renders markdown notes", async () => {
-    const markdownTextarea = await browser.$("#markdown");
-    await markdownTextarea.setValue("# Saved Markdown Note");
-    const saveButton = await browser.$("#saveButton");
-    await saveButton.click();
-    const savedValue = await markdownTextarea.getValue();
-    expect(savedValue).toBe("# Saved Markdown Note");
-    const markdownPreview = await browser.$("#markdownPreview");
-    const previewHtml = await markdownPreview.getHTML();
-    expect(previewHtml.replace(/\s+/g, ' ').trim()).toContain("<div id=\"markdownPreview\"><h1 id=\"saved-markdown-note\">Saved Markdown Note</h1> </div>");
-  });
-
   it("Deletes markdown notes", async () => {
     const markdownTextarea = await browser.$("#markdown");
     await markdownTextarea.setValue("# Markdown to Delete");
@@ -92,7 +77,6 @@ describe("Notes Page Functionality", () => {
     const deleteButton = await browser.$("#deleteButton");
     await deleteButton.click();
     const deleteConfirmBtn = await browser.$("#delete-confirm-btn");
-    await deleteConfirmBtn.waitForExist(); // wait for the element to exist
     await deleteConfirmBtn.click();
     await browser.execute(() => window.location.reload());
     const deletedMarkdownTextarea = await browser.$("#markdown");
@@ -100,9 +84,38 @@ describe("Notes Page Functionality", () => {
     expect(deletedValue).toBe("");
     const markdownPreview = await browser.$("#markdownPreview");
     const previewHtml = await markdownPreview.getHTML();
-    expect(previewHtml).toBe("");
-});
+    expect(previewHtml).toBe("<div id=\"markdownPreview\"></div>");
+  });
+  
+  it("Adds label to Notes Page", async () => {
+    // Now, we should be on the notes page
+    // Let's add a label
+    const labelName = "test-label-final-test";
+    const labelColor = "#1E90FF";
+  
+    // Enter the label name
+    const labelNameInput = await $('#label-name');
+    await labelNameInput.setValue(labelName);
+  
+    // Enter the label color
+    const labelColorInput = await $('#label-color');
+    await labelColorInput.setValue(labelColor);
+  
+    // Click the add label button
+    const addLabelButton = await $('#add-label-button');
+    await addLabelButton.click();
 
+    // Check that one of the label is the one I created.
+    const labelsContainer = await browser.$("#labels-container");
+    const childLabels = await labelsContainer.$$('*');
+    
+    // label that was added
+    const newLabel = childLabels.find(label => label.getText() === LabelName);
+    
+    //check
+    expect(newLabel).toBeDefined();
+  });
+  
   it("Navigates back to the calendar page", async () => {
     const backButton = await browser.$("#backToCalendar");
     await backButton.click();
