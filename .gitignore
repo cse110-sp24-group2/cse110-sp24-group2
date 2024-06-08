@@ -2,3 +2,4 @@ node_modules
 source/Data
 DevJournal
 .DS_Store
+/dist
