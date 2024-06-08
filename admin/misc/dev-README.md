@@ -87,6 +87,27 @@ Make sure `npx prettier . --check` does not show any unformatted files before pu
 
 [Prettier Docs](https://prettier.io/docs/en/cli.html)
 
+### Finding Stored Files on The Release Version (Mac)
+
+- `npm run package` creates a build. The following JSON in `package.json` is also relevant for this npm script, but please google the `electron-builder` pacakge to understand the keywords.
+
+```json
+"build": {
+    "appId": "com.cse110.devjournal",
+    "directories": {
+      "output": "DevJournal"
+    },
+    "files": [
+      "source/**/*"
+    ],
+    "asar": false
+  },
+```
+
+- Once you create the build / run the command, it should generate a folder called `DevJournal`. Right click `DevJournal` and Reveal its Location in the Finder.
+- Right click the application, then click "Show Package Contents
+- Navigate to `cse110-sp24-group2/DevJournal/mac-arm64/Developer Journal.app/Contents/Resources/app/DevJournal/Data` to find app local data
+
 ### Archive:
 
 - `npx eslint` to check files that violate eslint (code quality / potential bugs)
