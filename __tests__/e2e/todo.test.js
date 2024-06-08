@@ -4,6 +4,40 @@ const path = require("path");
 let CALENDAR_URL;
 let NOTES_URL;
 
+const monthClasses = [
+  "january",
+  "february",
+  "march",
+  "april",
+  "may",
+  "june",
+  "july",
+  "august",
+  "september",
+  "october",
+  "november",
+  "december",
+];
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const currentDate = new Date().getDate();
+const currentMonth = new Date().getMonth();
+const currentYear = new Date().getFullYear();
+
 describe("Testing of the To Do List element", () => {
   // Get to the calendar page
   beforeEach(async () => {
@@ -74,6 +108,41 @@ describe("Testing of the To Do List element", () => {
       taskCrossed = await taskDesc.getCSSProperty("text-decoration");
       expect(taskCrossed["value"]).toHaveText(expect.stringContaining("none"));
     }
+  });
+
+  // Check the completion/uncompletion of items
+  it("Tasks persist between notes and calendar page", async () => {
+    // Get the todo-list element
+    let todoList = await browser.$("todo-list-element");
+    // Get the list element
+    let list = await todoList.shadow$("#list-container");
+    // Get the task items
+    let tasks = await list.$$("li");
+    // Check number of tests on calendar page
+    expect(tasks.length).toBe(5);
+
+    // Check number of tests on notes page is the same
+    // Check month and year accuracy
+    let month = currentMonth - 1 < 0 ? 11 : currentMonth - 1;
+
+    // Click days of the month to be sent to notes page and check displayed date
+    // Navigate to notes page
+    // Check that the active day is chosen properly
+    const activeDay = await browser.$(".current-day");
+    expect(activeDay).not.toBeNull();
+    await activeDay.click();
+    await browser.pause(800);
+
+    // Get the todo-list element
+    todoList = await browser.$("todo-list-element");
+    expect(todoList).not.toBeNull();
+    // Get the list element
+    list = await todoList.shadow$("#list-container");
+    expect(list).not.toBeNull();
+    // Get the task items
+    tasks = await list.$$("li");
+    // Check number of tests on calendar page
+    expect(tasks.length).toBe(5);
   });
 
   // Check the addition of items
