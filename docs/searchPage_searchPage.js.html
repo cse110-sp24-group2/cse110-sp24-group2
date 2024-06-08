@@ -92,8 +92,30 @@ function displayLabels(labels, labelsContainer, searchInput) {
         )
       );
     });
+    // Event listener for enter on label element
+    labelElement.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        searchInput.value = label;
+        labelsContainer.innerHTML = "";
+        displayDates(
+          label,
+          JSON.parse(
+            fs.readFileSync(
+              path.join(
+                __dirname,
+                "../../DevJournal",
+                "/Data",
+                "DatetoLabel.json"
+              ),
+              "utf8"
+            )
+          )
+        );
+      }
+    });
 
     labelsContainer.appendChild(labelElement);
+    labelElement.setAttribute("tabindex", "0"); // Add tabindex to make search bar labels keyboard accessible
   });
 }
 /**

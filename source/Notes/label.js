@@ -1,5 +1,11 @@
 const { ipcRenderer } = require("electron");
-const { labelExists, saveLabel, saveDatetoLabel, deleteLabel, deleteDatetoLabel } = require('./label-helper');
+const {
+  labelExists,
+  saveLabel,
+  saveDatetoLabel,
+  deleteLabel,
+  deleteDatetoLabel,
+} = require("./label-helper");
 /*global fs*/
 /*global path*/
 /**
@@ -41,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // If the label doesn't exist, create it
         let newLabel = document.createElement("div");
         newLabel.classList.add("custom-label");
-        newLabel.innerHTML = `<button style="background-color: ${color || "#F0F0F0"}">${name || "New Label"}</button>`;
+        newLabel.innerHTML = `<button style="background-color: ${color || "#F0F0F0"}; color: ${getContrastColor(color || "#F0F0F0")}">${name || "New Label"}</button>`;
 
         document.getElementById("labels-container").appendChild(newLabel);
         // Add event listener for deleting the label
@@ -51,6 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
           // Delete the label from the JSON files
           deleteLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
           deleteDatetoLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
+        });
+        newLabel.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            console.log("Deleting label:", name);
+            newLabel.remove();
+            deleteLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
+            deleteDatetoLabel(
+              dateInfo.day,
+              dateInfo.month,
+              dateInfo.year,
+              name
+            );
+          }
         });
         // Save the label to the JSON file
         console.log("Saving label:", { name, color });
@@ -91,7 +110,7 @@ function renderLabels(day, month, year) {
         dayLabels.labels.forEach((labelData) => {
           let newLabel = document.createElement("div");
           newLabel.classList.add("custom-label");
-          newLabel.innerHTML = `<button style="background-color: ${labelData.color}">${labelData.done ? `<s>${labelData.name}</s>` : `${labelData.name}`}</button>`;
+          newLabel.innerHTML = `<button style="background-color: ${labelData.color}; color: ${getContrastColor(labelData.color || "#F0F0F0")}">${labelData.done ? `<s>${labelData.name}</s>` : `${labelData.name}`}</button>`;
 
           document.getElementById("labels-container").appendChild(newLabel);
           // Add the dblclick event listener to the new label
@@ -119,3 +138,14 @@ function renderLabels(day, month, year) {
   });
 }
 
+// Function to calcultate the perceived brightness of the background color and adjust text color accordingly
+function getContrastColor(hexColor) {
+  // Convert hex color to RGB
+  let r = parseInt(hexColor.substr(1, 2), 16);
+  let g = parseInt(hexColor.substr(3, 2), 16);
+  let b = parseInt(hexColor.substr(5, 2), 16);
+  // Calculate the perceived brightness
+  let perceivedBrightness = (r * 0.2126 + g * 0.7152 + b * 0.0722) / 255;
+  // Return either black or white depending on the brightness
+  return perceivedBrightness > 0.5 ? "#000000" : "#ffffff";
+}

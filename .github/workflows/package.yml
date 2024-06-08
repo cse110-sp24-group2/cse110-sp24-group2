@@ -63,12 +63,8 @@ jobs: # the things being executed
       - name: Windows Packaging
         run: |
           npm install
-          npm run package-win
-      - name: Zip application
-        uses: thedoctor0/zip-release@0.7.5
-        with:
-          filename: "DevJournal-win32-x64.zip"
-          path: "DevJournal"
+          npm install -g electron-builder
+          npm run package
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
@@ -76,9 +72,9 @@ jobs: # the things being executed
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
-          asset_path: ./DevJournal-win32-x64.zip
-          asset_name: DevJournal-win32-x64.zip
-          asset_content_type: application/zip
+          asset_path: ./DevJournal/Developer Journal Setup 1.0.0.exe
+          asset_name: Developer Journal Setup 1.0.0.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
 
   macos:
     runs-on: macos-latest
@@ -92,12 +88,8 @@ jobs: # the things being executed
       - name: MacOS Packaging
         run: |
           npm install
-          npm run package-mac
-      - name: Zip application
-        uses: thedoctor0/zip-release@0.7.5
-        with:
-          filename: "DevJournal-darwin-x64.zip"
-          path: "DevJournal"
+          npm install -g electron-builder
+          npm run package
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
@@ -105,6 +97,6 @@ jobs: # the things being executed
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
-          asset_path: ./DevJournal-darwin-x64.zip
-          asset_name: DevJournal-darwin-x64.zip
+          asset_path: ./DevJournal/Developer Journal-1.0.0-arm64-mac.zip
+          asset_name: Developer Journal-1.0.0-arm64-mac.zip
           asset_content_type: application/zip
