@@ -181,10 +181,9 @@ describe("Navigation and Generation of SearchPage", () => {
         // Click the date button
         const dateButton = await browser.$(".date-button");
         await dateButton.click();
-
+        await browser.pause(800);
         // Check if notes are loaded
         expect(await browser.getUrl()).toBe(NOTES_URL);
-
         // Check if these are notes for correct day
         const notesDate = await (await browser.$("h1")).getText();
 
