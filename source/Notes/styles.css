@@ -211,7 +211,7 @@ h1.color {
 }
 
 /* MOBILE RESPONSIVENESS BREAKPOINT */
-@media (max-width: 1024px) {
+@media (max-width: 1205px) {
   .container {
     flex-direction: column;
     align-items: center;
@@ -230,6 +230,12 @@ h1.color {
 
   todo-list-element {
     padding: 15px;
+    max-width: none;
+  }
+
+  todo-list-element,
+  .markdown-container {
+    width: 80%;
   }
 }
 

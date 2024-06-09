@@ -17,13 +17,12 @@ class TodoList extends HTMLElement {
         .todo-list-container {
             flex: 1;
             width: auto;
-            max-width: 450px;
             height: auto;
             padding: 20px;
             background-color: rgba(255 255 255 / 80%); 
             margin-top: 25px;
             box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%); 
-            margin-right: 20px;
+            margin-right: 10px;
             box-shadow: 0 6px 12px rgba(0 0 0 / 15%);  
             color: #044c4d;
         }
@@ -100,9 +99,11 @@ class TodoList extends HTMLElement {
             padding: 12px 8px 12px 0;
             user-select: none;
             cursor: pointer;
-            margin-left: 5px;
-            position: relative;  
             font-family: Courgette; 
+            position: relative;   
+            overflow-x: scroll;
+            width: 0;
+            min-width: 100%;
         }
         ul li::before {
             content: '';
@@ -201,9 +202,20 @@ class TodoList extends HTMLElement {
         .scrollbar::-webkit-scrollbar-corner {
             background: transparent; 
         }
+
+        @media (max-width: 1205px) {
+          .todo-list-container{
+            margin-right: 0px;
+            margin-left: 0px;
+            width: 95%;
+            padding: 30px;
+            
+          }
+        }
           `;
 
     container.setAttribute("class", "todo-list-container");
+    container.setAttribute("tabindex", "0"); // Add tabindex to make todolist keyboard accessible
 
     container.innerHTML = `
             <style>
@@ -226,14 +238,20 @@ class TodoList extends HTMLElement {
     const button = shadowRoot.querySelector("#add-todo");
     const input = this.shadowRoot.querySelector("#todo-input");
     const listContainer = shadowRoot.querySelector("#list-container");
-
     button.addEventListener("click", () =>
       this.addTodoListItem(input, listContainer)
     );
     this.renderNotes(listContainer);
 
-    // Add event listener for keyboard navigation
+    // Add event listener for keyboard navigation on add button
     button.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        this.addTodoListItem(input, listContainer);
+        e.preventDefault();
+      }
+    });
+    // Add event listener for enter key on input
+    input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         this.addTodoListItem(input, listContainer);
         e.preventDefault();
