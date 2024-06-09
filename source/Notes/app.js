@@ -132,6 +132,18 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       window.location.href = escape("../calendar/index.html");
     });
+  document
+    .getElementById("back-to-calendar")
+    .addEventListener("click", function () {
+      const markdownText = markdownTextarea.value;
+      saveMarkdownEntry(
+        dateInfo.day,
+        dateInfo.month,
+        dateInfo.year,
+        markdownText
+      );
+      window.location.href = escape("../calendar/index.html");
+    });
   // Render markdown entry on load
   renderMarkdownEntry(dateInfo.day, dateInfo.month, dateInfo.year);
 });

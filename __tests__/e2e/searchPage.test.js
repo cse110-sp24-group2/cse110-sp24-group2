@@ -1,6 +1,8 @@
 const { browser } = require("@wdio/globals");
 const path = require("path");
 
+// Array of month names
+const monthNames = require("../../source/vars").monthNames;
 //Declare Variables to be used throughout testing and set before each test
 let CALENDAR_URL;
 let SEARCH_URL;
@@ -10,22 +12,6 @@ let NOTES_URL;
 const currentDate = new Date().getDate();
 const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
-
-// Array of month names
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 describe("Navigation and Generation of SearchPage", () => {
   // Get to the calendar page
@@ -50,7 +36,7 @@ describe("Navigation and Generation of SearchPage", () => {
     await browser.url(SEARCH_URL);
 
     // Add a brief pause to ensure page load
-    await browser.pause(800);
+    await browser.pause(1200);
   });
 
   // Test if clicking on the "Back to Calendar" button takes you to the calendar page
@@ -119,6 +105,7 @@ describe("Navigation and Generation of SearchPage", () => {
     await backToCalendarButton.click();
     await browser.pause(800);
 
+
     // Click on the search bar
     await browser.execute(() => {
       document.querySelector("#search-bar").click();
@@ -155,6 +142,7 @@ describe("Navigation and Generation of SearchPage", () => {
       const text = await childLabel.getText();
       if (text.trim() === "test-label-final-test") {
         await childLabel.click();
+        await browser.pause(1200);
         // Check if the date that we see is the same as the current date
         const dateButton = await browser.$(".date-button");
         const displayedDate = await dateButton.getText();
@@ -177,6 +165,7 @@ describe("Navigation and Generation of SearchPage", () => {
       const text = await childLabel.getText();
       if (text.trim() === "test-label-final-test") {
         await childLabel.click();
+        await browser.pause(1200);
 
         // Click the date button
         const dateButton = await browser.$(".date-button");
@@ -193,6 +182,7 @@ describe("Navigation and Generation of SearchPage", () => {
         // Go back to calendar
         const backToCalendarButton = await browser.$("#backToCalendar");
         await backToCalendarButton.click();
+        await browser.pause(1200);
         break;
       }
     }
