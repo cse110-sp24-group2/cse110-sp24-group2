@@ -1,7 +1,7 @@
 const {
   daysInMonth,
   isHoliday,
-} = require("../../source/calendar/calendar-helper");
+} = require("../../source/calendar/calendarHelper");
 
 const holidays = [
   new Date(2024, 0, 1), // New Year's Day
