@@ -69,26 +69,26 @@ describe("Notes Page Functionality", () => {
     );
   });
 
-  //   it("Deletes markdown notes", async () => {
-  //     const markdownTextarea = await browser.$("#markdown");
-  //     await markdownTextarea.setValue("# Markdown to Delete");
-  //     const saveButton = await browser.$("#saveButton");
-  //     await saveButton.click();
-  //     await browser.pause(800);
-  //     const deleteButton = await browser.$("#deleteButton");
-  //     await deleteButton.click();
-  //     await browser.pause(800);
-  //     const deleteConfirmBtn = await browser.$("#delete-confirm-btn");
-  //     await deleteConfirmBtn.click();
-  //     await browser.pause(800);
-  //     await browser.execute(() => window.location.reload());
-  //     const deletedMarkdownTextarea = await browser.$("#markdown");
-  //     const deletedValue = await deletedMarkdownTextarea.getValue();
-  //     expect(deletedValue).toBe("");
-  //     const markdownPreview = await browser.$("#markdownPreview");
-  //     const previewHtml = await markdownPreview.getHTML();
-  //     expect(previewHtml).toBe('<div id="markdownPreview"></div>');
-  //   });
+  it("Deletes markdown notes", async () => {
+    const markdownTextarea = await browser.$("#markdown");
+    await markdownTextarea.setValue("# Markdown to Delete");
+    const saveButton = await browser.$("#saveButton");
+    await saveButton.click();
+    await browser.pause(800);
+    const deleteButton = await browser.$("#deleteButton");
+    await deleteButton.click();
+    await browser.pause(800);
+    const deleteConfirmBtn = await browser.$("#delete-confirm-btn");
+    await deleteConfirmBtn.click();
+    await browser.pause(800);
+    await browser.execute(() => window.location.reload());
+    const deletedMarkdownTextarea = await browser.$("#markdown");
+    const deletedValue = await deletedMarkdownTextarea.getValue();
+    expect(deletedValue).toBe("");
+    const markdownPreview = await browser.$("#markdownPreview");
+    const previewHtml = await markdownPreview.getHTML();
+    expect(previewHtml).toBe('<div id="markdownPreview"></div>');
+  });
 
   it("Adds label to Notes Page", async () => {
     // Now, we should be on the notes page
@@ -114,11 +114,11 @@ describe("Notes Page Functionality", () => {
     const childLabels = await labelsContainer.$$("*");
 
     // label that was added
-    const newLabel = childLabels.find((label) => label.getText() === LabelName);
+    const newLabel = childLabels.find((label) => label.getText() === labelName);
 
     //check
     expect(newLabel).toBeDefined();
-  });
+});
 
   it("Navigates back to the calendar page", async () => {
     const backButton = await browser.$("#backToCalendar");

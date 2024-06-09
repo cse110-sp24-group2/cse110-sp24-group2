@@ -1,5 +1,5 @@
 const { ipcRenderer } = require("electron");
-const { labelExists, saveLabel, saveDatetoLabel, deleteLabel, deleteDatetoLabel } = require('./label-helper');
+const { labelExists, saveLabel, saveDatetoLabel, deleteLabel, deleteDatetoLabel} = require('./label-helper');
 /*global fs*/
 /*global path*/
 /**

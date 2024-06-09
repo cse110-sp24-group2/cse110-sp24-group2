@@ -1,5 +1,4 @@
 const {saveMarkdownEntry, renderMarkdownEntry, deleteMarkdownEntry} = require("./notes-helper.js");
-const { deleteLabel, deleteDatetoLabel } = require("./label-helper.js");
 // Play a fade in animation when the notes page load
 window.onload = function () {
   document.body.classList.add("fade-in");
