@@ -3,7 +3,6 @@ const path = require("path");
 
 // Array of month names
 const monthNames = require("../../source/vars").monthNames;
-
 //Declare Variables to be used throughout testing and set before each test
 let CALENDAR_URL;
 let SEARCH_URL;
@@ -78,11 +77,11 @@ describe("Navigation and Generation of SearchPage", () => {
   it("Add Label to Notes Page and Verify on Search Page", async () => {
     // First you are on the calendar page
     await browser.url(CALENDAR_URL);
+    await browser.pause(800);
     // Click on the current day. take you to notes page
     const currentDay = await $(".current-day");
-    await browser.pause(3000);
     await currentDay.click();
-    await browser.pause(1200);
+    await browser.pause(800);
 
     // Now, we should be on the notes page
     // Let's add a label
@@ -104,6 +103,8 @@ describe("Navigation and Generation of SearchPage", () => {
     // Go back to calendar
     const backToCalendarButton = await browser.$("#backToCalendar");
     await backToCalendarButton.click();
+    await browser.pause(800);
+
 
     // Click on the search bar
     await browser.execute(() => {
@@ -112,7 +113,7 @@ describe("Navigation and Generation of SearchPage", () => {
 
     // Navigate to the search page
     await browser.url(SEARCH_URL);
-    await browser.pause(3000);
+    await browser.pause(800);
 
     // Check that one of the label is the one I created.
     const labelsContainer = await browser.$("#labels-container");
@@ -169,11 +170,9 @@ describe("Navigation and Generation of SearchPage", () => {
         // Click the date button
         const dateButton = await browser.$(".date-button");
         await dateButton.click();
-        await browser.pause(1200);
-
+        await browser.pause(800);
         // Check if notes are loaded
         expect(await browser.getUrl()).toBe(NOTES_URL);
-
         // Check if these are notes for correct day
         const notesDate = await (await browser.$("h1")).getText();
 
@@ -198,7 +197,7 @@ describe("Navigation and Generation of SearchPage", () => {
     let found = false;
     for (const childLabel of childLabels) {
       const text = await childLabel.getText();
-      if (text.trim() !== "test-label-final-test") {
+      if (!text.trim().includes("test-label-final-test")) {
         found = true;
         break;
       }

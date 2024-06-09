@@ -119,7 +119,6 @@ describe("Navigation and Generation of Calendar", () => {
       expect(await browser.getUrl()).toHaveUrl(calendarUrl);
       // Get back to the previous month
       await prevButton.click();
-      await browser.pause(800);
     }
   }, 100000);
 
@@ -170,7 +169,6 @@ describe("Navigation and Generation of Calendar", () => {
       expect(await browser.getUrl()).toHaveUrl(calendarUrl);
       // Get back to the next month
       await nextButton.click();
-      await browser.pause(800);
     }
   }, 100000);
 
