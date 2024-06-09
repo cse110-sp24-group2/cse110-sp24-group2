@@ -16,6 +16,18 @@ We used different processes throughout our project. One process we emphasized on
 
 2. Storming
 
+- Design process and Miro Board Usage:
+  - The Miro board was instrumental in mapping out user stories, workflows, and user journeys. This visual representation helped the team identify potential bottlenecks and areas for improvement.
+  - The team used the Miro board extensively for brainstorming and collaboration. They took the user stories into consideration and listed ideas and features that those users might want.
+- Wireframes:
+  - The team created wireframes to outline the initial design of the user interface. These wireframes provided a visual guide for the Performing phase and helped in aligning the design with user expectations.
+  - We created a lot of different designs and also had a place for discarded designs to show the various design approaches we took.
+- Architecture Decision Record (ADR) Construction:
+  - All the ideas and designs were presented in meetings and decisions were made by voting and all inputs were considered. This helped building our ADR file as we made crucial decisions for how our app should look like and behave.
+  - The team built an ADR to document important architectural decisions. This included justifications for choosing certain technologies, design patterns, and frameworks.
+  - The ADR process helped in building consensus among team members by providing a structured way to discuss and document decisions.
+- UML Diagrams:
+  - UML diagrams were used to represent the system architecture.
 - When some members of team started to feel lost due to unequal distribution of work
 - Meetings taking too long, people needing to drop b/c meetings went over time
 
