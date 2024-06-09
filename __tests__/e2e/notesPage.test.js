@@ -46,15 +46,15 @@ describe("Notes Page Functionality", () => {
       NOTES_URL = path.resolve(CALENDAR_URL, "../../Notes/index.html");
     }
     await browser.url(CALENDAR_URL);
-  
+
     // Check that the active day is chosen properly
     const activeDay = await browser.$(".current-day");
     const activeDayText = await activeDay.getText();
-  
+
     // Click the active day to be sent to notes page and check displayed date
     await activeDay.click();
     await browser.pause(800);
-  
+
     // Make sure you are sent to the notes page
     await browser.execute(() => window.location.reload());
   });
@@ -64,7 +64,9 @@ describe("Notes Page Functionality", () => {
     await markdownTextarea.setValue("# Test Markdown");
     const markdownPreview = await browser.$("#markdownPreview");
     const previewHtml = await markdownPreview.getHTML();
-    expect(previewHtml.replace(/\s+/g, ' ').trim()).toContain("<div id=\"markdownPreview\"><h1 id=\"test-markdown\">Test Markdown</h1> </div>");
+    expect(previewHtml.replace(/\s+/g, " ").trim()).toContain(
+      '<div id="markdownPreview"><h1 id="test-markdown">Test Markdown</h1> </div>'
+    );
   });
 
   it("Deletes markdown notes", async () => {
@@ -85,39 +87,39 @@ describe("Notes Page Functionality", () => {
     expect(deletedValue).toBe("");
     const markdownPreview = await browser.$("#markdownPreview");
     const previewHtml = await markdownPreview.getHTML();
-    expect(previewHtml).toBe("<div id=\"markdownPreview\"></div>");
+    expect(previewHtml).toBe('<div id="markdownPreview"></div>');
   });
-  
+
   it("Adds label to Notes Page", async () => {
     // Now, we should be on the notes page
     // Let's add a label
-    const labelName = "test-label-final-test";
+    const labelName = "test-label-final-test2";
     const labelColor = "#1E90FF";
-  
+
     // Enter the label name
-    const labelNameInput = await $('#label-name');
+    const labelNameInput = await $("#label-name");
     await labelNameInput.setValue(labelName);
-  
+
     // Enter the label color
-    const labelColorInput = await $('#label-color');
+    const labelColorInput = await $("#label-color");
     await labelColorInput.setValue(labelColor);
-  
+
     // Click the add label button
-    const addLabelButton = await $('#add-label-button');
+    const addLabelButton = await $("#add-label-button");
     await addLabelButton.click();
     await browser.pause(800);
 
     // Check that one of the label is the one I created.
     const labelsContainer = await browser.$("#labels-container");
-    const childLabels = await labelsContainer.$$('*');
-    
+    const childLabels = await labelsContainer.$$("*");
+
     // label that was added
-    const newLabel = childLabels.find(label => label.getText() === LabelName);
-    
+    const newLabel = childLabels.find((label) => label.getText() === LabelName);
+
     //check
     expect(newLabel).toBeDefined();
   });
-  
+
   it("Navigates back to the calendar page", async () => {
     const backButton = await browser.$("#backToCalendar");
     await backButton.click();
