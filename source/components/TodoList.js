@@ -19,22 +19,30 @@ class TodoList extends HTMLElement {
             width: auto;
             height: auto;
             padding: 20px;
-            background-color: rgba(255 255 255 / 80%); 
             margin-top: 25px;
-            box-shadow: 0 12px 12px 12px rgba(0 0 0 / 15%); 
             margin-right: 10px;
-            box-shadow: 0 6px 12px rgba(0 0 0 / 15%);  
             color: #044c4d;
+            background-color: rgba(255 255 255 / 80%);
+            border: 1px solid #439093;
+            box-shadow: 0 6px 12px #439093;
         }
         
+        .todo-list {
+            background-color: rgb(251, 239,242);
+        }
+
+
         .todo-list h2 {
-            color: #187474;
+            color: rgb(250, 196, 205);
             display: flex;
             align-items: center;
             font-size: 1.5rem;
             margin-bottom: 20px;
             margin-left: 10px;
             font-family: Courgette;
+            background-color: #439093;
+            border: 2px solid #439093;
+            box-shadow: 0 6px 12px #439093;
         }
         
         .todo-list h2 img {
