@@ -370,7 +370,10 @@ function deleteDatetoLabel(day, month, year, label) {
   });
 }
 
-// FUnction to calcultate the perceived brightness of the background color and adjust text color accordingly
+/** 
+ *  Calcultates the perceived brightness of the background color and adjust text color accordingly
+ * @param {string} hexColor - The hex color code
+ */
 function getContrastColor(hexColor) {
   // Convert hex color to RGB
   let r = parseInt(hexColor.substr(1, 2), 16);
