@@ -2,6 +2,12 @@
   font-family: Rubik, sans-serif;
 }
 
+.courgette-regular {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .rubik-font {
   font-family: Rubik, sans-serif;
   font-optical-sizing: auto;
@@ -191,7 +197,7 @@ button.color:hover {
 h1.color {
   background-color: white;
   color: #187474;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Courgette;
 }
 #markdownPreview {
   background-color: white;

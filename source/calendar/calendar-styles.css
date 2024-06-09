@@ -2,6 +2,12 @@
   padding: 10px;
 }
 
+.courgette-regular {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .rubik-font {
   font-family: Rubik, sans-serif;
   font-optical-sizing: auto;
@@ -65,7 +71,7 @@ body {
   border: none;
   margin-top: 20px;
   color: rgba(15 106 108 / 805);
-  font-family: serif;
+  font-family: Courgette;
 }
 
 /* Vertical layout for calendar and todo list if screen size is too small for readability */
@@ -380,7 +386,7 @@ body {
 }
 
 #current-month {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Courgette;
 }
 
 /* Animation to slide the modal content from the top */
@@ -565,7 +571,8 @@ button.delete-button:hover {
   border: 2px solid #025a5a;
   box-shadow: 0 0 8px rgba(9 165 179 / 60%);
   border-radius: 20px;
-  padding-left: 20px;
+  padding-left: 15px;
+  width: 30vw;
 }
 
 .search-container input::placeholder {
@@ -589,7 +596,7 @@ button.delete-button:hover {
   color: #044c4d;
   border: 1px solid #025a5a;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 18px;
 }
 
 #search-button:hover {

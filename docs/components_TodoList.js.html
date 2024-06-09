@@ -36,6 +36,12 @@
     const styleElement = document.createElement("style");
 
     styleElement.textContent = `
+        .courgette-regular {
+          font-family: "Courgette", cursive;
+          font-weight: 400;
+          font-style: normal;
+        }
+
         .todo-list-container {
             flex: 1;
             width: auto;
@@ -55,12 +61,12 @@
             align-items: center;
             font-size: 1.5rem;
             margin-bottom: 20px;
-            font-family: serif;
+            margin-left: 10px;
+            font-family: Courgette;
         }
         
         .todo-list h2 img {
             width: 30px;
-            margin-left: 10px;
         }
         
         .row {
@@ -72,9 +78,12 @@
             border: 2px solid #025a5a;
             box-shadow: 0 0 8px rgba(67 162 170 / 0.6);
             border-radius: 20px;
-            padding-left: 20px;
+            padding-left: 15px;
             margin-bottom: 25px;
+            margin-right: 10px;
+            margin-left: 10px;
         }
+
         input {
             flex: 1;
             border: none;
@@ -91,7 +100,7 @@
       
         .row button{
             outline: none;
-            padding: 16px 50px;
+            padding: 8px 20px;
             background: linear-gradient(135deg, #439093, pink);
             color: #044c4d;
             border: 1px solid #025a5a;
@@ -103,7 +112,7 @@
         .row button:hover {
             color:white !important;
             background: linear-gradient(135deg, #439093, pink);
-            box-shadow: 0 0 5px rgba(9, 165, 179, 0.6), 0 0 25px rgba(9, 165, 179, 0.6), 0 0 50px rgba(9, 165, 179, 0.6), 0 0 200px rgba(9, 165, 179, 0.6); 
+            box-shadow: 0 0 5px rgba(9, 165, 179, 0.6), 0 0 12px rgba(9, 165, 179, 0.6), 0 0 25px rgba(9, 165, 179, 0.6), 0 0 200px rgba(9, 165, 179, 0.6); 
         }
         
         #list-container {
@@ -118,6 +127,7 @@
             padding: 12px 8px 12px 0;
             user-select: none;
             cursor: pointer;
+            font-family: Courgette; 
             position: relative;   
             overflow-x: scroll;
             width: 0;
@@ -188,6 +198,7 @@
             border: 1px solid #025a5a;
             cursor: pointer;
             float: right;
+            margin-right: 10px;
             border-radius: 5px;
             box-shadow: 0 0 8px rgba(67, 162, 170, 0.6);
         }
@@ -235,8 +246,11 @@
     container.setAttribute("tabindex", "0"); // Add tabindex to make todolist keyboard accessible
 
     container.innerHTML = `
+            &lt;style>
+              @import url('https://fonts.googleapis.com/css2?family=Courgette&amp;display=swap');
+            &lt;/style>
             &lt;div class="todo-list scrollbar"> 
-                &lt;h2>To-Do Lists &lt;img src="../components/images/to-do-icon.png"> &lt;/h2>
+                &lt;h2>To-Do List &amp;nbsp&lt;img src="../components/images/to-do-icon.png"> &lt;/h2>
                 &lt;div class="row">
                     &lt;input type="text" id="todo-input" placeholder="Enter a new task...">
                     &lt;button id="add-todo">Add&lt;/button>
