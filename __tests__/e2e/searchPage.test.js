@@ -208,7 +208,7 @@ describe("Navigation and Generation of SearchPage", () => {
     let found = false;
     for (const childLabel of childLabels) {
       const text = await childLabel.getText();
-      if (text.trim() !== "test-label-final-test") {
+      if (!text.trim().includes("test-label-final-test")) {
         found = true;
         break;
       }
