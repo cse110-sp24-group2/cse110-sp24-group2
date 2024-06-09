@@ -1,4 +1,4 @@
-const { daysInMonth, isHoliday } = require("./calendar-helper");
+const { daysInMonth, isHoliday } = require("./calendarHelper.js");
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get the main components of the calendar and set date info
