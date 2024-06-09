@@ -1,35 +1,8 @@
 const { browser } = require("@wdio/globals");
 const path = require("path");
 
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-const monthClasses = [
-  "january",
-  "february",
-  "march",
-  "april",
-  "may",
-  "june",
-  "july",
-  "august",
-  "september",
-  "october",
-  "november",
-  "december",
-];
+const monthNames = require("../../source/vars").monthNames;
+const monthClasses = require("../../source/vars").monthClasses;
 
 let CALENDAR_URL;
 let NOTES_URL;
