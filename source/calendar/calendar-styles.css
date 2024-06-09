@@ -74,7 +74,6 @@ body {
   font-family: Courgette;
 }
 
-/* Vertical layout for calendar and todo list if screen size is too small for readability */
 @media (max-width: 1205px) {
   .main-container {
     flex-direction: column;
@@ -553,9 +552,9 @@ button.delete-button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f2f2f2; /* Light gray background */
+  background-color: #f2f2f2;
   padding: 20px;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
