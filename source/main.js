@@ -5,7 +5,7 @@ function createWindow () {
   let win = new BrowserWindow({
     width: 1200,
     height: 1000,
-    icon: `${__dirname}/../assets/icons/icon.ico`,
+    icon: `${__dirname}/../assets/icons/icon.png`,
     webPreferences: {
       nodeIntegration: true, // turn off nodeIntegration
       contextIsolation: false, // turn on contextIsolationt

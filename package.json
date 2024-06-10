@@ -38,9 +38,11 @@
       "output": "DevJournal"
     },
     "files": [
-      "source/**/*"
+      "source/**/*",
+      "icons/**/*"
     ],
-    "asar": false
+    "asar": false,
+    "icon": "assets/icons/icon.png"
   },
   "jest": {
     "transform": {},
