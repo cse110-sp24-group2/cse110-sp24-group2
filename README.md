@@ -40,6 +40,15 @@ The other new feature on this page is the label system at the bottom, simply add
 
 ---
 
+## Links to navigate easily throughout the repo
+- [Links to test cases](__tests__)
+- [Links to CI CD Pipeline YAML file]()
+- [Links to dev docs](docs)
+- [Links to project board]()
+- [Links to meeting notes](admin/meetings)
+- [Links to Miro board](https://miro.com/app/board/uXjVKNpdRwE=/)
+- [Links to hand demos](admin/handTesting)
+  
 We hope you enjoy the work journal and can get some good use out of it, thank you!
 
 _- CSE 110 Sp24 King Julian (aka Group 2)_
