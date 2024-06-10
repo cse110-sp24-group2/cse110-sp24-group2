@@ -22,7 +22,7 @@ body {
 }
 
 .diff-month {
-  color: rgb(192, 189, 189);
+  color: rgb(205, 202, 202);
   font-family: cursive;
 }
 
@@ -36,7 +36,9 @@ body {
   padding-top: 10px;
   padding-bottom: 15vh;
   flex-direction: row;
-  background: linear-gradient(135deg, #439093, pink);
+  background-color: rgba(242, 229, 241, 0.8);
+  box-shadow: 0 5px 14px #439093;
+  border: 5px solid #439093;
   gap: 10px;
 }
 
@@ -66,11 +68,12 @@ body {
   text-align: center;
   font-size: 120%;
   padding: 10px;
-  background-color: rgba(255 255 255 / 80%);
+  background-color: #439093;
+  box-shadow: 0 7px 12px #439093;
   font-weight: bold;
   border: none;
   margin-top: 20px;
-  color: rgba(15 106 108 / 805);
+  color: rgb(250, 196, 205);
   font-family: Courgette;
 }
 
@@ -134,10 +137,11 @@ body {
   gap: 10px;
   padding: 30px;
   background-color: rgba(255 255 255 / 80%);
+  border: 2px solid #439093;
+  box-shadow: 0 6px 12px #439093;
   width: 95%;
   max-width: 600px;
   margin: auto;
-  box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
 }
 @keyframes fadeIn {
   from {
@@ -155,7 +159,7 @@ body {
 
 .day {
   padding: 15px 10px;
-  background-color: #fff;
+  background-color: rgb(251, 239,242);
   border: none;
   border-radius: 10px;
   transition:
