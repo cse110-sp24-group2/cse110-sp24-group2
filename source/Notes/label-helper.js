@@ -198,7 +198,7 @@ function deleteDatetoLabel(day, month, year, label) {
       if (dateIndex > -1) {
         dates.splice(dateIndex, 1);
         if (dates.length === 0) {
-          if(labels.hasOwnProperty(String(label))){
+          if (labels.hasOwnProperty(String(label))) {
             delete labels[String(label)];
           }
         }
