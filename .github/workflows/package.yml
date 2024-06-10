@@ -97,6 +97,6 @@ jobs: # the things being executed
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.release.outputs.upload_url }}
-          asset_path: ./DevJournal/Developer Journal-1.0.0-arm64-mac.zip
+          asset_path: ./DevJournal/Developer Journal-1.0.0-arm64.dmg
           asset_name: Developer Journal-1.0.0-arm64-mac.zip
           asset_content_type: application/zip
