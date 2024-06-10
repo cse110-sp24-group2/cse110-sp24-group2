@@ -8,9 +8,9 @@ The work journal has an easy to navigate calendar that keeps track of some of th
 
 ## Installation
 
-Go to the [Releases page](https://github.com/cse110-sp24-group2/cse110-sp24-group2/releases) in order to find the files that you need to download, whether that is on a Windows, MacOS, or Linux system. Windows should download the .exe file, MacOS the .dmg file, and linux the .zip file.
+Go to the [Releases page](https://github.com/cse110-sp24-group2/cse110-sp24-group2/releases) in order to find the files that you need to download, whether that is on a Windows, MacOS, or Linux system. Windows should download the .exe file, MacOS the .zip file, and linux the .zip file.
 
-Then you just have to run the installer (give it permission if it asks for it) and the app should be set up
+Then you just have to run the installer (give it permission if it asks for it) and the app should be set up.
 
 After that the app should be fully functional to help you achieve your goals!
 
