@@ -10,8 +10,12 @@ The work journal has an easy to navigate calendar that keeps track of some of th
 
 Go to the [Releases page](https://github.com/cse110-sp24-group2/cse110-sp24-group2/releases) in order to find the files that you need to download, whether that is on a Windows, MacOS, or Linux system. Windows should download the .exe file, MacOS the .dmg file, and linux the .zip file.
 
-Then you just have to run the installer (give it permission if it asks for it) and the app should be set up
+Then you just have to run the installer (give it permission if it asks for it) and the app should be set up.  
 
+P.S. For the MAC release you might get an error saying that the app is damaged and can't be opened. Don't worry, this only occurs because we haven't paid money to Apple for verification. Open your terminal and type the command
+```bash
+xattr -d com.apple.quarantine /Applications/Developer\ Journal.app
+```  
 After that the app should be fully functional to help you achieve your goals!
 
 ## Basic Navigation

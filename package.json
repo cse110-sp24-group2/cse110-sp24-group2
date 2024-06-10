@@ -6,26 +6,29 @@
   "description": "A Developer Journal That tracks what you do in a day",
   "main": "source/main.js",
   "scripts": {
-    "start": "electron source/main.js",
+    "start": "electron .",
     "package": "electron-builder",
     "test": "node node_modules/jest/bin/jest.js -- __tests__/unit",
     "package-win": "electron-packager . DevJournal --platform=win32 --arch=x64 --out=DevJournal",
     "package-mac": "electron-packager . DevJournal --platform=darwin --arch=x64 --out=DevJournal",
     "package-linux": "electron-packager . DevJournal --platform=linux --arch=x64 --out=DevJournal",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "wdio:todo": "DEBUG=true npx wdio run ./wdio.conf.js --spec ./__tests__/e2e/todo.test.js"
   },
   "keywords": [],
   "license": "ISC",
   "devDependencies": {
-    "electron": "^30.0.9",
-    "electron-builder": "^17.3.1",
     "@wdio/cli": "^8.38.1",
     "@wdio/local-runner": "^8.38.0",
     "@wdio/mocha-framework": "^8.38.0",
     "@wdio/spec-reporter": "^8.38.0",
+    "electron": "^30.0.9",
+    "electron-builder": "^17.10.0",
     "electron-packager": "^17.1.2",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "jsdoc": "^4.0.3",
+    "mock-fs": "^5.2.0",
     "prettier": "3.2.5",
     "wdio-electron-service": "^6.6.1"
   },
@@ -41,6 +44,10 @@
   },
   "jest": {
     "transform": {},
-    "verbose": true
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "local-storage": "^2.0.0"
   }
 }

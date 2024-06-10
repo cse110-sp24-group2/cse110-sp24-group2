@@ -2,6 +2,12 @@
   padding: 10px;
 }
 
+.courgette-regular {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .rubik-font {
   font-family: Rubik, sans-serif;
   font-optical-sizing: auto;
@@ -16,7 +22,7 @@ body {
 }
 
 .diff-month {
-  color: rgb(192, 189, 189);
+  color: rgb(205, 202, 202);
   font-family: cursive;
 }
 
@@ -30,7 +36,9 @@ body {
   padding-top: 10px;
   padding-bottom: 15vh;
   flex-direction: row;
-  background: linear-gradient(135deg, #439093, pink);
+  background-color: rgba(242, 229, 241, 0.8);
+  box-shadow: 0 5px 14px #439093;
+  border: 5px solid #439093;
   gap: 10px;
 }
 
@@ -60,24 +68,31 @@ body {
   text-align: center;
   font-size: 120%;
   padding: 10px;
-  background-color: rgba(255 255 255 / 80%);
+  background-color: #439093;
+  box-shadow: 0 7px 12px #439093;
   font-weight: bold;
   border: none;
   margin-top: 20px;
-  color: rgba(15 106 108 / 805);
-  font-family: serif;
+  color: rgb(250, 196, 205);
+  font-family: Courgette;
 }
 
-/* Vertical layout for calendar and todo list if screen size is too small for readability */
 @media (max-width: 1205px) {
   .main-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .calendar-container {
-    width: 100%;
+  .calendar-container,
+  .todo-list-container,
+  todo-list-element {
+    width: 95%;
+    max-width: 600px;
+
     flex: auto;
+    justify-self: center;
+
+    align-items: center;
   }
 
   .day-names {
@@ -105,7 +120,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px;
+  padding-left: 20vw;
   background-color: rgba(242, 229, 241, 0.8);
   box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
   margin-bottom: 10px;
@@ -121,10 +137,11 @@ body {
   gap: 10px;
   padding: 30px;
   background-color: rgba(255 255 255 / 80%);
+  border: 2px solid #439093;
+  box-shadow: 0 6px 12px #439093;
   width: 95%;
   max-width: 600px;
   margin: auto;
-  box-shadow: 0 6px 12px rgba(0 0 0 / 15%);
 }
 @keyframes fadeIn {
   from {
@@ -142,7 +159,7 @@ body {
 
 .day {
   padding: 15px 10px;
-  background-color: #fff;
+  background-color: rgb(251, 239,242);
   border: none;
   border-radius: 10px;
   transition:
@@ -164,7 +181,6 @@ body {
   color: #044c4d;
   font-weight: bold;
   font-family: cursive;
-  padding: 10px 12px;
   border-radius: 10px;
   transition:
     background 0.3s ease,
@@ -374,7 +390,7 @@ body {
 }
 
 #current-month {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Courgette;
 }
 
 /* Animation to slide the modal content from the top */
@@ -541,9 +557,9 @@ button.delete-button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f2f2f2; /* Light gray background */
+  background-color: #f2f2f2;
   padding: 20px;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -559,7 +575,8 @@ button.delete-button:hover {
   border: 2px solid #025a5a;
   box-shadow: 0 0 8px rgba(9 165 179 / 60%);
   border-radius: 20px;
-  padding-left: 20px;
+  padding-left: 15px;
+  width: 30vw;
 }
 
 .search-container input::placeholder {
@@ -583,7 +600,7 @@ button.delete-button:hover {
   color: #044c4d;
   border: 1px solid #025a5a;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 18px;
 }
 
 #search-button:hover {

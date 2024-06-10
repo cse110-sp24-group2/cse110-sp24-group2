@@ -1,38 +1,11 @@
 const { browser } = require("@wdio/globals");
 const path = require("path");
 
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+const monthNames = require("../../source/vars").monthNames;
+const monthClasses = require("../../source/vars").monthClasses;
 
-const monthClasses = [
-  "january",
-  "february",
-  "march",
-  "april",
-  "may",
-  "june",
-  "july",
-  "august",
-  "september",
-  "october",
-  "november",
-  "december",
-];
-
-let CALENDAR_URL;
-let NOTES_URL;
+let calendarUrl;
+let notesUrl;
 
 const currentDate = new Date().getDate();
 const currentMonth = new Date().getMonth();
@@ -41,12 +14,13 @@ const currentYear = new Date().getFullYear();
 describe("Navigation and Generation of Calendar", () => {
   // Get to the calendar page
   beforeEach(async () => {
-    if (!CALENDAR_URL) {
+    if (!calendarUrl) {
       // Set up URLs
-      CALENDAR_URL = await browser.getUrl();
-      NOTES_URL = path.resolve(CALENDAR_URL, "../../Notes/index.html");
+      calendarUrl = await browser.getUrl();
+      notesUrl = path.resolve(calendarUrl, "../../Notes/index.html");
     }
-    await browser.url(CALENDAR_URL);
+    await browser.url(calendarUrl);
+    await browser.pause(800);
   });
 
   // Check if current month is generated
@@ -65,7 +39,7 @@ describe("Navigation and Generation of Calendar", () => {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is unclickable
       await diffMonthDay.click();
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+      expect(await browser.getUrl()).toHaveUrl(calendarUrl);
     }
     // Check that the active day is chosen properly
     const activeDay = await browser.$(".current-day");
@@ -81,7 +55,7 @@ describe("Navigation and Generation of Calendar", () => {
       await activeDay.click();
       await browser.pause(800);
       // Make sure you are sent to the notes page
-      expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
+      expect(await browser.getUrl()).toHaveUrl(notesUrl);
       let dateDisplay = await browser.$("#dateDisplay");
       let dateDisplayText = await dateDisplay.getText();
       // Check that the date displayed is correct
@@ -93,7 +67,7 @@ describe("Navigation and Generation of Calendar", () => {
       await backButton.click();
       await browser.pause(800);
       // Ensure you are back on the calendar page
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+      expect(await browser.getUrl()).toHaveUrl(calendarUrl);
     }
   }, 100000);
 
@@ -119,7 +93,8 @@ describe("Navigation and Generation of Calendar", () => {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is unclickable
       await diffMonthDay.click();
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+      await browser.pause(800);
+      expect(await browser.getUrl()).toHaveUrl(calendarUrl);
     }
     // Click days of the month to be sent to notes page and check displayed date
     let activeDays = await browser.$$(`div.${monthClasses[month]}`);
@@ -131,7 +106,7 @@ describe("Navigation and Generation of Calendar", () => {
       await activeDay.click();
       await browser.pause(800);
       // Make sure you are sent to the notes page
-      expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
+      expect(await browser.getUrl()).toHaveUrl(notesUrl);
       let dateDisplay = await browser.$("#dateDisplay");
       let dateDisplayText = await dateDisplay.getText();
       // Check that the date displayed is correct
@@ -141,7 +116,7 @@ describe("Navigation and Generation of Calendar", () => {
       await backButton.click();
       await browser.pause(800);
       // Ensure you are back on the calendar page
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+      expect(await browser.getUrl()).toHaveUrl(calendarUrl);
       // Get back to the previous month
       await prevButton.click();
     }
@@ -169,7 +144,7 @@ describe("Navigation and Generation of Calendar", () => {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is unclickable
       await diffMonthDay.click();
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+      expect(await browser.getUrl()).toHaveUrl(calendarUrl);
     }
     // Click days of the month to be sent to notes page and check displayed date
     let activeDays = await browser.$$(`div.${monthClasses[month]}`);
@@ -181,7 +156,7 @@ describe("Navigation and Generation of Calendar", () => {
       await activeDay.click();
       await browser.pause(800);
       // Make sure you are sent to the notes page
-      expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
+      expect(await browser.getUrl()).toHaveUrl(notesUrl);
       let dateDisplay = await browser.$("#dateDisplay");
       let dateDisplayText = await dateDisplay.getText();
       // Check that the date displayed is correct
@@ -191,7 +166,7 @@ describe("Navigation and Generation of Calendar", () => {
       await backButton.click();
       await browser.pause(800);
       // Ensure you are back on the calendar page
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+      expect(await browser.getUrl()).toHaveUrl(calendarUrl);
       // Get back to the next month
       await nextButton.click();
     }
@@ -221,7 +196,7 @@ describe("Navigation and Generation of Calendar", () => {
       let diffMonthDay = daysNotInMonth[0];
       // Make sure the day is unclickable
       await diffMonthDay.click();
-      expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+      expect(await browser.getUrl()).toHaveUrl(calendarUrl);
     }
     // Click days of the month to be sent to notes page and check displayed date
     let activeDays = await browser.$$(`div.${monthClasses[month]}`);
@@ -230,7 +205,7 @@ describe("Navigation and Generation of Calendar", () => {
     await activeDay.click();
     await browser.pause(800);
     // Make sure you are sent to the notes page
-    expect(await browser.getUrl()).toHaveUrl(NOTES_URL);
+    expect(await browser.getUrl()).toHaveUrl(notesUrl);
     let dateDisplay = await browser.$("#dateDisplay");
     let dateDisplayText = await dateDisplay.getText();
     // Check that the date displayed is correct
@@ -240,6 +215,6 @@ describe("Navigation and Generation of Calendar", () => {
     await backButton.click();
     await browser.pause(800);
     // Ensure you are back on the calendar page
-    expect(await browser.getUrl()).toHaveUrl(CALENDAR_URL);
+    expect(await browser.getUrl()).toHaveUrl(calendarUrl);
   }, 100000);
 });
