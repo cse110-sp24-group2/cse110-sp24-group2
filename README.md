@@ -15,7 +15,10 @@ Then you just have to run the installer (give it permission if it asks for it) a
 P.S. For the MAC release you might get an error saying that the app is damaged and can't be opened. Don't worry, this only occurs because we haven't paid money to Apple for verification. Open your terminal and type the command
 ```bash
 xattr -d com.apple.quarantine /Applications/Developer\ Journal.app
-```  
+```
+
+For the Windows release, you might get an error saying it detects a virus, if so, open the Windows Security App, go to "Virus and Threat Protection", click "Manage Settings" under Virus and Threat Protection settings, and temporarily turn off the real-time protection until the installer is downloaded. Then you should be free to run it
+
 After that the app should be fully functional to help you achieve your goals!
 
 ## Basic Navigation
