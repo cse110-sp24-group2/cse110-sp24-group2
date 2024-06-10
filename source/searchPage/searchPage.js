@@ -153,6 +153,8 @@ function filterLabels(query, labelsContainer, searchInput) {
 }
 
 /**
+ * @function updateButtonColor
+ *
  * Update the color of the search button based on the current month.
  */
 function updateButtonColor() {

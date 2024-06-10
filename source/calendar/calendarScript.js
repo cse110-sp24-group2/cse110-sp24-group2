@@ -89,7 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const dayElement = document.createElement("div");
       // Adds specific month class
       // dayElement.classList.add("day", monthClasses[parseInt(month, 10)]);
-      dayElement.classList.add("day", monthClasses[parseInt(month, 10)], "fade-in"); // Added "fade-in" class here
+      dayElement.classList.add(
+        "day",
+        monthClasses[parseInt(month, 10)],
+        "fade-in"
+      ); // Added "fade-in" class here
       dayElement.textContent = day;
       dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
@@ -135,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let num = 1;
     for (let i = lastDay + 1; i <= 6; i++) {
       const dayElement = document.createElement("div");
-      dayElement.classList.add("day", "diff-month","fade-in");
+      dayElement.classList.add("day", "diff-month", "fade-in");
       dayElement.textContent = num;
       dayElement.setAttribute("tabindex", "0"); // Add tabindex to make days keyboard accessible
       calendarContainer.appendChild(dayElement);
@@ -148,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("next-month")
     .addEventListener("click", () => changeMonth(1));
+
   /**
    * Changes the current month by a specified amount.
    * @param {number} change - The amount to change the month by.

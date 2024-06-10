@@ -1,4 +1,8 @@
-const {saveMarkdownEntry, renderMarkdownEntry, deleteMarkdownEntry} = require("./notes-helper.js");
+const {
+  saveMarkdownEntry,
+  renderMarkdownEntry,
+  deleteMarkdownEntry,
+} = require("./notes-helper.js");
 // Play a fade in animation when the notes page load
 window.onload = function () {
   document.body.classList.add("fade-in");
@@ -149,6 +153,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 /**
  * Opens entry windows for Markdown and To-do list
+ *
+ * @param {Event} evt - The event object
+ * @param {string} tabName - The name of the tab to open
  */
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
