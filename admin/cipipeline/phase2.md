@@ -20,10 +20,9 @@ We are going to have the Codacy app run quality tests on code to ensure that the
 
 #### Jest
 
-We will be using Jest in order to implement our unit tests. The `jest` package needs to be installed in order to use Jest properly to run tests. You can use the `npm run test` command to run the unit tests. The unit tests can be found in the `__tests__/unit` directory. 
+We will be using Jest in order to implement our unit tests. The `jest` package needs to be installed in order to use Jest properly to run tests. You can use the `npm run test` command to run the unit tests. The unit tests can be found in the `__tests__/unit` directory.
 
 Adding Jest will allow us to have a smaller suite of unit tests that can be quickly run during development.
-
 
 #### WebDriverIO
 
