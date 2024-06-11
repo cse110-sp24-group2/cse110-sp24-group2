@@ -24,6 +24,12 @@ From there you have a fully navigational calendar to log on any day you would li
 
 You can also see a todo-list page on the side where you can add any goal, mark it as complete, or delete as necessary.
 
+On a smaller window size, the calendar and todo list would be stacked vertically, in which the calendar would be on top of the todo list
+
+This is the todo list for the calendar page:
+
+![Todo list use](admin/branding/calendar_todo_list.gif)
+
 There is also the search bar on the top right where upon clicking it you can choose one of the labels you have created to find all the days with that current label and navigate to them.
 
 Once you click on a day, you will be taken to the notes page that looks like this:
@@ -32,7 +38,15 @@ Once you click on a day, you will be taken to the notes page that looks like thi
 
 Here you find a page where you can write your notes utilizing [markdown](https://www.markdownguide.org/) format so that when you click on the preview page, you can see your notes in a smooth and easy-to-read way.
 
+This is how you would create, save, and delete a note for a specific day:
+
+![Manage a Note](admin/branding/create_note.gif)
+
 The other new feature on this page is the label system at the bottom, simply add a name and select a color of your choice to mark this page so when you look for the topic again later, you can quickly find it once again
+
+Down below is a GIF on how to create a label and use the search bar to filter out the note based on a specific label
+
+![Label and Filter GIF](admin/branding/label_and_filter.gif)
 
 ---
 
