@@ -48,6 +48,7 @@ The other new feature on this page is the label system at the bottom, simply add
 - [Links to meeting notes](admin/meetings)
 - [Links to Miro board](https://miro.com/app/board/uXjVKNpdRwE=/)
 - [Links to hand demos](admin/handTesting)
+- [Link to JSDocs Github page](https://cse110-sp24-group2.github.io/cse110-sp24-group2/docs/global.html)
   
 We hope you enjoy the work journal and can get some good use out of it, thank you!
 
