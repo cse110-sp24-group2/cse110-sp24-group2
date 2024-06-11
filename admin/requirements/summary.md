@@ -107,9 +107,11 @@ Throughout development, we also made sure to refactor the code we wrote so that 
 
 This accounts for **maintainability** because we want to make sure our codebase is clean and organized in case we have to make any changes in the future
 
-The issue below is one where we refactored the code to follow the DRY concept (Don't Repeat Yourself)
+The two issues below is one where we refactored the code to follow the DRY concept (Don't Repeat Yourself)
 
 [[REFACTOR] Calendar Colors Not Following DRY · Issue #74 · cse110-sp24-group2/cse110-sp24-group2](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/74)
+
+[[REFACTOR] Test cases to use vars.js as Single Source of Truth (DRY) · Issue #198 ·](https://github.com/cse110-sp24-group2/cse110-sp24-group2/pull/198)
 
 ## Improvements For the Future
 
