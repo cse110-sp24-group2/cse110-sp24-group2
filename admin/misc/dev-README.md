@@ -2,7 +2,7 @@
 
 ## [Team Wiki](../team.md)
 
-## [Process Sumarry](/admin/requirements/summary.md)
+## [Our Process Sumarry](/admin/requirements/summary.md)
 
 ## Links to navigate easily throughout the repo
 

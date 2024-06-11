@@ -4,6 +4,9 @@
  * @param {number} month - The month (0-11).
  * @param {number} year - The year.
  * @returns {number} The number of days in the month.
+ *
+ * @example
+ * daysInMonth(0, 2024); // returns 31
  */
 function daysInMonth(month, year) {
   return new Date(year, month + 1, 0).getDate();

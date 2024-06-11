@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 /**
+ * @function labelExists
  * Checks if a label exists for a specific day.
  *
  * @param {number} day - The day of the month.
@@ -39,6 +40,7 @@ function labelExists(day, month, year, name) {
   });
 }
 /**
+ * @function saveLabel
  * Saves a label for a specific day.
  *
  * @param {number} day - The day of the month.
