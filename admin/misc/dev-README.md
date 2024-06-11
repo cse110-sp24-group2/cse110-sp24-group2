@@ -2,6 +2,8 @@
 
 ## [Team Wiki](../team.md)
 
+## [Process Sumarry](/admin/requirements/summary.md)
+
 ## Running the App
 
 1. Make sure that the root package.json looks like this:
