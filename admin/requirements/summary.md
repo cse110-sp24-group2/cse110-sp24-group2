@@ -4,9 +4,35 @@ Throughout our project, we applied various SWE concepts and processes that we le
 
 ## Our Use of Processes
 
-We used different processes throughout our project. One process we emphasized on the most is the Tuckman model
+We used different processes throughout our project.
 
-**Our use of the Tuckman model**
+### Issue Tracking
+
+We used Github Projects in order to track our issues. Midway through the project, we noticed that low priority issues were being picked up over higher priority ones. To remedy this, we started adding priority labels like `high-priority`, `medium-priority`, and `low-priority` to issues (mentioned in [this retrospective](/admin/meetings/052524-retrospective.md)).
+
+### UCD Related Documents
+
+Our user stories are mainly concentraited inside our [Miro board](https://miro.com/app/board/uXjVKNpdRwE=/). Next time, to ensure that everything is in one place, we should move our user stories to our repository to maintain a Single Source of Truth.
+
+Our user stories also contributed to the specifications in our [specifications "ilities"](/admin/requirements/ilities.md) document.
+
+### Architecture Related Documents
+
+Our architecture related documents can be found in [/specs/adr](/specs/adr/). We consluted the professor for feedback and were suggested to add expiration dates, the date the decision was made, and who was consulted.
+
+### Team and Managerial Docs
+
+Information for developers are in our [dev-README.md](/admin/misc/dev-README.md) file. We also had a slack channel that summarized our policies so they would be more easily accessible than if on Github. Next time, we should also keep these policies on Github and keep a link to it in Slack. The policy was recently uploaded [here](admin/misc/teamPolicy.md) for viewing convenience.
+
+![Policy Channel Slack](policyChannel.png)
+
+We also created PR templates to help make following the policy process easier:
+
+![PR Templates](prTemplate.png)
+
+### **Our use of the Tuckman model**
+
+One process we emphasized on the most is the Tuckman model. This is how we saw the steps manifest in our group.
 
 1. Forming
 
@@ -19,27 +45,28 @@ We used different processes throughout our project. One process we emphasized on
 - Design process and Miro Board Usage:
   - The Miro board was instrumental in mapping out user stories, workflows, and user journeys. This visual representation helped the team identify potential bottlenecks and areas for improvement.
   - The team used the Miro board extensively for brainstorming and collaboration. They took the user stories into consideration and listed ideas and features that those users might want.
-![Brainstorming](/admin/requirements/brainstorming.png)
-![User personas](./userPersonas.png)
+    ![Brainstorming](/admin/requirements/brainstorming.png)
+    ![User personas](./userPersonas.png)
 - Wireframes:
   - The team created wireframes to outline the initial design of the user interface. These wireframes provided a visual guide for the Performing phase and helped in aligning the design with user expectations.
   - We created a lot of different designs and also had a place for discarded designs to show the various design approaches we took.
-![Wireframes](./wireframes.png)
+    ![Wireframes](./wireframes.png)
 - Architecture Decision Record (ADR) Construction:
   - All the ideas and designs were presented in meetings and decisions were made by voting and all inputs were considered. This helped building our ADR file as we made crucial decisions for how our app should look like and behave.
   - The team built an ADR to document important architectural decisions. This included justifications for choosing certain technologies, design patterns, and frameworks.
   - The ADR process helped in building consensus among team members by providing a structured way to discuss and document decisions.
 - UML Diagrams:
   - UML diagrams were used to represent the system architecture.
-![UML Diagram](./UMLDiagram.png)
-![User Flow Diagram](./userFlowDiagram.png)
-- When some members of team started to feel lost due to unequal distribution of work
+    ![UML Diagram](./UMLDiagram.png)
+    ![User Flow Diagram](./userFlowDiagram.png)
+- When some members of team started to feel lost due to unequal distribution of work (see [this retrospective underneath "Step 2"](/admin/meetings/042724-retrospective.md))
 - Meetings taking too long, people needing to drop b/c meetings went over time
 
 3. Norming
 
 - Adjusting team structure and forming the three subteams
 - Creating the 3 subteams to clarify roles and distribute work equally
+  - See impacts [in this sprint retrospecitve](/admin/meetings/052524-retrospective.md)
 - Retrospectives and sprint reflection using Retrium
   - Started using timers to keep meetings on pace and make meetings shorter
   - Sprint Retrospective Week 8: Keeping each other accountable, more strict reviews.
@@ -52,8 +79,13 @@ We used different processes throughout our project. One process we emphasized on
 
 4. Performing
 
-   - Establishing subteams and policy channel
-   - Move more towards solo and pair programming
+- Establishing subteams and policy channel
+- Move more towards solo and pair programming
+- People/subteams taking ownership of certain features
+
+5. Adjorning
+
+- Setting up team lunch to celebrate project end!
 
 **How different processes ties into one another**
 
@@ -107,11 +139,13 @@ Throughout development, we also made sure to refactor the code we wrote so that 
 
 This accounts for **maintainability** because we want to make sure our codebase is clean and organized in case we have to make any changes in the future
 
-The issue below is one where we refactored the code to follow the DRY concept (Don't Repeat Yourself)
+The two issues below is one where we refactored the code to follow the DRY concept (Don't Repeat Yourself)
 
 [[REFACTOR] Calendar Colors Not Following DRY · Issue #74 · cse110-sp24-group2/cse110-sp24-group2](https://github.com/cse110-sp24-group2/cse110-sp24-group2/issues/74)
 
-## Improvements For the Future
+[[REFACTOR] Test cases to use vars.js as Single Source of Truth (DRY) · Issue #198 ·](https://github.com/cse110-sp24-group2/cse110-sp24-group2/pull/198)
+
+## Other Improvements For the Future
 
 Even though our team did a good job with following the processes for our project, there are still some things we can do to make our project better
 

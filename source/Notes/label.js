@@ -1,5 +1,11 @@
 const { ipcRenderer } = require("electron");
-const { labelExists, saveLabel, saveDatetoLabel, deleteLabel, deleteDatetoLabel} = require('./label-helper');
+const {
+  labelExists,
+  saveLabel,
+  saveDatetoLabel,
+  deleteLabel,
+  deleteDatetoLabel,
+} = require("./label-helper");
 /*global fs*/
 /*global path*/
 /**
@@ -57,7 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Deleting label:", name);
             newLabel.remove();
             deleteLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
-             deleteDatetoLabel(dateInfo.day, dateInfo.month, dateInfo.year, name);
+            deleteDatetoLabel(
+              dateInfo.day,
+              dateInfo.month,
+              dateInfo.year,
+              name
+            );
           }
         });
         // Save the label to the JSON file
@@ -127,8 +138,9 @@ function renderLabels(day, month, year) {
   });
 }
 
-/** 
- *  Calcultates the perceived brightness of the background color and adjust text color accordingly
+/**
+ * @function getContrastColor
+ * Calcultates the perceived brightness of the background color and adjust text color accordingly
  * @param {string} hexColor - The hex color code
  */
 function getContrastColor(hexColor) {

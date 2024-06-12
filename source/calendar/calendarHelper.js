@@ -4,6 +4,9 @@
  * @param {number} month - The month (0-11).
  * @param {number} year - The year.
  * @returns {number} The number of days in the month.
+ *
+ * @example
+ * daysInMonth(0, 2024); // returns 31
  */
 function daysInMonth(month, year) {
   return new Date(year, month + 1, 0).getDate();
@@ -16,6 +19,18 @@ function daysInMonth(month, year) {
  * @param {*} day The day to test for
  * @param {*} holidays A list of holidays to check against
  * @returns True if the day is a holiday, false otherwise
+ *
+ * @example
+ * isHoliday(2024, 0, 1, [
+ *   new Date(2024, 0, 1), // New Year's Day
+ *   new Date(2024, 1, 14), // Valentine's Day
+ *   new Date(2024, 6, 4), // Independence Day
+ *   new Date(2024, 9, 31), // Halloween
+ *   new Date(2024, 10, 11), // Veterans Day
+ *   new Date(2024, 11, 25), // Christmas Day
+ *   new Date(2024, 11, 31), // New Year's Eve
+ * ]);
+ * // should return true
  */
 function isHoliday(year, month, day, holidays) {
   const currentDate = new Date(year, month, day);

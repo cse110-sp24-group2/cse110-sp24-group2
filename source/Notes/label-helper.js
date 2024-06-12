@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 /**
+ * @function labelExists
  * Checks if a label exists for a specific day.
  *
  * @param {number} day - The day of the month.
@@ -39,6 +40,7 @@ function labelExists(day, month, year, name) {
   });
 }
 /**
+ * @function saveLabel
  * Saves a label for a specific day.
  *
  * @param {number} day - The day of the month.
@@ -198,7 +200,7 @@ function deleteDatetoLabel(day, month, year, label) {
       if (dateIndex > -1) {
         dates.splice(dateIndex, 1);
         if (dates.length === 0) {
-          if(labels.hasOwnProperty(String(label))){
+          if (labels.hasOwnProperty(String(label))) {
             delete labels[String(label)];
           }
         }
