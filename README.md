@@ -10,9 +10,10 @@ The work journal has an easy to navigate calendar that keeps track of some of th
 
 Go to the [Releases page](https://github.com/cse110-sp24-group2/cse110-sp24-group2/releases) in order to find the files that you need to download, whether that is on a Windows, MacOS, or Linux system. Windows should download the .exe file, MacOS the .dmg file, and linux the .zip file.
 
-Then you just have to run the installer (give it permission if it asks for it) and the app should be set up.  
+Then you just have to run the installer (give it permission if it asks for it) and the app should be set up.
 
 P.S. For the MAC release you might get an error saying that the app is damaged and can't be opened. Don't worry, this only occurs because we haven't paid money to Apple for verification. Open your terminal and type the command
+
 ```bash
 xattr -d com.apple.quarantine /Applications/Developer\ Journal.app
 ```
@@ -58,15 +59,26 @@ Down below is a GIF on how to create a label and use the search bar to filter ou
 ---
 
 ## Links to navigate easily throughout the repo
+
 - [Links to test cases](__tests__)
 - [Links to CI CD Pipeline YML file](.github/workflows)
 - [Links to dev docs](docs)
-- [Links to project board](https://github.com/orgs/cse110-sp24-group2/projects/1) 
+- [Links to project board](https://github.com/orgs/cse110-sp24-group2/projects/1)
 - [Links to meeting notes](admin/meetings)
 - [Links to Miro board](https://miro.com/app/board/uXjVKNpdRwE=/)
 - [Links to hand demos](admin/handTesting)
 - [Link to JSDocs Github page](https://cse110-sp24-group2.github.io/cse110-sp24-group2/docs/global.html)
-  
+
+## Final Project Videos
+
+[Public Video](https://youtu.be/ECy-2X0Zfdk)
+
+[Private Video](https://youtu.be/nAoN7DAaQtQ)
+
+## Contributing
+
+If you wish to contribute to the project, please see the [developer onboarding docs](/admin/misc/dev-README.md) for more information.
+
 We hope you enjoy the work journal and can get some good use out of it, thank you!
 
 _- CSE 110 Sp24 King Julian (aka Group 2)_
