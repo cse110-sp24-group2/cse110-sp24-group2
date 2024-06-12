@@ -62,7 +62,7 @@ One process we emphasized on the most is the Tuckman model. This is how we saw t
 - When some members of team started to feel lost due to unequal distribution of work (see [this retrospective underneath "Step 2"](/admin/meetings/042724-retrospective.md))
 - Meetings taking too long, people needing to drop b/c meetings went over time
 
-1. Norming
+3. Norming
 
 - Adjusting team structure and forming the three subteams
 - Creating the 3 subteams to clarify roles and distribute work equally
@@ -77,10 +77,15 @@ One process we emphasized on the most is the Tuckman model. This is how we saw t
   - https://github.com/cse110-sp24-group2/cse110-sp24-group2/blob/feature-testing/admin/meetings/042724-retrospective.md
     ![priority issues](/admin/requirements/priority_issues.png)
 
-1. Performing
+4. Performing
 
-   - Establishing subteams and policy channel
-   - Move more towards solo and pair programming
+- Establishing subteams and policy channel
+- Move more towards solo and pair programming
+- People/subteams taking ownership of certain features
+
+5. Adjorning
+
+- Setting up team lunch to celebrate project end!
 
 **How different processes ties into one another**
 
@@ -140,7 +145,7 @@ The two issues below is one where we refactored the code to follow the DRY conce
 
 [[REFACTOR] Test cases to use vars.js as Single Source of Truth (DRY) · Issue #198 ·](https://github.com/cse110-sp24-group2/cse110-sp24-group2/pull/198)
 
-## Improvements For the Future
+## Other Improvements For the Future
 
 Even though our team did a good job with following the processes for our project, there are still some things we can do to make our project better
 
