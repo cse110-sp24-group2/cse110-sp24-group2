@@ -75,6 +75,10 @@ Down below is a GIF on how to create a label and use the search bar to filter ou
 
 [Private Video](https://youtu.be/nAoN7DAaQtQ)
 
+## Contributing
+
+If you wish to contribute to the project, please see the [developer onboarding docs](/admin/misc/dev-README.md) for more information.
+
 We hope you enjoy the work journal and can get some good use out of it, thank you!
 
 _- CSE 110 Sp24 King Julian (aka Group 2)_
