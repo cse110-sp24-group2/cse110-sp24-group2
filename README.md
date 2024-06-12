@@ -73,7 +73,7 @@ Down below is a GIF on how to create a label and use the search bar to filter ou
 
 [Public Video](https://youtu.be/ECy-2X0Zfdk)
 
-[Private Video](https://youtu.be/nAoN7DAaQtQ)
+[Private Video](https://youtu.be/LcMrYwzHAaM)
 
 ## Contributing
 
